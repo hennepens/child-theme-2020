@@ -117,6 +117,42 @@ function woo_remove_product_tabs( $tabs ) {
     return $tabs;
 }
 
+/**
+ * Display the Autoship Product Options as radio buttons
+ * @param WC_Product $product The current WC Product object.
+ */
+function xx_display_autoship_radio_options( $product ){
+
+  ?>
+
+  <label class="autoship-label" for="autoship-no">
+    <input type="radio" class="autoship-options autoship-radio-option" name="autoship-options" value="" checked="checked"/>
+    <?php echo __( 'One-time Purchase', 'autoship' ); ?>
+  </label>
+
+  <div class="autoship-save-options">
+
+  <h3><?php echo autoship_checkout_recurring_discount_string( $product->get_id() ); ?></h3>
+
+  <?php
+  // Loop through the Scheduled Options and display as radio options.
+  foreach ( autoship_product_frequency_options( $product->get_id() ) as $key => $option ): ?>
+
+    <label class="autoship-label" for="autoship-option-<?php echo $key;?>">
+      <input type="radio" class="autoship-options autoship-radio-option" name="autoship-options" value="<?php echo esc_attr( json_encode( $option ) ); ?>" />
+      <?php echo esc_html( $option['display_name'] ); ?>
+    </label>
+
+  <?php endforeach; ?>
+
+  </div>
+
+  <?php
+
+}
+add_action('autoship_before_schedule_options', 'xx_display_autoship_radio_options', 10, 1 );
+add_action('autoship_before_schedule_options_variable', 'xx_display_autoship_radio_options', 10, 1 );
+
 function autoship_new_default_frequency_options( $options ) {
     // Return a new set of default frequency options of 30, 60, 90 Days
     return array(
@@ -125,21 +161,21 @@ function autoship_new_default_frequency_options( $options ) {
             'frequency_type' => 'Days',
             // Frequency (integer)
             'frequency' => 30,
-            'display_name' => 'Every 30 Days'
+            'display_name' => 'Monthly'
         ),
         array(
             // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
             'frequency_type' => 'Days',
             // Frequency (integer)
             'frequency' => 60,
-            'display_name' => 'Every 60 Days'
+            'display_name' => 'Bi-Monthly'
         ),
         array(
             // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
             'frequency_type' => 'Days',
             // Frequency (integer)
             'frequency' => 90,
-            'display_name' => 'Every 90 Days'
+            'display_name' => 'Quarterly'
         )
     );
 }
