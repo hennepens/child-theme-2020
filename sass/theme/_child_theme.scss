@@ -10,12 +10,23 @@ h1,h2,h3,h4,h5,h6{
 	font-family: $font-family-libre-baskerville-bold;
 }
 
-.navbar-absolute{
-	position: absolute;
-	z-index: 1;
-	width: 100%;
+
+.admin-bar p.demo_store{
+	top: 0;
+}
+
+/* Navbar Customizations */
+
+.navbar{
+	background: #f9f9f9;
+	.navbar-brand{
+		#logo-svg{
+			filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
+
+		}
+	}
 	a{
-		color: #fff;
+		color: #000;
 	}
 }
 
@@ -36,17 +47,37 @@ h1,h2,h3,h4,h5,h6{
 .menu-footer-menu-container{
 	.menu{
 		display: flex;
-		justify-content: center;
 		list-style: none;
 		padding: 0;
 		li{
 			padding: 0 10px;
+			&:first-child{
+				padding-left: 0;
+			}
 		}
 	}
 }
 
-/////* HOME PAGE CUSTOMIZATIONS *////////
 
+/* HOME PAGE CUSTOMIZATIONS */
+
+.home{
+	.navbar{
+		background: none;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		.navbar-brand{
+			#logo-svg{
+			filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
+
+			}
+		}
+		a{
+			color: #fff;
+		}
+	}
+}
 
 #hero-header .fl-heading{
 	font-family: $font-family-superior-regular !important;
@@ -67,18 +98,47 @@ h1,h2,h3,h4,h5,h6{
 
 
 
-//////* Footer Edits *///////
+/* Footer Edits */
 
+#wrapper-footer{
+	background: #e9ecef;
+	padding-top: 0;
+}
 #wrapper-footer-full{
-	text-align: center;
+	background: rgb(53,110,62);
+	background: linear-gradient(315deg, rgba(53,110,62,1) 0%, rgba(43,142,47,1) 100%);
+	padding: 50px 0;
+	margin-bottom: 50px;
 }
-.site-info {
+
+#menu-main-footer-menu{
+	column-count: 3;
+	list-style: none;
+	padding: 0;
+}
+
+.disclaimer{
+	font-size: .7rem;
 	text-align: center;
+	border: 1px solid #ccc;
+	padding: 20px;
+}
+
+.site-info ul{
+	list-style: none;
+	display: flex;
+	padding: 0;
+	text-align: center;
+	li{
+		padding-right: 10px;
+		&:last-child{
+			padding-right: 0;
+		}
+	}
 }
 
 
-
-/////* Product Categories *///////
+/* Product Categories */
 
 .cat-header{
 	width: 100%;
@@ -100,22 +160,138 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-/////* Single Product Template *///////
+
+/* Single Product Template */
 
 .single-product{
-	.navbar{
-		background: #f9f9f9;
-		.navbar-brand{
-			#logo-svg{
-				filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
-
-			}
-		}
-		a{
-			color: #000;
-		}
-	}
 	#woocommerce-wrapper{
 		padding-top: 100px;
 	}
+}
+
+.summary p.price{
+	display: none;
+}
+
+.woocommerce-variation-price{
+	.price{
+		.amount{
+			font-size: 2rem;
+			font-family: $font-family-libre-baskerville-regular;
+		}
+	}
+}
+
+.single_variation_wrap{
+	.quantity{
+		margin-right: 0 !important;
+		.qty{
+			border-right: 0;
+			
+	    	border-bottom-right-radius: 0;
+	    	border-top-right-radius: 0;
+	    	border-top-left-radius: 100px;
+	    	border-bottom-left-radius: 100px;
+	    	border-color: #2b8e2f !important;
+	    	height: 100%;
+	    	padding: 14px;
+	    	width:100px;
+	    	font-weight: bold;
+	    	font-size: xx-large;
+		}
+	}
+	.single_add_to_cart_button{
+		border-left: 0;
+		border-color: #2b8e2f;
+		border-radius: 100px;
+	    border-top-left-radius: 0;
+	    border-bottom-left-radius: 0;
+	    padding: 20px;
+	    font-size: larger;
+	    text-transform: uppercase;
+	    min-width: 250px;
+	    background: #356e3e;
+
+	}
+}
+
+
+#ivpa-content{
+	margin: 0 !important;
+	.ivpa_term{
+		border-radius: 100px !important;
+	}
+}
+
+
+/* MC Form Edits */
+
+
+#sign-up-for-hennepens-news-1{
+	display: flex;
+	margin: 0 auto;
+	max-width: 500px;
+	label{
+		margin-bottom: 0;
+	}
+	.yikes-easy-mc-email{
+		margin-bottom: 0;
+	    height: 100%;
+	    border-bottom-right-radius: 0;
+	    border-top-right-radius: 0;
+	    border-top-left-radius: .25rem;
+	    border-bottom-left-radius: .25rem;
+	    border-right: 0;
+	}
+	.yikes-easy-mc-submit-button{
+		margin-top: 0;
+	    border-top-left-radius: 0;
+	    border-bottom-left-radius: 0;
+	    border: 2px solid rgba(51,51,51,.1);
+	    padding: 10px 20px;
+	    width: auto;
+	}
+}
+
+.yikes-mailchimp-form-description{
+	margin: 20px 0 10px 0;
+}
+
+
+/* Autoship Radio Options Extension Custom Styling
+=================================== */
+.autoship-schedule-options .autoship-frequency {
+  display: none !important;
+}
+
+.autoship-schedule-options > .autoship-label:first-of-type {
+  padding: 5px;
+}
+
+.autoship-type {
+  display: none !important;
+}
+
+.autoship-save-options {
+  border: 1px solid #294ebc;
+  border-radius: 5px;
+  position: relative;
+  padding: 11px 5px 5px 5px;
+  margin-top: 9px;
+}
+
+.autoship-save-options h3 {
+  position: absolute;
+  top: -12px;
+  left: 18px;
+  width: auto;
+  color: #294ebc;
+  background-color: #fff;
+  padding: 0px 10px;
+  font-size: 15px;
+  font-weight: bold !important;
+}
+
+.autoship-save-options label {
+  padding-right: 15px;
 }

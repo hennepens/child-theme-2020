@@ -30,6 +30,34 @@ function theme_enqueue_styles() {
 add_action( 'init', 'child_remove_parent_functions', 99 );
 function child_remove_parent_functions() {
     remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+}
+
+add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
+function woo_new_product_tab( $tabs ) {
+    
+    // Adds the new tab
+    
+    $tabs['test_tab'] = array(
+        'title'     => __( 'Certificate of Analysis', 'woocommerce' ),
+        'priority'  => 20,
+        'callback'  => 'woo_coa_tab_content'
+    );
+
+    return $tabs;
+
+}
+function woo_coa_tab_content() {
+    $pdf = get_field('coa_pdf_upload'); 
+    if(!empty($pdf)){
+        echo '<a href="'. $pdf['url'] .'"><i class="fa fa-lg fa-file-pdf-o"></i> Download Certificate of Analysis</a>';
+    }
+    $image = get_field('coa_image_upload'); 
+    if( !empty($image) ){ ?>
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php
+    }
 }
 
 
@@ -55,7 +83,66 @@ function category_banner(){ ?>
 add_action('woocommerce_archive_description','category_banner',15);
 
 
+add_filter( 'woocommerce_variable_price_html', 'bbloomer_variation_price_format', 10, 2 );
+ 
+function bbloomer_variation_price_format( $price, $product ) {
+ 
+// 1. Get min/max regular and sale variation prices
+ 
+$min_var_reg_price = $product->get_variation_regular_price( 'min', true );
+$min_var_sale_price = $product->get_variation_sale_price( 'min', true );
+$max_var_reg_price = $product->get_variation_regular_price( 'max', true );
+$max_var_sale_price = $product->get_variation_sale_price( 'max', true );
+ 
+// 2. New $price, unless all variations have exact same prices
+ 
+if ( ! ( $min_var_reg_price == $max_var_reg_price && $min_var_sale_price == $max_var_sale_price ) ) {   
+   if ( $min_var_sale_price < $min_var_reg_price ) {
+      $price = sprintf( __( '<del>%1$s</del><ins>%2$s</ins>', 'woocommerce' ), wc_price( $min_var_reg_price ), wc_price( $min_var_sale_price ) );
+   } else {
+      $price = sprintf( __( '%1$s', 'woocommerce' ), wc_price( $min_var_reg_price ) );
+   }
+}
+ 
+// 3. Return $price
+ 
+return $price;
+}
 
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
+function woo_remove_product_tabs( $tabs ) {
+    unset( $tabs['additional_information'] );   // Remove the additional information tab
+
+    return $tabs;
+}
+
+function autoship_new_default_frequency_options( $options ) {
+    // Return a new set of default frequency options of 30, 60, 90 Days
+    return array(
+        array(
+            // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+            'frequency_type' => 'Days',
+            // Frequency (integer)
+            'frequency' => 30,
+            'display_name' => 'Every 30 Days'
+        ),
+        array(
+            // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+            'frequency_type' => 'Days',
+            // Frequency (integer)
+            'frequency' => 60,
+            'display_name' => 'Every 60 Days'
+        ),
+        array(
+            // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+            'frequency_type' => 'Days',
+            // Frequency (integer)
+            'frequency' => 90,
+            'display_name' => 'Every 90 Days'
+        )
+    );
+}
+add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' );
 
 ?>

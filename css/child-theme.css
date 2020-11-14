@@ -11712,12 +11712,17 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: "libre_baskervillebold"; }
 
-.navbar-absolute {
-  position: absolute;
-  z-index: 1;
-  width: 100%; }
-  .navbar-absolute a {
-    color: #fff; }
+.admin-bar p.demo_store {
+  top: 0; }
+
+/* Navbar Customizations */
+.navbar {
+  background: #f9f9f9; }
+  .navbar .navbar-brand #logo-svg {
+    -webkit-filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
+            filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
+  .navbar a {
+    color: #000; }
 
 .woocommerce-store-notice.demo_store {
   position: relative;
@@ -11735,13 +11740,24 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   list-style: none;
   padding: 0; }
   .menu-footer-menu-container .menu li {
     padding: 0 10px; }
+    .menu-footer-menu-container .menu li:first-child {
+      padding-left: 0; }
+
+/* HOME PAGE CUSTOMIZATIONS */
+.home .navbar {
+  background: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%; }
+  .home .navbar .navbar-brand #logo-svg {
+    -webkit-filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
+            filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
+  .home .navbar a {
+    color: #fff; }
 
 #hero-header .fl-heading {
   font-family: "superiorregular" !important;
@@ -11757,12 +11773,43 @@ h1, h2, h3, h4, h5, h6 {
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }
 
+/* Footer Edits */
+#wrapper-footer {
+  background: #e9ecef;
+  padding-top: 0; }
+
 #wrapper-footer-full {
-  text-align: center; }
+  background: #356e3e;
+  background: linear-gradient(315deg, #356e3e 0%, #2b8e2f 100%);
+  padding: 50px 0;
+  margin-bottom: 50px; }
 
-.site-info {
-  text-align: center; }
+#menu-main-footer-menu {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+  list-style: none;
+  padding: 0; }
 
+.disclaimer {
+  font-size: .7rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px; }
+
+.site-info ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  text-align: center; }
+  .site-info ul li {
+    padding-right: 10px; }
+    .site-info ul li:last-child {
+      padding-right: 0; }
+
+/* Product Categories */
 .cat-header {
   width: 100%;
   height: 400px;
@@ -11777,16 +11824,108 @@ h1, h2, h3, h4, h5, h6 {
 .tax-product_cat .wrapper {
   padding: 0; }
 
-.single-product .navbar {
-  background: #f9f9f9; }
-  .single-product .navbar .navbar-brand #logo-svg {
-    -webkit-filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
-            filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
-  .single-product .navbar a {
-    color: #000; }
-
+/* Single Product Template */
 .single-product #woocommerce-wrapper {
   padding-top: 100px; }
+
+.summary p.price {
+  display: none; }
+
+.woocommerce-variation-price .price .amount {
+  font-size: 2rem;
+  font-family: "libre_baskervilleregular"; }
+
+.single_variation_wrap .quantity {
+  margin-right: 0 !important; }
+  .single_variation_wrap .quantity .qty {
+    border-right: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-color: #2b8e2f !important;
+    height: 100%;
+    padding: 14px;
+    width: 100px;
+    font-weight: bold;
+    font-size: xx-large; }
+
+.single_variation_wrap .single_add_to_cart_button {
+  border-left: 0;
+  border-color: #2b8e2f;
+  border-radius: 100px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 20px;
+  font-size: larger;
+  text-transform: uppercase;
+  min-width: 250px;
+  background: #356e3e; }
+
+#ivpa-content {
+  margin: 0 !important; }
+  #ivpa-content .ivpa_term {
+    border-radius: 100px !important; }
+
+/* MC Form Edits */
+#sign-up-for-hennepens-news-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 500px; }
+  #sign-up-for-hennepens-news-1 label {
+    margin-bottom: 0; }
+  #sign-up-for-hennepens-news-1 .yikes-easy-mc-email {
+    margin-bottom: 0;
+    height: 100%;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-right: 0; }
+  #sign-up-for-hennepens-news-1 .yikes-easy-mc-submit-button {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 2px solid rgba(51, 51, 51, 0.1);
+    padding: 10px 20px;
+    width: auto; }
+
+.yikes-mailchimp-form-description {
+  margin: 20px 0 10px 0; }
+
+/* Autoship Radio Options Extension Custom Styling
+=================================== */
+.autoship-schedule-options .autoship-frequency {
+  display: none !important; }
+
+.autoship-schedule-options > .autoship-label:first-of-type {
+  padding: 5px; }
+
+.autoship-type {
+  display: none !important; }
+
+.autoship-save-options {
+  border: 1px solid #294ebc;
+  border-radius: 5px;
+  position: relative;
+  padding: 11px 5px 5px 5px;
+  margin-top: 9px; }
+
+.autoship-save-options h3 {
+  position: absolute;
+  top: -12px;
+  left: 18px;
+  width: auto;
+  color: #294ebc;
+  background-color: #fff;
+  padding: 0px 10px;
+  font-size: 15px;
+  font-weight: bold !important; }
+
+.autoship-save-options label {
+  padding-right: 15px; }
 
 /*
 * Use existing Bootstrap 4 classes and
