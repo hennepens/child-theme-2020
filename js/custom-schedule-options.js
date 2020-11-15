@@ -9,7 +9,7 @@ jQuery(function ($) {
      * Adjust the Values based on the option
      */
     var triggerAutoshipChange = function(e){
-
+              console.log('TESTING');
       var $thisProduct = window.autoshipTemplateData.isCartPage ?
       $( e.target ).closest( window.autoshipTemplateData.cartItemCls ):
       $( e.target ).closest( window.autoshipTemplateData.productCls );
@@ -22,6 +22,7 @@ jQuery(function ($) {
       // Is the user clicking on a Schedule Option or One-Time Purchase
       if ( $(this).val() ){
         $autoshipYesRadio.attr('checked', true).trigger('click');
+
         $autoshipFrequencySelect.val( $(this).val() ).trigger('change');
       } else {
         $autoshipNoRadio.attr('checked', true).trigger('click');

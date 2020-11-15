@@ -25,6 +25,9 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+    if ( is_singular() && is_product() ) {
+      wp_enqueue_script( 'custom-schedule-options', get_stylesheet_directory_uri() . '/js/custom-schedule-options.js', array(), $the_theme->get( 'Version' ), true );
+    }
 }
 
 add_action( 'init', 'child_remove_parent_functions', 99 );
@@ -117,6 +120,14 @@ function woo_remove_product_tabs( $tabs ) {
     return $tabs;
 }
 
+
+if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
+  // This function replaces the Understrap function of the same name
+  function understrap_wc_form_field_args( $args, $key, $value = null ) {
+    return $args;
+  }
+}
+
 /**
  * Display the Autoship Product Options as radio buttons
  * @param WC_Product $product The current WC Product object.
@@ -150,45 +161,8 @@ function xx_display_autoship_radio_options( $product ){
   <?php
 
 }
-
-/*
 add_action('autoship_before_schedule_options', 'xx_display_autoship_radio_options', 10, 1 );
 add_action('autoship_before_schedule_options_variable', 'xx_display_autoship_radio_options', 10, 1 );
-
-function autoship_new_default_frequency_options( $options ) {
-    // Return a new set of default frequency options of 30, 60, 90 Days
-    return array(
-        array(
-            // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-            'frequency_type' => 'Days',
-            // Frequency (integer)
-            'frequency' => 30,
-            'display_name' => 'Monthly'
-        ),
-        array(
-            // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-            'frequency_type' => 'Days',
-            // Frequency (integer)
-            'frequency' => 60,
-            'display_name' => 'Bi-Monthly'
-        ),
-        array(
-            // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-            'frequency_type' => 'Days',
-            // Frequency (integer)
-            'frequency' => 90,
-            'display_name' => 'Quarterly'
-        )
-    );
-}
-add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' ); */
-
-if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
-  // This function replaces the Understrap function of the same name
-  function understrap_wc_form_field_args( $args, $key, $value = null ) {
-    return $args;
-  }
-}
 
 
 ?>
