@@ -150,6 +150,8 @@ function xx_display_autoship_radio_options( $product ){
   <?php
 
 }
+
+/*
 add_action('autoship_before_schedule_options', 'xx_display_autoship_radio_options', 10, 1 );
 add_action('autoship_before_schedule_options_variable', 'xx_display_autoship_radio_options', 10, 1 );
 
@@ -179,7 +181,7 @@ function autoship_new_default_frequency_options( $options ) {
         )
     );
 }
-add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' );
+add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' ); */
 
 if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
   // This function replaces the Understrap function of the same name
