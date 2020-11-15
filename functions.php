@@ -181,4 +181,12 @@ function autoship_new_default_frequency_options( $options ) {
 }
 add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' );
 
+if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
+  // This function replaces the Understrap function of the same name
+  function understrap_wc_form_field_args( $args, $key, $value = null ) {
+    return $args;
+  }
+}
+
+
 ?>
