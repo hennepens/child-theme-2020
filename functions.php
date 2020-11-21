@@ -3,31 +3,57 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-function understrap_remove_scripts() {
-    wp_dequeue_style( 'understrap-styles' );
-    wp_deregister_style( 'understrap-styles' );
-
-    wp_dequeue_script( 'understrap-scripts' );
-    wp_deregister_script( 'understrap-scripts' );
-
-    // Removes the parent themes stylesheet and scripts from inc/enqueue.php
-}
-add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
-
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
 
 	// Get the theme data
 	$the_theme = wp_get_theme();
-    wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
-    wp_enqueue_script( 'jquery');
-    wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
-    if ( is_singular() && is_product() ) {
-      wp_enqueue_script( 'custom-schedule-options', get_stylesheet_directory_uri() . '/js/custom-schedule-options.js', array(), $the_theme->get( 'Version' ), true );
-    }
+  wp_dequeue_style( 'understrap-styles' );
+  wp_deregister_style( 'understrap-styles' );
+
+  wp_dequeue_script( 'understrap-scripts' );
+  wp_deregister_script( 'understrap-scripts' );
+
+  // Removes the parent themes stylesheet and scripts from inc/enqueue.php
+  wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
+  wp_enqueue_script( 'jquery');
+  wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+      wp_enqueue_script( 'comment-reply' );
+  }
+  if ( is_singular() && is_product() ) {
+    wp_enqueue_script( 'custom-schedule-options', get_stylesheet_directory_uri() . '/js/custom-schedule-options.js', array(), $the_theme->get( 'Version' ), true );
+  }
+
+  if( ! function_exists( 'is_product' ) || ! is_product() ) { return; }
+  wp_enqueue_script( 'jquery' );
+  wp_add_inline_script( 'jquery', '
+    jQuery( document ).ready( function( $ ) {
+      $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
+        $( "div.generatedRadios" ).remove();
+        $( "table.variations select" ).each( function() {
+          var selName = $( this ).attr( "name" );
+          $( "select[name=" + selName + "] option" ).each( function() {
+            var option = $( this );
+            var value = option.attr( "value" );
+            if( value == "" ) { return; }
+            var label = option.html();
+            var select = option.parent();
+            var selected = select.val();
+            var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
+            var radioHtml = `<input type="radio" name="${selName}" value="${value}"${isSelected}>`;
+            var optionHtml = `<div class="generatedRadios"><label>${radioHtml} ${label}</label></div>`;
+            select.parent().append(
+              $( optionHtml ).click( function() {
+                select.val( value ).trigger( "change" );
+              } )
+            )
+          } ).parent().hide();
+        } );
+      } );
+    } );
+  ', 'after'
+  );
 }
 
 add_action( 'init', 'child_remove_parent_functions', 99 );
@@ -68,8 +94,6 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
-
-
 
 remove_action( 'wp_footer', 'woocommerce_demo_store' );
 add_action( 'wp_body_open', 'woocommerce_demo_store' );
@@ -128,41 +152,52 @@ if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
   }
 }
 
-/**
- * Display the Autoship Product Options as radio buttons
- * @param WC_Product $product The current WC Product object.
+
+/*
+ * Product subscriptions
  */
-function xx_display_autoship_radio_options( $product ){
 
-  ?>
+function get_company_name($echo = false){
 
-  <label class="autoship-label" for="autoship-no">
-    <input type="radio" class="autoship-options autoship-radio-option" name="autoship-options" value="" checked="checked"/>
-    <?php echo __( 'One-time Purchase', 'autoship' ); ?>
-  </label>
+  if (function_exists('get_field'))
+    $output = get_field('company', 'option');
 
-  <div class="autoship-save-options">
+  if (empty($output))
+    $output = get_bloginfo('name');
 
-  <h3><?php echo autoship_checkout_recurring_discount_string( $product->get_id() ); ?></h3>
-
-  <?php
-  // Loop through the Scheduled Options and display as radio options.
-  foreach ( autoship_product_frequency_options( $product->get_id() ) as $key => $option ): ?>
-
-    <label class="autoship-label" for="autoship-option-<?php echo $key;?>">
-      <input type="radio" class="autoship-options autoship-radio-option" name="autoship-options" value="<?php echo esc_attr( json_encode( $option ) ); ?>" />
-      <?php echo esc_html( $option['display_name'] ); ?>
-    </label>
-
-  <?php endforeach; ?>
-
-  </div>
-
-  <?php
-
+  if ($echo) echo $output;
+  else return $output;
 }
-add_action('autoship_before_schedule_options', 'xx_display_autoship_radio_options', 10, 1 );
-add_action('autoship_before_schedule_options_variable', 'xx_display_autoship_radio_options', 10, 1 );
+
+
+function get_help_icon($content, $type = 'text', $echo = false){
+
+  if ($type == 'image') {
+
+    $class = 'covering-image';
+    $content = "<img src='$content' alt='' />";
+
+  } else $class = 'with-paddings';
+
+  $output = "<span class='help-icon'>\n".
+    "<span class='help-icon-inner fa fa-question-circle'></span>\n".
+    ($content ? "<span class='help-icon-hover $class'><span class='help-icon-hover-inner'>$content</span></span>\n" : "").
+    "</span>\n";
+
+  if ($echo) echo $output;
+  else return $output;
+}
+
+/*
+ * Product subscriptions: Cart
+ */
+
+// Remove filters added by "WC Subscriptions" and "WC All Products For Subscriptions"
+remove_filter( 'woocommerce_cart_item_price', array( 'WCS_ATT_Display_Cart', 'show_cart_item_subscription_options' ), 1000, 3 );
+remove_filter( 'woocommerce_cart_item_subtotal', array( 'WC_Subscriptions_Switcher', 'add_cart_item_switch_direction' ), 10, 3 );
+
+
+add_filter('woocommerce_reset_variations_link', '__return_empty_string');
 
 
 ?>
