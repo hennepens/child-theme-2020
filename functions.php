@@ -3,57 +3,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+function understrap_remove_scripts() {
+    wp_dequeue_style( 'understrap-styles' );
+    wp_deregister_style( 'understrap-styles' );
+
+    wp_dequeue_script( 'understrap-scripts' );
+    wp_deregister_script( 'understrap-scripts' );
+
+    // Removes the parent themes stylesheet and scripts from inc/enqueue.php
+}
+add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
+
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
 
 	// Get the theme data
 	$the_theme = wp_get_theme();
-  wp_dequeue_style( 'understrap-styles' );
-  wp_deregister_style( 'understrap-styles' );
-
-  wp_dequeue_script( 'understrap-scripts' );
-  wp_deregister_script( 'understrap-scripts' );
-
-  // Removes the parent themes stylesheet and scripts from inc/enqueue.php
-  wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
-  wp_enqueue_script( 'jquery');
-  wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
-  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-      wp_enqueue_script( 'comment-reply' );
-  }
-  if ( is_singular() && is_product() ) {
-    wp_enqueue_script( 'custom-schedule-options', get_stylesheet_directory_uri() . '/js/custom-schedule-options.js', array(), $the_theme->get( 'Version' ), true );
-  }
-
-  if( ! function_exists( 'is_product' ) || ! is_product() ) { return; }
-  wp_enqueue_script( 'jquery' );
-  wp_add_inline_script( 'jquery', '
-    jQuery( document ).ready( function( $ ) {
-      $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
-        $( "div.generatedRadios" ).remove();
-        $( "table.variations select" ).each( function() {
-          var selName = $( this ).attr( "name" );
-          $( "select[name=" + selName + "] option" ).each( function() {
-            var option = $( this );
-            var value = option.attr( "value" );
-            if( value == "" ) { return; }
-            var label = option.html();
-            var select = option.parent();
-            var selected = select.val();
-            var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
-            var radioHtml = `<input type="radio" name="${selName}" value="${value}"${isSelected}>`;
-            var optionHtml = `<div class="generatedRadios"><label>${radioHtml} ${label}</label></div>`;
-            select.parent().append(
-              $( optionHtml ).click( function() {
-                select.val( value ).trigger( "change" );
-              } )
-            )
-          } ).parent().hide();
-        } );
-      } );
-    } );
-  ', 'after'
-  );
+    wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
+    wp_enqueue_script( 'jquery');
+    wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+    if ( is_singular() && is_product() ) {
+      wp_enqueue_script( 'custom-schedule-options', get_stylesheet_directory_uri() . '/js/custom-schedule-options.js', array(), $the_theme->get( 'Version' ), true );
+    }
 }
 
 add_action( 'init', 'child_remove_parent_functions', 99 );
@@ -62,6 +36,7 @@ function child_remove_parent_functions() {
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 }
 
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
@@ -94,6 +69,8 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+
 
 remove_action( 'wp_footer', 'woocommerce_demo_store' );
 add_action( 'wp_body_open', 'woocommerce_demo_store' );
@@ -195,9 +172,183 @@ function get_help_icon($content, $type = 'text', $echo = false){
 // Remove filters added by "WC Subscriptions" and "WC All Products For Subscriptions"
 remove_filter( 'woocommerce_cart_item_price', array( 'WCS_ATT_Display_Cart', 'show_cart_item_subscription_options' ), 1000, 3 );
 remove_filter( 'woocommerce_cart_item_subtotal', array( 'WC_Subscriptions_Switcher', 'add_cart_item_switch_direction' ), 10, 3 );
-
+add_action( 'wp_enqueue_scripts', function() {
+  if( ! function_exists( 'is_product' ) || ! is_product() ) { return; }
+  wp_enqueue_script( 'jquery' );
+  wp_add_inline_script( 'jquery', '
+    jQuery( document ).ready( function( $ ) {
+      $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
+        $( "div.generatedRadios" ).remove();
+        $( "table.variations select" ).each( function() {
+          var selName = $( this ).attr( "name" );
+          $( "select[name=" + selName + "] option" ).each( function() {
+            var option = $( this );
+            var value = option.attr( "value" );
+            if( value == "" ) { return; }
+            var label = option.html();
+            var select = option.parent();
+            var selected = select.val();
+            var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
+            console.log("Help: "+ isSelected);
+            if(isSelected.includes("checked")){var selectedClass = "selected"} else{var selectedClass=""};
+            var radioHtml = `<input type="radio" name="${selName}" value="${value}" ${isSelected}>`;
+            var optionHtml = `<div class="generatedRadios ${selectedClass}"><label>${radioHtml} ${label}</label></div>`;
+            select.parent().append(
+              $( optionHtml ).click( function() {
+                select.val( value ).trigger( "change" );
+              } )
+            )
+          } ).parent().hide();
+        } );
+      } );
+    } );
+  ', 'after' );
+} );
 
 add_filter('woocommerce_reset_variations_link', '__return_empty_string');
 
+function wc_subscriptions_custom_price_string( $pricestring ) {
+    $pricestring = str_replace( 'every 2 months', 'Bi-Monthly', $pricestring );
+    $pricestring = str_replace( 'month', 'Monthly', $pricestring );
 
+    return $pricestring;
+}
+add_filter( 'woocommerce_subscriptions_product_price_string', 'wc_subscriptions_custom_price_string' );
+add_filter( 'woocommerce_subscription_price_string', 'wc_subscriptions_custom_price_string' );
+
+add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
+function func_option_valgt2() {
+    global $product;
+
+    if($product->is_type('variable')){
+        $variations_data = [];
+        foreach($product->get_available_variations() as $variation ){
+            // Variation ID
+             $variations_data[$variation['variation_id']] = $variation['display_regular_price'];
+            // Prices
+            $active_price = floatval($variation['display_price']); // Active price
+            $regular_price = floatval($variation['display_regular_price']); // Regular Price
+            if( $active_price != $regular_price ){
+                $sale_price = $active_price; // Sale Price
+                $variations_data[$variation['variation_id']] = $sale_price;
+                $variations_orig_data[$variation['variation_id']] = $regular_price;
+            }
+        }
+?>
+        <script>
+        jQuery(function($) {
+          const formatToCurrency = amount => {
+            return "$" + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+          }
+          var jsonData = <?php echo json_encode($variations_data); ?>,
+              inputVID = 'input.variation_id',
+              regular_price = <?php echo json_encode($variations_orig_data); ?>;
+
+             console.log(jsonData); 
+             console.log(regular_price); 
+
+          $('input').change( function(){
+              if( '' != $(inputVID).val() ) {
+                  var vid      = $(inputVID).val(), // VARIATION ID
+                      vprice   = '',
+                      rprice   = ''; // Initilizing
+
+
+                  // Loop through variation IDs / Prices pairs
+                  $.each( jsonData, function( index, price) {
+                      if( index == $(inputVID).val() ) {
+                          vprice = formatToCurrency(price); // The right variation price
+                      }
+                  });
+                  $.each( regular_price, function(index, regular_price) {
+                      if( index == $(inputVID).val() ) {
+                          rprice = formatToCurrency(regular_price); // The right variation price
+                          
+                      }
+                  });
+                  $('.one-time-price').html("<del>"+ rprice + "</del>" + " " + vprice);
+                  //alert('variation Id: '+vid+' | Lengde: '+length+' | Diameter: '+diameter+' | Variantpris: '+vprice);
+              }
+          });
+        });
+        </script>
+        <?php
+    }
+  }
+
+  function func_option_valgt() {
+    global $product;
+    
+    if ( $product->is_type('variable') ) {
+        $variations_data =[]; // Initializing
+
+        // Loop through variations data
+        foreach($product->get_available_variations() as $variation ) {
+            // Set for each variation ID the corresponding price in the data array (to be used in jQuery)
+            $variations_data[$variation['variation_id']] = $variation['display_regular_price'];
+        }
+        ?>
+        <script>
+        jQuery(function($) {
+            var jsonData = <?php echo json_encode($variations_data); ?>,
+                inputVID = 'input.variation_id';
+               console.log(jsonData); 
+
+            $('input').change( function(){
+                if( '' != $(inputVID).val() ) {
+                    var vid      = $(inputVID).val(), // VARIATION ID
+                        vprice   = '',
+                        rprice   = ''; // Initilizing
+
+
+                    // Loop through variation IDs / Prices pairs
+                    $.each( jsonData, function( index, price, regular_price, sale_price ) {
+                        if( index == $(inputVID).val() ) {
+                            vprice = price; // The right variation price
+                            rprice = price; // The right variation price
+                        }
+                    });
+                    $('.one-time-price').html("<del>"+ rprice + "</del>" + " " + vprice);
+                    //alert('variation Id: '+vid+' | Lengde: '+length+' | Diameter: '+diameter+' | Variantpris: '+vprice);
+                }
+            });
+        });
+        </script>
+        <?php
+    }
+  }
+
+add_filter( 'gettext', 'bbloomer_translate_woocommerce_strings', 999, 3 );
+  
+function bbloomer_translate_woocommerce_strings( $translated, $untranslated, $domain ) {
+ 
+   if ( ! is_admin() && 'woocommerce' === $domain ) {
+ 
+      switch ( $translated) {
+ 
+         case 'Deliver every' :
+ 
+            $translated = 'On Offer';
+            break;
+ 
+         case 'Description' :
+ 
+            $translated = 'Product Specifications';
+            break;
+ 
+         // ETC
+       
+      }
+ 
+   }   
+  
+   return $translated;
+ 
+}
+
+//add_filter( 'wcsatt_price_html_suffix', 'apfs_remove_suffix', 10, 3 );
+
+function apfs_remove_suffix( $suffix, $product, $args ) {
+  return '';
+}
 ?>

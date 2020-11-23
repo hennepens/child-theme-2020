@@ -1,3 +1,22 @@
+<?php
+/**
+ * Product Subscription Options Template.
+ *
+ * Override this template by copying it to 'yourtheme/woocommerce/single-product/product-subscription-options.php'.
+ *
+ * On occasion, this template file may need to be updated and you (the theme developer) will need to copy the new files to your theme to maintain compatibility.
+ * We try to do this as little as possible, but it does happen.
+ * When this occurs the version of the template file will be bumped and the readme will list any important changes.
+ *
+ * @version 3.0.0
+ */
+global $product;
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
+
 <style>
 /*
 * Help Icon
@@ -108,7 +127,7 @@
 
 .single-product .purchase-options{
 	max-width: 460px;
-	margin: 0 0 1.5rem;
+	margin: 0 0 10px 0;
 	padding-left: 0;
 }
 
@@ -126,6 +145,9 @@
 
 .single-product .purchase-options li.selected{
 	background-color: #edebe6;
+}
+.single-product .purchase-options .subscription-price li.selected{
+	background-color: inherit;
 }
 
 .single-product .purchase-options li::before{
@@ -164,10 +186,14 @@
 <script>
 (function($){
     $(document).ready(function(){
-        
+    	var $savetext = $(".subscription-price");
+    	$(':contains("— save")').each(function(){
+		    $($savetext).html($($savetext).html().split("— save").join(""));
+		});
+    	
         // purchase options
 		$('.purchase-options input').change(function(){
-
+			console.log('test');
 			if ($(this).val() == 'one-time') updatePurchaseOptions(0);
 			else updatePurchaseOptions($('.purchase-options select').val());
 
@@ -176,6 +202,18 @@
 
 		});
 
+		$('.wcsatt-options-wrapper .wcsatt-options-product input').change(function(){
+
+			if ($(this).val() == 'one-time') updatePurchaseOptions(0);
+			else updatePurchaseOptions($('.wcsatt-options-wrapper .wcsatt-options-product select').val());
+
+			$(this).siblings('.purchase-options .selected .subscriptions-list .subscription-price').children('li').addClass('selected')
+				.siblings().removeClass('selected');
+
+		});
+
+
+
 		$('.purchase-options select').change(function(){
 			$('.purchase-options input[value="subscription"]').prop('checked', true).change();
 		});
@@ -183,7 +221,35 @@
 		function updatePurchaseOptions(v){
 			$('.wcsatt-options-product input[value="'+ v +'"]').prop('checked', true).change();
 		}
-		
+		if( jQuery( ".variations_form select" ).length  ){
+
+			// get json value from woocomerce from
+		    
+			var product_attr    =   jQuery.parseJSON( $(".variations_form").attr("data-product_variations") ),
+		    	obj_attr		= "";
+
+			
+		    jQuery( ".variations_form select" ).on( "change", function () {
+		        console.log('test2');
+		        
+		       // Create New Array by selecting variations
+		        jQuery( ".variations_form select" ).each(function( index ) {
+		            
+		             obj_attr[ $(this).attr("name") ] = $(this).val();
+		            
+		        });
+		        
+		        // Get Variations
+		        jQuery.each( product_attr, function( index, loop_value ) {
+		        
+		            if( JSON.stringify( obj_attr ) === JSON.stringify( loop_value.attributes )  ){
+		                //console.log('test')
+		                $('.one-time-price').html( loop_value.price_html );
+		                
+		            }
+		        }); 
+		    });
+		}
     });
 })(jQuery);
 </script>
@@ -196,7 +262,7 @@ if (!defined('ABSPATH')) exit;
 $subscription_options = $hidden_options = array();
 
 $tip_text = sprintf(__('We’ll ship your favorite %s products based on the schedule that you select. This way, you will never run out. You can change the schedule, pause, or cancel anytime.'), get_company_name());
-
+//$product_price = $product->get_price_html();
 foreach ($options as $option) {
 
 	// visible controls
@@ -204,7 +270,7 @@ foreach ($options as $option) {
 
 		$one_time_option = "<li". ($option['selected'] ? " class='selected'" : "") .">".
 			"<input type='radio' id='one-time-purchase' name='purchase-options' value='one-time'". ($option['selected'] ? " checked" : "") ." />".
-			"<label for='one-time-purchase'>". __('One-Time Purchase') ."</label></li>\n";
+			"<label class='one-time-purchase-label' for='one-time-purchase'>". __('One-Time') . "<span class='one-time-price'></span></label></li>\n";
 
 	} else {
 
@@ -216,7 +282,7 @@ foreach ($options as $option) {
 	}
 
 	// hidden controls
-	$hidden_options[] = sprintf('<li class="%1$s"><label><input type="radio" name="convert_to_sub_%2$d" data-custom_data="%3$s" value="%4$s" %5$s autocomplete="off" />'.
+	$hidden_options[] = sprintf('<li class="%1$s'. ($option['selected'] ? " selected" : "") .'"><label><input type="radio" name="convert_to_sub_%2$d" data-custom_data="%3$s" value="%4$s" %5$s autocomplete="off" />'.
 		'<span class="%1$s-details">%6$s</span></label></li>',
 			esc_attr($option['class']),
 			absint($product_id),
@@ -224,23 +290,22 @@ foreach ($options as $option) {
 			esc_attr($option['value']),
 			checked($option['selected'], true, false),
 			$option['description']
-	);
+	); 
 }
 
 echo
 "<ul class='purchase-options'>\n".
-
 	(isset($one_time_option) ? $one_time_option : "").
 
 	($subscription_options ? "<li". (isset($selected_subscription_option) ? " class='selected'" : "") .">".
 		"<input type='radio' id='subscriptions-list' name='purchase-options' value='subscription'". (isset($selected_subscription_option) ? " checked" : "") ." />\n".
-		"<label for='subscriptions-list'>". ($prompt ? strip_tags($prompt) : __('Choose a subscription plan:')) ."</label>\n".
-		"<select name='subscription-options'>". implode('', $subscription_options) ."</select>\n" : "").
-		get_help_icon($tip_text) ."</li>\n".
+		"<label for='subscriptions-list' class='subscription-container'><span class='choose-label'>". ($prompt2 ? strip_tags($prompt) : __('Subscribe & Save 25%')) . "</span><ul class='subscription-price'>". implode('', $hidden_options) ."</ul></label>\n".
+		"<div class='subscription-delivery'><label class='delivery-every'>Deliver every</label><select name='subscription-options'>". implode('', $subscription_options) ."</select>\n" : "").
+		get_help_icon($tip_text) ."</div></li>\n".
+"</li>".
+"</ul>\n" .
 
-"</ul>\n".
-
-"<div class='wcsatt-options-wrapper' style='display: none;'>\n".
+"<div class='wcsatt-options-wrapper'>\n".
 
 	"<ul class='wcsatt-options-product'>\n".
 		implode('', $hidden_options).

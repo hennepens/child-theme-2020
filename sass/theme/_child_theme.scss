@@ -19,7 +19,11 @@ h1,h2,h3,h4,h5,h6{
 
 .navbar{
 	background: #f9f9f9;
+	flex: 1;
 	.navbar-brand{
+		margin: 0 auto;
+    	flex: 1;
+    	text-align: center;
 		#logo-svg{
 			filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
 
@@ -27,6 +31,16 @@ h1,h2,h3,h4,h5,h6{
 	}
 	a{
 		color: #000;
+		font-family: $font-family-libre-baskerville-regular;
+	}
+	.navbar-collapse{
+		flex: 1;
+		&.right{
+			
+			.navbar-nav{
+				flex-grow: 1;
+			}
+		}
 	}
 }
 
@@ -165,7 +179,32 @@ h1,h2,h3,h4,h5,h6{
 
 .single-product{
 	#woocommerce-wrapper{
-		padding-top: 100px;
+		padding-top: 50px;
+	}
+	.purchase-options{
+		max-width: 100% !important;
+		label{
+			&.subscription-container{
+				width: auto;
+				flex-grow: 1;
+				padding: 15px 15px 15px 0;
+				display: flex;
+				align-items: center;
+			}
+		}
+		li{
+			padding: 0 !important;
+			display: flex;
+			flex-wrap: wrap;
+			input{
+				margin-left: 15px;
+				width: 1.25rem;
+				height: 1.25rem;
+			}
+			&.selected{
+				border-radius: 8px;
+			}
+		}
 	}
 }
 
@@ -176,7 +215,7 @@ h1,h2,h3,h4,h5,h6{
 .woocommerce-variation-price{
 	.price{
 		.amount{
-			font-size: 2rem;
+			font-size: 1.25rem;
 			font-family: $font-family-libre-baskerville-regular;
 		}
 	}
@@ -184,42 +223,18 @@ h1,h2,h3,h4,h5,h6{
 
 .single_variation_wrap{
 	.quantity{
-		margin-right: 0 !important;
+
 		.qty{
-			border-right: 0;
-			
-	    	border-bottom-right-radius: 0;
-	    	border-top-right-radius: 0;
-	    	border-top-left-radius: 100px;
-	    	border-bottom-left-radius: 100px;
-	    	border-color: #2b8e2f !important;
-	    	height: 100%;
-	    	padding: 14px;
-	    	width:100px;
-	    	font-weight: bold;
-	    	font-size: xx-large;
+		
 		}
 	}
 	.single_add_to_cart_button{
-		border-left: 0;
-		border-color: #2b8e2f;
-		border-radius: 100px;
-	    border-top-left-radius: 0;
-	    border-bottom-left-radius: 0;
-	    padding: 20px;
-	    font-size: larger;
-	    text-transform: uppercase;
-	    min-width: 250px;
+		padding: 10px 20px;
+	    min-width: 200px;
+	    font-size: 1.25rem;
 	    background: #356e3e;
-
-	}
-}
-
-
-#ivpa-content{
-	margin: 0 !important;
-	.ivpa_term{
-		border-radius: 100px !important;
+	    border: 1px solid #356e3e;
+	    border-radius: 8px;
 	}
 }
 
@@ -271,7 +286,167 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 .variations{
+	tr{
+		display: flex;
+		flex-direction: column;
+	}
+	td.value{
+		display: flex;
+	}
 	.label{
+		font-weight: bold;
+		font-size: large;
+	}
+}
+
+.wcsatt-options-wrapper{
+	
+	.wcsatt-options-product{
+		margin: 0 0 2em 0;
+		padding: 0;
+	}
+}
+
+
+
+
+.subscription-option{
+	display: none;
+	&.selected{
+		/*display: inherit;*/
+	}
+	input{
 		display: none;
 	}
+}
+.subscription-details{
+	display: none;
+}
+
+.subscription-price{
+	margin: 0;
+	padding: 0;
+	.one-time-option{
+		display: none !important;
+	}
+	.wcsatt-sub-discount{
+		display: none;
+	}
+	.subscription-option{
+		display:none !important;
+		min-height: auto !important;
+		padding: 0 !important;
+		&.selected{
+			display: inherit !important;
+			background-color: inherit;
+			&.one-time-option{
+				display: none;
+			}
+		}
+		label{
+			float: right;
+			width: auto;
+		}
+	}
+}
+
+.choose-label{
+	float: left;
+	width: auto;
+	flex-grow: 1;
+	font-weight: bold;
+	font-size: 1.15rem;
+}
+
+.one-time-price{
+	float: right;
+    font-size: large;
+    line-height: initial;
+    font-family: $font-family-libre-baskerville-regular;
+}
+.one-time-purchase-label{
+	flex-grow: 1;
+	padding-right: 15px;
+	color: #aaa;
+}
+.subscription-delivery{
+	padding: 15px;
+	border-top: 2px solid #fff;
+	display: none;
+	width: 100%;
+	align-items: center;
+	justify-content: flex-end;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	.delivery-every{
+		width: auto;
+	}
+}
+
+.selected{
+	.subscription-delivery{
+		display: flex;
+	}
+	.one-time-purchase-label{
+		color: inherit;
+	}
+}
+
+.generatedRadios{
+	padding: 15px;
+	width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    color: #ccc;
+    &.selected{
+    	border-color: #333;
+    	color: inherit;
+    	background-color: #edebe6;
+    }
+	label{
+		margin: 0;
+		display: flex;
+		align-items: center;
+	}
+	input{
+		width: 1.25rem;
+		height: 1.25rem;
+		margin-right: 5px;
+	}
+}
+
+.woocommerce-variation-price{
+	.price{
+		display: none;
+	}
+	.purchase-options{
+		.subscription-price{
+			display: inherit;
+		}
+	}	
+}
+
+.woocommerce-variation-add-to-cart{
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	;
+	.added_to_cart{
+		position: absolute;
+		bottom: -34px;
+	}
+	.qty{
+		height: 52px;
+		border-radius: 8px;
+		border: 2px solid #aaa;
+	}
+}
+.woocommerce span.onsale {
+	display: flex;
+	line-height: inherit;
+	align-items: center;
+	justify-content: center;
 }

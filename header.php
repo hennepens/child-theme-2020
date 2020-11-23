@@ -31,6 +31,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
 		<nav class="navbar navbar-expand-md">
+			
+				<?php wp_nav_menu(
+				array(
+					//'theme_location'  => 'primary',
+					'container_class' => 'collapse navbar-collapse right',
+					'container_id'    => 'navbarNavDropdown',
+					'menu_class'      => 'navbar-nav ml-auto',
+					'fallback_cb'     => '',
+					'menu'         => 'Shop Menu',
+					'depth'           => 2,
+					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+				)
+			); ?>
 			<h1 class="navbar-brand mb-0">
 				<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
 					<img id="logo-svg" src="<?php echo get_stylesheet_directory_uri() .'/images/hennepens-logo.svg';?>" alt="Hennepen's" width="300">
@@ -44,11 +57,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php wp_nav_menu(
 				array(
 					'theme_location'  => 'primary',
-					'container_class' => 'collapse navbar-collapse',
+					'container_class' => 'collapse navbar-collapse left',
 					'container_id'    => 'navbarNavDropdown',
 					'menu_class'      => 'navbar-nav ml-auto',
 					'fallback_cb'     => '',
-					'menu_id'         => 'main-menu',
+					'menu_id'         => 'main-menu-right',
 					'depth'           => 2,
 					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 				)
