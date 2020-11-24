@@ -11915,26 +11915,52 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1; }
+  .navbar .mobile-nav {
+    position: absolute; }
+    .navbar .mobile-nav .shiftnav-toggle-button {
+      background: none !important;
+      font-size: 1.5rem; }
+  .navbar .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: auto; }
+  .navbar .quick-links-container {
+    position: absolute;
+    right: 20px; }
+  .navbar .navbar-collapse {
+    width: 225px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .navbar .navbar-collapse li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
   .navbar .navbar-brand {
     margin: 0 auto;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    text-align: center; }
+    padding: 30px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    @media only screen and (max-width: 767px) {
+      .navbar .navbar-brand {
+        padding: 10px 30px; } }
     .navbar .navbar-brand #logo-svg {
       -webkit-filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
               filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
+    .navbar .navbar-brand .tagline {
+      margin-top: -5px;
+      letter-spacing: 4px;
+      font-size: 1rem;
+      color: #fff;
+      font-family: "superiorregular" !important; }
   .navbar a {
     color: #000;
     font-family: "libre_baskervilleregular"; }
-  .navbar .navbar-collapse {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1; }
-    .navbar .navbar-collapse.right .navbar-nav {
-      -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
-              flex-grow: 1; }
 
 .woocommerce-store-notice.demo_store {
   position: relative;
@@ -11970,6 +11996,13 @@ h1, h2, h3, h4, h5, h6 {
             filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
   .home .navbar a {
     color: #fff; }
+
+.home .xoo-wsc-sc-bki {
+  color: #fff;
+  margin-left: 15px; }
+
+.home .woocommerce-store-notice {
+  display: none !important; }
 
 #hero-header .fl-heading {
   font-family: "superiorregular" !important;
