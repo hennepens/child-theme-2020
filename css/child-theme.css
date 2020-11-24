@@ -12195,6 +12195,9 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
   -webkit-transform: rotate(-5deg);
           transform: rotate(-5deg); }
+  @media only screen and (max-width: 767px) {
+    #hero-header .fl-heading {
+      font-size: 4.5rem; } }
 
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }
