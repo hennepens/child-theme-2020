@@ -12126,7 +12126,8 @@ h1, h2, h3, h4, h5, h6 {
             flex-direction: column; }
     @media only screen and (max-width: 767px) {
       .navbar .navbar-brand {
-        padding: 10px 30px; } }
+        padding: 10px 30px;
+        max-width: 95%; } }
     .navbar .navbar-brand #logo-svg {
       -webkit-filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
               filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
@@ -12197,7 +12198,7 @@ h1, h2, h3, h4, h5, h6 {
           transform: rotate(-5deg); }
   @media only screen and (max-width: 767px) {
     #hero-header .fl-heading {
-      font-size: 4.5rem; } }
+      font-size: 4rem; } }
 
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }

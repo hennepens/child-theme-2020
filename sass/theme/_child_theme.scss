@@ -56,6 +56,7 @@ h1,h2,h3,h4,h5,h6{
     	flex-direction: column;
     	@media only screen and (max-width: 767px) {
     		padding: 10px 30px;
+    		max-width: 95%;
     	}
 		#logo-svg{
 			filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
@@ -148,7 +149,7 @@ h1,h2,h3,h4,h5,h6{
     font-style: italic;
     transform: rotate(-5deg);
     @media only screen and (max-width: 767px) {
-		font-size: 4.5rem;
+		font-size: 4rem;
 	}
 }
 
