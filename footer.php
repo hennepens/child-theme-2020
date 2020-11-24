@@ -15,12 +15,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="wrapper-footer">
 	<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr( $container ); ?> pt-5">
 		<div class="row">
 			<div class="col-md-9">
 				<div class="row">
-					<div class="col-md-2">
-						<img id="logo-svg" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hennepens-logomark.svg" alt="Hennepen's" width="80">
+					<div class="d-flex col-md-2 justify-content-center align-items-md-start">
+						<img id="logo-svg" class="mb-3" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hennepens-logomark.svg" alt="Hennepen's" width="80">
 					</div>
 					<div class="col-md-10">
 						<?php wp_nav_menu( array('menu' => 'Main Footer Menu') ); ?>
@@ -28,7 +28,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</div>	
 			</div>
 			<div class="col-md-3">
-				<ul class="d-flex list-inline justify-content-end">
+				<ul class="d-flex list-inline justify-content-center justify-content-md-end">
 					<li class="icon list-inline-item">
 						<a href="https://instagram.com/hennepens" target="_blank">
 							<i class="fa fa-2x fa-instagram"></i>
@@ -50,7 +50,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					  	</a>
 					</li>
 				</ul>
-				<ul class="d-flex list-inline justify-content-end">
+				<ul class="d-flex list-inline justify-content-center justify-content-md-end" justify-content-md-end">
 		            <li class="icon list-inline-item">
 		            	<i class="fa fa-2x fa-cc-visa"></i>
 		            </li>
@@ -68,7 +68,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-md-12">
 				<footer class="site-footer mt-5" id="colophon">
 					<div class="d-flex site-info justify-content-center">
-						<ul>
+						<ul class="d-md-flex d-block">
 							<li>
 								&copy; <?php echo date_i18n(_x( 'Y', 'copyright date format', 'understrap' )); ?> Hennepen&apos;s&reg;. All Rights Reserved.
 							</li>

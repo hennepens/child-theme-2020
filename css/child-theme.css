@@ -12214,8 +12214,7 @@ h1, h2, h3, h4, h5, h6 {
 #wrapper-footer-full {
   background: #356e3e;
   background: linear-gradient(315deg, #356e3e 0%, #2b8e2f 100%);
-  padding: 50px 0;
-  margin-bottom: 50px; }
+  padding: 50px 0; }
 
 #menu-main-footer-menu {
   -webkit-column-count: 3;
