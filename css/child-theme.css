@@ -11934,7 +11934,7 @@ h1, h2, h3, h4, h5, h6 {
         -ms-flex-pack: center;
             justify-content: center; }
     .navbar .navbar-collapse li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
   .navbar .navbar-brand {
     margin: 0 auto;
     padding: 30px;
@@ -11956,7 +11956,6 @@ h1, h2, h3, h4, h5, h6 {
       margin-top: -5px;
       letter-spacing: 4px;
       font-size: 1rem;
-      color: #fff;
       font-family: "superiorregular" !important; }
   .navbar a {
     color: #000;
@@ -11991,9 +11990,13 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   z-index: 1;
   width: 100%; }
+  .home .navbar .navbar-collapse li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
   .home .navbar .navbar-brand #logo-svg {
     -webkit-filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
             filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
+  .home .navbar .navbar-brand .tagline {
+    color: #fff; }
   .home .navbar a {
     color: #fff; }
 
@@ -12308,6 +12311,14 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
+
+.xoo-wsc-sc-subt {
+  display: none; }
+
+.xoo-wsc-sc-count {
+  position: absolute;
+  right: -10px;
+  top: -5px; }
 
 /*
 * Use existing Bootstrap 4 classes and

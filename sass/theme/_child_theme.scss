@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6{
 		width: 225px;
 		justify-content: center;
 		li{
-			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+			border-bottom: 1px solid rgba(000, 000, 000, 0.3);
 		}
 	}
 	.navbar-brand{
@@ -59,7 +59,6 @@ h1,h2,h3,h4,h5,h6{
 			margin-top: -5px;
 			letter-spacing: 4px;
 			font-size: 1rem;
-			color: #fff;
 			font-family: $font-family-superior-regular !important;
 		}
 	}
@@ -106,10 +105,18 @@ h1,h2,h3,h4,h5,h6{
 		position: absolute;
 		z-index: 1;
 		width: 100%;
+		.navbar-collapse{
+			li{
+				border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+			}
+		}
 		.navbar-brand{
 			#logo-svg{
 			filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
 
+			}
+			.tagline{
+				color: #fff;
 			}
 		}
 		a{
@@ -483,3 +490,11 @@ h1,h2,h3,h4,h5,h6{
 	justify-content: center;
 }
 
+.xoo-wsc-sc-subt{
+display: none;
+}
+.xoo-wsc-sc-count{
+position: absolute;
+right: -10px;
+top: -5px;
+}
