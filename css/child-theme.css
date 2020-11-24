@@ -12106,6 +12106,9 @@ h1, h2, h3, h4, h5, h6 {
   .navbar .quick-links-container {
     position: absolute;
     right: 20px; }
+    @media only screen and (max-width: 767px) {
+      .navbar .quick-links-container {
+        right: 15px; } }
   .navbar .navbar-collapse {
     width: 225px;
     -webkit-box-pack: center;
