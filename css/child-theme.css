@@ -12127,7 +12127,7 @@ h1, h2, h3, h4, h5, h6 {
     @media only screen and (max-width: 767px) {
       .navbar .navbar-brand {
         padding: 10px 30px;
-        max-width: 95%; } }
+        max-width: 92%; } }
     .navbar .navbar-brand #logo-svg {
       -webkit-filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
               filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
