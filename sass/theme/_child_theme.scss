@@ -1,3 +1,5 @@
+
+
 body {
   font-family: $font-family-sans-serif;
 }
@@ -23,9 +25,13 @@ h1,h2,h3,h4,h5,h6{
 	.mobile-nav{
 		position: absolute;
 		.shiftnav-toggle-button{
-   		background: none !important;
-   		font-size: 1.5rem;
+   			background: none !important;
+   			font-size: 1.5rem;
+		}	
 	}
+	@media only screen and (max-width: 767px) {
+		padding-left: 0;
+		padding-right: 0
 	}
 	.container{
 		justify-content: center;
