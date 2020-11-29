@@ -12210,8 +12210,8 @@ h1, h2, h3, h4, h5, h6 {
   display: none !important; }
 
 #hero-header .fl-heading {
-  font-family: "superiorregular" !important;
-  font-size: 6rem;
+  font-family: baskerville, serif;
+  font-size: 9rem;
   letter-spacing: 2px;
   margin-bottom: 50px;
   text-align: center;
@@ -12220,7 +12220,7 @@ h1, h2, h3, h4, h5, h6 {
           transform: rotate(-5deg); }
   @media only screen and (max-width: 767px) {
     #hero-header .fl-heading {
-      font-size: 3rem; } }
+      font-size: 4rem; } }
 
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }
