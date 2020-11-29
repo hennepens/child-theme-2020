@@ -10,7 +10,7 @@
  *
  * @version 3.0.0
  */
-global $product;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -262,6 +262,7 @@ if (!defined('ABSPATH')) exit;
 $subscription_options = $hidden_options = array();
 
 $tip_text = sprintf(__('We’ll ship your favorite %s products based on the schedule that you select. This way, you will never run out. You can change the schedule, pause, or cancel anytime.'), get_company_name());
+
 //$product_price = $product->get_price_html();
 foreach ($options as $option) {
 
@@ -278,7 +279,7 @@ foreach ($options as $option) {
 			$selected_subscription_option = $option['selected'];
 
 		$subscription_options[] = "<option value='". $option['value'] ."'selected ". ($option['selected'] ? " selected" : "") .">".
-			sprintf('%d %s', $option['data']['subscription_scheme']['interval'], ucfirst($option['data']['subscription_scheme']['period'])) ."</option>\n";
+			sprintf('%d %s', $option['data']['subscription_scheme']['interval'], ucfirst($option['data']['subscription_scheme']['period'])) ."s</option>\n";
 	}
 
 	// hidden controls
@@ -292,14 +293,14 @@ foreach ($options as $option) {
 			$option['description']
 	); 
 }
-
+$amount_saved = $product->get_sale_price();
 echo
 "<ul class='purchase-options'>\n".
 	(isset($one_time_option) ? $one_time_option : "").
 
 	($subscription_options ? "<li". (isset($selected_subscription_option) ? " class='selected'" : "") .">".
 		"<input type='radio' id='subscriptions-list' name='purchase-options' value='subscription'". (isset($selected_subscription_option) ? " checked" : "") ." />\n".
-		"<label for='subscriptions-list' class='subscription-container'><span class='choose-label'>". ($prompt2 ? strip_tags($prompt) : __('Subscribe & Save 25%')) . "</span><ul class='subscription-price'>". implode('', $hidden_options) ."</ul></label>\n".
+		"<label for='subscriptions-list' class='subscription-container'><span class='choose-label'>". ($prompt2 ? strip_tags($prompt) : __('Subscribe & Save 40%')) . $amount_saved . "</span><ul class='subscription-price'>". implode('', $hidden_options) ."</ul></label>\n".
 		"<div class='subscription-delivery'><label class='delivery-every'>Deliver every</label><select name='subscription-options'>". implode('', $subscription_options) ."</select>\n" : "").
 		get_help_icon($tip_text) ."</div></li>\n".
 "</li>".

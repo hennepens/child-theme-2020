@@ -296,10 +296,6 @@ h1,h2,h3,h4,h5,h6{
 	}
 }
 
-.summary p.price{
-	/*display: none;*/
-}
-
 .woocommerce-variation-price{
 	.price{
 		.amount{
@@ -567,6 +563,11 @@ display: none;
 		}
 		#primary{
 			padding: 0;
+		}
+	}
+	.summary{
+		.product_title{
+			font-size: 2rem;
 		}
 	}
 

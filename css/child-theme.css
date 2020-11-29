@@ -12312,9 +12312,6 @@ h1, h2, h3, h4, h5, h6 {
     .single-product .purchase-options li.selected {
       border-radius: 8px; }
 
-.summary p.price {
-  /*display: none;*/ }
-
 .woocommerce-variation-price .price .amount {
   font-size: 1.25rem;
   font-family: "libre_baskervilleregular"; }
@@ -12541,6 +12538,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .single-product #content #primary {
   padding: 0; }
+
+.single-product .summary .product_title {
+  font-size: 2rem; }
 
 .bb-content {
   display: block;

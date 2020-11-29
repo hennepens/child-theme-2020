@@ -338,4 +338,12 @@ function hook_additional_product_info_template() {
 
 add_action( 'woocommerce_after_single_product', 'hook_additional_product_info_template' );
 
+function the_dramatist_price_show() {
+    global $product;
+    if( $product->is_on_sale() ) {
+        return $product->get_sale_price();
+    }
+    return $product->get_regular_price();
+}
+
 ?>
