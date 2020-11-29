@@ -293,14 +293,14 @@ foreach ($options as $option) {
 			$option['description']
 	); 
 }
-$amount_saved = $product->get_sale_price();
+//$amount_saved = $product->get_sale_price();
 echo
 "<ul class='purchase-options'>\n".
 	(isset($one_time_option) ? $one_time_option : "").
 
 	($subscription_options ? "<li". (isset($selected_subscription_option) ? " class='selected'" : "") .">".
 		"<input type='radio' id='subscriptions-list' name='purchase-options' value='subscription'". (isset($selected_subscription_option) ? " checked" : "") ." />\n".
-		"<label for='subscriptions-list' class='subscription-container'><span class='choose-label'>". ($prompt2 ? strip_tags($prompt) : __('Subscribe & Save 40%')) . $amount_saved . "</span><ul class='subscription-price'>". implode('', $hidden_options) ."</ul></label>\n".
+		"<label for='subscriptions-list' class='subscription-container'><span class='choose-label'>". ($prompt2 ? strip_tags($prompt) : __('Subscribe & Save 40%')) . "</span><ul class='subscription-price'>". implode('', $hidden_options) ."</ul></label>\n".
 		"<div class='subscription-delivery'><label class='delivery-every'>Deliver every</label><select name='subscription-options'>". implode('', $subscription_options) ."</select>\n" : "").
 		get_help_icon($tip_text) ."</div></li>\n".
 "</li>".
