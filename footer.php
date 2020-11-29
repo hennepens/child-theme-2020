@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="wrapper-footer">
 	<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
-	<div class="<?php echo esc_attr( $container ); ?> pt-5">
+	<div class="container pt-5">
 		<div class="row">
 			<div class="col-md-9">
 				<div class="row">
@@ -28,7 +28,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</div>	
 			</div>
 			<div class="col-md-3">
-				<ul class="d-flex list-inline justify-content-center justify-content-md-end">
+				<ul class="d-flex list-inline justify-content-center justify-content-md-end social-cc">
 					<li class="icon list-inline-item">
 						<a href="https://instagram.com/hennepens" target="_blank">
 							<i class="fa fa-2x fa-instagram"></i>
@@ -50,7 +50,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					  	</a>
 					</li>
 				</ul>
-				<ul class="d-flex list-inline justify-content-center justify-content-md-end" justify-content-md-end">
+				<ul class="d-flex list-inline justify-content-center justify-content-md-end social-cc">
 		            <li class="icon list-inline-item">
 		            	<i class="fa fa-2x fa-cc-visa"></i>
 		            </li>

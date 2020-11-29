@@ -12083,6 +12083,22 @@ h1, h2, h3, h4, h5, h6 {
 .admin-bar p.demo_store {
   top: 0; }
 
+/* LOGIN STYLES */
+.u-column1 {
+  display: block; }
+
+.u-column2 {
+  display: none; }
+
+.login-hide .u-column2 {
+  display: block; }
+
+.login-hide .u-column1 {
+  display: none; }
+
+.password-input {
+  width: 100%; }
+
 /* Navbar Customizations */
 .navbar {
   background: #f9f9f9;
@@ -12109,6 +12125,8 @@ h1, h2, h3, h4, h5, h6 {
     @media only screen and (max-width: 767px) {
       .navbar .quick-links-container {
         right: 15px; } }
+    .navbar .quick-links-container img {
+      max-width: 30px; }
   .navbar .navbar-collapse {
     width: 225px;
     -webkit-box-pack: center;
@@ -12166,6 +12184,9 @@ h1, h2, h3, h4, h5, h6 {
     .menu-footer-menu-container .menu li:first-child {
       padding-left: 0; }
 
+.xoo-wsc-sc-bki {
+  margin-left: 15px; }
+
 /* HOME PAGE CUSTOMIZATIONS */
 .home .navbar {
   background: none;
@@ -12183,8 +12204,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff; }
 
 .home .xoo-wsc-sc-bki {
-  color: #fff;
-  margin-left: 15px; }
+  color: #fff; }
 
 .home .woocommerce-store-notice {
   display: none !important; }
@@ -12240,6 +12260,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 10px; }
     .site-info ul li:last-child {
       padding-right: 0; }
+
+.social-cc .fa {
+  font-weight: inherit !important;
+  font-family: FontAwesome; }
 
 /* Product Categories */
 .cat-header {
@@ -12503,6 +12527,20 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   right: -10px;
   top: -5px; }
+
+.single-product #woocommerce-wrapper {
+  padding-bottom: 0; }
+
+.single-product #content .product {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+.single-product #content #primary {
+  padding: 0; }
+
+.bb-content {
+  display: block;
+  clear: both; }
 
 /*
 * Use existing Bootstrap 4 classes and

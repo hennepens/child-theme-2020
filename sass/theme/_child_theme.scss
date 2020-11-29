@@ -17,6 +17,29 @@ h1,h2,h3,h4,h5,h6{
 	top: 0;
 }
 
+
+
+/* LOGIN STYLES */
+.u-column1{
+	display: block;
+}
+
+.u-column2{
+	display: none;
+}
+
+.login-hide .u-column2{
+	display: block;
+}
+
+.login-hide .u-column1{
+	display: none;
+}
+
+.password-input{
+	width: 100%;
+}
+
 /* Navbar Customizations */
 
 .navbar{
@@ -42,6 +65,9 @@ h1,h2,h3,h4,h5,h6{
 		right: 20px;
 			@media only screen and (max-width: 767px) {
 			right: 15px;
+		}
+		img{
+			max-width: 30px;
 		}
 	}
 	.navbar-collapse{
@@ -92,6 +118,7 @@ h1,h2,h3,h4,h5,h6{
 	color: $hennepens-green;
 }
 
+
 .menu-footer-menu-container{
 	.menu{
 		display: flex;
@@ -105,7 +132,9 @@ h1,h2,h3,h4,h5,h6{
 		}
 	}
 }
-
+.xoo-wsc-sc-bki{
+	margin-left: 15px;
+}
 
 /* HOME PAGE CUSTOMIZATIONS */
 
@@ -135,7 +164,7 @@ h1,h2,h3,h4,h5,h6{
 	}
 	.xoo-wsc-sc-bki{
 		color: #fff;
-		margin-left: 15px;
+
 	}
 	.woocommerce-store-notice{
 		display: none !important;
@@ -199,6 +228,14 @@ h1,h2,h3,h4,h5,h6{
 		&:last-child{
 			padding-right: 0;
 		}
+	}
+}
+
+.social-cc{
+	.fa{
+		font-weight: inherit !important;
+		font-family: FontAwesome;
+
 	}
 }
 
@@ -509,4 +546,24 @@ display: none;
 	position: absolute;
 	right: -10px;
 	top: -5px;
+}
+
+.single-product{
+	#woocommerce-wrapper{
+		padding-bottom: 0;
+	}
+	#content{
+		.product{
+			max-width: 1140px;
+			margin: 0 auto;
+		}
+		#primary{
+			padding: 0;
+		}
+	}
+
+}
+.bb-content{
+	display: block;
+	clear: both;
 }

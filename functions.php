@@ -37,6 +37,7 @@ function child_remove_parent_functions() {
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 }
 
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
@@ -53,6 +54,8 @@ function woo_new_product_tab( $tabs ) {
     return $tabs;
 
 }
+
+
 function woo_coa_tab_content() {
     $pdf = get_field('coa_pdf_upload'); 
     if(!empty($pdf)){
@@ -351,4 +354,30 @@ function bbloomer_translate_woocommerce_strings( $translated, $untranslated, $do
 function apfs_remove_suffix( $suffix, $product, $args ) {
   return '';
 }
+
+
+add_action('woocommerce_after_customer_login_form', 'login_show_hide');
+function login_show_hide(){
+    echo '<h4 class="lines text-center"><span>New to Hennepen\'s?</span></h4><br /><a href="#" class="btn btn-outline-secondary m-auto d-block login-toggle align-self-center" id="sign-up-btn"><span>Sign Up Now</span></a>
+    <script>
+    window.onload=function(){
+      if (window.location.href.indexOf("register") > -1) {
+        document.getElementById("sign-up-btn").click();
+      }
+    };
+    </script> 
+    ';
+}
+
+function hook_additional_product_info_template() {
+  global $product;
+  if ( has_term( 'softgel-template', 'product_tag' ) ) {
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="softgels"]' ) . '</div>';
+  }else{
+    echo 'HELLO';
+  }
+}
+
+add_action( 'woocommerce_after_single_product', 'hook_additional_product_info_template' );
+
 ?>

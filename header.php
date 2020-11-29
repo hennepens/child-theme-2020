@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			); ?>
 			<h1 class="navbar-brand mb-0 ">
 				<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
-					<img id="logo-svg" src="<?php echo get_stylesheet_directory_uri() .'/images/hennepens-logo.svg';?>" alt="Hennepen's" width="300">
+					<img id="logo-svg" src="<?php echo get_stylesheet_directory_uri() .'/images/hennepens-logo-registered.svg';?>" alt="Hennepen's" width="300">
 				</a>
 				<span class="tagline">Hemp Made</span>
 			</h1>
