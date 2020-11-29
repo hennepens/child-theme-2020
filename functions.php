@@ -216,8 +216,8 @@ function wc_subscriptions_custom_price_string( $pricestring ) {
 
     return $pricestring;
 }
-add_filter( 'woocommerce_subscriptions_product_price_string', 'wc_subscriptions_custom_price_string' );
-add_filter( 'woocommerce_subscription_price_string', 'wc_subscriptions_custom_price_string' );
+//add_filter( 'woocommerce_subscriptions_product_price_string', 'wc_subscriptions_custom_price_string' );
+//add_filter( 'woocommerce_subscription_price_string', 'wc_subscriptions_custom_price_string' );
 
 add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
 function func_option_valgt2() {
@@ -273,48 +273,6 @@ function func_option_valgt2() {
                   //alert('variation Id: '+vid+' | Lengde: '+length+' | Diameter: '+diameter+' | Variantpris: '+vprice);
               }
           });
-        });
-        </script>
-        <?php
-    }
-  }
-
-  function func_option_valgt() {
-    global $product;
-    
-    if ( $product->is_type('variable') ) {
-        $variations_data =[]; // Initializing
-
-        // Loop through variations data
-        foreach($product->get_available_variations() as $variation ) {
-            // Set for each variation ID the corresponding price in the data array (to be used in jQuery)
-            $variations_data[$variation['variation_id']] = $variation['display_regular_price'];
-        }
-        ?>
-        <script>
-        jQuery(function($) {
-            var jsonData = <?php echo json_encode($variations_data); ?>,
-                inputVID = 'input.variation_id';
-               console.log(jsonData); 
-
-            $('input').change( function(){
-                if( '' != $(inputVID).val() ) {
-                    var vid      = $(inputVID).val(), // VARIATION ID
-                        vprice   = '',
-                        rprice   = ''; // Initilizing
-
-
-                    // Loop through variation IDs / Prices pairs
-                    $.each( jsonData, function( index, price, regular_price, sale_price ) {
-                        if( index == $(inputVID).val() ) {
-                            vprice = price; // The right variation price
-                            rprice = price; // The right variation price
-                        }
-                    });
-                    $('.one-time-price').html("<del>"+ rprice + "</del>" + " " + vprice);
-                    //alert('variation Id: '+vid+' | Lengde: '+length+' | Diameter: '+diameter+' | Variantpris: '+vprice);
-                }
-            });
         });
         </script>
         <?php

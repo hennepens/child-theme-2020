@@ -12390,23 +12390,27 @@ h1, h2, h3, h4, h5, h6 {
 .subscription-details {
   display: none; }
 
-.subscription-price {
+.purchase-options li .subscription-price {
   margin: 0;
   padding: 0; }
-  .subscription-price .one-time-option {
+  .purchase-options li .subscription-price .one-time-option {
     display: none !important; }
-  .subscription-price .wcsatt-sub-discount {
+  .purchase-options li .subscription-price .wcsatt-sub-discount {
     display: none; }
-  .subscription-price .subscription-option {
-    display: none !important;
+  .purchase-options li .subscription-price .subscription-option {
+    display: none;
     min-height: auto !important;
     padding: 0 !important; }
-    .subscription-price .subscription-option.selected {
-      display: inherit !important;
+    .purchase-options li .subscription-price .subscription-option.selected {
+      display: block !important;
       background-color: inherit; }
-      .subscription-price .subscription-option.selected.one-time-option {
+      .purchase-options li .subscription-price .subscription-option.selected.one-time-option {
         display: none; }
-    .subscription-price .subscription-option label {
+      .purchase-options li .subscription-price .subscription-option.selected .subscription-price {
+        display: inherit !important; }
+    .purchase-options li .subscription-price .subscription-option:last-child {
+      display: block; }
+    .purchase-options li .subscription-price .subscription-option label {
       float: right;
       width: auto; }
 

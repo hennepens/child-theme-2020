@@ -277,7 +277,7 @@ foreach ($options as $option) {
 		if ($option['selected'])
 			$selected_subscription_option = $option['selected'];
 
-		$subscription_options[] = "<option value='". $option['value'] ."'". ($option['selected'] ? " selected" : "") .">".
+		$subscription_options[] = "<option value='". $option['value'] ."'selected ". ($option['selected'] ? " selected" : "") .">".
 			sprintf('%d %s', $option['data']['subscription_scheme']['interval'], ucfirst($option['data']['subscription_scheme']['period'])) ."</option>\n";
 	}
 
