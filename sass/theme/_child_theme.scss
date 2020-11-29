@@ -175,13 +175,12 @@ h1,h2,h3,h4,h5,h6{
 	font-family: $font-family-superior-regular !important;
 	font-size: 6rem;
 	letter-spacing: 2px;
-	text-transform: uppercase;
 	margin-bottom: 50px;
     text-align: center;
     font-style: italic;
     transform: rotate(-5deg);
     @media only screen and (max-width: 767px) {
-		font-size: 4rem;
+		font-size: 3rem;
 	}
 }
 
