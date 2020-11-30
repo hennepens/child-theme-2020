@@ -12256,7 +12256,8 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 10px solid #000; }
 
 #wrapper-footer-full {
-  padding: 50px 0; }
+  padding: 50px 0;
+  background: none; }
 
 #menu-main-footer-menu {
   -webkit-column-count: 3;
