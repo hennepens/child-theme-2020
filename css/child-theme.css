@@ -12126,7 +12126,8 @@ h1, h2, h3, h4, h5, h6 {
       .navbar .quick-links-container {
         right: 15px; } }
     .navbar .quick-links-container img {
-      max-width: 30px; }
+      max-width: 30px;
+      border-radius: 100px; }
   .navbar .navbar-collapse {
     width: 225px;
     -webkit-box-pack: center;
@@ -12228,7 +12229,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block; }
 
 #hero-header .fl-heading {
-  font-family: baskerville, serif;
+  font-family: baskerville, sans-serif;
   font-size: 9rem;
   letter-spacing: 2px;
   margin-bottom: 50px;
@@ -12557,7 +12558,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0; }
 
 .single-product .summary .product_title {
-  font-size: 2rem; }
+  font-size: 2rem;
+  margin-bottom: 1.25rem; }
 
 .bb-content {
   display: block;

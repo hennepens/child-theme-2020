@@ -68,6 +68,7 @@ h1,h2,h3,h4,h5,h6{
 		}
 		img{
 			max-width: 30px;
+			border-radius: 100px;
 		}
 	}
 	.navbar-collapse{
@@ -193,7 +194,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #hero-header .fl-heading{
-	font-family: baskerville, serif;
+	font-family: baskerville, sans-serif;
 	font-size: 9rem;
 	letter-spacing: 2px;
 	margin-bottom: 50px;
@@ -588,6 +589,7 @@ display: none;
 	.summary{
 		.product_title{
 			font-size: 2rem;
+			margin-bottom: 1.25rem;
 		}
 	}
 
