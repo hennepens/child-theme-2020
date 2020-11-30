@@ -222,7 +222,7 @@ h1,h2,h3,h4,h5,h6{
 }
 #wrapper-footer-full{
 	background: rgb(53,110,62);
-	background: linear-gradient(315deg, rgba(53,110,62,1) 0%, rgba(43,142,47,1) 100%);
+	background: url('../images/newsletter-bg-2.jpg');
 	padding: 50px 0;
 }
 
@@ -281,6 +281,24 @@ h1,h2,h3,h4,h5,h6{
 		padding: 0;
 	}
 }
+.products{
+	li{
+		position: relative;
+		.add_to_cart_button{
+			width: 150px;
+			margin: 20px auto 0 auto;
+			border-radius: 100px;
+		}
+		.product-info{
+			text-align: center;
+			.price{
+				font-size: 1rem !important;
+			}
+		}
+	}
+}
+
+
 
 
 

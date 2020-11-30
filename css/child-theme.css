@@ -12251,7 +12251,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #wrapper-footer-full {
   background: #356e3e;
-  background: linear-gradient(315deg, #356e3e 0%, #2b8e2f 100%);
+  background: url("../images/newsletter-bg-2.jpg");
   padding: 50px 0; }
 
 #menu-main-footer-menu {
@@ -12297,6 +12297,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .tax-product_cat .wrapper {
   padding: 0; }
+
+.products li {
+  position: relative; }
+  .products li .add_to_cart_button {
+    width: 150px;
+    margin: 20px auto 0 auto;
+    border-radius: 100px; }
+  .products li .product-info {
+    text-align: center; }
+    .products li .product-info .price {
+      font-size: 1rem !important; }
 
 /* Single Product Template */
 .single-product #woocommerce-wrapper {
