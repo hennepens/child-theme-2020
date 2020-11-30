@@ -12244,6 +12244,10 @@ h1, h2, h3, h4, h5, h6 {
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }
 
+.path-to-wellness {
+  padding: 10px;
+  border: 1px solid #000; }
+
 /* Footer Edits */
 #wrapper-footer {
   background: #e9ecef;
