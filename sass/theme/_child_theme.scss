@@ -222,12 +222,13 @@ h1,h2,h3,h4,h5,h6{
 /* Footer Edits */
 
 #wrapper-footer{
-	background: #e9ecef;
+	background-color: #e9ecef;
 	padding-top: 0;
+	background: url('../images/newsletter-bg-2.jpg');
+	border-top: 10px solid #000;
 }
 #wrapper-footer-full{
 	background: rgb(53,110,62);
-	background: url('../images/newsletter-bg-2.jpg');
 	padding: 50px 0;
 }
 
