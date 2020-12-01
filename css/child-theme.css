@@ -12313,7 +12313,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 20px auto 0 auto;
     border-radius: 100px; }
   .products li .woocommerce-loop-product__title {
-    padding: 0 1.5rem 0 1.5rem; }
+    padding: 0 1.5rem !important; }
   .products li .single_add_to_cart_button {
     width: 150px;
     margin: 20px auto 0 auto;
