@@ -12566,7 +12566,7 @@ h1, h2, h3, h4, h5, h6 {
 .single-product #woocommerce-wrapper {
   padding-bottom: 0; }
 
-.single-product #content .product {
+.single-product #content .product.type-product {
   max-width: 1140px;
   margin: 0 auto; }
 

@@ -602,8 +602,10 @@ display: none;
 	}
 	#content{
 		.product{
-			max-width: 1140px;
-			margin: 0 auto;
+			&.type-product{
+				max-width: 1140px;
+				margin: 0 auto;
+			}
 		}
 		#primary{
 			padding: 0;
