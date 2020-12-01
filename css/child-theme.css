@@ -12303,27 +12303,20 @@ h1, h2, h3, h4, h5, h6 {
 .tax-product_cat .wrapper {
   padding: 0; }
 
-.products {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-  .products li {
-    position: relative; }
-    .products li .add_to_cart_button {
-      width: 150px;
-      margin: 20px auto 0 auto;
-      border-radius: 100px; }
-    .products li .single_add_to_cart_button {
-      width: 150px;
-      margin: 20px auto 0 auto;
-      border-radius: 100px; }
-    .products li .product-info {
-      text-align: center; }
-      .products li .product-info .price {
-        font-size: 1rem !important; }
+.products li {
+  position: relative; }
+  .products li .add_to_cart_button {
+    width: 150px;
+    margin: 20px auto 0 auto;
+    border-radius: 100px; }
+  .products li .single_add_to_cart_button {
+    width: 150px;
+    margin: 20px auto 0 auto;
+    border-radius: 100px; }
+  .products li .product-info {
+    text-align: center; }
+    .products li .product-info .price {
+      font-size: 1rem !important; }
 
 .stamp-group img {
   float: left;
