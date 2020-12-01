@@ -471,6 +471,11 @@ h1,h2,h3,h4,h5,h6{
 			.wcsatt-sub-discount{
 				display: none;
 			}
+			.subscription-option-details{
+				display: none;
+				min-height: auto !important;
+				padding: 0 !important;
+			}
 			.subscription-option{
 				display: none;
 				min-height: auto !important;
@@ -485,7 +490,7 @@ h1,h2,h3,h4,h5,h6{
 						display: inherit !important;
 					}
 				}
-				&:last-child{
+				&:first-child{
 					display: block;
 				}
 
