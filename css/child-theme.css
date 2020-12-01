@@ -12608,8 +12608,7 @@ h1, h2, h3, h4, h5, h6 {
   display: none; }
 
 .rounded-pill .fl-node-content {
-  border-radius: 100px;
-  padding: 30px 60px; }
+  border-radius: 10px; }
 
 /*
 * Use existing Bootstrap 4 classes and
