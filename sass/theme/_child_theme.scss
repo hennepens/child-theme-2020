@@ -490,8 +490,13 @@ h1,h2,h3,h4,h5,h6{
 						display: inherit !important;
 					}
 				}
-				&:first-child{
+				&:last-child{
 					display: block;
+					.subscription-option-details{
+						display: none;
+						min-height: auto !important;
+						padding: 0 !important;
+					}
 				}
 
 				label{

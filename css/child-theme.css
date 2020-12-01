@@ -12456,8 +12456,12 @@ h1, h2, h3, h4, h5, h6 {
         display: none; }
       .purchase-options li .subscription-price .subscription-option.selected .subscription-price {
         display: inherit !important; }
-    .purchase-options li .subscription-price .subscription-option:first-child {
+    .purchase-options li .subscription-price .subscription-option:last-child {
       display: block; }
+      .purchase-options li .subscription-price .subscription-option:last-child .subscription-option-details {
+        display: none;
+        min-height: auto !important;
+        padding: 0 !important; }
     .purchase-options li .subscription-price .subscription-option label {
       float: right;
       width: auto; }
