@@ -343,8 +343,21 @@ function hook_additional_product_info_template() {
   global $product;
   if ( has_term( 'softgel-template', 'product_tag' ) ) {
     echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="softgels"]' ) . '</div>';
-  }else{
-    echo 'HELLO';
+  }
+  if ( has_term( 'sports-cream-template', 'product_tag' ) ) {
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="sports-cream"]' ) . '</div>';
+  }
+  if ( has_term( 'better-balm-template', 'product_tag' ) ) {
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="better-balm"]' ) . '</div>';
+  }
+  if ( has_term( 'isolate-tincture-template', 'product_tag' ) ) {
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="isoloate-tincture"]' ) . '</div>';
+  }
+  if ( has_term( 'full-spectrum-tincture-template', 'product_tag' ) ) {
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="full-spectrum-tincture"]' ) . '</div>';
+  }
+  else{
+    //echo 'HELLO';
   }
 }
 
