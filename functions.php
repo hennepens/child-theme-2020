@@ -353,7 +353,7 @@ function hook_additional_product_info_template() {
     echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="better-balm"]' ) . '</div>';
   }
   if ( has_term( 'isolate-tincture-template', 'product_tag' ) ) {
-    echo '<div class="bb-content">test' . do_shortcode( '[fl_builder_insert_layout slug="isoloate-tincture"]' ) . '</div>';
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="isolate-tincture"]' ) . '</div>';
   }
   if ( has_term( 'full-spectrum-tincture-template', 'product_tag' ) ) {
     echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="full-spectrum-tincture"]' ) . '</div>';
