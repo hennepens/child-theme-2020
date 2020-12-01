@@ -38,6 +38,8 @@ function child_remove_parent_functions() {
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
 }
 
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
@@ -370,5 +372,6 @@ function the_dramatist_price_show() {
     }
     return $product->get_regular_price();
 }
+
 
 ?>
