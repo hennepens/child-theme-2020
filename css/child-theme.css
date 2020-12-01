@@ -12459,9 +12459,7 @@ h1, h2, h3, h4, h5, h6 {
     .purchase-options li .subscription-price .subscription-option:last-child {
       display: block; }
       .purchase-options li .subscription-price .subscription-option:last-child .subscription-option-details {
-        display: none;
-        min-height: auto !important;
-        padding: 0 !important; }
+        display: block; }
     .purchase-options li .subscription-price .subscription-option label {
       float: right;
       width: auto; }
