@@ -9,7 +9,6 @@ jQuery(function ($) {
      * Adjust the Values based on the option
      */
     var triggerAutoshipChange = function(e){
-              console.log('TESTING');
       var $thisProduct = window.autoshipTemplateData.isCartPage ?
       $( e.target ).closest( window.autoshipTemplateData.cartItemCls ):
       $( e.target ).closest( window.autoshipTemplateData.productCls );

@@ -373,5 +373,9 @@ function the_dramatist_price_show() {
     return $product->get_regular_price();
 }
 
+add_filter('woocommerce_sale_flash', 'lw_hide_sale_flash');
+function lw_hide_sale_flash(){
+  return false;
+}
 
 ?>
