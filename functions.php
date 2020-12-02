@@ -198,7 +198,7 @@ add_action( 'wp_enqueue_scripts', function() {
             console.log("Help: "+ isSelected);
             if(isSelected.includes("checked")){
               var selectedClass = "selected"
-
+               $(".current_selected_variant").text(value);
               if(value == "Case (10 Boxes)" && qtyUpdate <= 1){
                 $(".current_selected_variant").text("Case");
               }
@@ -250,7 +250,7 @@ add_action( 'wp_enqueue_scripts', function() {
             }
             else{
               var selectedClass=""
-               $(".current_selected_variant").text("Box");
+              
             };
 
             var radioHtml = `<input type="radio" name="${selName}" value="${value}" ${isSelected}>`;
