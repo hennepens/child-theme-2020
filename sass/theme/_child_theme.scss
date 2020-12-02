@@ -518,11 +518,18 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .choose-label{
+	position: relative;
 	float: left;
 	width: auto;
 	flex-grow: 1;
 	font-weight: bold;
 	font-size: 1.15rem;
+	.subscription-term-notification{
+		display: block;
+		font-size: 0.75rem;
+		color: #999;
+		margin-top: -5px;
+	}
 }
 
 .one-time-price{

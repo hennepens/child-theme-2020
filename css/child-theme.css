@@ -12469,6 +12469,7 @@ h1, h2, h3, h4, h5, h6 {
       width: auto; }
 
 .choose-label {
+  position: relative;
   float: left;
   width: auto;
   -webkit-box-flex: 1;
@@ -12476,6 +12477,11 @@ h1, h2, h3, h4, h5, h6 {
           flex-grow: 1;
   font-weight: bold;
   font-size: 1.15rem; }
+  .choose-label .subscription-term-notification {
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: -5px; }
 
 .one-time-price {
   float: right;
