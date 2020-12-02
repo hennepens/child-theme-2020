@@ -543,23 +543,34 @@ h1,h2,h3,h4,h5,h6{
 	padding-right: 15px;
 	color: #aaa;
 }
-.subscription-delivery{
+.delivery-container{
 	padding: 15px;
 	border-top: 2px solid #fff;
 	display: none;
 	width: 100%;
-	align-items: center;
-	justify-content: flex-end;
-	border-bottom-right-radius: 8px;
-	border-bottom-left-radius: 8px;
+	.prompt-heading{
+		text-align: right;
+		margin-bottom: 15px;
+	}
+	.subscription-delivery{
+		width: 100%;
+		align-items: center;
+		justify-content: flex-end;
+		border-bottom-right-radius: 8px;
+		border-bottom-left-radius: 8px;
+		display: flex;
+		justify-content: flex-end;
 	.delivery-every{
 		width: auto;
 	}
 }
+}
+
 
 .selected{
-	.subscription-delivery{
+	.delivery-container{
 		display: flex;
+		flex-direction: column;
 	}
 	.one-time-purchase-label{
 		color: inherit;

@@ -12496,26 +12496,39 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 15px;
   color: #aaa; }
 
-.subscription-delivery {
+.delivery-container {
   padding: 15px;
   border-top: 2px solid #fff;
   display: none;
-  width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px; }
-  .subscription-delivery .delivery-every {
-    width: auto; }
+  width: 100%; }
+  .delivery-container .prompt-heading {
+    text-align: right;
+    margin-bottom: 15px; }
+  .delivery-container .subscription-delivery {
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end; }
+    .delivery-container .subscription-delivery .delivery-every {
+      width: auto; }
 
-.selected .subscription-delivery {
+.selected .delivery-container {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .selected .one-time-purchase-label {
   color: inherit; }
