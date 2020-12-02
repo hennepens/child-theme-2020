@@ -339,7 +339,7 @@ add_action( 'wp_enqueue_scripts', function() {
               }
               else if(qtyUpdate >= 2 && (variationSelect == "Bottle" || variationSelect == "Bottle")){
                 
-                var selectionPlural = $(".current_selected_variant").text().replace("Bottles", "Bottle");
+                var selectionPlural = $(".current_selected_variant").text().replace("Bottle", "Bottle");
 
               }
 
