@@ -182,6 +182,7 @@ add_action( 'wp_enqueue_scripts', function() {
   wp_enqueue_script( 'jquery' );
   wp_add_inline_script( 'jquery', '
     jQuery( document ).ready( function( $ ) {
+      var qtyUpdate = $(".input-text.qty").val();
       $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
         $( "div.generatedRadios" ).remove();
         $( "table.variations select" ).each( function() {
@@ -195,16 +196,195 @@ add_action( 'wp_enqueue_scripts', function() {
             var selected = select.val();
             var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
             console.log("Help: "+ isSelected);
-            if(isSelected.includes("checked")){var selectedClass = "selected"} else{var selectedClass=""};
+            if(isSelected.includes("checked")){
+              var selectedClass = "selected"
+
+              if(value == "Case (10 Boxes)" && qtyUpdate <= 1){
+                $(".current_selected_variant").text("Case");
+              }
+              else if(value == "Case (10 Boxes)" && qtyUpdate >= 2){
+                 $(".current_selected_variant").text("Cases");
+              }
+              else if(value == "Box" && qtyUpdate <= 1){
+                 $(".current_selected_variant").text("Box");
+              }
+              else if(value == "Box" && qtyUpdate >= 2){
+                 $(".current_selected_variant").text("Boxes");
+              }
+
+              else if(value == "Jar" && qtyUpdate <= 1){
+                 $(".current_selected_variant").text("Jar");
+              }
+              else if(value == "Jar" && qtyUpdate >= 2){
+                 $(".current_selected_variant").text("Jars");
+              }
+
+              else if(value == "Bottle" && qtyUpdate <= 1){
+                 $(".current_selected_variant").text("Bottle");
+              }
+              else if(value == "Bottles" && qtyUpdate >= 2){
+                 $(".current_selected_variant").text("Bottles");
+              }
+
+              else if(value == "Case (10 Boxes)" && qtyUpdate <= 1){
+                $(".current_selected_variant").text("Case");
+              }
+              else if(value == "Case (10 Boxes)" && qtyUpdate >= 2){
+                 $(".current_selected_variant").text("Cases");
+              }
+
+              else if(value == "Case (6 Jars)" && qtyUpdate <= 1){
+                $(".current_selected_variant").text("Case");
+              }
+              else if(value == "Case (6 Jars)" && qtyUpdate >= 2){
+                 $(".current_selected_variant").text("Cases");
+              }
+
+              else if(value == "Case (4 Bottles)" && qtyUpdate <= 1){
+                $(".current_selected_variant").text("Case");
+              }
+              else if(value == "Case (4 Bottles)" && qtyUpdate >= 2){
+                 $(".current_selected_variant").text("Cases");
+              }
+
+            }
+            else{
+              var selectedClass=""
+               $(".current_selected_variant").text("Box");
+            };
+
             var radioHtml = `<input type="radio" name="${selName}" value="${value}" ${isSelected}>`;
             var optionHtml = `<div class="generatedRadios ${selectedClass}"><label>${radioHtml} ${label}</label></div>`;
+           
             select.parent().append(
               $( optionHtml ).click( function() {
-                select.val( value ).trigger( "change" );
+                var qtyUpdate = $(".input-text.qty").val();
+                select.val( value ).trigger( "change" ); 
+                
+                if(value == "Case (10 Boxes)" && qtyUpdate <= 1){
+                  $(".current_selected_variant").text("Case");
+                }
+                else if(value == "Case (10 Boxes)" && qtyUpdate >= 2){
+                  $(".current_selected_variant").text("Cases");
+                }
+                else if(value == "Box" && qtyUpdate <= 1){
+                  $(".current_selected_variant").text("Box");
+                }
+                else if(value == "Box" && qtyUpdate >= 2){
+                  $(".current_selected_variant").text("Boxes");
+                }
+
+                else if(value == "Jar" && qtyUpdate <= 1){
+                  $(".current_selected_variant").text("Jar");
+                }
+                else if(value == "Jar" && qtyUpdate >= 2){
+                  $(".current_selected_variant").text("Jars");
+                }
+
+                else if(value == "Bottle" && qtyUpdate <= 1){
+                  $(".current_selected_variant").text("Bottle");
+                }
+                else if(value == "Bottle" && qtyUpdate >= 2){
+                  $(".current_selected_variant").text("Bottles");
+                }
+
+                else if(value == "Case (6 Jars)" && qtyUpdate <= 1){
+                  $(".current_selected_variant").text("Case");
+                }
+                else if(value == "Case (6 Jars)" && qtyUpdate >= 2){
+                  $(".current_selected_variant").text("Cases");
+                }
+
+                 else if(value == "Case (4 Bottles)" && qtyUpdate <= 1){
+                  $(".current_selected_variant").text("Case");
+                }
+                else if(value == "Case (4 Bottles)" && qtyUpdate >= 2){
+                  $(".current_selected_variant").text("Cases");
+                }
+
               } )
             )
           } ).parent().hide();
         } );
+         $(".input-text.qty").on("change", function(){
+              var qtyUpdate = $(".input-text.qty").val();
+              var variationSelect = $(".current_selected_variant").text();
+              
+              if(qtyUpdate <= 1 && (variationSelect == "Box" || variationSelect == "Boxes" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Boxes", "Box");
+
+              }
+              else if(qtyUpdate >= 2 && (variationSelect == "Box" || variationSelect == "Box")){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Box", "Boxes");
+
+              }
+
+              else if(qtyUpdate <= 1 && (variationSelect == "Jar" || variationSelect == "Jars" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Jars", "Jar");
+
+              }
+              else if(qtyUpdate >= 2 && (variationSelect == "Jar" || variationSelect == "Jar")){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Jar", "Jars");
+
+              }
+
+              else if(qtyUpdate <= 1 && (variationSelect == "Bottle" || variationSelect == "Bottles" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Bottles", "Bottle");
+
+              }
+              else if(qtyUpdate >= 2 && (variationSelect == "Bottle" || variationSelect == "Bottle")){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Bottles", "Bottle");
+
+              }
+
+
+              else if(qtyUpdate <= 1 && (variationSelect == "Case (10 Boxes)" || variationSelect == "Cases" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Cases", "Case");
+
+              }
+              else if(qtyUpdate >= 2 && (variationSelect == "Case (10 Boxes)" || variationSelect == "Case" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Case", "Cases");
+
+              }
+
+              else if(qtyUpdate <= 1 && (variationSelect == "Case (6 Jars)" || variationSelect == "Cases" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Cases", "Case");
+
+              }
+              else if(qtyUpdate >= 2 && (variationSelect == "Case (6 Jars)" || variationSelect == "Case" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Case", "Cases");
+
+              }
+              else if(qtyUpdate <= 1 && (variationSelect == "Case (4 Bottles)" || variationSelect == "Cases" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Cases", "Case");
+
+              }
+              else if(qtyUpdate >= 2 && (variationSelect == "Case (4 Bottles)" || variationSelect == "Case" )){
+                
+                var selectionPlural = $(".current_selected_variant").text().replace("Case", "Cases");
+
+              }
+
+
+
+              else{
+
+              }
+              $(".current_selected_qty").text(qtyUpdate);
+              $(".current_selected_variant").text(selectionPlural);
+
+            });
       } );
     } );
   ', 'after' );

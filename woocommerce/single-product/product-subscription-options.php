@@ -187,13 +187,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 (function($){
     $(document).ready(function(){
     	var $savetext = $(".subscription-price");
+    	
     	$(':contains("— save")').each(function(){
 		    $($savetext).html($($savetext).html().split("— save").join(""));
 		});
     	
         // purchase options
 		$('.purchase-options input').change(function(){
-			console.log('test');
+			//console.log('test');
 			if ($(this).val() == 'one-time') updatePurchaseOptions(0);
 			else updatePurchaseOptions($('.purchase-options select').val());
 
@@ -230,7 +231,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			
 		    jQuery( ".variations_form select" ).on( "change", function () {
-		        console.log('test2');
+		        //console.log('test2');
 		        
 		       // Create New Array by selecting variations
 		        jQuery( ".variations_form select" ).each(function( index ) {
@@ -301,7 +302,7 @@ echo
 	($subscription_options ? "<li". (isset($selected_subscription_option) ? " class='selected'" : "") .">".
 		"<input type='radio' id='subscriptions-list' name='purchase-options' value='subscription'". (isset($selected_subscription_option) ? " checked" : "") ." />\n".
 		"<label for='subscriptions-list' class='subscription-container'><span class='choose-label'>". ($prompt2 ? strip_tags($prompt) : __('Subscribe & Save 40%')) . "</span><ul class='subscription-price'>". implode('', $hidden_options) ."</ul></label>\n".
-		"<div class='subscription-delivery'><label class='delivery-every'>Deliver every</label><select name='subscription-options'>". implode('', $subscription_options) ."</select>\n" : "").
+		"<div class='subscription-delivery'><label class='delivery-every'>Deliver <span class='current_selected_qty'></span> <span class='current_selected_variant'></span> every</label><select name='subscription-options'>". implode('', $subscription_options) ."</select>\n" : "").
 		get_help_icon($tip_text) ."</div></li>\n".
 "</li>".
 "</ul>\n" .
