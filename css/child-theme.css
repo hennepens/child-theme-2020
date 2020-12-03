@@ -12387,9 +12387,11 @@ h1, h2, h3, h4, h5, h6 {
             -ms-flex-positive: 1;
                 flex-grow: 1; }
         .products li .product-info .woocommerce-loop-product__link .price {
+          font-family: "libre_baskervilleitalic";
+          color: #000 !important;
           margin-top: 15px !important;
           margin-bottom: -10px !important;
-          font-size: 1rem !important; }
+          font-size: 1.5rem !important; }
     .products li .wcsatt-sub-options {
       font-style: italic; }
     .products li .wcsatt-sub-discount {
