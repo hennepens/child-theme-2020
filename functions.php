@@ -558,4 +558,64 @@ function lw_hide_sale_flash(){
   return false;
 }
 
+//add_action( 'woocommerce_before_single_product', 'bbloomer_prev_next_product' );
+ 
+// and if you also want them at the bottom...
+//add_action( 'woocommerce_after_single_product', 'bbloomer_prev_next_product' );
+ 
+function bbloomer_prev_next_product(){
+ 
+echo '<div class="prev_next_buttons">';
+  $prevPost = get_previous_post(true);
+  $nextPost = get_next_post(true);
+
+  if($prevPost) {
+    $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );
+  }else{
+    $prevthumbnail = '';
+  }
+  if($nextPost){
+    $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(100,100) );
+  }else{
+    $nextthumbnail = '';
+  }
+   // 'product_cat' will make sure to return next/prev from current category
+   $previous = next_post_link('%link', '&larr; %prevthumbnail  %title ', TRUE, ' ', 'product_cat');
+   $next = previous_post_link('%link', '%title nextthumbnail  &rarr;', TRUE, ' ', 'product_cat');
+ 
+   echo $previous;
+   echo $next;
+    
+echo '</div>';
+         
+}
+
+add_action( 'woocommerce_after_single_product', 'wpsites_image_nav_links' );
+
+function wpsites_image_nav_links() {
+
+if( !is_singular('product') ) 
+      return;
+
+if( $prev_post = get_previous_post() ): 
+echo'<span class="single-post-nav previous-post-link">';
+$prevpost = get_the_post_thumbnail( $prev_post->ID, 'medium', array('class' => 'pagination-previous')); 
+previous_post_link( '%link',"$prevpost  <p>Previous Post in Category</p>", TRUE ); 
+echo'</span>';
+endif; 
+
+if( $next_post = get_next_post() ): 
+echo'<span class="single-post-nav next-post-link">';
+$nextpost = get_the_post_thumbnail( $next_post->ID, 'medium', array('class' => 'pagination-next')); 
+next_post_link( '%link',"$nextpost  <p>Next Post in Category</p>", TRUE ); 
+echo'</span>';
+endif; 
+} 
+
+add_filter( 'wc_add_to_cart_message', 'remove_add_to_cart_message' );
+
+function remove_add_to_cart_message() {
+return;
+}
+
 ?>

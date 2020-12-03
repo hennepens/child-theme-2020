@@ -365,7 +365,12 @@ h1,h2,h3,h4,h5,h6{
 		float: left;
 	    margin-bottom: 20px;
     	margin-right: 5px;
+    	@media only screen and (max-width: 767px) {
+			float: none;
+			margin: 0 auto;
+		}
     }
+
 }
 
 
@@ -401,6 +406,29 @@ h1,h2,h3,h4,h5,h6{
 			}
 		}
 	}
+}
+
+.prev_next_buttons {
+line-height: 40px;
+margin-bottom: 20px;
+}
+ 
+.prev_next_buttons a[rel="prev"], .prev_next_buttons a[rel="next"] {
+display: block;
+}
+ 
+.prev_next_buttons a[rel="prev"] {
+float: right;
+}
+ 
+.prev_next_buttons a[rel="next"] {
+float: left;
+}
+ 
+.prev_next_buttons::after {
+content: '';
+display: block;
+clear:both;
 }
 
 .woocommerce-variation-price{
