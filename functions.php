@@ -619,5 +619,11 @@ unset($items['downloads']);
 return $items;
 }
 
+function iconic_add_to_cart_button_text( $text, $product ) {
+  return '<div class="woocommerce-button" title="' . esc_attr__( 'Select options', 'woocommerce' ) . '">Add to Cart</div>';
+}
+
+add_filter( 'iconic_wssv_add_to_cart_button_text', 'iconic_add_to_cart_button_text', 10, 2 );
+
 
 ?>
