@@ -102,6 +102,10 @@ h1,h2,h3,h4,h5,h6{
 	a{
 		color: #000;
 		font-family: $font-family-libre-baskerville-regular;
+		&:hover{
+			color: #hennepens-green;
+
+		}
 	}
 }
 
@@ -316,6 +320,12 @@ h1,h2,h3,h4,h5,h6{
 			.price{
 				font-size: 1rem !important;
 			}
+		}
+		.wcsatt-sub-options{
+			font-style: italic;
+		}
+		.wcsatt-dash{
+			display: none;
 		}
 	}
 }
