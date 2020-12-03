@@ -12355,6 +12355,10 @@ h1, h2, h3, h4, h5, h6 {
         display: inline-block;
         margin-top: 10px;
         font-size: .75rem; }
+        .products li .woocommerce-loop-product__title span:last-child:before {
+          content: '•'; }
+        .products li .woocommerce-loop-product__title span:last-child:after {
+          content: '•'; }
     .products li .single_add_to_cart_button {
       width: 150px;
       margin: 20px auto 0 auto;
