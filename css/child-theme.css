@@ -12339,10 +12339,22 @@ h1, h2, h3, h4, h5, h6 {
       display: block;
       padding-top: 5px; }
     .products li .woocommerce-loop-product__title {
-      padding: 0 1.5rem !important;
+      padding: 0;
       -webkit-box-flex: 1;
           -ms-flex-positive: 1;
               flex-grow: 1; }
+      .products li .woocommerce-loop-product__title span:first-child {
+        font-family: "libre_baskervillebold";
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+        display: block; }
+      .products li .woocommerce-loop-product__title span:last-child {
+        padding: 5px 10px;
+        background: #356e3e;
+        color: #fff;
+        display: inline-block;
+        margin-top: 10px;
+        font-size: .75rem; }
     .products li .single_add_to_cart_button {
       width: 150px;
       margin: 20px auto 0 auto;
@@ -12441,8 +12453,12 @@ h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
 .woocommerce-variation-price .price .amount {
+  display: block;
+  padding-bottom: 5px;
   font-size: 1.25rem;
-  font-family: "libre_baskervilleregular"; }
+  font-family: "libre_baskervilleitalic"; }
+  .woocommerce-variation-price .price .amount bdi {
+    font-size: inherit; }
 
 .single_variation_wrap .single_add_to_cart_button {
   padding: 10px 20px;

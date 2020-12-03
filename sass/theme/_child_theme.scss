@@ -323,8 +323,25 @@ h1,h2,h3,h4,h5,h6{
 			}
 		}
 		.woocommerce-loop-product__title{
-			padding: 0 1.5rem !important;
+			padding: 0;
 			flex-grow: 1;
+			span:first-child{
+				font-family: $font-family-libre-baskerville-bold;
+    			font-size: 1.5rem;
+    			margin-bottom: 8px;
+    			display: block;
+			}
+			span:nth-child(2){
+
+			}
+			span:last-child{
+				padding: 5px 10px;
+			    background: $hennepens-green;
+			    color: #fff;
+			    display: inline-block;
+			    margin-top: 10px;
+			    font-size: .75rem;
+			}
 		}
 		.single_add_to_cart_button{
 			width: 150px;
@@ -434,8 +451,13 @@ clear:both;
 .woocommerce-variation-price{
 	.price{
 		.amount{
-			font-size: 1.25rem;
-			font-family: $font-family-libre-baskerville-regular;
+			display: block;
+    		padding-bottom: 5px;
+    		font-size: 1.25rem;
+			font-family: $font-family-libre-baskerville-italic;
+			bdi{
+				font-size: inherit;
+			}
 		}
 	}
 }
