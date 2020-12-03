@@ -12219,6 +12219,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 56.25%;
   /* 16:9 */
   height: 0; }
+  .videoWrapper:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #fffae1; }
 
 .videoWrapper iframe {
   position: absolute;
