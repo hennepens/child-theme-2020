@@ -12162,7 +12162,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     font-family: "libre_baskervilleregular"; }
     .navbar a:hover {
-      color: #hennepens-green; }
+      color: #356e3e; }
 
 .woocommerce-store-notice.demo_store {
   position: relative;
@@ -12206,7 +12206,7 @@ h1, h2, h3, h4, h5, h6 {
   .home .navbar a {
     color: #fff; }
     .home .navbar a:hover {
-      color: #hennepens-green; }
+      color: #356e3e; }
 
 .home .xoo-wsc-sc-bki {
   color: #fff; }
@@ -12219,7 +12219,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 56.25%;
   /* 16:9 */
   height: 0; }
-  .videoWrapper:before {
+  .videoWrapper:after {
     content: '';
     position: absolute;
     width: 100%;

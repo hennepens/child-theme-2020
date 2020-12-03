@@ -103,7 +103,7 @@ h1,h2,h3,h4,h5,h6{
 		color: #000;
 		font-family: $font-family-libre-baskerville-regular;
 		&:hover{
-			color: #hennepens-green;
+			color: $hennepens-green;
 
 		}
 	}
@@ -166,7 +166,7 @@ h1,h2,h3,h4,h5,h6{
 		a{
 			color: #fff;
 			&:hover{
-				color: #hennepens-green;
+				color: $hennepens-green;
 			}
 		}
 	}
@@ -183,12 +183,13 @@ h1,h2,h3,h4,h5,h6{
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
-  &:before{
+  &:after{
   	content: '';
   	position: absolute;
   	width: 100%;
   	height: 100%;
   	border: 10px solid #fffae1;
+
   }
 }
 .videoWrapper iframe {
