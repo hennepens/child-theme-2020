@@ -678,6 +678,9 @@ display: none;
 			&.type-product{
 				max-width: 1140px;
 				margin: 0 auto;
+				@media only screen and (max-width: 767px) {
+					padding: 0 20px;
+				}
 			}
 		}
 		#primary{
