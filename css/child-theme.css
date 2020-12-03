@@ -12205,6 +12205,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff; }
   .home .navbar a {
     color: #fff; }
+    .home .navbar a:hover {
+      color: #hennepens-green; }
 
 .home .xoo-wsc-sc-bki {
   color: #fff; }
@@ -12328,6 +12330,8 @@ h1, h2, h3, h4, h5, h6 {
     .products li .product-info .price {
       font-size: 1rem !important; }
   .products li .wcsatt-sub-options {
+    font-style: italic; }
+  .products li .wcsatt-sub-discount {
     font-style: italic; }
   .products li .wcsatt-dash {
     display: none; }

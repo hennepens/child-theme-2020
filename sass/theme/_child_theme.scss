@@ -165,6 +165,9 @@ h1,h2,h3,h4,h5,h6{
 		}
 		a{
 			color: #fff;
+			&:hover{
+				color: #hennepens-green;
+			}
 		}
 	}
 	.xoo-wsc-sc-bki{
@@ -322,6 +325,9 @@ h1,h2,h3,h4,h5,h6{
 			}
 		}
 		.wcsatt-sub-options{
+			font-style: italic;
+		}
+		.wcsatt-sub-discount{
 			font-style: italic;
 		}
 		.wcsatt-dash{
