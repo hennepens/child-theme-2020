@@ -501,7 +501,7 @@ function add_info_after_container(){
 
 add_action('woocommerce_after_shop_loop_item', 'add_info_after_container');
 
-//add_filter( 'wcsatt_price_html_suffix', 'apfs_remove_suffix', 10, 3 );
+add_filter( 'wcsatt_price_html_suffix', 'apfs_remove_suffix', 10, 3 );
 
 function apfs_remove_suffix( $suffix, $product, $args ) {
   return '';
@@ -611,6 +611,13 @@ next_post_link( '%link',"$nextpost  <p>Next Post in Category</p>", TRUE );
 echo'</span>';
 endif; 
 } 
+
+add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
+ 
+function custom_remove_downloads_my_account( $items ) {
+unset($items['downloads']);
+return $items;
+}
 
 
 ?>
