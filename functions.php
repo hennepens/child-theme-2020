@@ -612,4 +612,19 @@ echo'</span>';
 endif; 
 } 
 
+add_filter( 'woocommerce_product_add_to_cart_text' , 'custom_select_options_text' );
+  function custom_select_options_text() {
+  global $product;
+  $product_type = $product->product_type;
+  switch ( $product_type ) {
+  case 'subscription':
+  return __( 'Options', 'woocommerce' ); /*change 'Options' for Simple Subscriptions */
+  case 'variable-subscription':
+  return __( 'Options', 'woocommerce' ); /*change 'Options' for Variable Subscriptions */
+  case 'variable':
+  return __( 'Add to Cart', 'woocommerce' ); /*change 'Options' for Variable Products */
+  break;
+      }
+  }
+
 ?>
