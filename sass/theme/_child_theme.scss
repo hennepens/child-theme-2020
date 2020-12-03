@@ -681,3 +681,29 @@ display: none;
 .rounded-pill .fl-node-content{
 	border-radius: 10px;
 }
+
+
+
+/**** MY ACCOUNT *****/
+.woocommerce-account{
+	.entry-title{
+		margin-bottom: 20px;		
+	}
+	.woocommerce{
+		max-width: 1100px;
+		margin: 0 auto;
+		.woocommerce-MyAccount-navigation{
+			.list-group-item{
+				border: 0;
+				border-right: 1px solid rgba(0,0,0,.125);
+			}
+		}
+
+	}
+}
+.woocommerce-cart{
+	.container-fluid{
+		max-width: 1100px;
+	}
+}
+

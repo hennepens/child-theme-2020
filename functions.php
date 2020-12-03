@@ -510,7 +510,7 @@ function apfs_remove_suffix( $suffix, $product, $args ) {
 
 add_action('woocommerce_after_customer_login_form', 'login_show_hide');
 function login_show_hide(){
-    echo '<h4 class="lines text-center"><span>New to Hennepen\'s?</span></h4><br /><a href="#" class="btn btn-outline-secondary m-auto d-block login-toggle align-self-center" id="sign-up-btn"><span>Sign Up Now</span></a>
+    echo '<h4 class="lines text-center"><span>New to Hennepen\'s?</span></h4><br /><a href="#" class="btn btn-outline-secondary m-auto d-block login-toggle align-self-center" id="sign-up-btn" style="width: 200px;"><span>Sign Up Now</span></a>
     <script>
     window.onload=function(){
       if (window.location.href.indexOf("register") > -1) {

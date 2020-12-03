@@ -12629,6 +12629,20 @@ h1, h2, h3, h4, h5, h6 {
 .rounded-pill .fl-node-content {
   border-radius: 10px; }
 
+/**** MY ACCOUNT *****/
+.woocommerce-account .entry-title {
+  margin-bottom: 20px; }
+
+.woocommerce-account .woocommerce {
+  max-width: 1100px;
+  margin: 0 auto; }
+  .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation .list-group-item {
+    border: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.125); }
+
+.woocommerce-cart .container-fluid {
+  max-width: 1100px; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style
