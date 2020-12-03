@@ -625,7 +625,7 @@ function iconic_add_to_cart_button_text( $text, $product ) {
 
 add_filter( 'iconic_wssv_add_to_cart_button_text', 'iconic_add_to_cart_button_text', 10, 2 );
 
-add_action( 'woocommerce_after_add_to_cart_button', 'misha_after_add_to_cart_btn' );
+add_action( 'woocommerce_after_shop_loop_item', 'misha_after_add_to_cart_btn' );
  
 function misha_after_add_to_cart_btn(){
   global $product;
