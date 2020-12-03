@@ -622,7 +622,7 @@ add_filter( 'woocommerce_product_add_to_cart_text' , 'custom_select_options_text
   case 'variable-subscription':
   return __( 'Options', 'woocommerce' ); /*change 'Options' for Variable Subscriptions */
   case 'variable':
-  return __( 'Add to Cart', 'woocommerce' ); /*change 'Options' for Variable Products */
+  return __( 'Options', 'woocommerce' ); /*change 'Options' for Variable Products */
   break;
       }
   }
