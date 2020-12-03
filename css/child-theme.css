@@ -12504,6 +12504,10 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
     min-height: auto !important;
     padding: 0 !important; }
+    @media only screen and (max-width: 767px) {
+      .purchase-options li .subscription-price .subscription-option-details {
+        max-width: 90px;
+        text-align: right; } }
   .purchase-options li .subscription-price .subscription-option {
     display: none;
     min-height: auto !important;
