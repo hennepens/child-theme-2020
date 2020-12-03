@@ -7056,11 +7056,5 @@
 	  $(this).siblings('.lines').find('span').text($(this).siblings('.lines').find('span').text() == 'New to Hennepen\'s?' ? 'Already a Member?' : 'New to Hennepen\'s?');
 	});
 	
-	$( document ).ready(function() {
-		var cbdReplace = $('.products li.product h2').html();
-		cbdReplace = cbdReplace.replace('CBD', 'CBD<br/>');
-		cbdReplace2 = cbdReplace.replace('Hemp', 'Hemp<br/>');
-		$('.products li.product h2').html(cbdReplace);
-		$('.products li.product h2').html(cbdReplace2);
-	});
+	
 })( jQuery );
