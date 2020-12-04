@@ -12726,7 +12726,9 @@ h1, h2, h3, h4, h5, h6 {
   .woocommerce-variation-add-to-cart .qty {
     height: 52px;
     border-radius: 8px;
-    border: 2px solid #aaa; }
+    border: 2px solid #aaa;
+    padding-left: 15px;
+    margin-left: 5px; }
 
 .woocommerce span.onsale {
   display: -webkit-box;

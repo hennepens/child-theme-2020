@@ -182,7 +182,7 @@ add_action( 'wp_enqueue_scripts', function() {
   wp_enqueue_script( 'jquery' );
   wp_add_inline_script( 'jquery', '
     jQuery( document ).ready( function( $ ) {
-      var qtyUpdate = $(".input-text.qty").val();
+      var qtyUpdate = $("#selectQty").val();
       $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
         $( "div.generatedRadios" ).remove();
         $( "table.variations select" ).each( function() {
@@ -195,7 +195,7 @@ add_action( 'wp_enqueue_scripts', function() {
             var select = option.parent();
             var selected = select.val();
             var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
-            console.log("Help: "+ isSelected);
+            
             if(isSelected.includes("checked")){
               var selectedClass = "selected"
                $(".current_selected_variant").text(value);
@@ -258,7 +258,7 @@ add_action( 'wp_enqueue_scripts', function() {
            
             select.parent().append(
               $( optionHtml ).click( function() {
-                var qtyUpdate = $(".input-text.qty").val();
+                var qtyUpdate = $("#selectQty").val();
                 select.val( value ).trigger( "change" ); 
                 
                 if(value == "Case (10 Boxes)" && qtyUpdate <= 1){
@@ -306,8 +306,8 @@ add_action( 'wp_enqueue_scripts', function() {
             )
           } ).parent().hide();
         } );
-         $(".input-text.qty").on("change", function(){
-              var qtyUpdate = $(".input-text.qty").val();
+         $("#selectQty").on("change", function(){
+              var qtyUpdate = $("#selectQty").val();
               var variationSelect = $(".current_selected_variant").text();
               
               if(qtyUpdate <= 1 && (variationSelect == "Box" || variationSelect == "Boxes" )){
@@ -630,6 +630,66 @@ add_action( 'woocommerce_after_shop_loop_item', 'misha_after_add_to_cart_btn' );
 function misha_after_add_to_cart_btn(){
   global $product;
   echo '<a class="subscription-message" href="'. get_permalink( $productUrl->ID ) .'">Subscribe &amp; Save 40&percnt;</a>';
+}
+
+
+//add_action('woocommerce_after_variations_form', 'add_after_variation_table');
+function add_after_variation_table(){
+  echo test;
+}
+
+function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
+  
+   if ( is_null( $product ) ) {
+      $product = $GLOBALS['product'];
+   }
+ 
+   $defaults = array(
+      'input_id' => uniqid( 'quantity_' ),
+      'input_name' => 'quantity',
+      'input_value' => '1',
+      'classes' => apply_filters( 'woocommerce_quantity_input_classes', array( 'input-text', 'qty', 'text' ), $product ),
+      'max_value' => apply_filters( 'woocommerce_quantity_input_max', -1, $product ),
+      'min_value' => apply_filters( 'woocommerce_quantity_input_min', 0, $product ),
+      'step' => apply_filters( 'woocommerce_quantity_input_step', 1, $product ),
+      'pattern' => apply_filters( 'woocommerce_quantity_input_pattern', has_filter( 'woocommerce_stock_amount', 'intval' ) ? '[0-9]*' : '' ),
+      'inputmode' => apply_filters( 'woocommerce_quantity_input_inputmode', has_filter( 'woocommerce_stock_amount', 'intval' ) ? 'numeric' : '' ),
+      'product_name' => $product ? $product->get_title() : '',
+   );
+ 
+   $args = apply_filters( 'woocommerce_quantity_input_args', wp_parse_args( $args, $defaults ), $product );
+  
+   // Apply sanity to min/max args - min cannot be lower than 0.
+   $args['min_value'] = max( $args['min_value'], 0 );
+   // Note: change 20 to whatever you like
+   $args['max_value'] = 0 < $args['max_value'] ? $args['max_value'] : 20;
+ 
+   // Max cannot be lower than min if defined.
+   if ( '' !== $args['max_value'] && $args['max_value'] < $args['min_value'] ) {
+      $args['max_value'] = $args['min_value'];
+   }
+  
+   $options = '';
+    
+   for ( $count = $args['min_value']; $count <= $args['max_value']; $count = $count + $args['step'] ) {
+ 
+      // Cart item quantity defined?
+      if ( '' !== $args['input_value'] && $args['input_value'] >= 1 && $count == $args['input_value'] ) {
+        $selected = 'selected';      
+      } else $selected = '';
+ 
+      $options .= '<option value="' . $count . '"' . $selected . '>' . $count . '</option>';
+ 
+   }
+     
+   $string = '<div class="quantity d-none"><span>Select Quantity</span><select id="realQty" class="input-text qty" name="' . $args['input_name'] . '">' . $options . '</select></div>';
+ 
+   if ( $echo ) {
+      echo $string;
+   } else {
+      return $string;
+   }
+  
 }
 
 ?>
