@@ -12324,8 +12324,8 @@ h1, h2, h3, h4, h5, h6 {
       flex-wrap: wrap; }
   @media only screen and (max-width: 767px) {
     .products {
-      margin-right: -10px;
-      margin-left: -10px; } }
+      margin-right: -10px !important;
+      margin-left: -10px !important; } }
   .products li {
     position: relative;
     display: -webkit-box;
