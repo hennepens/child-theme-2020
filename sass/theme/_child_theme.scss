@@ -311,16 +311,13 @@ h1,h2,h3,h4,h5,h6{
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		img{
+			margin-bottom: 0 !important;
+		}
 		.add_to_cart_button{
 			width: 150px;
 			margin: 20px auto 0 auto;
 			border-radius: 100px;
-		}
-		.woocommerce-Price-amount{
-			&.amount{
-				display: block;
-				padding-top: 5px;
-			}
 		}
 		.woocommerce-loop-product__title{
 			padding: 0;
@@ -366,12 +363,10 @@ h1,h2,h3,h4,h5,h6{
     			.price{
     				font-family: $font-family-libre-baskerville-italic;
     				color: #000 !important;
-					margin-top: 15px !important;
+					margin-top: 0 !important;
 					margin-bottom: -10px !important;
 					font-size: 1.5rem !important;
-					bdi{
-						
-					}
+					padding-top: 10px;
 				}
     		}
 
@@ -482,12 +477,6 @@ clear:both;
 }
 
 .single_variation_wrap{
-	.quantity{
-
-		.qty{
-		
-		}
-	}
 	.single_add_to_cart_button{
 		padding: 10px 20px;
 	    min-width: 200px;
