@@ -807,8 +807,32 @@ display: none;
 			text-align: center;
     		line-height: 2rem;
     		span{
+    			&:first-child{
+    				font-family: $font-family-libre-baskerville-bold;
+    			}
     			&:nth-child(2){
-
+    				display: block;
+    				font-family: $font-family-libre-baskerville-italic;
+    				font-size: 1.25rem;
+    				margin-top: 15px;
+    			}
+    			&:last-child{
+					padding: 5px 0;
+				    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+				    color: #fff;
+				    display: inline-block;
+				    font-size: 1.25rem;
+				    &:before{
+				    	content: '• ';
+				    	padding-right: 4px;
+				    	padding-left: 10px;
+				    }
+				    &:after{
+				    	content: '• ';
+				    	padding-left: 4px;
+				    	padding-right: 10px;
+				    }
     			}
     		}
 		}
