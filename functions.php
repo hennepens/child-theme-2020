@@ -393,7 +393,7 @@ add_action( 'wp_enqueue_scripts', function() {
 add_filter('woocommerce_reset_variations_link', '__return_empty_string');
 
 function wc_subscriptions_custom_price_string( $pricestring ) {
-    $pricestring = str_replace( 'every 4 weeks', 'Monthly', $pricestring );
+    $pricestring = str_replace( 'every 4 week', 'Monthly', $pricestring );
     $pricestring = str_replace( 'month', 'Monthly', $pricestring );
 
     return $pricestring;
@@ -401,7 +401,7 @@ function wc_subscriptions_custom_price_string( $pricestring ) {
 add_filter( 'woocommerce_subscriptions_product_price_string', 'wc_subscriptions_custom_price_string' );
 add_filter( 'woocommerce_subscription_price_string', 'wc_subscriptions_custom_price_string' );
 
-add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
+//add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
 function func_option_valgt2() {
     global $product;
 
