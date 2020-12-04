@@ -308,8 +308,8 @@ h1,h2,h3,h4,h5,h6{
 	display: flex;
 	flex-wrap: wrap;
 	@media only screen and (max-width: 767px) {
-		margin-right: -10px !important;
-		margin-left: -10px !important;
+		margin-right: -5px !important;
+		margin-left: -5px !important;
 	}
 	li{
 		position: relative;
@@ -322,6 +322,7 @@ h1,h2,h3,h4,h5,h6{
 			width: 150px;
 			margin: 20px auto 0 auto;
 			border-radius: 100px;
+			color: #000;
 			background-color: #fff;
 			border: 2px solid #000;
 			&:hover{
@@ -340,7 +341,7 @@ h1,h2,h3,h4,h5,h6{
     			display: block;
 			}
 			span:nth-child(2){
-
+				display: block;
 			}
 			span:last-child{
 				padding: 5px 0;
