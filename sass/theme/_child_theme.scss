@@ -344,7 +344,7 @@ h1,h2,h3,h4,h5,h6{
 				}
 			}
 			span:nth-child(2){
-				display: block;
+				display: block !important;
 			}
 			span:last-child{
 				padding: 5px 0;
@@ -803,8 +803,14 @@ display: none;
 	}
 	.summary{
 		.product_title{
-			font-size: 2rem;
 			margin-bottom: 1.25rem;
+			text-align: center;
+    		line-height: 2rem;
+    		span{
+    			&:nth-child(2){
+
+    			}
+    		}
 		}
 	}
 

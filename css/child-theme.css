@@ -12362,7 +12362,7 @@ h1, h2, h3, h4, h5, h6 {
           .products li .woocommerce-loop-product__title span:first-child {
             font-size: 1.35rem; } }
       .products li .woocommerce-loop-product__title span:nth-child(2) {
-        display: block; }
+        display: block !important; }
       .products li .woocommerce-loop-product__title span:last-child {
         padding: 5px 0;
         background: #356e3e;
@@ -12762,8 +12762,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0; }
 
 .single-product .summary .product_title {
-  font-size: 2rem;
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1.25rem;
+  text-align: center;
+  line-height: 2rem; }
 
 .bb-content {
   display: block;
