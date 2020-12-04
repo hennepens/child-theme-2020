@@ -12324,8 +12324,8 @@ h1, h2, h3, h4, h5, h6 {
       flex-wrap: wrap; }
   @media only screen and (max-width: 767px) {
     .products {
-      margin-right: -5px !important;
-      margin-left: -5px !important; } }
+      margin-right: -10px !important;
+      margin-left: -10px !important; } }
   .products li {
     position: relative;
     display: -webkit-box;
@@ -12431,6 +12431,13 @@ h1, h2, h3, h4, h5, h6 {
       font-style: italic;
       color: #356e3e;
       margin-top: 10px; }
+
+@media only screen and (max-width: 767px) {
+  li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
+    padding-left: 10px; } }
+
+.woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+  padding-left: 10px; }
 
 .stamp-group img {
   float: left;
