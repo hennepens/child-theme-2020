@@ -12327,6 +12327,9 @@ h1, h2, h3, h4, h5, h6 {
 .tax-product_cat .wrapper {
   padding: 0; }
 
+.added_to_cart.wc-forward {
+  display: none !important; }
+
 .products {
   display: -webkit-box;
   display: -ms-flexbox;
