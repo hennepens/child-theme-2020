@@ -186,9 +186,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 <script>
 (function($){
     $(document).ready(function(){
-    	$(".qty-container #selectQty").change(function(){
-		  var selectedQty = $(this).children("option:selected").val();
+		 var selectedVariant = $(".generatedRadios.selected label input").val();
+		 selectedVariant = selectedVariant.split(" ")[0];
+		 $(".current_selected_variant").text(selectedVariant);
+    	$(".input-text.qty").change(function(){
+    		var selectedVariant = $(".generatedRadios.selected label input").val();
+    		var selectedQty = $(this).children("option:selected").val();
+		  $(".current_selected_variant").text(selectedVariant);
 		  $(".quantity #realQty").val(selectedQty);
+		  $(".delivery-every .current_selected_qty").text(selectedQty);
+		  	if(selectedQty <= 1){
+
+		  		$(".current_selected_variant").text(selectedVariant);
+			}else if(selectedQty>=2){
+				if(selectedVariant == "Box"){
+					$(".current_selected_variant").text(selectedVariant + "es");
+				}
+				else{
+					selectedVariant = selectedVariant.split(" ")[0];
+					$(".current_selected_variant").text(selectedVariant + "s");
+				}
+			}
 		});
     	var $savetext = $(".subscription-price");
     	
