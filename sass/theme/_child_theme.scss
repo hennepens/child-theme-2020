@@ -336,6 +336,7 @@ h1,h2,h3,h4,h5,h6{
 			color: #000;
 			background-color: #fff;
 			border: 2px solid #000;
+			display: inline-block !important;
 			&:hover{
 				background: #000;
 				color: #fff;
@@ -391,8 +392,7 @@ h1,h2,h3,h4,h5,h6{
 			}
 		}
 		.single_add_to_cart_button{
-			display: inline-block !important;
-			width: 170px;
+			width: 150px;
 			margin: 20px auto 0 auto;
 			border-radius: 100px;
 			background-color: #fff;
