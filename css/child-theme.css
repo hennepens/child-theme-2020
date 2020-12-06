@@ -12530,14 +12530,14 @@ h1, h2, h3, h4, h5, h6 {
   .woocommerce-variation-price .price .amount bdi {
     font-size: inherit; }
 
-.single_variation_wrap .single_add_to_cart_button {
+.single_variation_wrap button.button.single_add_to_cart_button {
   padding: 10px 20px;
   min-width: 200px;
   font-size: 1.25rem;
   background: #356e3e;
   border: 4px solid #75BD80;
   border-radius: 100px; }
-  .single_variation_wrap .single_add_to_cart_button:hover {
+  .single_variation_wrap button.button.single_add_to_cart_button:hover {
     background: #75BD80;
     border-color: #356e3e; }
 
