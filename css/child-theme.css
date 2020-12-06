@@ -12398,7 +12398,7 @@ h1, h2, h3, h4, h5, h6 {
           padding-left: 4px;
           padding-right: 10px; }
     .products li .single_add_to_cart_button {
-      display: inline-block;
+      display: inline-block !important;
       width: 170px;
       margin: 20px auto 0 auto;
       border-radius: 100px;
