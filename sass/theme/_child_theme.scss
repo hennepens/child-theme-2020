@@ -218,7 +218,7 @@ h1,h2,h3,h4,h5,h6{
 	    font-style: italic;
 	    transform: rotate(-5deg);
 	    @media only screen and (max-width: 767px) {
-			font-size: 3.5rem;
+			font-size: 3.75rem;
 		}
 	}
 }
@@ -231,7 +231,10 @@ h1,h2,h3,h4,h5,h6{
   		transform: rotate(-5deg) skewX(-20deg);
 	}
 	.fl-button-text{
+		font-family: $font-family-superior-regular !important;
 		transform: skewX(20deg);
+		text-transform: lowercase;
+		letter-spacing: 4px;
 	}
 }
 

@@ -12249,7 +12249,7 @@ h1, h2, h3, h4, h5, h6 {
           transform: rotate(-5deg); }
   @media only screen and (max-width: 767px) {
     #hero-header .fl-heading {
-      font-size: 3.5rem; } }
+      font-size: 3.75rem; } }
 
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }
@@ -12259,8 +12259,11 @@ h1, h2, h3, h4, h5, h6 {
           transform: rotate(-5deg) skewX(-20deg); }
 
 #home-page-hero .fl-button-text {
+  font-family: "superiorregular" !important;
   -webkit-transform: skewX(20deg);
-          transform: skewX(20deg); }
+          transform: skewX(20deg);
+  text-transform: lowercase;
+  letter-spacing: 4px; }
 
 .path-to-wellness {
   padding: 10px;
