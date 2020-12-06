@@ -196,7 +196,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		  $(".quantity #realQty").val(selectedQty);
 		  $(".delivery-every .current_selected_qty").text(selectedQty);
 		  	if(selectedQty <= 1){
-
+		  		selectedVariant = selectedVariant.split(" ")[0];
 		  		$(".current_selected_variant").text(selectedVariant);
 			}else if(selectedQty>=2){
 				if(selectedVariant == "Box"){
