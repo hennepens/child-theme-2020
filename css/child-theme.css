@@ -12250,14 +12250,16 @@ h1, h2, h3, h4, h5, h6 {
   @media only screen and (max-width: 767px) {
     #hero-header .fl-heading {
       font-size: 3.5rem; } }
-  #hero-header .fl-heading .fl-button {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
-    -webkit-transform: skewX(-20deg);
-            transform: skewX(-20deg); }
-  #hero-header .fl-heading .fl-button-text {
-    -webkit-transform: skewX(20deg);
-            transform: skewX(20deg); }
+
+#hero-header .fl-button {
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  -webkit-transform: skewX(-20deg);
+          transform: skewX(-20deg); }
+
+#hero-header .fl-button-text {
+  -webkit-transform: skewX(20deg);
+          transform: skewX(20deg); }
 
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }

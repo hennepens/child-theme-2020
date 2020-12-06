@@ -208,16 +208,18 @@ h1,h2,h3,h4,h5,h6{
 	}
 }
 
-#hero-header .fl-heading{
-	font-family: $font-family-superior-regular !important;
-	font-size: 6em;
-	letter-spacing: 2px;
-	margin-bottom: 50px;
-    text-align: center;
-    font-style: italic;
-    transform: rotate(-5deg);
-    @media only screen and (max-width: 767px) {
-		font-size: 3.5rem;
+#hero-header{
+	.fl-heading{
+		font-family: $font-family-superior-regular !important;
+		font-size: 6em;
+		letter-spacing: 2px;
+		margin-bottom: 50px;
+	    text-align: center;
+	    font-style: italic;
+	    transform: rotate(-5deg);
+	    @media only screen and (max-width: 767px) {
+			font-size: 3.5rem;
+		}
 	}
 	.fl-button{
 		transform: rotate(-5deg);
@@ -226,7 +228,6 @@ h1,h2,h3,h4,h5,h6{
 	.fl-button-text{
 		transform: skewX(20deg);
 	}
-
 }
 
 #home-page-hero{
