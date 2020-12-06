@@ -12255,10 +12255,8 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 80vh; }
 
 #home-page-hero .fl-button {
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
-  -webkit-transform: skewX(-20deg);
-          transform: skewX(-20deg); }
+  -webkit-transform: rotate(-5deg) skewX(-20deg);
+          transform: rotate(-5deg) skewX(-20deg); }
 
 #home-page-hero .fl-button-text {
   -webkit-transform: skewX(20deg);

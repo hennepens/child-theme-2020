@@ -228,8 +228,7 @@ h1,h2,h3,h4,h5,h6{
 		min-height: 80vh;
 	}
 	.fl-button{
-		transform: rotate(-5deg);
-  		transform: skewX(-20deg);
+  		transform: rotate(-5deg) skewX(-20deg);
 	}
 	.fl-button-text{
 		transform: skewX(20deg);
