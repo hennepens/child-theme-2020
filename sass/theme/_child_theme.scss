@@ -219,6 +219,18 @@ h1,h2,h3,h4,h5,h6{
     @media only screen and (max-width: 767px) {
 		font-size: 3.5rem;
 	}
+	.fl-button{
+		transform: rotate(-5deg);
+  		transform: skewX(-20deg);
+	}
+	.fl-button-text{
+		transform: skewX(20deg);
+	}
+
+.button-slanted-text {
+  transform: skewX(20deg);
+}
+	}
 }
 
 #home-page-hero{
