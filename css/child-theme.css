@@ -12251,18 +12251,18 @@ h1, h2, h3, h4, h5, h6 {
     #hero-header .fl-heading {
       font-size: 3.5rem; } }
 
-#hero-header .fl-button {
+#home-page-hero .fl-row-content-wrap {
+  min-height: 80vh; }
+
+#home-page-hero .fl-button {
   -webkit-transform: rotate(-5deg);
           transform: rotate(-5deg);
   -webkit-transform: skewX(-20deg);
           transform: skewX(-20deg); }
 
-#hero-header .fl-button-text {
+#home-page-hero .fl-button-text {
   -webkit-transform: skewX(20deg);
           transform: skewX(20deg); }
-
-#home-page-hero .fl-row-content-wrap {
-  min-height: 80vh; }
 
 .path-to-wellness {
   padding: 10px;

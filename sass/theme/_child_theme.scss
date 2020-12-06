@@ -221,18 +221,18 @@ h1,h2,h3,h4,h5,h6{
 			font-size: 3.5rem;
 		}
 	}
+}
+
+#home-page-hero{
+	.fl-row-content-wrap{
+		min-height: 80vh;
+	}
 	.fl-button{
 		transform: rotate(-5deg);
   		transform: skewX(-20deg);
 	}
 	.fl-button-text{
 		transform: skewX(20deg);
-	}
-}
-
-#home-page-hero{
-	.fl-row-content-wrap{
-		min-height: 80vh;
 	}
 }
 
