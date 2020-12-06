@@ -366,8 +366,6 @@ h1,h2,h3,h4,h5,h6{
 			}
 			span:last-child{
 				padding: 5px 0;
-			    
-
 				background: #D4AF37;
 				background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
 				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #D4AF37), color-stop(100%, #C5A028));
@@ -380,7 +378,6 @@ h1,h2,h3,h4,h5,h6{
 				box-shadow: inset 0 1px 0 #E3BE46;
 				-webkit-box-shadow: inset 0 1px 0 #E3BE46;
 				-moz-box-shadow: inset 0 1px 0 #E3BE46;
-
 			    color: #fff;
 			    display: inline-block;
 			    margin-top: 10px;
@@ -863,8 +860,18 @@ display: none;
     			}
     			&:last-child{
 					padding: 5px 0;
-				    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+				    background: #D4AF37;
+					background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #D4AF37), color-stop(100%, #C5A028));
+					background: -webkit-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
+					background: -moz-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
+					background: -o-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
+					background: -ms-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D4AF37', endColorstr='#C5A028', GradientType=0);
+					border: 1px solid #B69119;
+					box-shadow: inset 0 1px 0 #E3BE46;
+					-webkit-box-shadow: inset 0 1px 0 #E3BE46;
+					-moz-box-shadow: inset 0 1px 0 #E3BE46;
 				    color: #fff;
 				    display: inline-block;
 				    margin-top: 10px;
