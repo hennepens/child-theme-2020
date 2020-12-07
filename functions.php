@@ -221,7 +221,7 @@ function wc_subscriptions_custom_price_string( $pricestring ) {
 add_filter( 'woocommerce_subscriptions_product_price_string', 'wc_subscriptions_custom_price_string' );
 add_filter( 'woocommerce_subscription_price_string', 'wc_subscriptions_custom_price_string' );
 
-//add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
+add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
 function func_option_valgt2() {
     global $product;
 
