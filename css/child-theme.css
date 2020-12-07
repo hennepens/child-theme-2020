@@ -12187,11 +12187,14 @@ h1, h2, h3, h4, h5, h6 {
     .menu-footer-menu-container .menu li:first-child {
       padding-left: 0; }
 
-.menu-footer-menu-contact-container {
+.menu-footer-menu-contact {
   padding: 0;
   list-style: none; }
-  .menu-footer-menu-contact-container li {
+  .menu-footer-menu-contact li {
     padding: 0 10px; }
+  @media only screen and (max-width: 767px) {
+    .menu-footer-menu-contact {
+      text-align: center; } }
 
 .xoo-wsc-sc-bki {
   margin-left: 15px; }
