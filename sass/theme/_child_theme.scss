@@ -124,15 +124,13 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-.menu-footer-menu-container{
+.menu-main-footer-menu-container{
 	.menu{
-		display: flex;
-		list-style: none;
-		padding: 0;
-		li{
-			padding: 0 10px;
-			&:first-child{
-				padding-left: 0;
+		@media only screen and (max-width: 767px) {
+			li{
+				&:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4){
+					text-align:right;
+				}
 			}
 		}
 	}
@@ -147,7 +145,11 @@ h1,h2,h3,h4,h5,h6{
 		}
 		@media only screen and (max-width: 767px) {
 			text-align: center;
+			display: none;
 		}
+	}
+	@media only screen and (max-width: 767px) {
+		display: none;
 	}
 }
 
