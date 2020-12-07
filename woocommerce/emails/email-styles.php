@@ -129,7 +129,7 @@ font-family: 'Libre Baskerville', serif;
 #body_content table tr{
 	border-top: 1px solid;
 }
-#body_content table tfoot tr{
+#body_content table tfoot tr,#body_content table thead tr{
 	border: 0;
 }
 
