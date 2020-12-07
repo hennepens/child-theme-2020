@@ -948,6 +948,14 @@ display: none;
 				border-right: 1px solid rgba(0,0,0,.125);
 			}
 		}
+		.woocommerce-orders-table{
+			.woocommerce-column--billing-address{
+				width: 100% !important;
+			}
+			.woocommerce-column--shipping-address{
+				width: 100% !important;
+			}
+		}
 
 	}
 }
