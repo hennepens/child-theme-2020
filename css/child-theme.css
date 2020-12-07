@@ -12871,6 +12871,9 @@ h1, h2, h3, h4, h5, h6 {
 .woocommerce-cart .container-fluid {
   max-width: 1100px; }
 
+.button-cancel {
+  color: #cc0000; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style
