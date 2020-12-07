@@ -950,9 +950,11 @@ display: none;
 		}
 		.woocommerce-customer-details{
 			.woocommerce-column--billing-address{
+				max-width: 100% !important;
 				width: 100% !important;
 			}
 			.woocommerce-column--shipping-address{
+				max-width: 100% !important;
 				width: 100% !important;
 			}
 		}
@@ -966,6 +968,6 @@ display: none;
 }
 
 .button.cancel{
-	color: #cc0000 !important;
+	background-color: #cc0000 !important;
 }
 
