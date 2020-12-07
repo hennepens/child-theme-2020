@@ -12704,7 +12704,7 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit; }
 
 .generatedRadios {
-  padding: 15px;
+  padding: 15px 0;
   width: 50%;
   border: 1px solid #ccc;
   border-radius: 8px;
