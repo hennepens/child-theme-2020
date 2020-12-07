@@ -218,8 +218,8 @@ function wc_subscriptions_custom_price_string( $pricestring ) {
 
     return $pricestring;
 }
-add_filter( 'woocommerce_subscriptions_product_price_string', 'wc_subscriptions_custom_price_string' );
-add_filter( 'woocommerce_subscription_price_string', 'wc_subscriptions_custom_price_string' );
+//add_filter( 'woocommerce_subscriptions_product_price_string', 'wc_subscriptions_custom_price_string' );
+//add_filter( 'woocommerce_subscription_price_string', 'wc_subscriptions_custom_price_string' );
 
 add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
 function func_option_valgt2() {
@@ -510,6 +510,22 @@ function woocommerce_quantity_input( $args = array(), $product = null, $echo = t
       return $string;
    }
   
+}
+
+add_action( 'woocommerce_review_order_before_submit', 'bbloomer_add_checkout_minimum_notice', 9 );
+    
+function bbloomer_add_checkout_minimum_notice() {
+if ( class_exists( 'WC_Subscriptions_Product' ) && WC_Subscriptions_Cart::cart_contains_subscription( $product )) {
+  woocommerce_form_field( 'sub_min_notice', array(
+     'type'          => 'checkbox',
+     'class'         => array('form-row sub_min_notice'),
+     'label_class'   => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
+     'input_class'   => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
+     'required'      => true,
+     'label'         => 'I acknowledge that a minimum of 3 subscription cycles is required for 40% off promotion.*',
+  )); 
+}
+   
 }
 
 ?>
