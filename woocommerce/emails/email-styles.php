@@ -177,7 +177,7 @@ font-family: 'Libre Baskerville', serif;
 }
 
 #addresses thead tr{
-	border: 0;
+	border-top: 3px solid;
 }
 
 .address {
