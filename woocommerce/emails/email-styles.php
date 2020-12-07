@@ -113,7 +113,7 @@ font-family: 'Libre Baskerville', serif;
 
 #body_content table{
 	border: 0;
-	table-collapse: collapse;
+	border-collapse: collapse;
 }
 
 #body_content table td {
@@ -128,6 +128,9 @@ font-family: 'Libre Baskerville', serif;
 
 #body_content table tr{
 	border-top: 1px solid;
+}
+#body_content table tfoot tr{
+	border: 0;
 }
 
 #body_content table thead{
