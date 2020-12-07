@@ -124,7 +124,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-.menu-footer-menu-container,.menu-footer-menu-contact-container{
+.menu-footer-menu-container{
 	.menu{
 		display: flex;
 		list-style: none;
@@ -137,6 +137,15 @@ h1,h2,h3,h4,h5,h6{
 		}
 	}
 }
+
+.menu-footer-menu-contact-container{
+	padding: 0;
+	list-style: none;
+	li{
+		padding: 0 10px;
+	}
+}
+
 .xoo-wsc-sc-bki{
 	margin-left: 15px;
 }

@@ -12176,16 +12176,22 @@ h1, h2, h3, h4, h5, h6 {
   .woocommerce-store-notice.demo_store .woocommerce-store-notice__dismiss-link {
     display: none; }
 
-.menu-footer-menu-container .menu, .menu-footer-menu-contact-container .menu {
+.menu-footer-menu-container .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
   padding: 0; }
-  .menu-footer-menu-container .menu li, .menu-footer-menu-contact-container .menu li {
+  .menu-footer-menu-container .menu li {
     padding: 0 10px; }
-    .menu-footer-menu-container .menu li:first-child, .menu-footer-menu-contact-container .menu li:first-child {
+    .menu-footer-menu-container .menu li:first-child {
       padding-left: 0; }
+
+.menu-footer-menu-contact-container {
+  padding: 0;
+  list-style: none; }
+  .menu-footer-menu-contact-container li {
+    padding: 0 10px; }
 
 .xoo-wsc-sc-bki {
   margin-left: 15px; }
