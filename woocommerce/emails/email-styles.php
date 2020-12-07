@@ -111,16 +111,31 @@ font-family: 'Libre Baskerville', serif;
 	background-color: <?php echo esc_attr( $body ); ?>;
 }
 
+#body_content table{
+	border: 0;
+}
+
 #body_content table td {
 	padding: 48px 48px 32px;
+	border: 0;
 }
 
 #body_content table td td {
 	padding: 12px;
+	border: 0;
+}
+
+#body_content table tr{
+	border-top: 1px solid;
+}
+
+#body_content table thead{
+	border-bottom: 3px solid;
 }
 
 #body_content table td th {
 	padding: 12px;
+	border: 0;
 }
 
 #body_content td ul.wc-item-meta {
