@@ -113,6 +113,7 @@ font-family: 'Libre Baskerville', serif;
 
 #body_content table{
 	border: 0;
+	table-collapse: collapse;
 }
 
 #body_content table td {
