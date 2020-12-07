@@ -15,14 +15,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="wrapper-footer">
 	<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
-	<div class="container pt-5">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-9">
 				<div class="row">
-					<div class="d-flex col-md-2 justify-content-center align-items-md-start">
+					<div class="d-flex col-2 justify-content-center align-items-md-start">
 						<img id="logo-svg" class="mb-3" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hennepens-logomark.svg" alt="Hennepen's" width="80">
 					</div>
-					<div class="col-md-10">
+					<div class="col-10">
 						<div class="row">
 							<div class="col-md-8">
 								<?php wp_nav_menu( array('menu' => 'Main Footer Menu') ); ?>
