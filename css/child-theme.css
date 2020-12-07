@@ -12176,10 +12176,6 @@ h1, h2, h3, h4, h5, h6 {
   .woocommerce-store-notice.demo_store .woocommerce-store-notice__dismiss-link {
     display: none; }
 
-@media only screen and (max-width: 767px) {
-  .menu-main-footer-menu-container .menu li:first-child, .menu-main-footer-menu-container .menu li:nth-child(2), .menu-main-footer-menu-container .menu li:nth-child(3), .menu-main-footer-menu-container .menu li:nth-child(4) {
-    text-align: right; } }
-
 .menu-footer-menu-contact-container .menu {
   padding: 0;
   list-style: none; }
