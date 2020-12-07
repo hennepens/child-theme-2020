@@ -58,7 +58,7 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 			);
 			?>
 		</tbody>
-		<tfoot>
+		<tfoot style="border-top: 6px solid;">
 			<?php
 			$item_totals = $order->get_order_item_totals();
 
