@@ -176,6 +176,10 @@ font-family: 'Libre Baskerville', serif;
 	vertical-align: middle;
 }
 
+#addresses thead tr{
+	border: 0;
+}
+
 .address {
 	padding: 12px;
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
