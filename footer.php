@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="col-md-4">
 								<?php wp_nav_menu( array('menu' => 'Footer Menu Contact') ); ?>
 							</div>
-						
+						</div>
 					</div>
 				</div>	
 			</div>
