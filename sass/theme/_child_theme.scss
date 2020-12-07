@@ -124,7 +124,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-.menu-footer-menu-container{
+.menu-footer-menu-container,.menu-footer-menu-contact-container{
 	.menu{
 		display: flex;
 		list-style: none;
@@ -261,7 +261,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #menu-main-footer-menu{
-	column-count: 3;
+	column-count: 2;
 	list-style: none;
 	padding: 0;
 }

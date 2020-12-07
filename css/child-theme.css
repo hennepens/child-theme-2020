@@ -12176,15 +12176,15 @@ h1, h2, h3, h4, h5, h6 {
   .woocommerce-store-notice.demo_store .woocommerce-store-notice__dismiss-link {
     display: none; }
 
-.menu-footer-menu-container .menu {
+.menu-footer-menu-container .menu, .menu-footer-menu-contact-container .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
   padding: 0; }
-  .menu-footer-menu-container .menu li {
+  .menu-footer-menu-container .menu li, .menu-footer-menu-contact-container .menu li {
     padding: 0 10px; }
-    .menu-footer-menu-container .menu li:first-child {
+    .menu-footer-menu-container .menu li:first-child, .menu-footer-menu-contact-container .menu li:first-child {
       padding-left: 0; }
 
 .xoo-wsc-sc-bki {
@@ -12284,9 +12284,9 @@ h1, h2, h3, h4, h5, h6 {
   background: none; }
 
 #menu-main-footer-menu {
-  -webkit-column-count: 3;
-     -moz-column-count: 3;
-          column-count: 3;
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
   list-style: none;
   padding: 0; }
 
