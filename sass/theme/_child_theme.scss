@@ -948,7 +948,7 @@ display: none;
 				border-right: 1px solid rgba(0,0,0,.125);
 			}
 		}
-		.woocommerce-orders-table{
+		.woocommerce-customer-details{
 			.woocommerce-column--billing-address{
 				width: 100% !important;
 			}
@@ -965,7 +965,7 @@ display: none;
 	}
 }
 
-.button-cancel{
-	color: #cc0000;
+.button.cancel{
+	color: #cc0000 !important;
 }
 

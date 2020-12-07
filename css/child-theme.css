@@ -12867,16 +12867,16 @@ h1, h2, h3, h4, h5, h6 {
   .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation .list-group-item {
     border: 0;
     border-right: 1px solid rgba(0, 0, 0, 0.125); }
-  .woocommerce-account .woocommerce .woocommerce-orders-table .woocommerce-column--billing-address {
+  .woocommerce-account .woocommerce .woocommerce-customer-details .woocommerce-column--billing-address {
     width: 100% !important; }
-  .woocommerce-account .woocommerce .woocommerce-orders-table .woocommerce-column--shipping-address {
+  .woocommerce-account .woocommerce .woocommerce-customer-details .woocommerce-column--shipping-address {
     width: 100% !important; }
 
 .woocommerce-cart .container-fluid {
   max-width: 1100px; }
 
-.button-cancel {
-  color: #cc0000; }
+.button.cancel {
+  color: #cc0000 !important; }
 
 /*
 * Use existing Bootstrap 4 classes and
