@@ -17,14 +17,15 @@
 
 defined( 'ABSPATH' ) || exit;
 
-do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
-
-<h3><?php printf( esc_html__( 'Thanks for registering on labsociety.com!'));?></h3>
+do_action( 'woocommerce_email_header', $email_heading, $email ); 
+$customer = get_user_by('login', $user_login );?>
+<h3><?php printf( esc_html__( 'Thanks for registering on hennepens.com!'));?></h3>
+<p><?php printf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $customer->user_firstname ) ); ?></p>
 <p><?php printf( esc_html__( 'You can now access your account area to view orders, change your password, see your subscription status, and more at: %2$s', 'woocommerce' ), esc_html( $blogname ), make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 <p><strong>username:</strong>
 
 <?php
-$customer = get_user_by('login', $user_login );
+
 
 printf( esc_html( $customer->user_email ) ); ?>
 
