@@ -230,4 +230,9 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+.shipped_via{
+	display: block;
+}
+
 <?php
