@@ -951,11 +951,17 @@ display: none;
 		.woocommerce-customer-details{
 			.woocommerce-column--billing-address{
 				max-width: 100% !important;
-				width: 100% !important;
+				width: 50% !important;
+				address{
+					border: 0;
+				}
 			}
 			.woocommerce-column--shipping-address{
 				max-width: 100% !important;
-				width: 100% !important;
+				width: 50% !important;
+				address{
+					border: 0;
+				}
 			}
 		}
 
@@ -969,5 +975,6 @@ display: none;
 
 .button.cancel{
 	background-color: #cc0000 !important;
+	color: #fff !important;
 }
 
