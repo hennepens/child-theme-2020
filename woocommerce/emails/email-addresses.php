@@ -24,8 +24,8 @@ $address    = $order->get_formatted_billing_address();
 $shipping   = $order->get_formatted_shipping_address();
 
 ?><table id="addresses" cellspacing="0" cellpadding="0" style="width: 100%; vertical-align: top; margin-bottom: 40px; padding:0;" border="0">
-	<tr>
-		<td style="text-align:<?php echo esc_attr( $text_align ); ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border:0; padding:0;" valign="top" width="50%">
+	<tr style="border-top: 0;">
+		<td style="text-align:<?php echo esc_attr( $text_align ); ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border:0;" valign="top" width="50%">
 			<h2><?php esc_html_e( 'Billing address', 'woocommerce' ); ?></h2>
 
 			<address class="address">
