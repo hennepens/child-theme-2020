@@ -1058,4 +1058,14 @@ display: none;
 		padding-left: 0;
 		padding-right: 0;
 	}
+	.entry-header{
+		.entry-title{
+			float: right;
+		    text-align: left !important;
+		    width: 100%;
+		    padding-left: 52%;
+		    margin-bottom: 20px;
+		    margin-top: 25px;
+		}
+	}
 }
