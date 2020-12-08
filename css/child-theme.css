@@ -12239,7 +12239,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 65%; } }
 
 @media only screen and (max-width: 768px) {
-  .home .partial-content-space .min-height-img-col {
+  .home .min-height-img-col {
     min-height: 300px; } }
 
 .videoWrapper {
