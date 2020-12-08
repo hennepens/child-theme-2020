@@ -578,6 +578,17 @@ li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.prod
 			}
 		}
 	}
+	.woocommerce-product-gallery{
+		.flex-control-nav{
+			display: flex;
+			justify-content: center;
+			li{
+				img{
+					max-width: 100px;
+				}
+			}
+		}
+	}
 }
 
 .prev_next_buttons {
