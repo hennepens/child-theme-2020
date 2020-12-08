@@ -583,6 +583,7 @@ li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.prod
 			display: flex;
 			justify-content: center;
 			li{
+				max-width: 100px;
 				img{
 					max-width: 100px;
 				}

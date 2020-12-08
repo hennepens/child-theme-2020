@@ -12568,8 +12568,10 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  .single-product .woocommerce-product-gallery .flex-control-nav li img {
+  .single-product .woocommerce-product-gallery .flex-control-nav li {
     max-width: 100px; }
+    .single-product .woocommerce-product-gallery .flex-control-nav li img {
+      max-width: 100px; }
 
 .prev_next_buttons {
   line-height: 40px;
