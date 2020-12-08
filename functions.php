@@ -176,7 +176,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
 
 // Remove filters added by "WC Subscriptions" and "WC All Products For Subscriptions"
 remove_filter( 'woocommerce_cart_item_price', array( 'WCS_ATT_Display_Cart', 'show_cart_item_subscription_options' ), 1000, 3 );
-remove_filter( 'woocommerce_cart_item_subtotal', array( 'WC_Subscriptions_Switcher', 'add_cart_item_switch_direction' ), 10, 3 );
+//remove_filter( 'woocommerce_cart_item_subtotal', array( 'WC_Subscriptions_Switcher', 'add_cart_item_switch_direction' ), 10, 3 );
   add_action( 'wp_enqueue_scripts', function() {
   if( ! function_exists( 'is_product' ) || ! is_product() ) { return; }
   wp_enqueue_script( 'jquery' );
@@ -212,14 +212,6 @@ remove_filter( 'woocommerce_cart_item_subtotal', array( 'WC_Subscriptions_Switch
 
 add_filter('woocommerce_reset_variations_link', '__return_empty_string');
 
-function wc_subscriptions_custom_price_string( $pricestring ) {
-    $pricestring = str_replace( 'every 4 week', 'Monthly', $pricestring );
-    $pricestring = str_replace( 'month', 'Monthly', $pricestring );
-
-    return $pricestring;
-}
-//add_filter( 'woocommerce_subscriptions_product_price_string', 'wc_subscriptions_custom_price_string' );
-//add_filter( 'woocommerce_subscription_price_string', 'wc_subscriptions_custom_price_string' );
 
 add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
 function func_option_valgt2() {
@@ -450,12 +442,6 @@ add_action( 'woocommerce_after_shop_loop_item', 'misha_after_add_to_cart_btn' );
 function misha_after_add_to_cart_btn(){
   global $product;
   echo '<a class="subscription-message" href="'. get_permalink( $productUrl->ID ) .'">Subscribe &amp; Save 40&percnt;</a>';
-}
-
-
-//add_action('woocommerce_after_variations_form', 'add_after_variation_table');
-function add_after_variation_table(){
-  echo test;
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {

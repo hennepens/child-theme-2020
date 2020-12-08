@@ -12217,6 +12217,14 @@ h1, h2, h3, h4, h5, h6 {
 .home .woocommerce-store-notice {
   display: none !important; }
 
+@media only screen and (min-width: 768px) {
+  .home .partial-content-space h2 {
+    max-width: 65%; } }
+
+@media only screen and (min-width: 768px) {
+  .home .partial-content-space p {
+    max-width: 65%; } }
+
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -12610,8 +12618,11 @@ h1, h2, h3, h4, h5, h6 {
   .subscription-option input {
     display: none; }
 
-.subscription-details {
+.subscription-option-details .subscription-details {
   display: none; }
+
+.subscription-details {
+  display: block; }
 
 .purchase-options li .subscription-price {
   margin: 0;
