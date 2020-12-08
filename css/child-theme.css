@@ -12932,14 +12932,14 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #cc0000 !important;
   color: #fff !important; }
 
-.contact-us .wrapper {
+.page-contact-us .wrapper {
   padding: 0; }
 
-.contact-us .container-fluid {
+.page-contact-us .container-fluid {
   padding-left: 0;
   padding-right: 0; }
 
-.contact-us .entry-header .entry-title {
+.page-contact-us .entry-header .entry-title {
   float: right;
   text-align: left !important;
   width: 100%;
