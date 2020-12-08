@@ -360,6 +360,7 @@ h1,h2,h3,h4,h5,h6{
 .products{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	@media only screen and (max-width: 767px) {
 		margin-right: -10px !important;
 		margin-left: -10px !important;
