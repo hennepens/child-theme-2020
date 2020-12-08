@@ -223,15 +223,16 @@ h1,h2,h3,h4,h5,h6{
 			max-width: 65%;
 		}
 	}
-}
-
-.fl-col-group-group-nested{
-	.fl-col-content.fl-node-content{
-		@media only screen and (min-width: 768px) {
-			max-width: 100% !important;
+	.fl-col-group-group-nested{
+		.fl-col-content.fl-node-content{
+			@media only screen and (min-width: 768px) {
+				max-width: 100% !important;
+			}
 		}
 	}
 }
+
+
 
 .map-column{
 	.fl-module.fl-module-map{
@@ -1047,3 +1048,14 @@ display: none;
 	color: #fff !important;
 }
 
+
+
+.contact-us{
+	.wrapper{
+		padding: 0;
+	}
+	.container-fluid{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

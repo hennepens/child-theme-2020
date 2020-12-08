@@ -12247,7 +12247,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 65%; } }
 
 @media only screen and (min-width: 768px) {
-  .fl-col-group-group-nested .fl-col-content.fl-node-content {
+  .max-width-65 .fl-col-group-group-nested .fl-col-content.fl-node-content {
     max-width: 100% !important; } }
 
 @media only screen and (min-width: 768px) {
@@ -12931,6 +12931,13 @@ h1, h2, h3, h4, h5, h6 {
 .button.cancel {
   background-color: #cc0000 !important;
   color: #fff !important; }
+
+.contact-us .wrapper {
+  padding: 0; }
+
+.contact-us .container-fluid {
+  padding-left: 0;
+  padding-right: 0; }
 
 /*
 * Use existing Bootstrap 4 classes and
