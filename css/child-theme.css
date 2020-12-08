@@ -12247,15 +12247,16 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 65%; } }
 
 @media only screen and (min-width: 768px) {
-  .max-width-65 .fl-col-group-group-nested {
-    max-width: 100%; } }
+  .fl-col-group-group-nested {
+    max-width: 100% !important; } }
 
-.map-column .fl-module.fl-map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  z-index: -1; }
+@media only screen and (min-width: 768px) {
+  .map-column .fl-module.fl-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: -1; } }
 
 .videoWrapper {
   position: relative;
