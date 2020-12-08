@@ -12242,6 +12242,10 @@ h1, h2, h3, h4, h5, h6 {
   .home .min-height-img-col {
     min-height: 300px; } }
 
+@media only screen and (min-width: 768px) {
+  .max-width-65 {
+    max-width: 65%; } }
+
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%;
