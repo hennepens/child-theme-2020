@@ -997,8 +997,10 @@ display: none;
 }
 
 
-.rounded-pill .fl-node-content{
-	border-radius: 10px;
+.rounded-pill{
+	.fl-node-content{
+		border-radius: 10px;
+	}
 	.default-button{
 		background: #D4AF37;
 		background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
