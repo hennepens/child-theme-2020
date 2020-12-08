@@ -12903,7 +12903,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .rounded-pill .fl-node-content {
   border-radius: 10px; }
-  .rounded-pill .fl-node-content .uabb-cta-button .default-btn {
+  .rounded-pill .fl-node-content .uabb-cta-button .uabb-creative-default-btn {
     background: #D4AF37;
     background: -webkit-gradient(linear, left top, left bottom, from(#D4AF37), to(#C5A028));
     background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
