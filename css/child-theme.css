@@ -13029,21 +13029,25 @@ h2 {
 .white #flourish .st0 {
   fill: #ffffff; }
 
-.top-left-rounded {
-  border-top-left-radius: 8px;
-  overflow: hidden; }
+@media only screen and (min-width: 768px) {
+  .top-left-rounded {
+    border-top-left-radius: 8px;
+    overflow: hidden; } }
 
-.bottom-left-rounded {
-  border-bottom-left-radius: 8px;
-  overflow: hidden; }
+@media only screen and (min-width: 768px) {
+  .bottom-left-rounded {
+    border-bottom-left-radius: 8px;
+    overflow: hidden; } }
 
-.top-right-rounded {
-  border-top-right-radius: 8px;
-  overflow: hidden; }
+@media only screen and (min-width: 768px) {
+  .top-right-rounded {
+    border-top-right-radius: 8px;
+    overflow: hidden; } }
 
-.bottom-right-rounded {
-  border-bottom-right-radius: 8px;
-  overflow: hidden; }
+@media only screen and (min-width: 768px) {
+  .bottom-right-rounded {
+    border-bottom-right-radius: 8px;
+    overflow: hidden; } }
 
 /*
 * Use existing Bootstrap 4 classes and
