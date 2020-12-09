@@ -12989,10 +12989,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #cc0000 !important;
   color: #fff !important; }
 
-.page-contact-us .wrapper {
+.page-contact-us .wrapper, .page-sell-wholesale .wrapper {
   padding: 0; }
 
-.page-contact-us .container-fluid {
+.page-contact-us .container-fluid, .page-sell-wholesale .container-fluid {
   padding-left: 0;
   padding-right: 0; }
 
