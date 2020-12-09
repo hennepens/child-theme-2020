@@ -13026,6 +13026,9 @@ h2 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding-top: 30px; }
 
+#flourish.white .st0 {
+  fill: #fff; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style
