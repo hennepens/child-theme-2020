@@ -12080,6 +12080,9 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: "libre_baskervilleitalic"; }
 
+h2 {
+  font-size: 2.5rem; }
+
 .admin-bar p.demo_store {
   top: 0; }
 
