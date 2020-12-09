@@ -969,6 +969,24 @@ display: none;
     				font-family: $font-family-libre-baskerville-italic;
     				font-size: 1.25rem;
     				margin-top: 15px;
+    				position: relative;
+    				white-space: nowrap;
+    				&:before,
+					&:after {
+					
+						vertical-align: middle;
+					    display: inline-block;
+					    content: "";
+					    border-top: 1px solid rgba(000, 000, 000, 0.3);
+					    width: 4rem;
+					    margin: 0 1rem;
+					}
+					&:before{
+
+					}
+					&:after{
+
+    				}
     			}
     			&:last-child{
 					padding: 5px 0;
