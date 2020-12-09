@@ -189,7 +189,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 var selectedVariant = $(".generatedRadios.selected label input").val();
 		 selectedVariant = selectedVariant.split(" ")[0];
 		 $(".current_selected_variant").text(selectedVariant);
-		 $("#selectedQty").text("1" + selectedVariant);
+		 $("#selectedQty option:selected").text("1" + selectedVariant);
     	$	(".input-text.qty").change(function(){
     		var selectedVariant = $(".generatedRadios.selected label input").val();
     		var selectedQty = $(this).children("option:selected").val();
@@ -202,12 +202,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}else if(selectedQty>=2){
 				if(selectedVariant == "Box"){
 					$(".current_selected_variant").text(selectedVariant + "es");
-					$("#selectedQty").text(selectedQty + selectedVariant + "es");
+					$("#selectedQty option:selected").text(selectedQty + selectedVariant + "es");
 				}
 				else{
 					selectedVariant = selectedVariant.split(" ")[0];
 					$(".current_selected_variant").text(selectedVariant + "s");
-					$("#selectedQty").text(selectedQty + selectedVariant + "s");
+					$("#selectedQty option:selected").text(selectedQty + selectedVariant + "s");
 				}
 			}
 		});
