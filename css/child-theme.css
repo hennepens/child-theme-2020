@@ -13029,6 +13029,22 @@ h2 {
 .white #flourish .st0 {
   fill: #ffffff; }
 
+.top-left-rounded {
+  border-top-left-radius: 8px;
+  overflow: none; }
+
+.bottom-left-rounded {
+  border-bottom-left-radius: 8px;
+  overflow: none; }
+
+.top-right-rounded {
+  border-top-right-radius: 8px;
+  overflow: none; }
+
+.bottom-right-rounded {
+  border-bottom-right-radius: 8px;
+  overflow: none; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style
