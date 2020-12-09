@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 		<header class="entry-header">
 
-			<?php the_title( '<h1 class="entry-title text-center">', '</h1>' ); ?>
+			<?php the_title( 'test<h1 class="entry-title text-center">', '</h1>' ); ?>
 
 		</header><!-- .entry-header -->
 		<?php the_content(); ?>
