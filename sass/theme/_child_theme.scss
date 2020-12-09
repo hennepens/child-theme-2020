@@ -985,19 +985,20 @@ display: none;
     				width: 100%;
     				&:before,
 					&:after {
-					
+						position: absolute;
 						vertical-align: middle;
 					    display: inline-block;
 					    content: "";
 					    border-top: 1px solid rgba(000, 000, 000, 0.3);
 					    width: 12%;
 					    margin: 0 1rem;
+					    top: 50%;
 					    @media only screen and (max-width: 767px) {
 							width: 6%;
 						}
 					}
 					&:before{
-
+						left: 20px;
 					}
 					&:after{
 
