@@ -970,6 +970,7 @@ display: none;
 			margin-bottom: 1.25rem;
 			text-align: center;
     		line-height: 2rem;
+    		width: 100%;
     		span{
     			&:first-child{
     				font-family: $font-family-libre-baskerville-bold;
@@ -981,6 +982,7 @@ display: none;
     				margin-top: 15px;
     				position: relative;
     				white-space: normal;
+    				width: 100%;
     				&:before,
 					&:after {
 					
