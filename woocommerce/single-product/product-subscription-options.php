@@ -318,7 +318,7 @@ foreach ($options as $option) {
 }
 //$amount_saved = $product->get_sale_price();
 echo
-"<div class='qty-container'><label>Select a Quantity</label><select id='selectQty' class='input-text qty'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option></select></div><label>I would like to:</label><ul class='purchase-options'>\n".
+"<div class='qty-container'><label>Select a Quantity</label><select id='selectQty' class='input-text qty'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option></select></div><label>I would like to</label><ul class='purchase-options'>\n".
 	(isset($one_time_option) ? $one_time_option : "").
 
 	($subscription_options ? "<li". (isset($selected_subscription_option) ? " class='selected'" : "") .">".

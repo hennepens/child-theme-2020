@@ -12816,6 +12816,9 @@ h1, h2, h3, h4, h5, h6 {
 .woocommerce-variation-price .purchase-options .subscription-price {
   display: inherit; }
 
+.woocommerce-variation-price label {
+  font-weight: 700; }
+
 .woocommerce-variation-add-to-cart {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12837,9 +12840,12 @@ h1, h2, h3, h4, h5, h6 {
 .qty-container {
   width: 100%;
   padding: 20px 0; }
+  .qty-container label {
+    font-weight: 700; }
   .qty-container select {
     padding: 10px 10px 10px 15px;
-    margin-left: 10px; }
+    margin-left: 10px;
+    border-radius: 8px; }
 
 .woocommerce span.onsale {
   display: -webkit-box;

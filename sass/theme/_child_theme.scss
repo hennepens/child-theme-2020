@@ -886,6 +886,9 @@ clear:both;
 		.subscription-price{
 			display: inherit;
 		}
+	}
+	label{
+		font-weight: 700;
 	}	
 }
 
@@ -910,9 +913,13 @@ clear:both;
 .qty-container{
 	width: 100%;
 	padding: 20px 0;
+	label{
+		font-weight: 700;
+	}
 	select{
 		padding: 10px 10px 10px 15px;
 		margin-left: 10px;
+		border-radius: 8px;
 	}
 }
 
