@@ -12914,9 +12914,9 @@ h1, h2, h3, h4, h5, h6 {
       top: 50%; }
       @media only screen and (max-width: 767px) {
         .single-product .summary .product_title span:nth-child(2):before, .single-product .summary .product_title span:nth-child(2):after {
-          width: 6%; } }
+          width: 8%; } }
     .single-product .summary .product_title span:nth-child(2):before {
-      left: 15px; }
+      left: 8%; }
   .single-product .summary .product_title span:last-child {
     padding: 5px 0;
     background: #D4AF37;
