@@ -12899,8 +12899,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "libre_baskervilleitalic";
     font-size: 1.25rem;
     margin-top: 15px;
-    position: relative;
-    white-space: nowrap; }
+    position: relative; }
     .single-product .summary .product_title span:nth-child(2):before, .single-product .summary .product_title span:nth-child(2):after {
       vertical-align: middle;
       display: inline-block;
