@@ -12867,6 +12867,10 @@ h1, h2, h3, h4, h5, h6 {
   right: -10px;
   top: -5px; }
 
+.xoo-wsc-img-col {
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+
 .single-product #woocommerce-wrapper {
   padding-bottom: 0;
   padding-top: 50px; }

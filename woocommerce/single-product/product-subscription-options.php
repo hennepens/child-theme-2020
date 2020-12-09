@@ -201,10 +201,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}else if(selectedQty>=2){
 				if(selectedVariant == "Box"){
 					$(".current_selected_variant").text(selectedVariant + "es");
+					$("#selectedQty").text(selectedQty + selectedVariant + "es");
 				}
 				else{
 					selectedVariant = selectedVariant.split(" ")[0];
 					$(".current_selected_variant").text(selectedVariant + "s");
+					$("#selectedQty").text(selectedQty + selectedVariant + "s");
 				}
 			}
 		});
