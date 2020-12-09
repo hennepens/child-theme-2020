@@ -205,7 +205,6 @@ remove_filter( 'woocommerce_cart_item_price', array( 'WCS_ATT_Display_Cart', 'sh
             var select = option.parent();
             var selected = select.val();
             var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
-            console.log("Help: "+ isSelected);
             if(isSelected.includes("checked")){var selectedClass = "selected"} else{var selectedClass=""};
             var radioHtml = `<input type="radio" name="${selName}" value="${value}" ${isSelected}>`;
             var optionHtml = `<div class="generatedRadios ${selectedClass}"><label>${radioHtml} ${label}</label></div>`;
@@ -251,9 +250,6 @@ function func_option_valgt2() {
           var jsonData = <?php echo json_encode($variations_data); ?>,
               inputVID = 'input.variation_id',
               regular_price = <?php echo json_encode($variations_orig_data); ?>;
-
-             console.log(jsonData); 
-             console.log(regular_price); 
 
           $('input').change( function(){
               if( '' != $(inputVID).val() ) {
