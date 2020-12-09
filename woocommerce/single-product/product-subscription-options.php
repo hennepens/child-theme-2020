@@ -189,7 +189,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 var selectedVariant = $(".generatedRadios.selected label input").val();
 		 selectedVariant = selectedVariant.split(" ")[0];
 		 $(".current_selected_variant").text(selectedVariant);
-    	$(".input-text.qty").change(function(){
+		 $("#selectedQty").text("1" + selectedVariant);
+    	$	(".input-text.qty").change(function(){
     		var selectedVariant = $(".generatedRadios.selected label input").val();
     		var selectedQty = $(this).children("option:selected").val();
 		  $(".current_selected_variant").text(selectedVariant);
