@@ -189,8 +189,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 var selectedVariant = $(".generatedRadios.selected label input").val();
 		 selectedVariant = selectedVariant.split(" ")[0];
 		 $(".current_selected_variant").text(selectedVariant);
-		 $("#selectedQty option:selected").text("1" + selectedVariant);
-    	$	(".input-text.qty").change(function(){
+    	$(".input-text.qty").change(function(){
     		var selectedVariant = $(".generatedRadios.selected label input").val();
     		var selectedQty = $(this).children("option:selected").val();
 		  $(".current_selected_variant").text(selectedVariant);
@@ -202,12 +201,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}else if(selectedQty>=2){
 				if(selectedVariant == "Box"){
 					$(".current_selected_variant").text(selectedVariant + "es");
-					$("#selectedQty option:selected").text(selectedQty + selectedVariant + "es");
 				}
 				else{
 					selectedVariant = selectedVariant.split(" ")[0];
 					$(".current_selected_variant").text(selectedVariant + "s");
-					$("#selectedQty option:selected").text(selectedQty + selectedVariant + "s");
 				}
 			}
 		});
