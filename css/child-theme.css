@@ -12914,9 +12914,6 @@ h1, h2, h3, h4, h5, h6 {
         width: 12%;
         margin: 0 1rem;
         top: 50%; }
-        @media only screen and (max-width: 767px) {
-          .single-product .summary .product_title span:nth-child(2) em:before, .single-product .summary .product_title span:nth-child(2) em:after {
-            width: 8%; } }
       .single-product .summary .product_title span:nth-child(2) em:before {
         left: -24%; }
         @media only screen and (max-width: 767px) {
