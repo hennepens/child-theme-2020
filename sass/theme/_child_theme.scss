@@ -983,26 +983,29 @@ display: none;
     				position: relative;
     				white-space: normal;
     				width: 100%;
-    				&:before,
-					&:after {
-						position: absolute;
-						vertical-align: middle;
-					    display: inline-block;
-					    content: "";
-					    border-top: 1px solid rgba(000, 000, 000, 0.3);
-					    width: 12%;
-					    margin: 0 1rem;
-					    top: 50%;
-					    @media only screen and (max-width: 767px) {
-							width: 8%;
+    				em{
+    					position: relative;
+	    				&:before,
+						&:after {
+							position: absolute;
+							vertical-align: middle;
+						    display: inline-block;
+						    content: "";
+						    border-top: 1px solid rgba(000, 000, 000, 0.3);
+						    width: 12%;
+						    margin: 0 1rem;
+						    top: 50%;
+						    @media only screen and (max-width: 767px) {
+								width: 8%;
+							}
 						}
-					}
-					&:before{
-						left: 8%;
-					}
-					&:after{
+						&:before{
+							left: -8%;
+						}
+						&:after{
 
-    				}
+	    				}
+	    			}
     			}
     			&:last-child{
 					padding: 5px 0;
