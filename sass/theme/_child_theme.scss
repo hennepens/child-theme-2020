@@ -915,6 +915,9 @@ clear:both;
 		padding-left: 15px;
 		margin-left: 5px;
 	}
+	.quantity.real{
+		display: none;
+	}
 }
 
 .qty-container{
@@ -1211,3 +1214,4 @@ display: none;
 		overflow: hidden;
 	}
 }
+
