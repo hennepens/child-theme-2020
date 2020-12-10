@@ -13051,6 +13051,9 @@ h2 {
     border-bottom-right-radius: 8px;
     overflow: hidden; } }
 
+.cart .quantity.real span {
+  display: none; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style
