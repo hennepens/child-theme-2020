@@ -915,7 +915,7 @@ clear:both;
 		margin-left: 5px;
 	}
 	.quantity.real{
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -1216,6 +1216,7 @@ display: none;
 
 .cart{
 	.quantity.real{
+		display: block !important;
 		span{
 			display: none;
 		}

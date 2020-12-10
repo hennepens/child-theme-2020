@@ -12843,7 +12843,7 @@ h2 {
     padding-left: 15px;
     margin-left: 5px; }
   .woocommerce-variation-add-to-cart .quantity.real {
-    display: none; }
+    display: none !important; }
 
 .qty-container {
   width: 100%;
@@ -13051,8 +13051,10 @@ h2 {
     border-bottom-right-radius: 8px;
     overflow: hidden; } }
 
-.cart .quantity.real span {
-  display: none; }
+.cart .quantity.real {
+  display: block !important; }
+  .cart .quantity.real span {
+    display: none; }
 
 /*
 * Use existing Bootstrap 4 classes and
