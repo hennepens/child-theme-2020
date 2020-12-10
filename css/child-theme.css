@@ -13051,9 +13051,9 @@ h2 {
     border-bottom-right-radius: 8px;
     overflow: hidden; } }
 
-.cart .quantity.real {
+.woocommerce-cart .cart .quantity.real {
   display: block !important; }
-  .cart .quantity.real span {
+  .woocommerce-cart .cart .quantity.real span {
     display: none; }
 
 /*

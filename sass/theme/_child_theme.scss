@@ -1213,12 +1213,13 @@ display: none;
 		overflow: hidden;
 	}
 }
-
-.cart{
-	.quantity.real{
-		display: block !important;
-		span{
-			display: none;
+.woocommerce-cart{
+	.cart{
+		.quantity.real{
+			display: block !important;
+			span{
+				display: none;
+			}
 		}
 	}
 }
