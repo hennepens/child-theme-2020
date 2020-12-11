@@ -1,7 +1,12 @@
 
 
 body {
-  font-family: $font-family-sans-serif;
+	font-family: $font-family-sans-serif;
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+  	&.fade-out{
+    	opacity: 0;   	
+	}
 }
 
 p {

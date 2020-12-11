@@ -1,5 +1,6 @@
 // Add your custom JS here.
 (function($) {
+	$('body').removeClass('fade-out');
 	$('.login-toggle').on('click',function(e){
 	  console.log('this');
 	  e.preventDefault();
