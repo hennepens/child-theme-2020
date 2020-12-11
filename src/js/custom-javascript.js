@@ -1,7 +1,7 @@
 // Add your custom JS here.
 (function($) {
 	$(document).ready(function(){
-fasdfsadxfawefdsadfasdv		
+		$('body').removeClass('fade-out');		
 	});
 	$('.login-toggle').on('click',function(e){
 	  console.log('this');
