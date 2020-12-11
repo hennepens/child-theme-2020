@@ -36,9 +36,6 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
-    if ( is_singular() && is_product() ) {
-      wp_enqueue_script( 'custom-schedule-options', get_stylesheet_directory_uri() . '/js/custom-schedule-options.js', array(), $the_theme->get( 'Version' ), true );
-    }
 }
 
 add_action( 'init', 'child_remove_parent_functions', 99 );
