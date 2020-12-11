@@ -5,7 +5,7 @@ body {
 	opacity: 1;
 	transition: opacity .25s ease-in-out;
   	&.fade-out{
-    	/*opacity: 0;*/
+    	opacity: 0;
 	}
 }
 
