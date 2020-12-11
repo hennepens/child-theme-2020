@@ -2,6 +2,7 @@
 (function($) {
 	$(document).ready(function(){
 		$('body').removeClass('fade-out');
+		console.log('here');
 	});
 	$('.login-toggle').on('click',function(e){
 	  console.log('this');
