@@ -57,7 +57,7 @@ h2{
 .navbar{
 	background: #f9f9f9;
 	flex: 1;
-	z-index: 9;
+	z-index: 999;
 	.mobile-nav{
 		position: absolute;
 		.shiftnav-toggle-button{
@@ -164,7 +164,7 @@ h2{
 	.navbar{
 		background: none;
 		position: absolute;
-		z-index: 1;
+		z-index: 999;
 		width: 100%;
 		.navbar-collapse{
 			li{
