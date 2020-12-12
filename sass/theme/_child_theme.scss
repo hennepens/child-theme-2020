@@ -159,7 +159,7 @@ h2{
 
 /* HOME PAGE CUSTOMIZATIONS */
 
-
+.home,.page-our-mission,.page-about-us,.page-sell-wholesale, .page-arc-partnership{
 	.navbar{
 		background: none;
 		position: absolute;
@@ -228,6 +228,7 @@ h2{
 			min-height: 300px;
 		}
 	}
+}
 .max-width-65{
 	.fl-col-content.fl-node-content{
 		@media only screen and (min-width: 768px) {
@@ -1138,7 +1139,7 @@ display: none;
 
 
 
-.page-contact-us,.page-sell-wholesale,.page-our-mission{
+.page-contact-us,.page-sell-wholesale,.page-our-mission,.page-arc-partnership{
 	.wrapper{
 		padding: 0;
 	}

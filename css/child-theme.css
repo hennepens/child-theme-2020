@@ -12205,52 +12205,52 @@ h2 {
   margin-left: 15px; }
 
 /* HOME PAGE CUSTOMIZATIONS */
-.navbar {
+.home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
   background: none;
   position: absolute;
   z-index: 1;
   width: 100%; }
-  .navbar .navbar-collapse li {
+  .home .navbar .navbar-collapse li, .page-our-mission .navbar .navbar-collapse li, .page-about-us .navbar .navbar-collapse li, .page-sell-wholesale .navbar .navbar-collapse li, .page-arc-partnership .navbar .navbar-collapse li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-  .navbar .navbar-brand #logo-svg {
+  .home .navbar .navbar-brand #logo-svg, .page-our-mission .navbar .navbar-brand #logo-svg, .page-about-us .navbar .navbar-brand #logo-svg, .page-sell-wholesale .navbar .navbar-brand #logo-svg, .page-arc-partnership .navbar .navbar-brand #logo-svg {
     -webkit-filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
             filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
-  .navbar .navbar-brand .tagline {
+  .home .navbar .navbar-brand .tagline, .page-our-mission .navbar .navbar-brand .tagline, .page-about-us .navbar .navbar-brand .tagline, .page-sell-wholesale .navbar .navbar-brand .tagline, .page-arc-partnership .navbar .navbar-brand .tagline {
     color: #fff; }
-  .navbar a {
+  .home .navbar a, .page-our-mission .navbar a, .page-about-us .navbar a, .page-sell-wholesale .navbar a, .page-arc-partnership .navbar a {
     color: #fff; }
-    .navbar a:hover {
+    .home .navbar a:hover, .page-our-mission .navbar a:hover, .page-about-us .navbar a:hover, .page-sell-wholesale .navbar a:hover, .page-arc-partnership .navbar a:hover {
       color: #356e3e; }
 
-.xoo-wsc-sc-bki {
+.home .xoo-wsc-sc-bki, .page-our-mission .xoo-wsc-sc-bki, .page-about-us .xoo-wsc-sc-bki, .page-sell-wholesale .xoo-wsc-sc-bki, .page-arc-partnership .xoo-wsc-sc-bki {
   color: #fff; }
 
-.woocommerce-store-notice {
+.home .woocommerce-store-notice, .page-our-mission .woocommerce-store-notice, .page-about-us .woocommerce-store-notice, .page-sell-wholesale .woocommerce-store-notice, .page-arc-partnership .woocommerce-store-notice {
   display: none !important; }
 
 @media only screen and (min-width: 768px) {
-  .partial-content-space h2 {
+  .home .partial-content-space h2, .page-our-mission .partial-content-space h2, .page-about-us .partial-content-space h2, .page-sell-wholesale .partial-content-space h2, .page-arc-partnership .partial-content-space h2 {
     max-width: 65%; } }
 
 @media only screen and (min-width: 768px) {
-  .partial-content-space p {
+  .home .partial-content-space p, .page-our-mission .partial-content-space p, .page-about-us .partial-content-space p, .page-sell-wholesale .partial-content-space p, .page-arc-partnership .partial-content-space p {
     max-width: 65%; } }
 
 @media only screen and (min-width: 768px) {
-  .partial-content-space.right h2 {
+  .home .partial-content-space.right h2, .page-our-mission .partial-content-space.right h2, .page-about-us .partial-content-space.right h2, .page-sell-wholesale .partial-content-space.right h2, .page-arc-partnership .partial-content-space.right h2 {
     float: right; } }
 
 @media only screen and (min-width: 768px) {
-  .partial-content-space.right p {
+  .home .partial-content-space.right p, .page-our-mission .partial-content-space.right p, .page-about-us .partial-content-space.right p, .page-sell-wholesale .partial-content-space.right p, .page-arc-partnership .partial-content-space.right p {
     float: right; } }
 
 @media only screen and (min-width: 768px) {
-  .partial-content-space .max-width-65 {
+  .home .partial-content-space .max-width-65, .page-our-mission .partial-content-space .max-width-65, .page-about-us .partial-content-space .max-width-65, .page-sell-wholesale .partial-content-space .max-width-65, .page-arc-partnership .partial-content-space .max-width-65 {
     float: right;
     max-width: 65%; } }
 
 @media only screen and (max-width: 768px) {
-  .min-height-img-col {
+  .home .min-height-img-col, .page-our-mission .min-height-img-col, .page-about-us .min-height-img-col, .page-sell-wholesale .min-height-img-col, .page-arc-partnership .min-height-img-col {
     min-height: 300px; } }
 
 @media only screen and (min-width: 768px) {
@@ -13002,10 +13002,10 @@ h2 {
   background-color: #cc0000 !important;
   color: #fff !important; }
 
-.page-contact-us .wrapper, .page-sell-wholesale .wrapper, .page-our-mission .wrapper {
+.page-contact-us .wrapper, .page-sell-wholesale .wrapper, .page-our-mission .wrapper, .page-arc-partnership .wrapper {
   padding: 0; }
 
-.page-contact-us .container-fluid, .page-sell-wholesale .container-fluid, .page-our-mission .container-fluid {
+.page-contact-us .container-fluid, .page-sell-wholesale .container-fluid, .page-our-mission .container-fluid, .page-arc-partnership .container-fluid {
   padding-left: 0;
   padding-right: 0; }
 
