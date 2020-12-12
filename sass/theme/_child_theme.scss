@@ -57,6 +57,7 @@ h2{
 .navbar{
 	background: #f9f9f9;
 	flex: 1;
+	z-index: 9;
 	.mobile-nav{
 		position: absolute;
 		.shiftnav-toggle-button{
