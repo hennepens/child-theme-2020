@@ -13010,8 +13010,8 @@ h2 {
   padding-left: 0;
   padding-right: 0; }
   .page-contact-us .container-fluid#footer-full-content, .page-sell-wholesale .container-fluid#footer-full-content, .page-our-mission .container-fluid#footer-full-content, .page-arc-partnership .container-fluid#footer-full-content {
-    padding-left: inherit;
-    padding-right: inherit; }
+    padding-left: 15px;
+    padding-right: 15px; }
 
 .entry-content form label {
   width: 100%; }
