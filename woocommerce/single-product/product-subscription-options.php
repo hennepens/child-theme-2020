@@ -216,7 +216,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     	
         // purchase options
 		$('.purchase-options input').change(function(){
-			//console.log('test');
+
 			if ($(this).val() == 'one-time') updatePurchaseOptions(0);
 			else updatePurchaseOptions($('.purchase-options select').val());
 
@@ -252,9 +252,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		    	obj_attr		= "";
 
 			
-		    jQuery( ".variations_form select" ).on( "change", function () {
-		        //console.log('test2');
-		        
+		    jQuery( ".variations_form select" ).on( "change", function () {		        
 		       // Create New Array by selecting variations
 		        jQuery( ".variations_form select" ).each(function( index ) {
 		            
@@ -266,7 +264,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		        jQuery.each( product_attr, function( index, loop_value ) {
 		        
 		            if( JSON.stringify( obj_attr ) === JSON.stringify( loop_value.attributes )  ){
-		                //console.log('test')
 		                $('.one-time-price').html( loop_value.price_html );
 		                
 		            }

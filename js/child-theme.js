@@ -7052,7 +7052,6 @@
 		$('body').removeClass('fade-out');		
 	});
 	$('.login-toggle').on('click',function(e){
-	  console.log('this');
 	  e.preventDefault();
 	  $('body').toggleClass('login-hide');
 	  $(this).find('span').text($(this).find('span').text() == 'Sign Up Now' ? 'Login' : 'Sign Up Now');
