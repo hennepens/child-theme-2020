@@ -20,7 +20,6 @@ function understrap_remove_scripts() {
 
     wp_dequeue_script( 'understrap-scripts' );
     wp_deregister_script( 'understrap-scripts' );
-    wp_dequeue_script( 'wc-cart-fragments' );
 
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
@@ -37,8 +36,6 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
-    wp_dequeue_style('wc-bundle-style');
-    wp_deregister_style('wc-bundle-style');
 }
 
 add_action( 'init', 'child_remove_parent_functions', 99 );
