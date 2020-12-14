@@ -12938,6 +12938,10 @@ h2 {
   overflow: scroll;
   border-radius: 8px; }
 
+@media only screen and (max-width: 767px) {
+  #shawn-brad-bg .fl-row-content-wrap {
+    background-image: none; } }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

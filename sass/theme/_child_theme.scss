@@ -1239,3 +1239,9 @@ display: none;
 	overflow: scroll;
 	border-radius: 8px;
 }
+
+#shawn-brad-bg .fl-row-content-wrap{
+	@media only screen and (max-width: 767px) {
+		background-image: none;
+	}
+}
