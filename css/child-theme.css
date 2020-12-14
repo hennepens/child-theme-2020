@@ -21,33 +21,42 @@
   font-display: swap; }
 
 @font-face {
-  font-family: 'superiorbold';
-  src: url("../fonts/superior-bold-webfont.woff2") format("woff2"), url("../fonts/superior-bold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'superiorbold_rough';
-  src: url("../fonts/superior-boldrough-webfont.woff2") format("woff2"), url("../fonts/superior-boldrough-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
   font-family: 'superiorregular';
   src: url("../fonts/superior-regular-webfont.woff2") format("woff2"), url("../fonts/superior-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
 
-@font-face {
-  font-family: 'superiorrough';
-  src: url("../fonts/superior-rough-webfont.woff2") format("woff2"), url("../fonts/superior-rough-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
+/*
 
+@font-face {
+    font-family: 'superiorbold';
+    src: url('../fonts/superior-bold-webfont.woff2') format('woff2'),
+         url('../fonts/superior-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'superiorbold_rough';
+    src: url('../fonts/superior-boldrough-webfont.woff2') format('woff2'),
+         url('../fonts/superior-boldrough-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'superiorrough';
+    src: url('../fonts/superior-rough-webfont.woff2') format('woff2'),
+         url('../fonts/superior-rough-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*/
 @font-face {
   font-family: 'proxima_novaregular';
   src: url("../fonts/proximanova-regular-webfont.woff2") format("woff2"), url("../fonts/proximanova-regular-webfont.woff") format("woff");
