@@ -20,16 +20,26 @@ function understrap_remove_scripts() {
     wp_dequeue_script( 'understrap-scripts' );
     wp_deregister_script( 'understrap-scripts' );
     wp_dequeue_script( 'wc-cart-fragments' ); 
+    wp_dequeue_style( 'font-awesome' ); // FontAwesome 4
+    wp_dequeue_style( 'font-awesome-5' ); // FontAwesome 5
+
+    wp_dequeue_style( 'jquery-magnificpopup' );
+    wp_dequeue_script( 'jquery-magnificpopup' );
+
+    wp_dequeue_script( 'bootstrap' );
+    wp_dequeue_script( 'imagesloaded' );
+    wp_dequeue_script( 'jquery-fitvids' );
+    wp_dequeue_script( 'jquery-throttle' );
+    wp_dequeue_script( 'jquery-waypoints' );
 
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
-add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style' );
-function tn_dequeue_font_awesome_style() {
-      wp_dequeue_style( 'fontawesome' );
-      wp_deregister_style( 'fontawesome' );
-}
+
+
+
+
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
