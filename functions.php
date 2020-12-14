@@ -25,6 +25,12 @@ function understrap_remove_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
+add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style' );
+function tn_dequeue_font_awesome_style() {
+      wp_dequeue_style( 'fontawesome' );
+      wp_deregister_style( 'fontawesome' );
+}
+
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
 
