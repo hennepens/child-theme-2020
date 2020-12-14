@@ -1,28 +1,28 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'libre_baskervillebold';
-  src: url("../fonts/librebaskerville-bold-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-bold-webfont.woff") format("woff");
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/librebaskerville-bold-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'libre_baskervilleitalic';
-  src: url("../fonts/librebaskerville-italic-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-italic-webfont.woff") format("woff");
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/librebaskerville-italic-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'libre_baskervilleregular';
-  src: url("../fonts/librebaskerville-regular-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-regular-webfont.woff") format("woff");
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/librebaskerville-regular-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'superiorregular';
-  src: url("../fonts/superior-regular-webfont.woff2") format("woff2"), url("../fonts/superior-regular-webfont.woff") format("woff");
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/superior-regular-webfont.woff2") format("woff2"), url("../fonts/superior-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
@@ -31,7 +31,7 @@
 
 @font-face {
     font-family: 'superiorbold';
-    src: url('../fonts/superior-bold-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-bold-webfont.woff2') format('woff2'),
          url('../fonts/superior-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -40,7 +40,7 @@
 
 @font-face {
     font-family: 'superiorbold_rough';
-    src: url('../fonts/superior-boldrough-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-boldrough-webfont.woff2') format('woff2'),
          url('../fonts/superior-boldrough-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -50,7 +50,7 @@
 
 @font-face {
     font-family: 'superiorrough';
-    src: url('../fonts/superior-rough-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-rough-webfont.woff2') format('woff2'),
          url('../fonts/superior-rough-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -59,60 +59,79 @@
 */
 @font-face {
   font-family: 'proxima_novaregular';
-  src: url("../fonts/proximanova-regular-webfont.woff2") format("woff2"), url("../fonts/proximanova-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'proxima_nova_altbold';
-  src: url("../fonts/proxima_nova_alt_bold-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_alt_bold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'proxima_nova_altlight';
-  src: url("../fonts/proxima_nova_alt_light-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_alt_light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'proxima_nova_altthin';
-  src: url("../fonts/proxima_nova_alt_thin-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_alt_thin-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'proxima_novablack';
-  src: url("../fonts/proxima_nova_black-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_black-webfont.woff") format("woff");
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/proximanova-regular-webfont.woff2") format("woff2"), url("../fonts/proximanova-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'proxima_novabold';
-  src: url("../fonts/proxima_nova_bold-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_bold-webfont.woff") format("woff");
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/proxima_nova_bold-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
+
+/*
 
 @font-face {
-  font-family: 'proxima_novaextrabold';
-  src: url("../fonts/proxima_nova_extrabold-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_extrabold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
+    font-family: 'proxima_nova_altbold';
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_bold-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_alt_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 @font-face {
-  font-family: 'proxima_novathin';
-  src: url("../fonts/proxima_nova_thin-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_thin-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
+    font-family: 'proxima_nova_altlight';
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_light-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_alt_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: 'proxima_nova_altthin';
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_thin-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_alt_thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'proxima_novablack';
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_black-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'proxima_novaextrabold';
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'proxima_novathin';
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_thin-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*/
+/*
+$font-family-sans-serif-black: 'proxima_novablack';
+$font-family-sans-serif-thin: 'proxima_novathin';
+$font-family-sans-serif-alt-thin: 'proxima_nova_altthin';
+*/
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -11891,173 +11910,6 @@ figure.woocommerce-product-gallery__wrapper {
 
 .fa-meetup:before {
   content: ""; }
-
-[class^="icon-"], [class*=" icon-"] {
-  font-family: "linearicons" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon-facebook-square:before {
-  content: "\e900"; }
-
-.icon-instagram:before {
-  content: "\e901"; }
-
-.icon-arrow-up:before {
-  content: "\e941"; }
-
-.icon-arrow-down:before {
-  content: "\e942"; }
-
-.icon-arrow-left:before {
-  content: "\e943"; }
-
-.icon-arrow-right:before {
-  content: "\e944"; }
-
-.icon-home:before {
-  content: "\e600"; }
-
-.icon-cog:before {
-  content: "\e672"; }
-
-.icon-trash2:before {
-  content: "\e681"; }
-
-.icon-star:before {
-  content: "\e68d"; }
-
-.icon-copy:before {
-  content: "\e6b8"; }
-
-.icon-enter:before {
-  content: "\e6d2"; }
-
-.icon-repeat:before {
-  content: "\e6ee"; }
-
-.icon-equalizer:before {
-  content: "\e6f2"; }
-
-.icon-user:before {
-  content: "\e71e"; }
-
-.icon-bag2:before {
-  content: "\e74c"; }
-
-.icon-credit-card:before {
-  content: "\e759"; }
-
-.icon-cash-dollar:before {
-  content: "\e75a"; }
-
-.icon-bag-dollar:before {
-  content: "\e75e"; }
-
-.icon-telephone:before {
-  content: "\e76a"; }
-
-.icon-telephone2:before {
-  content: "\e777"; }
-
-.icon-smartphone:before {
-  content: "\e7a6"; }
-
-.icon-graph:before {
-  content: "\e7fa"; }
-
-.icon-chart-bars:before {
-  content: "\e7fc"; }
-
-.icon-speed-fast:before {
-  content: "\e836"; }
-
-.icon-rocket:before {
-  content: "\e837"; }
-
-.icon-truck:before {
-  content: "\e857"; }
-
-.icon-download2:before {
-  content: "\e8f5"; }
-
-.icon-exit-right:before {
-  content: "\e8fe"; }
-
-.icon-magnifier:before {
-  content: "\e922"; }
-
-.icon-cross:before {
-  content: "\e92a"; }
-
-.icon-menu:before {
-  content: "\e92b"; }
-
-.icon-check:before {
-  content: "\e934"; }
-
-.icon-check-square:before {
-  content: "\e999"; }
-
-.icon-checkmark-circle:before {
-  content: "\e959"; }
-
-.icon-chevron-up:before {
-  content: "\e939"; }
-
-.icon-chevron-down:before {
-  content: "\e93a"; }
-
-.icon-chevron-left:before {
-  content: "\e93b"; }
-
-.icon-chevron-right:before {
-  content: "\e93c"; }
-
-.icon-chevron-up-circle:before {
-  content: "\e962"; }
-
-.icon-chevron-down-circle:before {
-  content: "\e963"; }
-
-.icon-chevron-left-circle:before {
-  content: "\e964"; }
-
-.icon-chevron-right-circle:before {
-  content: "\e965"; }
-
-.icon-linux:before {
-  content: "\eabd"; }
-
-.icon-apple:before {
-  content: "\eabe"; }
-
-.icon-windows:before {
-  content: "\eac2"; }
-
-.icon-plus-square:before {
-  content: "\e98e"; }
-
-.icon-envelope:before {
-  content: "\e696"; }
-
-.icon-envelope-open:before {
-  content: "\e697"; }
-
-.icon-paper-plane:before {
-  content: "\e699"; }
-
-.icon-eye:before {
-  content: "\e6a5"; }
-
-.icon-eye-crossed:before {
-  content: "\e6a6"; }
 
 .gallery {
   margin-bottom: 1.5em; }
