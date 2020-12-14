@@ -1242,6 +1242,6 @@ display: none;
 
 .bg-img-none .fl-row-content-wrap{
 	@media only screen and (max-width: 767px) {
-		background-image: none;
+		background-image: none !important;
 	}
 }

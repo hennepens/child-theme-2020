@@ -12940,7 +12940,7 @@ h2 {
 
 @media only screen and (max-width: 767px) {
   .bg-img-none .fl-row-content-wrap {
-    background-image: none; } }
+    background-image: none !important; } }
 
 /*
 * Use existing Bootstrap 4 classes and
