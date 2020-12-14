@@ -76,7 +76,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			      wp_get_current_user();
 			      echo '<li><a href="/my-account">' . get_avatar( $current_user ) . '</a></li>'; ?>		    
 			      <?php } else { ?>
-			        <li class="d-none d-md-block"><a href="/my-account"><span class="icon fa-lg icon-user"></span></a></li>
+			        <li class="d-none d-md-block"><a href="/my-account"><span class="fa fa-lg fa-user"></span></a></li>
 			      <?php } ?>
 			      <li><?php echo do_shortcode('[xoo_wsc_cart]'); ?></li>
 			  </ul>
