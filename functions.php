@@ -20,10 +20,11 @@ function understrap_remove_scripts() {
 
     wp_dequeue_script( 'understrap-scripts' );
     wp_deregister_script( 'understrap-scripts' );
+    wp_dequeue_script( 'wc-cart-fragments' );
 
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
-add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
+add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 10 );
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
@@ -38,7 +39,6 @@ function theme_enqueue_styles() {
     }
     wp_dequeue_style('wc-bundle-style');
     wp_deregister_style('wc-bundle-style');
-    wp_dequeue_script( 'wc-cart-fragments' );
 }
 
 add_action( 'init', 'child_remove_parent_functions', 99 );
