@@ -20,7 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-md-9">
 				<div class="row">
 					<div class="d-flex col-md-2 justify-content-center align-items-md-start">
-						<img id="logo-svg" class="mb-3" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hennepens-logomark.svg" alt="Hennepen's" width="80">
+						<img id="logo-svg" class="mb-3 lazy-load" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hennepens-logomark.svg" alt="Hennepen's" width="80">
 					</div>
 					<div class="col-md-10">
 						<div class="row">
