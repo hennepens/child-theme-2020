@@ -21,7 +21,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'libre_baskervillebold';
-    src: url('../fonts/librebaskerville-bold-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/librebaskerville-bold-webfont.woff2') format('woff2'),
          url('../fonts/librebaskerville-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -30,7 +30,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'libre_baskervilleitalic';
-    src: url('../fonts/librebaskerville-italic-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/librebaskerville-italic-webfont.woff2') format('woff2'),
          url('../fonts/librebaskerville-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -39,7 +39,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'libre_baskervilleregular';
-    src: url('../fonts/librebaskerville-regular-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/librebaskerville-regular-webfont.woff2') format('woff2'),
          url('../fonts/librebaskerville-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -48,7 +48,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'superiorregular';
-    src: url('../fonts/superior-regular-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-regular-webfont.woff2') format('woff2'),
          url('../fonts/superior-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -59,7 +59,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'superiorbold';
-    src: url('../fonts/superior-bold-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-bold-webfont.woff2') format('woff2'),
          url('../fonts/superior-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -68,7 +68,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'superiorbold_rough';
-    src: url('../fonts/superior-boldrough-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-boldrough-webfont.woff2') format('woff2'),
          url('../fonts/superior-boldrough-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -78,7 +78,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'superiorrough';
-    src: url('../fonts/superior-rough-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-rough-webfont.woff2') format('woff2'),
          url('../fonts/superior-rough-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -89,7 +89,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'proxima_novaregular';
-    src: url('../fonts/proximanova-regular-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proximanova-regular-webfont.woff2') format('woff2'),
          url('../fonts/proximanova-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -98,7 +98,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'proxima_novabold';
-    src: url('../fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
          url('../fonts/proxima_nova_bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -109,7 +109,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'proxima_nova_altbold';
-    src: url('../fonts/proxima_nova_alt_bold-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_bold-webfont.woff2') format('woff2'),
          url('../fonts/proxima_nova_alt_bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -118,7 +118,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'proxima_nova_altlight';
-    src: url('../fonts/proxima_nova_alt_light-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_light-webfont.woff2') format('woff2'),
          url('../fonts/proxima_nova_alt_light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -127,7 +127,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'proxima_nova_altthin';
-    src: url('../fonts/proxima_nova_alt_thin-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_thin-webfont.woff2') format('woff2'),
          url('../fonts/proxima_nova_alt_thin-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -136,7 +136,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'proxima_novablack';
-    src: url('../fonts/proxima_nova_black-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_black-webfont.woff2') format('woff2'),
          url('../fonts/proxima_nova_black-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -145,7 +145,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'proxima_novaextrabold';
-    src: url('../fonts/proxima_nova_extrabold-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_extrabold-webfont.woff2') format('woff2'),
          url('../fonts/proxima_nova_extrabold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -154,7 +154,7 @@ $hennepens-green: #356e3e;
 
 @font-face {
     font-family: 'proxima_novathin';
-    src: url('../fonts/proxima_nova_thin-webfont.woff2') format('woff2'),
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_thin-webfont.woff2') format('woff2'),
          url('../fonts/proxima_nova_thin-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
