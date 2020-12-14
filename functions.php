@@ -24,7 +24,7 @@ function understrap_remove_scripts() {
 
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
-add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 10 );
+add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
