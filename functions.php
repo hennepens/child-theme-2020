@@ -25,7 +25,7 @@ function page_load_script(){
     <?php
 }
 
-add_action('wp_body_open','page_load_script');
+add_action('wp_footer','page_load_script',1);
 
 
 function understrap_remove_scripts() {
