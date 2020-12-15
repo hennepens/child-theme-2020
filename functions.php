@@ -17,7 +17,7 @@ add_filter( 'body_class', 'add_slug_body_class' );
 
 function page_load_script(){
     ?>
-    <script>document.body.className -= ' fade-out';</script>
+    <script>document.body.className += ' fade-out';</script>
     <?php
 }
 
