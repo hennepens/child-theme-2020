@@ -2,10 +2,12 @@
 
 body {
 	font-family: $font-family-sans-serif;
+	transition: opacity .25s ease-out;
 	opacity: 0;
-	transition: opacity .25s ease-in-out;
+	visibility: hidden;
   	&.fade-out{
-    	opacity: 1;
+  		visibility: visible;
+  		opacity: 1;
 	}
 }
 

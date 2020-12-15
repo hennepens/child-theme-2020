@@ -11941,10 +11941,12 @@ figure.woocommerce-product-gallery__wrapper {
 
 body {
   font-family: "proxima_novaregular";
+  -webkit-transition: opacity .25s ease-out;
+  transition: opacity .25s ease-out;
   opacity: 0;
-  -webkit-transition: opacity .25s ease-in-out;
-  transition: opacity .25s ease-in-out; }
+  visibility: hidden; }
   body.fade-out {
+    visibility: visible;
     opacity: 1; }
 
 p {

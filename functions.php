@@ -12,16 +12,20 @@ $classes[] = $post->post_type . '-' . $post->post_name . " fade-out";
 }
 return $classes;
 }
-add_filter( 'body_class', 'add_slug_body_class' );
+//add_filter( 'body_class', 'add_slug_body_class' );
 
 
 function page_load_script(){
     ?>
-    <script>document.body.className += ' fade-out';</script>
+    <script>
+      jQuery(document).ready(function(){
+        jQuery('body').addClass(' fade-out');
+      });
+    </script>
     <?php
 }
 
-add_action('wp_footer','page_load_script',9999);
+add_action('wp_body_open','page_load_script');
 
 
 function understrap_remove_scripts() {
