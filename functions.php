@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
 add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'font-awesome' ); // FontAwesome 4
-    wp_enqueue_style( 'font-awesome-5' ); // FontAwesome 5
+    wp_dequeue_style( 'font-awesome-5' ); // FontAwesome 5
 
     wp_dequeue_style( 'jquery-magnificpopup' );
     wp_dequeue_script( 'jquery-magnificpopup' );
@@ -38,7 +38,18 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_script( 'jquery-fitvids' );
     wp_dequeue_script( 'jquery-throttle' );
     wp_dequeue_script( 'jquery-waypoints' );
+    wp_dequeue_script( 'jquery-blockui' );
+    wp_dequeue_script( 'jquery-placeholder' );
+    wp_dequeue_script( 'fancybox' );
+    wp_dequeue_script( 'jqueryui' );
+    wp_dequeue_style( 'woocommerce-smallscreen' );
+    wp_dequeue_style( 'woocommerce_fancybox_styles' );
+    wp_dequeue_style( 'woocommerce_chosen_styles' );
+    wp_dequeue_style( 'woocommerce-general' );
+    wp_dequeue_style( 'woocommerce-layout' );   
+    wp_dequeue_style( 'woocommerce_frontend_styles' );
 }, 9999 );
+
 
 
 
