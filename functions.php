@@ -14,6 +14,18 @@ return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
 
+
+function page_load_script(){
+    ?>
+    <script>jQuery(document).ready(function(){
+    jQuery('body').removeClass('fade-out');    
+  });</script>
+    <?php
+}
+
+add_action('wp_footer','page_load_script',9999);
+
+
 function understrap_remove_scripts() {
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
