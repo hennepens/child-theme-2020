@@ -126,7 +126,7 @@ font-family: 'Libre Baskerville', serif;
 	border: 0;
 }
 
-#body_content table tr{
+#addresses tr{
 	border-top: 1px solid;
 }
 #body_content table tfoot tr,#body_content table thead tr{
@@ -256,6 +256,10 @@ img {
 
 .shipped_via{
 	display: block;
+}
+
+#template_body table tbody tr:first-child{
+	border-top: 0 !important;
 }
 
 <?php

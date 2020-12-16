@@ -55,11 +55,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<!-- End Header -->
 								</td>
 							</tr>
-							<tr>
+							<tr style="border-top: 0;">
 								<td align="center" valign="top">
 									<!-- Body -->
 									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_body">
-										<tr>
+										<tr style="border-top: 0;">
 											<td valign="top" id="body_content">
 												<!-- Content -->
 												<table border="0" cellpadding="20" cellspacing="0" width="100%">
