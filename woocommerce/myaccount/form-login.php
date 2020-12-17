@@ -116,6 +116,18 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 	</div>
 
 </div>
+<script>
+	// Add your custom JS here.
+(function($) {
+	$('.login-toggle').on('click',function(e){
+	  e.preventDefault();
+	  $('body').toggleClass('login-hide');
+	  $(this).find('span').text($(this).find('span').text() == 'Sign Up Now' ? 'Login' : 'Sign Up Now');
+	  $(this).siblings('.lines').find('span').text($(this).siblings('.lines').find('span').text() == 'New to Hennepen\'s?' ? 'Already a Member?' : 'New to Hennepen\'s?');
+	});
+	
+})( jQuery );
+</script>
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>
