@@ -11980,6 +11980,11 @@ h2 {
 .password-input {
   width: 100%; }
 
+.btn .btn-outline-primary, .wpcf7 input[type=submit] .btn-outline-primary,
+.btn .wpcf7 input[type=submit], .wpcf7 .btn input[type=submit],
+.wpcf7 input[type=submit] input[type=submit] {
+  border-radius: 100px; }
+
 /* Navbar Customizations */
 .navbar {
   background: #f9f9f9;
@@ -12855,9 +12860,30 @@ h2 {
 .woocommerce-account .woocommerce {
   max-width: 1100px;
   margin: 0 auto; }
-  .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation .list-group-item {
-    border: 0;
-    border-right: 1px solid rgba(0, 0, 0, 0.125); }
+  .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link {
+      list-style: none;
+      width: 100%;
+      float: left;
+      border: 0;
+      border-right: 1px solid rgba(0, 0, 0, 0.125); }
+      .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link a {
+        float: left;
+        padding: 10px;
+        width: 100%;
+        border-left: 3px solid #fff; }
+      .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link:hover {
+        background: #f8f9fa;
+        text-decoration: none; }
+        .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link:hover a {
+          text-decoration: none;
+          border-left: 3px solid #495057; }
+      .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link.is-active a {
+        background: #f8f9fa;
+        border-left: 3px solid #495057; }
   .woocommerce-account .woocommerce .woocommerce-customer-details .woocommerce-column--billing-address {
     max-width: 100% !important;
     width: 50% !important; }
