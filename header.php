@@ -18,8 +18,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="preload" as="style" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-bold-webfont.woff2" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" as="style" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.woff" type="font/woff" crossorigin="anonymous">
+	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-bold-webfont.woff2" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.woff" type="font/woff" crossorigin="anonymous">
 	<?php wp_head(); ?>
 </head>
 
