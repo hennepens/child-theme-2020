@@ -8938,10 +8938,6 @@ h2 {
     .site-info ul li:last-child {
       padding-right: 0; }
 
-.social-cc li {
-  margin-right: 0;
-  padding-left: 10px; }
-
 .social-cc .fa {
   font-weight: inherit !important;
   font-family: FontAwesome; }
