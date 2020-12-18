@@ -18,6 +18,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<!-- Main font -->
+	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-regular-webfont.woff2" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-bold-webfont.woff2" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-italic-webfont.woff2" type="font/woff2" crossorigin="anonymous">
+	<!-- Icon font -->
+	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.woff" type="font/woff" crossorigin="anonymous">
+
 	<?php wp_head(); ?>
 </head>
 
@@ -76,7 +83,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			      wp_get_current_user();
 			      echo '<li><a href="/my-account">' . get_avatar( $current_user ) . '</a></li>'; ?>		    
 			      <?php } else { ?>
-			        <li class="d-none d-md-block"><a href="/my-account"><span class="fa fa-lg fa-user"></span></a></li>
+			        <li class="m-none d-flex"><a href="/my-account" class="d-flex"><i class="icon-user"></i></a></li>
 			      <?php } ?>
 			      <li><?php echo do_shortcode('[xoo_wsc_cart]'); ?></li>
 			  </ul>
