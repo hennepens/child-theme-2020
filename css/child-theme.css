@@ -73,7 +73,7 @@
 
 @font-face {
   font-family: 'linearicons';
-  src: url("../fonts/linearicons.eot?mlscn1#iefix") format("embedded-opentype"), url("../fonts/linearicons.ttf?mlscn1") format("truetype"), url("../fonts/linearicons.woff?mlscn1") format("woff"), url("../fonts/linearicons.svg?mlscn1#icons") format("svg");
+  src: url("../fonts/linearicons.eot?mlscn1#iefix") format("embedded-opentype"), url("../fonts/linearicons.ttf") format("truetype"), url("../fonts/linearicons.woff") format("woff"), url("../fonts/linearicons.svg?#icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
