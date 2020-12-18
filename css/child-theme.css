@@ -76,7 +76,7 @@
   src: url("../fonts/linearicons.eot?mlscn1#iefix") format("embedded-opentype"), url("../fonts/linearicons.ttf?mlscn1") format("truetype"), url("../fonts/linearicons.woff?mlscn1") format("woff"), url("../fonts/linearicons.svg?mlscn1#icons") format("svg");
   font-weight: normal;
   font-style: normal;
-  font-display: block; }
+  font-display: swap; }
 
 /*
 
