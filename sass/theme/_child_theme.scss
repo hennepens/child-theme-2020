@@ -1296,3 +1296,37 @@ display: none;
 		background-image: none !important;
 	}
 }
+
+
+.video-popup{
+	.uabb-trigger{
+		.uabb-button-text{
+			display: flex;
+			align-items: center;
+			&:after{
+				content: '';
+			    border: 0;
+			    background: transparent;
+			    box-sizing: border-box;
+			    width: 6px;
+			    height: 6px;
+			    border-color: transparent transparent transparent #ffffff;
+			    transition: 100ms all ease;
+			    cursor: pointer;
+			    border-style: solid;
+			    border-width: 6px 0 6px 10px;
+			    display: block;
+			    margin-left: 10px;
+			}
+		}
+		&:hover{
+			.uabb-button-text{
+				display: flex;
+				align-items: center;
+				&:after{
+					border-color: transparent transparent transparent #000;	
+				}
+			}
+		}
+	}
+}
