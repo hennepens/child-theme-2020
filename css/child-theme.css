@@ -8902,9 +8902,6 @@ h2 {
   padding-top: 0;
   background-image: url("../images/newsletter-bg-2.jpg");
   border-top: 10px solid #000; }
-  #wrapper-footer #logo-svg {
-    width: 80px;
-    height: 80px; }
 
 #wrapper-footer-full {
   padding: 50px 0;
@@ -8940,6 +8937,10 @@ h2 {
     padding-right: 10px; }
     .site-info ul li:last-child {
       padding-right: 0; }
+
+.social-cc li {
+  margin-right: 0;
+  padding-left: 10px; }
 
 .social-cc .fa {
   font-weight: inherit !important;
