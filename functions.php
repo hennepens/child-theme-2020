@@ -74,7 +74,7 @@ add_action('woocommerce_single_product_summary','custom_product_title_inject',5)
 
 function custom_product_title_inject()
 {
-   $pdf = get_field('custom_product_title'); 
+   $custom_title = get_field('custom_product_title'); 
    echo '<h1 class="product_title entry-title">';
     if(!empty($custom_title)){
         echo $custom_title;
