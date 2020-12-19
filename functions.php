@@ -65,6 +65,17 @@ function child_remove_parent_functions() {
 
 }
 
+
+remove_action('woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title',10);
+add_action('woocommerce_shop_loop_item_title','custom_product_title_inject',10);
+function custom_product_title_inject()
+{
+   $pdf = get_field('custom_product_title'); 
+    if(!empty($custom_title)){
+        echo $custom_title;
+    }
+}
+
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
 function woo_new_product_tab( $tabs ) {
     
