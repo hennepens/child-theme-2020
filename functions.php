@@ -71,9 +71,13 @@ add_action('woocommerce_shop_loop_item_title','custom_product_title_inject',10);
 function custom_product_title_inject()
 {
    $pdf = get_field('custom_product_title'); 
+   echo '<h1 class="product_title entry-title">';
     if(!empty($custom_title)){
         echo $custom_title;
+    }else{
+      echo wp_kses_post(get_the_title());
     }
+    echo '</h1>';
 }
 
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
