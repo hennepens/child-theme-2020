@@ -68,12 +68,11 @@ function child_remove_parent_functions() {
 
 remove_action('woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title',10);
 remove_action('woocommerce_single_product_summary','woocommerce_template_single_title',5);
-add_action('woocommerce_shop_loop_item_title','custom_product_title_inject',10);
-add_action('woocommerce_single_product_summary','custom_product_title_inject',5);
+add_action('woocommerce_shop_loop_item_title','custom_loop_product_title_inject',10);
+add_action('woocommerce_single_product_summary','custom_single_product_title_inject',5);
 
 
-function custom_product_title_inject()
-{
+function custom_single_product_title_inject(){
    $custom_title = get_field('custom_product_title'); 
    echo '<h1 class="product_title entry-title">';
     if(!empty($custom_title)){
@@ -82,6 +81,17 @@ function custom_product_title_inject()
       echo wp_kses_post(get_the_title());
     }
     echo '</h1>';
+}
+
+function custom_loop_product_title_inject(){
+   $custom_title = get_field('custom_product_title'); 
+   echo '<h2 class="woocommerce-loop-product__title">';
+    if(!empty($custom_title)){
+        echo $custom_title;
+    }else{
+      echo wp_kses_post(get_the_title());
+    }
+    echo '</h2>';
 }
 
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
