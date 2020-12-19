@@ -3,7 +3,7 @@
 body {
 	font-family: $font-family-sans-serif;
 	transition: opacity .25s ease-out;
-	opacity: 0;
+	opacity: 1;
   	&.fade-out{
   		opacity: 1;
 	}
