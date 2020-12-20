@@ -320,7 +320,7 @@ echo
 
 	($subscription_options ? "<li". (isset($selected_subscription_option) ? " class='selected'" : "") .">".
 		"<input type='radio' id='subscriptions-list' name='purchase-options' value='subscription'". (isset($selected_subscription_option) ? " checked" : "") ." />\n".
-		"<label for='subscriptions-list' class='subscription-container'><span class='choose-label'>". ($prompt2 ? strip_tags($prompt) : __('Subscribe & Save 40%*')) . "<span class='subscription-term-notification'><i>*Minimum 3 Month Subscription</i></span></span><ul class='subscription-price'>". implode('', $hidden_options) ."</ul></label>\n".
+		"<label for='subscriptions-list' class='subscription-container'><span class='choose-label'>". ($prompt2 ? strip_tags($prompt) : __('Subscribe & Save 25%*')) . "<span class='subscription-term-notification'><i>*Minimum 3 Month Subscription</i></span></span><ul class='subscription-price'>". implode('', $hidden_options) ."</ul></label>\n".
 		"<div class='delivery-container'><h6 class='prompt-heading'>Choose a Subscription Cycle</h6><div class='subscription-delivery'><label class='delivery-every'>Deliver <span class='current_selected_qty'>1</span> <span class='current_selected_variant'></span> every</label><select name='subscription-options'>". implode('', $subscription_options) ."</select>\n" : "").
 		get_help_icon($tip_text) ."</div></div></li>\n".
 "</li>".
