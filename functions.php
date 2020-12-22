@@ -489,7 +489,7 @@ add_action( 'woocommerce_after_shop_loop_item', 'misha_after_add_to_cart_btn' );
  
 function misha_after_add_to_cart_btn(){
   global $product;
-  echo '<a class="subscription-message" href="'. get_permalink( $productUrl->ID ) .'&convert_to_sub'. $product->get_id() .'=6_week">Subscribe &amp; Save 25&percnt;</a>';
+  echo '<a class="subscription-message" href="'. get_permalink( $productUrl->ID ) .'&convert_to_sub_'. $product->get_parent_id() .'=6_week">Subscribe &amp; Save 25&percnt;</a>';
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
