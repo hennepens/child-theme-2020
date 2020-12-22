@@ -473,6 +473,29 @@ h2{
 			}
 			span:nth-child(2){
 				display: block !important;
+				em{
+					position: relative;
+					&:before,
+					&:after {
+						position: absolute;
+						vertical-align: middle;
+					    display: inline-block;
+					    content: "";
+					    border-top: 1px solid rgba(000, 000, 000, 0.3);
+					    width: 12%;
+					    margin: 0 1rem;
+					    top: 50%;
+					    @media only screen and (max-width: 767px) {
+							
+						}
+					}
+					&:before{
+						left: -24%;
+						 @media only screen and (max-width: 767px) {
+							
+						}
+					}
+				}
 			}
 			span:last-child{
 				padding: 5px 0;
@@ -679,10 +702,12 @@ clear:both;
 	    border-radius: 100px;
 	    color: #fff;
 	    text-transform: uppercase;
+	    transition: 100ms all ease;
 	    @media only screen and (max-width: 767px) {
 			width: 100%;
 		}
 	    &.loading{
+	    	padding-right: 50px;
 	    	&:after{
 	    		top: auto;
 	    	}
@@ -751,172 +776,7 @@ clear:both;
 	}
 }
 
-.wcsatt-options-wrapper{
-	
-	.wcsatt-options-product{
-		margin: 0 0 2em 0;
-		padding: 0;
-	}
-}
 
-.subscription-option{
-	display: none;
-	&.selected{
-		/*display: inherit;*/
-	}
-	input{
-		display: none;
-	}
-}
-
-.subscription-option-details{
-	.subscription-details{
-		display: none;
-	}
-}
-
-.subscription-details{
-	display: block;
-}
-
-.purchase-options{
-	li{
-		.subscription-price{
-			margin: 0;
-			padding: 0;
-			.one-time-option{
-				display: none !important;
-			}
-			.wcsatt-sub-discount{
-				display: none;
-			}
-			.subscription-option-details{
-				display: none;
-				min-height: auto !important;
-				padding: 0 !important;
-				@media only screen and (max-width: 767px) {
-					max-width: 90px;
-					text-align: right;
-				}
-			}
-			.subscription-option{
-				display: none;
-				min-height: auto !important;
-				padding: 0 !important;
-				&.selected{
-					display: block !important;
-					background-color: inherit;
-					&.one-time-option{
-						display: none;
-					}
-					.subscription-price{
-						display: inherit !important;
-					}
-				}
-				&:last-child{
-					display: block;
-					.subscription-option-details{
-						display: block;
-					}
-				}
-
-				label{
-					float: right;
-					width: auto;
-				}
-			}
-		}
-	}
-}
-
-.choose-label{
-	position: relative;
-	float: left;
-	width: auto;
-	flex-grow: 1;
-	font-weight: bold;
-	font-size: 1.15rem;
-	.subscription-term-notification{
-		display: block;
-		font-size: 0.75rem;
-		color: #999;
-		margin-top: -5px;
-	}
-}
-
-.one-time-price{
-	float: right;
-    font-size: large;
-    line-height: initial;
-    font-family: $font-family-libre-baskerville-regular;
-}
-.one-time-purchase-label{
-	flex-grow: 1;
-	padding-right: 15px;
-	color: #aaa;
-}
-.delivery-container{
-	padding: 15px;
-	border-top: 2px solid #fff;
-	display: none;
-	width: 100%;
-	.prompt-heading{
-		text-align: right;
-		margin-bottom: 15px;
-	}
-	.subscription-delivery{
-		width: 100%;
-		align-items: center;
-		justify-content: flex-end;
-		border-bottom-right-radius: 8px;
-		border-bottom-left-radius: 8px;
-		display: flex;
-		justify-content: flex-end;
-	.delivery-every{
-		width: auto;
-	}
-}
-}
-
-
-.selected{
-	.delivery-container{
-		display: flex;
-		flex-direction: column;
-	}
-	.one-time-purchase-label{
-		color: inherit;
-	}
-}
-
-.generatedRadios{
-	padding: 15px 0;
-	width: 50%;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    margin-right: 10px;
-    color: #ccc;
-    &:last-child{
-    	padding-right: 0;
-    }
-    &.selected{
-    	border-color: #333;
-    	color: inherit;
-    	background-color: #edebe6;
-    }
-	label{
-		margin: 0;
-		display: flex;
-		align-items: center;
-	}
-	input{
-		width: 1.25rem;
-		height: 1.25rem;
-		margin-right: 5px;
-	}
-}
 
 .woocommerce-variation-price{
 	.price{
@@ -1084,7 +944,172 @@ display: none;
     		}
 		}
 	}
+	.wcsatt-options-wrapper{
+	
+	.wcsatt-options-product{
+		margin: 0 0 2em 0;
+		padding: 0;
+		}
+	}
 
+	.subscription-option{
+		display: none;
+		&.selected{
+			/*display: inherit;*/
+		}
+		input{
+			display: none;
+		}
+	}
+
+	.subscription-option-details{
+		.subscription-details{
+			display: none;
+		}
+	}
+
+	.subscription-details{
+		display: block;
+	}
+
+	.purchase-options{
+		li{
+			.subscription-price{
+				margin: 0;
+				padding: 0;
+				.one-time-option{
+					display: none !important;
+				}
+				.wcsatt-sub-discount{
+					display: none;
+				}
+				.subscription-option-details{
+					display: none;
+					min-height: auto !important;
+					padding: 0 !important;
+					@media only screen and (max-width: 767px) {
+						max-width: 90px;
+						text-align: right;
+					}
+				}
+				.subscription-option{
+					display: none;
+					min-height: auto !important;
+					padding: 0 !important;
+					&.selected{
+						display: block !important;
+						background-color: inherit;
+						&.one-time-option{
+							display: none;
+						}
+						.subscription-price{
+							display: inherit !important;
+						}
+					}
+					&:last-child{
+						display: block;
+						.subscription-option-details{
+							display: block;
+						}
+					}
+
+					label{
+						float: right;
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+
+	.choose-label{
+		position: relative;
+		float: left;
+		width: auto;
+		flex-grow: 1;
+		font-weight: bold;
+		font-size: 1.15rem;
+		.subscription-term-notification{
+			display: block;
+			font-size: 0.75rem;
+			color: #999;
+			margin-top: -5px;
+		}
+	}
+
+	.one-time-price{
+		float: right;
+	    font-size: large;
+	    line-height: initial;
+	    font-family: $font-family-libre-baskerville-regular;
+	}
+	.one-time-purchase-label{
+		flex-grow: 1;
+		padding-right: 15px;
+		color: #aaa;
+	}
+	.delivery-container{
+		padding: 15px;
+		border-top: 2px solid #fff;
+		display: none;
+		width: 100%;
+		.prompt-heading{
+			text-align: right;
+			margin-bottom: 15px;
+		}
+		.subscription-delivery{
+			width: 100%;
+			align-items: center;
+			justify-content: flex-end;
+			border-bottom-right-radius: 8px;
+			border-bottom-left-radius: 8px;
+			display: flex;
+			justify-content: flex-end;
+			.delivery-every{
+				width: auto;
+			}
+		}
+	}
+
+
+	.selected{
+		.delivery-container{
+			display: flex;
+			flex-direction: column;
+		}
+		.one-time-purchase-label{
+			color: inherit;
+		}
+	}
+
+	.generatedRadios{
+		padding: 15px 0;
+		width: 50%;
+	    border: 1px solid #ccc;
+	    border-radius: 8px;
+	    display: flex;
+	    justify-content: center;
+	    margin-right: 10px;
+	    color: #ccc;
+	    &:last-child{
+	    	padding-right: 0;
+	    }
+	    &.selected{
+	    	border-color: #333;
+	    	color: inherit;
+	    	background-color: #edebe6;
+	    }
+		label{
+			margin: 0;
+			display: flex;
+			align-items: center;
+		}
+		input{
+			width: 1.25rem;
+			height: 1.25rem;
+			margin-right: 5px;
+		}
+	}
 }
 .bb-content{
 	display: block;
@@ -1284,6 +1309,38 @@ display: none;
 				display: none;
 			}
 		}
+	}
+	.wcsatt-options{
+		height: 30px;
+    	width: 150px;
+    	border: 1px #000 solid;
+    	li{
+    		padding: 5px 10px;
+    		z-index: 2;
+    		display: none;
+    		&.selectedOption{
+    			float: left;
+    			width: 130px;
+    			display: block;
+    			background: #ddd;
+    			&:hover{
+    				background: #09f;
+    			}
+    		}
+    		&.selected:not(> input:checked){
+    			background: #09f;
+    		}
+    		input:checked{
+    			cursor: pointer;
+    		}
+    	}
+    	&.open{
+    		position: absolute;
+    		width: 200px;
+    		li{
+    			display: block;
+    		}
+    	}
 	}
 }
 

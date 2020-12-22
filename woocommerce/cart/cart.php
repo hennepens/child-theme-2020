@@ -172,5 +172,24 @@ do_action( 'woocommerce_before_cart' ); ?>
 		do_action( 'woocommerce_cart_collaterals' );
 	?>
 </div>
+<script>
+	jQuery(document).ready(function(){
+		console.log('hello?');
+		var optionSelection = jQuery(".wcsatt-options li label input:checked");
+		if(jQuery(optionSelection).attr('checked')){
+			jQuery(optionSelection).parent().parent().toggleClass('selectedOption');
+		}
+		jQuery(".wcsatt-options").on("click", function() {
+	    jQuery(this).toggleClass('open');
+		});
 
+		var allOptions = jQuery(".wcsatt-options").children('li:not(> input:checked)');
+		jQuery(".wcsatt-options").on("click", "li:not(.one-time-option)", function() {
+		    allOptions.removeClass('selected');
+		    jQuery(this).addClass('selected');
+		    jQuery(".wcsatt-options").children('li > input:checked').html(jQuery(this).html());
+		    allOptions.toggle();
+		});
+	});
+</script>
 <?php do_action( 'woocommerce_after_cart' ); ?>
