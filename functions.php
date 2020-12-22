@@ -227,7 +227,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
  */
 
 // Remove filters added by "WC Subscriptions" and "WC All Products For Subscriptions"
-remove_filter( 'woocommerce_cart_item_price', array( 'WCS_ATT_Display_Cart', 'show_cart_item_subscription_options' ), 1000, 3 );
+//remove_filter( 'woocommerce_cart_item_price', array( 'WCS_ATT_Display_Cart', 'show_cart_item_subscription_options' ), 1000, 3 );
 //remove_filter( 'woocommerce_cart_item_subtotal', array( 'WC_Subscriptions_Switcher', 'add_cart_item_switch_direction' ), 10, 3 );
   add_action( 'wp_enqueue_scripts', function() {
   if( ! function_exists( 'is_product' ) || ! is_product() ) { return; }
