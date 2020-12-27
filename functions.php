@@ -615,19 +615,14 @@ function ql_woocommerce_ajax_add_to_cart() {
         }
 
 
-add_filter( 'user_has_cap', 'bbloomer_order_pay_without_login', 9999, 3 );
- 
-function bbloomer_order_pay_without_login( $allcaps, $caps, $args ) {
-   if ( isset( $caps[0], $_GET['key'] ) ) {
-      if ( $caps[0] == 'pay_for_order' ) {
-         $order_id = isset( $args[2] ) ? $args[2] : null;
-         $order = wc_get_order( $order_id );
-         if ( $order ) {
-            $allcaps['pay_for_order'] = true;
-         }
-      }
-   }
-   return $allcaps;
+// Custom payment link for speedy checkout
+function anchor_get_checkout_payment_url( $payment_url ) {
+
+    $home_url = esc_url( home_url( '/' ) );
+
+    $new_payment_url = str_replace( $home_url . 'checkout/order-pay/', $home_url . 'checkout-express/', $payment_url );
+
+    return $new_payment_url;
 }
 
 
