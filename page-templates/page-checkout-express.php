@@ -2,7 +2,7 @@
 /**
  * Template Name: Express Checkout
  *
- * Template for displaying a page without sidebar even if a sidebar widget is published.
+ * 
  *
  * @package understrap
  */
@@ -12,7 +12,7 @@ $order_id = get_query_var( 'callback' );
 $key      = $_GET['key'];
 
 // Loads user and key from order
-$customer_id = get_field( '_customer_user', $order_id );
+$customer_id = get_field( '_customer_email', $order_id );
 $order_key   = get_field( '_order_key', $order_id );
 
 // Loads order
