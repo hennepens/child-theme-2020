@@ -615,15 +615,7 @@ function ql_woocommerce_ajax_add_to_cart() {
         }
 
 
-// Custom payment link for speedy checkout
-function anchor_get_checkout_payment_url( $payment_url ) {
 
-    $home_url = esc_url( home_url( '/' ) );
-
-    $new_payment_url = str_replace( $home_url . 'checkout/order-pay/', $home_url . 'checkout-express/', $payment_url );
-
-    return $new_payment_url;
-}
 
 
 
