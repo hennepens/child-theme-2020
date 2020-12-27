@@ -224,13 +224,6 @@ function get_help_icon($content, $type = 'text', $echo = false){
   else return $output;
 }
 
-/*
- * Product subscriptions: Cart
- */
-
-// Remove filters added by "WC Subscriptions" and "WC All Products For Subscriptions"
-//remove_filter( 'woocommerce_cart_item_price', array( 'WCS_ATT_Display_Cart', 'show_cart_item_subscription_options' ), 1000, 3 );
-//remove_filter( 'woocommerce_cart_item_subtotal', array( 'WC_Subscriptions_Switcher', 'add_cart_item_switch_direction' ), 10, 3 );
   add_action( 'wp_enqueue_scripts', function() {
   if( ! function_exists( 'is_product' ) || ! is_product() ) { return; }
   wp_enqueue_script( 'jquery' );
@@ -420,37 +413,6 @@ function lw_hide_sale_flash(){
   return false;
 }
 
-//add_action( 'woocommerce_before_single_product', 'bbloomer_prev_next_product' );
- 
-// and if you also want them at the bottom...
-//add_action( 'woocommerce_after_single_product', 'bbloomer_prev_next_product' );
- 
-function bbloomer_prev_next_product(){
- 
-echo '<div class="prev_next_buttons">';
-  $prevPost = get_previous_post(true);
-  $nextPost = get_next_post(true);
-
-  if($prevPost) {
-    $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );
-  }else{
-    $prevthumbnail = '';
-  }
-  if($nextPost){
-    $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(100,100) );
-  }else{
-    $nextthumbnail = '';
-  }
-   // 'product_cat' will make sure to return next/prev from current category
-   $previous = next_post_link('%link', '&larr; %prevthumbnail  %title ', TRUE, ' ', 'product_cat');
-   $next = previous_post_link('%link', '%title nextthumbnail  &rarr;', TRUE, ' ', 'product_cat');
- 
-   echo $previous;
-   echo $next;
-    
-echo '</div>';
-         
-}
 
 add_action( 'woocommerce_after_single_product', 'wpsites_image_nav_links' );
 
@@ -556,67 +518,18 @@ function woocommerce_quantity_input( $args = array(), $product = null, $echo = t
 add_action( 'woocommerce_review_order_before_submit', 'bbloomer_add_checkout_minimum_notice', 9 );
     
 function bbloomer_add_checkout_minimum_notice() {
-if ( class_exists( 'WC_Subscriptions_Product' ) && WC_Subscriptions_Cart::cart_contains_subscription( $product )) {
-  woocommerce_form_field( 'sub_min_notice', array(
-     'type'          => 'checkbox',
-     'class'         => array('form-row sub_min_notice'),
-     'label_class'   => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
-     'input_class'   => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
-     'required'      => true,
-     'label'         => 'I acknowledge that a minimum of 3 subscription cycles is required for 40% off promotion.*',
-  )); 
-}
+  if ( class_exists( 'WC_Subscriptions_Product' ) && WC_Subscriptions_Cart::cart_contains_subscription( $product )) {
+    woocommerce_form_field( 'sub_min_notice', array(
+       'type'          => 'checkbox',
+       'class'         => array('form-row sub_min_notice'),
+       'label_class'   => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
+       'input_class'   => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
+       'required'      => true,
+       'label'         => 'I acknowledge that a minimum of 3 subscription cycles is required for 40% off promotion.*',
+    )); 
+  }
    
 }
-
-
-add_action('wp_ajax_ql_woocommerce_ajax_add_to_cart', 'ql_woocommerce_ajax_add_to_cart'); 
-
-add_action('wp_ajax_nopriv_ql_woocommerce_ajax_add_to_cart', 'ql_woocommerce_ajax_add_to_cart');          
-
-function ql_woocommerce_ajax_add_to_cart() {  
-
-    $product_id = apply_filters('ql_woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
-
-    $quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
-
-    $variation_id = absint($_POST['variation_id']);
-
-    $passed_validation = apply_filters('ql_woocommerce_add_to_cart_validation', true, $product_id, $quantity);
-
-    $product_status = get_post_status($product_id); 
-
-    if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id) && 'publish' === $product_status) { 
-
-        do_action('ql_woocommerce_ajax_added_to_cart', $product_id);
-
-            if ('yes' === get_option('ql_woocommerce_cart_redirect_after_add')) { 
-
-                wc_add_to_cart_message(array($product_id => $quantity), true); 
-
-            } 
-
-            WC_AJAX :: get_refreshed_fragments(); 
-
-            } else { 
-
-                $data = array( 
-
-                    'error' => true,
-
-                    'product_url' => apply_filters('ql_woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id));
-
-                echo wp_send_json($data);
-
-            }
-
-            wp_die();
-
-        }
-
-
-
-
 
 
 ?>
