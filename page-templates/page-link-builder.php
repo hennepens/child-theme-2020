@@ -1,3 +1,17 @@
+<?php
+/**
+ * Template Name: Link Builder
+ *
+ * Template for displaying a page without sidebar even if a sidebar widget is published.
+ *
+ * @package understrap
+ */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+get_header(); ?>
+
 <ul class="products">
 	<?php
 		$args = array(
@@ -15,3 +29,4 @@
 		wp_reset_postdata();
 	?>
 </ul>
+<?php get_footer(); ?>
