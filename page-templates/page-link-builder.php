@@ -31,7 +31,7 @@ $loop = new WP_Query( $args );
   }
 
   function createLink (){
-    var baseUrl = "https://dev.hennepens.com/checkout/?clear-cart?";
+    var baseUrl = "https://dev.hennepens.com/checkout/?";
     var args = {};
     var products  = Object.keys(dataDict);
     let productId, quantity, parentid, purchaseline;
