@@ -40,7 +40,7 @@ function custom_post_type() {
 // Set other options for Custom Post Type
      
     $args = array(
-        'label'               => __( 'share-links', 'understrap' ),
+        'label'               => __( 'Share Links', 'understrap' ),
         'description'         => __( 'Links shared to people', 'understrap' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
@@ -68,7 +68,7 @@ function custom_post_type() {
     );
      
     // Registering your Custom Post Type
-    register_post_type( 'share_links', $args );
+    register_post_type( 'sharelinks', $args );
  
 }
  
