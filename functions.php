@@ -31,12 +31,14 @@ function page_load_script(){
 
 
 function understrap_remove_scripts() {
+  if( !current_user_can('administrator') ) {
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
     wp_deregister_style( 'dashicons' ); 
     wp_dequeue_script( 'understrap-scripts' );
     wp_deregister_script( 'understrap-scripts' );
     wp_dequeue_script( 'wc-cart-fragments' ); 
+  }
 
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
