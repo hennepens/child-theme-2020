@@ -532,13 +532,4 @@ function bbloomer_add_checkout_minimum_notice() {
 }
 
 
-function wcbv_variation_is_active( $active, $variation ) {
- if( ! $variation->is_in_stock() ) {
- return false;
- }
- return $active;
-}
-add_filter( 'woocommerce_variation_is_active', 'wcbv_variation_is_active', 10, 2 );
-
-
 ?>
