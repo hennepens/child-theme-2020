@@ -20,6 +20,7 @@ $loop = new WP_Query( $args );
 
 <div class="container">
 <script>
+  var dataDict = {};
   var slugify = function(text) {
     return text.toString().toLowerCase()
       .replace(/\s+/g, '')           // Replace spaces with -
@@ -27,6 +28,47 @@ $loop = new WP_Query( $args );
       .replace(/\-\-+/g, '-')         // Replace multiple - with single -
       .replace(/^-+/, '')             // Trim - from start of text
       .replace(/-+$/, '');            // Trim - from end of text
+  }
+
+  function createLink (){
+    var baseUrl = "https://dev.hennepens.com/checkout/?clear-cart?";
+    var args = {};
+    var products  = Object.keys(dataDict);
+    let productId, quantity, parentid, purchaseline;
+    if (products.length > 1){
+      var lines = [];
+      for (var i = 0; i < products.length; i++) {
+        checkId = products[i];
+        [productId, quantity, parentid, purchaseline] = dataDict[checkId];
+        lines.push([productId + ":" + quantity])
+        if (purchaseline != "0"){
+          args["convert_to_sub_"+parentid] = purchaseline;
+        }
+      }
+      args["add-to-cart"] = lines.join();
+    }
+    if (products.length == 1){
+      checkId = products[0];
+      [productId, quantity, parentid, purchaseline] = dataDict[checkId];
+      args["add-to-cart"] =  productId;
+      args["quantity"] = quantity;
+      if (purchaseline != "0"){
+        args["convert_to_sub_"+parentid] = purchaseline;
+      }
+    }
+    var finalLink = baseUrl + serialize(args);
+    document.getElementById('linkString').value = finalLink;
+  }
+
+  function serialize(obj) {
+    var str = [];
+    var keys  = Object.keys(obj);
+    keys.sort();
+    for (var i = 0; i < keys.length; i++) {
+        var p = keys[i];
+        str.push(p + "=" + obj[p]);
+    }
+    return str.join("&");
   }
 
   jQuery(document).ready( function() {
@@ -38,14 +80,14 @@ $loop = new WP_Query( $args );
       var optionSelected = jQuery("option:selected", this);
       jQuery('option').removeClass('selected');
       jQuery(optionSelected).toggleClass('selected','');
-      
+
       jQuery('.variant-parent-id').text(optionSelected.attr('data-parent-id'));
       if(optionSelected.is(':selected')) {
-          
+
           queryArray = jQuery.grep(queryArray, function(item) {
             return item.key !== optionSelected.attr('data-key');
           });
-        
+
         queryArray.push({
           key: self.attr('data-key'),
           val: self.val(),
@@ -59,7 +101,7 @@ $loop = new WP_Query( $args );
       }
       if(queryArray.length) {
         jQuery('.variant-link-item-id').text( function() {
-          
+
           jQuery.each( queryArray, function(i, v) {
             q = queryArray[i].val;
           });
@@ -80,12 +122,12 @@ $loop = new WP_Query( $args );
           queryArray = jQuery.grep(queryArray, function(item) {
             return item.key !== optionSelected.attr('data-key');
           });
-        
+
         queryArray.push({
           key: self.attr('data-key'),
           val: self.val()
         });
-        
+
       } else {
         queryArray = jQuery.grep(queryArray, function(item) {
           return item.val !== self.val();
@@ -93,11 +135,11 @@ $loop = new WP_Query( $args );
       }
       if(queryArray.length) {
         jQuery('.link-item-qty').text( function() {
-          
+
           jQuery.each( queryArray, function(i, v) {
             if(queryArray[i].val == 1){
               q = '';
-              }else{          
+              }else{
                 q = '&quantity=' + queryArray[i].val;
               }
           });
@@ -118,12 +160,12 @@ $loop = new WP_Query( $args );
           queryArray = jQuery.grep(queryArray, function(item) {
             return item.key !== optionSelected.attr('data-key');
           });
-        
+
         queryArray.push({
           key: self.attr('data-key'),
           val: self.val()
         });
-        
+
       } else {
         queryArray = jQuery.grep(queryArray, function(item) {
           return item.val !== self.val();
@@ -131,11 +173,11 @@ $loop = new WP_Query( $args );
       }
       if(queryArray.length) {
         jQuery('.variant-link-item-subscribe').html( function() {
-          
+
           jQuery.each( queryArray, function(i, v) {
             if(queryArray[i].val == 1){
               q = '';
-              }else{ 
+              }else{
                parentID = jQuery('.link-list option:selected').attr('data-parent-id');
                 q = '&convert_to_sub_<span class="variant-parent-id">' + parentID + '</span>=' + queryArray[i].val;
               }
@@ -158,14 +200,20 @@ $loop = new WP_Query( $args );
       var quantityline = jQuery("#quantity-line").val();
       var purchaseline = jQuery("#purchase-line").val();
       var purchaselinename = jQuery("#purchase-line").find('option:selected').attr("name");
-      var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + productlinename + "</td><td>"+ productlineattr +"<td>" + quantityline + "</td><td>" + purchaselinename + "</td><td>" + productlineid + "</td><td>" + productlineparentid + "</td></tr>";
-      jQuery("table tbody").append(markup);
+      var checkId = productlineid + "-" + quantityline + "-" + purchaseline;
+      if ( !dataDict.hasOwnProperty(checkId) ){
+        var markup = "<tr><td><input type='checkbox' name='record' value="+ checkId +"></td><td>" + productlinename + "</td><td>"+ productlineattr +"<td>" + quantityline + "</td><td>" + purchaselinename + "</td><td>" + productlineid + "</td><td>" + productlineparentid + "</td></tr>";
+        jQuery("table tbody").append(markup);
+        dataDict[checkId] = [productlineid, quantityline, productlineparentid, purchaseline];
+      }
     });
-        
+
     jQuery(".delete-row").click(function(){
       jQuery("table tbody").find('input[name="record"]').each(function(){
         if(jQuery(this).is(":checked")){
               jQuery(this).parents("tr").remove();
+              checkId =  jQuery(this).val();
+              delete dataDict[checkId];
           }
       });
     });
@@ -180,13 +228,13 @@ $loop = new WP_Query( $args );
       while ( $loop->have_posts() ) : $loop->the_post(); ?>
         <?php  $variations = $product->get_available_variations();
          $parent_id = $product->get_id();
-        foreach ( $variations as $key => $value ) { 
+        foreach ( $variations as $key => $value ) {
           $variation_id = $value['variation_id'];
          $variation_obj = new WC_Product_variation($variation_id);
          $stock = $variation_obj->get_stock_quantity(); ?>
          <?php foreach ($value['attributes'] as $attribute => $term_slug ) { ?>
           <option data-key="variation-option" value="<?php echo $value['variation_id']; ?>" name="<?php echo the_title() ?>" attributename="<?php echo $term_slug  ?>"  data-parent-id="<?php echo $parent_id; ?>" <?php if($stock == 0){?> disabled <?php }?>>
-            <?php echo the_title() . " "; 
+            <?php echo the_title() . " ";
                     // Get the taxonomy slug
                     $taxonmomy = str_replace( 'attribute_', '', $attribute );
 
@@ -248,15 +296,17 @@ $loop = new WP_Query( $args );
     <td></td>
     <td></td>
     <td></td>
-    </tr> 
+    </tr>
 </table>
  <button type="button" class="delete-row">Delete Order Line(s)</button>
 
 <br/>
-<?php $fullstring = "https://dev.hennepens.com/checkout/?add-to-cart=<span class='variant-link-item'><span class='variant-link-item-id'></span><span class='link-item-qty'></span><!--<span class='variant-link-item-additional'><span class='variant-link-item-id'></span><span class='link-item-qty'></span></span>--></span><span class='variant-link-item-subscribe'></span>";?>
-<span class="fullstring" style="visibility: hidden;"><?php echo $fullstring; ?></span>
+<button type="button" onclick="createLink()">Generate Link</button><br/>
+<br/>
+
 <form method="POST" id="new_post" name="new_post" action="">
-  <input type="text" name="customlink" placeholder="select products above" style="width: 100%;" class="customlink"  value="" />
+  
+  <input type="text" id="linkString" name="linkString" style="width: 100%;" class="linkString"  value="">
   <input type="text" name="recipientname" placeholder="Name of Recipient" value="" /><br/>
   <input type="text" name="linkemail" placeholder="Email of Recipient" value="" /><br/>
   <textarea name="message" placeholder="Add a Custom Message" value="" ></textarea><br/>
@@ -265,7 +315,7 @@ $loop = new WP_Query( $args );
   <?php wp_nonce_field( 'new-post' ); ?>
 </form>
 </div>
-<?php 
+<?php
 if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") {
 function get_custom_email_html($heading = false, $mailer, $recipientname, $message, $customlink ) {
 
@@ -293,7 +343,7 @@ $recipient = $_POST['linkemail'];
 $subject = __("Your Checkout is Ready!", 'understrap');
 $recipientname = $_POST['recipientname'];
 $message = $_POST['message'];
-$customlink = $_POST['customlink'];
+$customlink = $_POST['linkString'];
 $content = get_custom_email_html($subject, $mailer, $recipientname, $message, $customlink);
 $headers = "Content-Type: text/html\r\n";
 
@@ -308,8 +358,8 @@ $mailer->send($recipient, $subject, $content, $headers );
     } else {
         echo 'Please enter a Name';
     }
-    if (isset ($_POST['customlink'])) {
-        $customlinkpost = $_POST['customlink'];
+    if (isset ($_POST['linkString'])) {
+        $customlinkpost = $_POST['linkString'];
     } else {
         echo 'Please enter the content';
     }
@@ -322,7 +372,7 @@ $mailer->send($recipient, $subject, $content, $headers );
         'post_type' => 'sharelinks'  //'post',page' or use a custom post type if you want to
     );
     //save the new post
-    $pid = wp_insert_post($new_post); 
+    $pid = wp_insert_post($new_post);
     //insert taxonomies
 }
 
