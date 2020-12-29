@@ -14,6 +14,70 @@ return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
 
+/*
+* Creating a function to create our CPT
+*/
+ 
+function custom_post_type() {
+ 
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Share Links', 'Post Type General Name', 'understap' ),
+        'singular_name'       => _x( 'Share Link', 'Post Type Singular Name', 'understrap' ),
+        'menu_name'           => __( 'Share Links', 'twentytwenty' ),
+        'parent_item_colon'   => __( 'Parent Share Link', 'understrap' ),
+        'all_items'           => __( 'All Share Links', 'understrap' ),
+        'view_item'           => __( 'View Share Link', 'understrap' ),
+        'add_new_item'        => __( 'Add New Share Link', 'understrap' ),
+        'add_new'             => __( 'Add New', 'understrap' ),
+        'edit_item'           => __( 'Edit Share Link', 'understrap' ),
+        'update_item'         => __( 'Update Share Link', 'understrap' ),
+        'search_items'        => __( 'Search Share Link', 'understrap' ),
+        'not_found'           => __( 'Not Found', 'understrap' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'understrap' ),
+    );
+     
+// Set other options for Custom Post Type
+     
+    $args = array(
+        'label'               => __( 'share-links', 'understrap' ),
+        'description'         => __( 'Links shared to people', 'understrap' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array( 'share categories' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+ 
+    );
+     
+    // Registering your Custom Post Type
+    register_post_type( 'share_links', $args );
+ 
+}
+ 
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+ 
+add_action( 'init', 'custom_post_type', 0 );
 
 
 
