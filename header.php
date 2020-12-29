@@ -26,8 +26,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.ttf">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/superior-regular-webfont.woff2">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/proximanova-regular-webfont.woff2">
-	<link rel="preload" as="image" href="https://f8p2j7h2.rocketcdn.me/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg">
-	<link rel="preload" as="image" href="https://f8p2j7h2.rocketcdn.me/wp-content/uploads/2020/12/hennepens-hero-image-mobile.jpg">
+	<link rel="preload" as="image" href="https://f8p2j7h2.rocketcdn.me/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg" type="image/webp">
+	<link rel="preload" as="image" href="https://f8p2j7h2.rocketcdn.me/wp-content/uploads/2020/12/hennepens-hero-image-mobile.jpg" type="image/webp">
 	
 	<?php wp_head(); ?>
 </head>
