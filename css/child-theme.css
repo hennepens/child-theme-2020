@@ -11411,7 +11411,9 @@ h2 {
       font-size: .9rem;
       font-style: italic;
       color: #356e3e;
-      margin-top: 10px; }
+      margin-top: 10px;
+      padding: 0;
+      border: 0; }
 
 @media only screen and (max-width: 767px) {
   li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
