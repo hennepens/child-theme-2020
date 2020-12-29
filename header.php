@@ -18,13 +18,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="preconnect" href="https://f8p2j7h2.rocketcdn.me">
+	<link rel="dns-prefetch" href="https://f8p2j7h2.rocketcdn.me">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-bold-webfont.woff2">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-regular-webfont.woff2">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-italic-webfont.woff2">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.ttf">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/superior-regular-webfont.woff2">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/proximanova-regular-webfont.woff2">
-	<link rel="preconnect" href="https://f8p2j7h2.rocketcdn.me/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg">
+	<link rel="preload" as="image" href="https://f8p2j7h2.rocketcdn.me/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg">
+	<link rel="preload" as="image" href="https://f8p2j7h2.rocketcdn.me/wp-content/uploads/2020/12/hennepens-hero-image-mobile.jpg">
+	
 	<?php wp_head(); ?>
 </head>
 
