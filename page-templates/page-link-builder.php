@@ -255,16 +255,18 @@ $loop = new WP_Query( $args );
 <br/>
 <?php $fullstring = "https://dev.hennepens.com/checkout/?add-to-cart=<span class='variant-link-item'><span class='variant-link-item-id'></span><span class='link-item-qty'></span><!--<span class='variant-link-item-additional'><span class='variant-link-item-id'></span><span class='link-item-qty'></span></span>--></span><span class='variant-link-item-subscribe'></span>";?>
 <span class="fullstring" style="visibility: hidden;"><?php echo $fullstring; ?></span>
-<form method="POST">
+<form method="POST" id="new_post" name="new_post" action="">
   <input type="text" name="customlink" placeholder="select products above" style="width: 100%;" class="customlink"  value="" />
   <input type="text" name="recipientname" placeholder="Name of Recipient" value="" /><br/>
   <input type="text" name="linkemail" placeholder="Email of Recipient" value="" /><br/>
   <textarea name="message" placeholder="Add a Custom Message" value="" ></textarea><br/>
   <button type="submit" name="submit" value="submit" method="post" >Send Now!</button>
+  <input type="hidden" name="action" value="new_post" />
+  <?php wp_nonce_field( 'new-post' ); ?>
 </form>
 </div>
 <?php 
-if(isset($_POST['submit'])){
+if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") {
 function get_custom_email_html($heading = false, $mailer, $recipientname, $message, $customlink ) {
 
 
@@ -297,6 +299,32 @@ $headers = "Content-Type: text/html\r\n";
 
 //send the email through wordpress
 $mailer->send($recipient, $subject, $content, $headers );
+
+
+
+    // Do some minor form validation to make sure there is content
+    if (isset ($_POST['recipientname'])) {
+        $title =  $_POST['recipientname'];
+    } else {
+        echo 'Please enter a Name';
+    }
+    if (isset ($_POST['customlink'])) {
+        $customlinkpost = $_POST['customlink'];
+    } else {
+        echo 'Please enter the content';
+    }
+
+    // Add the content of the form to $post as an array
+    $new_post = array(
+        'post_title'    => $title,
+        'post_content'  => $customlinkpost,
+        'post_status'   => 'draft',           // Choose: publish, preview, future, draft, etc.
+        'post_type' => 'sharelinks'  //'post',page' or use a custom post type if you want to
+    );
+    //save the new post
+    $pid = wp_insert_post($new_post); 
+    //insert taxonomies
 }
+
 ?>
 <?php get_footer(); ?>
