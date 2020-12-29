@@ -685,12 +685,15 @@ function woo_hack_invoke_private_method( $class_name, $methodName ) {
 }
 
 // check for clear-cart get param to clear the cart, append ?clear-cart to any site url to trigger this
-add_action( 'init', 'woocommerce_clear_cart_url' );
-function woocommerce_clear_cart_url() {
-  if ( isset( $_GET['clear-cart'] ) ) {
+add_filter( 'woocommerce_add_to_cart_validation', 'woo_custom_add_to_cart_before' );
+ 
+function woo_custom_add_to_cart_before( $cart_item_data ) {
+ 
     global $woocommerce;
     $woocommerce->cart->empty_cart();
-  }
+ 
+    // Do nothing with the data and return
+    return true;
 }
 
 ?>
