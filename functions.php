@@ -620,7 +620,19 @@ function woo_hack_invoke_private_method( $class_name, $methodName ) {
 }
 
 
+function get_custom_email_html( $order, $heading = false, $mailer ) {
 
+  $template = 'emails/prebuilt-cart.php';
+
+  return wc_get_template_html( $template, array(
+    'order'         => $order,
+    'email_heading' => $heading,
+    'sent_to_admin' => false,
+    'plain_text'    => false,
+    'email'         => $mailer
+  ) );
+
+}
 
 
 ?>
