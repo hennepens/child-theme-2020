@@ -24,6 +24,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.ttf">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/superior-regular-webfont.woff2">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/proximanova-regular-webfont.woff2">
+	<link rel="preconnect" href="https://f8p2j7h2.rocketcdn.me/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg">
 	<?php wp_head(); ?>
 </head>
 
