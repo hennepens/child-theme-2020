@@ -102,6 +102,8 @@ function understrap_remove_scripts() {
     wp_dequeue_script( 'understrap-scripts' );
     wp_deregister_script( 'understrap-scripts' );
     wp_dequeue_script( 'wc-cart-fragments' ); 
+    wp_dequeue_style( 'fontawesome' );
+    wp_deregister_style( 'fontawesome' );
   }
 
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
