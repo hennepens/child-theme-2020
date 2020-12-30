@@ -28,6 +28,10 @@ $upload_dir = wp_get_upload_dir();
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.ttf" crossorigin="anonymous">	
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/proximanova-regular-webfont.woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="/wp-content/plugins/woocommerce-side-cart-premium/assets/css/fonts/Woo-Side-Cart.ttf" crossorigin="anonymous">
+	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-regular-400.woff2" crossorigin="anonymous">
+
+
 	<link rel="preload" as="image" href="<?php echo $upload_dir['basedir'];?>/2020/12/hennepens-colorado-fields.jpg" type="image/webp">
 	<link rel="preload" as="image" href="<?php echo $upload_dir['basedir'];?>/2020/12/hennepens-hero-image-mobile.jpg" type="image/webp">
 	
