@@ -31,9 +31,11 @@ $upload_dir = wp_get_upload_dir();
 	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-regular-400.woff2" crossorigin="anonymous">
 
-
-	<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg" type="image/webp">
-	<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-hero-image-mobile.jpg" type="image/webp">
+	<?php if(!wp_is_mobile()){ ?>
+		<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg" type="image/webp">
+	<?php }else{ ?>
+		<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-hero-image-mobile.jpg" type="image/webp">
+	<?php } ?>
 	
 	<?php wp_head(); ?>
 </head>
@@ -66,9 +68,8 @@ $upload_dir = wp_get_upload_dir();
 			); ?>
 			<h1 class="navbar-brand mb-0 ">
 				<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
-					<img id="logo-svg" src="<?php echo get_stylesheet_directory_uri() .'/images/hennepens-logo-registered.svg';?>" alt="Hennepen's" width="300">
+					<img id="logo-svg" src="<?php echo get_stylesheet_directory_uri() .'/images/hennepens-logo-tagline.svg';?>" alt="Hennepen's" width="300">
 				</a>
-				<span class="tagline">Hemp Made</span>
 			</h1>
 			<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php/* esc_attr_e( 'Toggle navigation', 'understrap' );*/ ?>">
 				<span class="navbar-toggler-icon"></span>

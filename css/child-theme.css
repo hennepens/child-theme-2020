@@ -1769,24 +1769,16 @@ pre {
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
             box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25); }
-  .form-control::-webkit-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input::-webkit-input-placeholder,
-  .woocommerce-checkout .form-row .woocommerce-input-wrapper select::-webkit-input-placeholder,
-  .woocommerce-checkout .form-row .woocommerce-input-wrapper textarea::-webkit-input-placeholder {
+  .form-control::-webkit-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input::-webkit-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper select::-webkit-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper textarea::-webkit-input-placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control::-moz-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input::-moz-placeholder,
-  .woocommerce-checkout .form-row .woocommerce-input-wrapper select::-moz-placeholder,
-  .woocommerce-checkout .form-row .woocommerce-input-wrapper textarea::-moz-placeholder {
+  .form-control::-moz-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input::-moz-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper select::-moz-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper textarea::-moz-placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control:-ms-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input:-ms-input-placeholder,
-  .woocommerce-checkout .form-row .woocommerce-input-wrapper select:-ms-input-placeholder,
-  .woocommerce-checkout .form-row .woocommerce-input-wrapper textarea:-ms-input-placeholder {
+  .form-control:-ms-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input:-ms-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper select:-ms-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper textarea:-ms-input-placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control::-ms-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input::-ms-input-placeholder,
-  .woocommerce-checkout .form-row .woocommerce-input-wrapper select::-ms-input-placeholder,
-  .woocommerce-checkout .form-row .woocommerce-input-wrapper textarea::-ms-input-placeholder {
+  .form-control::-ms-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input::-ms-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper select::-ms-input-placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper textarea::-ms-input-placeholder {
     color: #6c757d;
     opacity: 1; }
   .form-control::placeholder, .woocommerce-checkout .form-row .woocommerce-input-wrapper input::placeholder,
@@ -3504,15 +3496,13 @@ input[type="button"].btn-block {
     background-color: #000;
     border: 0;
     border-radius: 1rem;
-    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     -moz-appearance: none;
          appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-moz-range-thumb {
-        -webkit-transition: none;
+        -moz-transition: none;
         transition: none; } }
     .custom-range::-moz-range-thumb:active {
       background-color: #595959; }
@@ -3533,14 +3523,12 @@ input[type="button"].btn-block {
     background-color: #000;
     border: 0;
     border-radius: 1rem;
-    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-ms-thumb {
-        -webkit-transition: none;
+        -ms-transition: none;
         transition: none; } }
     .custom-range::-ms-thumb:active {
       background-color: #595959; }
@@ -6622,7 +6610,6 @@ button.bg-dark:focus {
   position: fixed !important; }
 
 .position-sticky {
-  position: -webkit-sticky !important;
   position: sticky !important; }
 
 .fixed-top {
@@ -6639,9 +6626,8 @@ button.bg-dark:focus {
   left: 0;
   z-index: 1030; }
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
+@supports (position: sticky) {
   .sticky-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020; } }
@@ -11041,7 +11027,7 @@ h2 {
     .navbar .navbar-brand #logo-svg {
       -webkit-transition: all .25s ease-out;
       transition: all .25s ease-out;
-      max-height: 38px;
+      max-height: 60px;
       -webkit-filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
               filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
     .navbar .navbar-brand .tagline {
