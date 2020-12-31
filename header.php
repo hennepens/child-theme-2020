@@ -22,12 +22,7 @@ $upload_dir = wp_get_upload_dir();
 	<link rel="preconnect" href="https://f8p2j7h2.rocketcdn.me">
 	<link rel="dns-prefetch" href="https://f8p2j7h2.rocketcdn.me">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/superior-regular-webfont.woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-bold-webfont.woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-regular-webfont.woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-italic-webfont.woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.ttf" crossorigin="anonymous">	
-	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/proximanova-regular-webfont.woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="/wp-content/plugins/woocommerce-side-cart-premium/assets/css/fonts/Woo-Side-Cart.ttf" crossorigin="anonymous">
 	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-regular-400.woff2" crossorigin="anonymous">
 
