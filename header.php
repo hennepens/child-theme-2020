@@ -25,7 +25,6 @@ $upload_dir = wp_get_upload_dir();
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.ttf" crossorigin="anonymous">	
 	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-regular-400.woff2" crossorigin="anonymous">
-
 	<?php if(!wp_is_mobile()){ ?>
 		<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg" type="image/webp">
 	<?php }else{ ?>
