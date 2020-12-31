@@ -13,140 +13,6 @@
   font-style: normal;
   font-display: swap; }
 
-/*
-@font-face {
-    font-family: 'libre_baskervillebold';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/librebaskerville-bold-webfont.woff2') format('woff2'),
-         url('../fonts/librebaskerville-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'libre_baskervilleitalic';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/librebaskerville-italic-webfont.woff2') format('woff2'),
-         url('../fonts/librebaskerville-italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'libre_baskervilleregular';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/librebaskerville-regular-webfont.woff2') format('woff2'),
-         url('../fonts/librebaskerville-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-*/
-/*
-
-@font-face {
-    font-family: 'superiorbold';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-bold-webfont.woff2') format('woff2'),
-         url('../fonts/superior-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'superiorbold_rough';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-boldrough-webfont.woff2') format('woff2'),
-         url('../fonts/superior-boldrough-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'superiorrough';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-rough-webfont.woff2') format('woff2'),
-         url('../fonts/superior-rough-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'proxima_novaregular';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/proximanova-regular-webfont.woff2') format('woff2'),
-         url('../fonts/proximanova-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'proxima_novabold';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
-         url('../fonts/proxima_nova_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'proxima_nova_altbold';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_bold-webfont.woff2') format('woff2'),
-         url('../fonts/proxima_nova_alt_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'proxima_nova_altlight';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_light-webfont.woff2') format('woff2'),
-         url('../fonts/proxima_nova_alt_light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'proxima_nova_altthin';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_alt_thin-webfont.woff2') format('woff2'),
-         url('../fonts/proxima_nova_alt_thin-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'proxima_novablack';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_black-webfont.woff2') format('woff2'),
-         url('../fonts/proxima_nova_black-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'proxima_novaextrabold';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_extrabold-webfont.woff2') format('woff2'),
-         url('../fonts/proxima_nova_extrabold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'proxima_novathin';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/proxima_nova_thin-webfont.woff2') format('woff2'),
-         url('../fonts/proxima_nova_thin-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-*/
-/*
-$font-family-sans-serif-black: 'proxima_novablack';
-$font-family-sans-serif-thin: 'proxima_novathin';
-$font-family-sans-serif-alt-thin: 'proxima_nova_altthin';
-*/
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -8629,10 +8495,11 @@ body {
     opacity: 1; }
 
 p {
-  font-family: "Baskervville"; }
+  font-family: "Libre Baskerville"; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "libre_baskervilleitalic"; }
+  font-family: "Libre Baskerville";
+  font-style: italic; }
 
 h2 {
   font-size: 2.5rem; }
@@ -8737,7 +8604,7 @@ h2 {
       font-family: "superiorregular" !important; }
   .navbar a {
     color: #000;
-    font-family: "Baskervville"; }
+    font-family: "Libre Baskerville"; }
     .navbar a:hover {
       color: #356e3e; }
 
@@ -9000,8 +8867,9 @@ h2 {
           -ms-flex-positive: 1;
               flex-grow: 1; }
       .products li .woocommerce-loop-product__title span:first-child {
-        font-family: "libre_baskervillebold";
+        font-family: "Libre Baskerville";
         font-size: 1.5rem;
+        font-weight: 700;
         margin-bottom: 8px;
         display: block; }
         @media only screen and (max-width: 767px) {
@@ -9079,7 +8947,8 @@ h2 {
             -ms-flex-positive: 1;
                 flex-grow: 1; }
         .products li .product-info .woocommerce-loop-product__link .price {
-          font-family: "libre_baskervilleitalic";
+          font-family: "Libre Baskerville";
+          font-style: italic;
           color: #000 !important;
           margin-top: 0 !important;
           margin-bottom: -10px !important;
@@ -9187,7 +9056,8 @@ h2 {
   display: block;
   padding-bottom: 5px;
   font-size: 1.25rem;
-  font-family: "libre_baskervilleitalic"; }
+  font-family: "Libre Baskerville";
+  font-style: italic; }
   .woocommerce-variation-price .price .amount bdi {
     font-size: inherit; }
 
@@ -9344,10 +9214,12 @@ h2 {
   line-height: 2rem;
   width: 100%; }
   .single-product .summary .product_title span:first-child {
-    font-family: "libre_baskervillebold"; }
+    font-family: "Libre Baskerville";
+    font-weight: 700; }
   .single-product .summary .product_title span:nth-child(2) {
     display: block;
-    font-family: "libre_baskervilleitalic";
+    font-family: "Libre Baskerville";
+    font-style: italic;
     font-size: 1.25rem;
     margin-top: 15px;
     position: relative;
@@ -9460,7 +9332,7 @@ h2 {
   float: right;
   font-size: large;
   line-height: initial;
-  font-family: "Baskervville"; }
+  font-family: "Libre Baskerville"; }
 
 .single-product .one-time-purchase-label {
   -webkit-box-flex: 1;
