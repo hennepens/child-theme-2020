@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper" id="wrapper-footer">
+<div class="wrapper lazy" id="wrapper-footer" class="" data-bg="<?php echo get_stylesheet_directory_uri(); ?>/images/newsletter-bg-2.jpg">
 	<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 	<div class="container">
 		<div class="row">
