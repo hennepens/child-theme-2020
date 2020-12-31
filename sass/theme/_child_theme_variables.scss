@@ -18,6 +18,24 @@ $hennepens-green: #356e3e;
 // Custom Fonts
 //
 
+
+@font-face {
+    font-family: 'superiorregular';
+    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-regular-webfont.woff2') format('woff2'),
+         url('../fonts/superior-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face{
+  font-family: 'linearicons';
+  src:  url('../fonts/linearicons.eot?mlscn1#iefix') format('embedded-opentype'), url('../fonts/linearicons.ttf') format('truetype'), url('../fonts/linearicons.woff') format('woff'), url('../fonts/linearicons.svg?#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
 @font-face {
     font-family: 'libre_baskervillebold';
@@ -47,14 +65,7 @@ $hennepens-green: #356e3e;
 }
 */
 
-@font-face {
-    font-family: 'superiorregular';
-    src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-regular-webfont.woff2') format('woff2'),
-         url('../fonts/superior-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+
 
 /*
 
@@ -76,7 +87,6 @@ $hennepens-green: #356e3e;
     font-display: swap;
 }
 
-
 @font-face {
     font-family: 'superiorrough';
     src: local('Open Sans'), local('Open Sans'), url('../fonts/superior-rough-webfont.woff2') format('woff2'),
@@ -85,8 +95,6 @@ $hennepens-green: #356e3e;
     font-style: normal;
     font-display: swap;
 }
-
-
 
 @font-face {
     font-family: 'proxima_novaregular';
@@ -104,17 +112,7 @@ $hennepens-green: #356e3e;
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}*/
-
-@font-face{
-  font-family: 'linearicons';
-  src:  url('../fonts/linearicons.eot?mlscn1#iefix') format('embedded-opentype'), url('../fonts/linearicons.ttf') format('truetype'), url('../fonts/linearicons.woff') format('woff'), url('../fonts/linearicons.svg?#icons') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
-
-/*
 
 @font-face {
     font-family: 'proxima_nova_altbold';
