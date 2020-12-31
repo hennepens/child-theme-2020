@@ -141,6 +141,8 @@ remove_action('woocommerce_single_product_summary','woocommerce_template_single_
 add_action('woocommerce_shop_loop_item_title','custom_loop_product_title_inject',10);
 add_action('woocommerce_single_product_summary','custom_single_product_title_inject',5);
 
+add_filter( 'jetpack_sharing_counts', '__return_false', 99 );
+add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
 
 function custom_single_product_title_inject(){
    $custom_title = get_field('custom_product_title'); 
