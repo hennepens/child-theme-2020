@@ -10941,7 +10941,7 @@ body {
     opacity: 1; }
 
 p {
-  font-family: "libre_baskervilleregular"; }
+  font-family: "Baskervville"; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "libre_baskervilleitalic"; }
@@ -11049,7 +11049,7 @@ h2 {
       font-family: "superiorregular" !important; }
   .navbar a {
     color: #000;
-    font-family: "libre_baskervilleregular"; }
+    font-family: "Baskervville"; }
     .navbar a:hover {
       color: #356e3e; }
 
@@ -11772,7 +11772,7 @@ h2 {
   float: right;
   font-size: large;
   line-height: initial;
-  font-family: "libre_baskervilleregular"; }
+  font-family: "Baskervville"; }
 
 .single-product .one-time-purchase-label {
   -webkit-box-flex: 1;
