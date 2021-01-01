@@ -21,11 +21,8 @@ $upload_dir = wp_get_upload_dir();
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="preconnect" href="https://f8p2j7h2.rocketcdn.me">
 	<link rel="dns-prefetch" href="https://f8p2j7h2.rocketcdn.me">
-	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/superior-regular-webfont.woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/linearicons.ttf" crossorigin="anonymous">	
-	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-regular-400.woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/webfonts/fa-brands-400.woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/icomoon.ttf" crossorigin="anonymous">	
+
 	<?php if(!wp_is_mobile()){ ?>
 		<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg" type="image/webp">
 	<?php }else{ ?>
@@ -89,7 +86,7 @@ $upload_dir = wp_get_upload_dir();
 			      wp_get_current_user();
 			      echo '<li><a href="/my-account">' . get_avatar( $current_user ) . '</a></li>'; ?>		    
 			      <?php } else { ?>
-			        <li class="d-none d-md-flex"><a href="/my-account"><i class="icon-user"></i></a></li>
+			        <li class="d-none d-md-flex"><a href="/my-account"><i class="icon icon-user"></i></a></li>
 			      <?php } ?>
 			      <li><?php echo do_shortcode('[xoo_wsc_cart]'); ?></li>
 			  </ul>

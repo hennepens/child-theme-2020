@@ -38,34 +38,34 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<ul class="d-flex list-inline justify-content-center justify-content-md-end social-cc">
 					<li class="icon list-inline-item">
 						<a href="https://instagram.com/hennepenscbd" target="_blank">
-							<i class="fab fa-2x fa-instagram"></i>
+							<i class="icon icon-instagram"></i>
 						</a>
 					</li>
 					<li class="icon list-inline-item">
 						<a href="https://facebook.com/hennepens" target="_blank">
-					  		<i class="fab fa-2x fa-facebook-square"></i>
+					  		<i class="icon icon-facebook"></i>
 					  	</a>
 					</li>
 					<li class="icon list-inline-item">
 						<a href="https://twitter.com/hennepens" target="_blank">
-					  		<i class="fab fa-2x fa-twitter"></i>
+					  		<i class="icon icon-twitter"></i>
 					  	</a>
 					</li>
 					<li class="icon list-inline-item">
 						<a href="https://linkedin.com/company/hennepens" target="_blank">
-					  		<i class="fab fa-2x fa-linkedin"></i>
+					  		<i class="icon icon-linkedin"></i>
 					  	</a>
 					</li>
 				</ul>
 				<ul class="d-flex list-inline justify-content-center justify-content-md-end social-cc">
 		            <li class="icon list-inline-item">
-		            	<i class="fab fa-2x fa-cc-visa"></i>
+		            	<i class="icon icon-cc-visa"></i>
 		            </li>
 		            <li class="icon list-inline-item">
-		            	<i class="fab fa-2x fa-cc-mastercard"></i>
+		            	<i class="icon icon-cc-mastercard"></i>
 		            </li>
 		            <li class="icon list-inline-item">
-		            	<i class="fab fa-2x fa-cc-discover"></i>
+		            	<i class="icon icon-cc-discover"></i>
 		            </li>
               	</ul>
 			</div>

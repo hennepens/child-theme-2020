@@ -36,12 +36,20 @@ $hennepens-green: #356e3e;
   font-display: swap;
 }
 
-$font-family-linear-icons: 'linearicons';
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?1d56ub');
+  src:  url('../fonts/icomoon.eot?1d56ub#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?1d56ub') format('truetype'),
+    url('../fonts/icomoon.woff?1d56ub') format('woff'),
+    url('../fonts/icomoon.svg?1d56ub#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
+$font-family-icons: 'icomoon';
 $font-family-libre-baskerville-regular: 'Libre Baskerville';
-
-$font-family-superior-bold: 'superiorbold';
 $font-family-superior-regular: 'superiorregular';
-
 $font-family-sans-serif: 'proxima_novaregular';
 $font-family-sans-serif-bold: 'proxima_novabold';
