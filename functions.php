@@ -150,51 +150,24 @@ add_filter( 'jetpack_sharing_counts', '__return_false', 99 );
 add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
 
 function custom_single_product_title_inject(){
-   $custom_title = get_field('custom_product_title'); 
-   echo '<h1 class="product_title entry-title">';
-    if(!empty($custom_title)){
-        echo $custom_title;
+    global $post;
+    $product_main_title = get_post_meta( $post->ID, '_bhww_main_title_wysiwyg', true );
+
+    if ( ! empty( $product_main_title ) ) {
+        echo '<h1 class="product_title entry-title">' . $product_main_title . '</h1>';
     }else{
       echo wp_kses_post(get_the_title());
     }
-    echo '</h1>';
 }
 
 function custom_loop_product_title_inject(){
-   $custom_title = get_field('custom_product_title'); 
-   echo '<h2 class="woocommerce-loop-product__title">';
-    if(!empty($custom_title)){
-        echo $custom_title;
+  global $product;
+  $product_main_title = get_post_meta( $product->id, '_bhww_main_title_wysiwyg', true );
+
+    if ( !empty( $product_main_title ) ) {
+        echo '<h2 class="woocommerce-loop-product__title">' . $product_main_title . '</h2>';
     }else{
-      echo wp_kses_post(get_the_title());
-    }
-    echo '</h2>';
-}
-
-add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
-function woo_new_product_tab( $tabs ) {
-    
-    // Adds the new tab
-    
-    $tabs['test_tab'] = array(
-        'title'     => __( 'Certificate of Analysis', 'woocommerce' ),
-        'priority'  => 20,
-        'callback'  => 'woo_coa_tab_content'
-    );
-
-    return $tabs;
-
-}
-
-
-function woo_coa_tab_content() {
-    $pdf = get_field('coa_pdf_upload'); 
-    if(!empty($pdf)){
-        echo '<a href="'. $pdf['url'] .'"><i class="fa fa-lg fa-file-pdf-o"></i> Download Certificate of Analysis</a>';
-    }
-    $image = get_field('coa_image_upload'); 
-    if( !empty($image) ){ ?>
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php
+      echo 'testtesttest' . wp_kses_post(get_the_title());
     }
 }
 
@@ -208,17 +181,6 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 remove_action( 'wp_footer', 'woocommerce_demo_store' );
 add_action( 'wp_body_open', 'woocommerce_demo_store' );
-
-
-function category_banner(){ ?>
-    <?php if(get_field('category_banner_image')){?>
-     <div class="cat-header position-relative" style="background-image: url(<?php the_field('category_banner_image'); ?>);">
-     </div>
-     <?php } ?>
-    
-<?php }
-
-add_action('woocommerce_archive_description','category_banner',15);
 
 
 add_filter( 'woocommerce_variable_price_html', 'bbloomer_variation_price_format', 10, 2 );
@@ -489,28 +451,6 @@ function lw_hide_sale_flash(){
 }
 
 
-add_action( 'woocommerce_after_single_product', 'wpsites_image_nav_links' );
-
-function wpsites_image_nav_links() {
-
-if( !is_singular('product') ) 
-      return;
-
-if( $prev_post = get_previous_post() ): 
-echo'<span class="single-post-nav previous-post-link">';
-$prevpost = get_the_post_thumbnail( $prev_post->ID, 'medium', array('class' => 'pagination-previous')); 
-previous_post_link( '%link',"$prevpost  <p>Previous Post in Category</p>", TRUE ); 
-echo'</span>';
-endif; 
-
-if( $next_post = get_next_post() ): 
-echo'<span class="single-post-nav next-post-link">';
-$nextpost = get_the_post_thumbnail( $next_post->ID, 'medium', array('class' => 'pagination-next')); 
-next_post_link( '%link',"$nextpost  <p>Next Post in Category</p>", TRUE ); 
-echo'</span>';
-endif; 
-} 
-
 add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
  
 function custom_remove_downloads_my_account( $items ) {
@@ -706,5 +646,128 @@ function remove_jquery_migrate( $scripts ) {
   }
  }
 add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+add_shortcode ('woo_featured_products', 'woo_featured_products' );
+/**
+ * Create WooCommerce Image Loop of Featured Products
+ * @link https://wordpress.stackexchange.com/questions/195425/display-featured-products-through-custom-loop-in-woocommerce-on-template-page
+ */
+function woo_featured_products() {
+ob_start();
+
+    $meta_query  = WC()->query->get_meta_query();
+    $tax_query   = WC()->query->get_tax_query();
+    
+    $tax_query[] = array(
+        'taxonomy' => 'product_visibility',
+        'field'    => 'name',
+        'terms'    => 'featured',
+        'operator' => 'IN',
+    );
+
+    $args = array(
+        'post_type'           => 'product',
+        'post_status'         => 'publish',
+        'ignore_sticky_posts' => 1,
+        'posts_per_page'      => -1,
+        'orderby'             => 'date',
+        'order'               => 'ASC',
+        'meta_query'          => $meta_query,
+        'tax_query'           => $tax_query,
+    );
+    $loop = new WP_Query( $args );
+
+    while ( $loop->have_posts() ) : $loop->the_post(); 
+    ?>
+    
+    <div> 
+        <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
+            <?php the_post_thumbnail('large'); ?>
+        </a>
+    </div>
+
+    <?php 
+    endwhile; 
+
+    wp_reset_query();     
+
+return ob_get_clean();
+}
+
+## ---- 1. Backend ---- ##
+
+// Adding a custom Meta container to admin products pages
+add_action( 'add_meta_boxes', 'create_custom_meta_box' );
+if ( ! function_exists( 'create_custom_meta_box' ) )
+{
+    function create_custom_meta_box()
+    {
+        add_meta_box(
+            'custom_product_meta_box',
+            __( 'Additional Product Information <em>(optional)</em>', 'cmb' ),
+            'add_custom_content_meta_box',
+            'product',
+            'normal',
+            'default'
+        );
+    }
+}
+
+//  Custom metabox content in admin product pages
+if ( ! function_exists( 'add_custom_content_meta_box' ) ){
+    function add_custom_content_meta_box( $post ){
+        $prefix = '_bhww_'; // global $prefix;
+
+        $main_title = get_post_meta($post->ID, $prefix.'main_title_wysiwyg', true) ? get_post_meta($post->ID, $prefix.'main_title_wysiwyg', true) : '';
+        $args['textarea_rows'] = 6;
+
+        echo '<p>'.__( 'Product Custom Title', 'cmb' ).'</p>';
+        wp_editor( $main_title, 'main_title_wysiwyg', $args );
+
+        echo '<input type="hidden" name="custom_product_field_nonce" value="' . wp_create_nonce() . '">';
+    }
+}
+
+
+
+//Save the data of the Meta field
+add_action( 'save_post', 'save_custom_content_meta_box', 10, 1 );
+if ( ! function_exists( 'save_custom_content_meta_box' ) )
+{
+
+    function save_custom_content_meta_box( $post_id ) {
+        $prefix = '_bhww_'; // global $prefix;
+
+        // We need to verify this with the proper authorization (security stuff).
+
+        // Check if our nonce is set.
+        if ( ! isset( $_POST[ 'custom_product_field_nonce' ] ) ) {
+            return $post_id;
+        }
+        $nonce = $_REQUEST[ 'custom_product_field_nonce' ];
+
+        //Verify that the nonce is valid.
+        if ( ! wp_verify_nonce( $nonce ) ) {
+            return $post_id;
+        }
+
+        // If this is an autosave, our form has not been submitted, so we don't want to do anything.
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+            return $post_id;
+        }
+
+        // Check the user's permissions.
+        if ( 'product' == $_POST[ 'post_type' ] ){
+            if ( ! current_user_can( 'edit_product', $post_id ) )
+                return $post_id;
+        } else {
+            if ( ! current_user_can( 'edit_post', $post_id ) )
+                return $post_id;
+        }
+
+        // Sanitize user input and update the meta field in the database.
+        update_post_meta( $post_id, $prefix.'main_title_wysiwyg', wp_kses_post($_POST[ 'main_title_wysiwyg' ]) );
+    }
+}
 
 ?>
