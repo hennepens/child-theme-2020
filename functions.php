@@ -118,6 +118,8 @@ add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style',9999 );
 function tn_dequeue_font_awesome_style() {
       wp_dequeue_style( 'fontawesome' );
       wp_deregister_style( 'fontawesome' );
+      wp_dequeue_style( 'font-awesome' );
+      wp_deregister_style( 'font-awesome' );
 }
 
 
