@@ -100,9 +100,6 @@ function understrap_remove_scripts() {
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
     wp_deregister_style( 'dashicons' ); 
-     wp_dequeue_style( 'fontawesome' );
-      wp_deregister_style( 'fontawesome' );
-
     wp_dequeue_script( 'understrap-scripts' );
     wp_deregister_script( 'understrap-scripts' );
     wp_dequeue_script( 'wc-cart-fragments' ); 
@@ -113,22 +110,11 @@ function understrap_remove_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
-add_action( 'wp_enqueue_scripts', function() {
-    global $wp_styles;
-    if ( isset( $wp_styles->queue ) ) {
-        foreach ( $wp_styles->queue as $key => $handle ) {
-            if ( 'font-awesome-5' === $handle ) {
-              $wp_styles->registered[ $handle ]->src = site_url( '/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/css/all.min.css');
-            }
-        }
-    }
-}, 11 );
-
 add_action( 'wp_enqueue_scripts', function(){
     wp_dequeue_style( 'xoo-wsc-fonts' );
   }, 999 );
 
-add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style',9999 );
+add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style',-1 );
 function tn_dequeue_font_awesome_style() {
       wp_dequeue_style( 'fontawesome' );
       wp_deregister_style( 'fontawesome' );
