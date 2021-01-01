@@ -109,6 +109,7 @@ h2{
 		#logo-svg{
 			transition: all .25s ease-out;
 			max-height: 60px;
+			max-width: 100%;
 			filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
 
 		}
