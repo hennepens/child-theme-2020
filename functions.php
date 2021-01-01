@@ -80,25 +80,12 @@ function custom_post_type() {
 add_action( 'init', 'custom_post_type', 0 );
 
 
-
-function page_load_script(){
-    ?>
-    <script>
-      jQuery(document).ready(function(){
-        jQuery('body').addClass(' fade-out');
-      });
-    </script>
-    <?php
-}
-
-//add_action('wp_footer','page_load_script',999);
-
-
 function understrap_remove_scripts() {
   if( !current_user_can('administrator') ) {
     
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
+    wp_deregister_style( 'font-awesome-5' );
     wp_deregister_style( 'dashicons' ); 
     wp_dequeue_script( 'understrap-scripts' );
     wp_deregister_script( 'understrap-scripts' );
@@ -120,6 +107,8 @@ function tn_dequeue_font_awesome_style() {
       wp_deregister_style( 'fontawesome' );
       wp_dequeue_style( 'font-awesome' );
       wp_deregister_style( 'font-awesome' );
+      wp_dequeue_style( 'font-awesome-5' );
+      wp_deregister_style( 'font-awesome-5' );
 }
 
 
