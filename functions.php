@@ -96,6 +96,29 @@ function understrap_remove_scripts() {
 
   }
 
+   // Homepage
+  if ( is_front_page() || is_page( 'homepage' ) ) {
+    // Homepage styles
+    wp_enqueue_style('homepage-css', get_stylesheet_directory_uri() . '/css/home.css', array(), filemtime(get_stylesheet_directory() . '/css/home.css'), 'all');
+  }
+
+  if ( is_account_page() ) {
+    // Homepage styles
+    wp_enqueue_style('account-css', get_stylesheet_directory_uri() . '/css/account.css', array(), filemtime(get_stylesheet_directory() . '/css/account.css'), 'all');
+  }
+
+
+  // Single Product
+  if ( is_product() ) {
+    wp_enqueue_style('single-product-css', get_stylesheet_directory_uri() . '/css/single-product.css', array(), filemtime(get_stylesheet_directory() . '/css/single-product.css'), 'all');
+    wp_enqueue_style('shop-css', get_stylesheet_directory_uri() . '/css/shop.css', array(), filemtime(get_stylesheet_directory() . '/css/shop.css'), 'all');
+  }
+
+  // Shop
+  if ( is_shop() || is_product_category() || is_product_tag() || is_cart() || is_checkout() || is_account_page()|| is_tax('product_brand') ) {
+    wp_enqueue_style('shop-css', get_stylesheet_directory_uri() . '/css/shop.css', array(), filemtime(get_stylesheet_directory() . '/css/shop.css'), 'all');
+  }
+
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
@@ -167,7 +190,7 @@ function custom_loop_product_title_inject(){
     if ( !empty( $product_main_title ) ) {
         echo '<h2 class="woocommerce-loop-product__title">' . $product_main_title . '</h2>';
     }else{
-      echo 'testtesttest' . wp_kses_post(get_the_title());
+      echo wp_kses_post(get_the_title());
     }
 }
 
@@ -181,6 +204,9 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 remove_action( 'wp_footer', 'woocommerce_demo_store' );
 add_action( 'wp_body_open', 'woocommerce_demo_store' );
+
+
+
 
 
 add_filter( 'woocommerce_variable_price_html', 'bbloomer_variation_price_format', 10, 2 );
