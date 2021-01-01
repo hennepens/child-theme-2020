@@ -114,7 +114,7 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_dequeue_style( 'xoo-wsc-fonts' );
   }, 999 );
 
-add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style',-1 );
+add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style',9999 );
 function tn_dequeue_font_awesome_style() {
       wp_dequeue_style( 'fontawesome' );
       wp_deregister_style( 'fontawesome' );
@@ -713,5 +713,16 @@ function remove_jquery_migrate( $scripts ) {
  }
 add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
 
+// takes care of theme enqueues
+add_action( 'wp_enqueue_scripts', function() {
+    global $wp_styles;
+    if ( isset( $wp_styles->queue ) ) {
+        foreach ( $wp_styles->queue as $key => $handle ) {
+            if ( false !== strpos( $handle, 'fl-builder-google-fonts-' ) ) {
+                unset( $wp_styles->queue[ $key ] );
+            }
+        }
+    }
+}, 101 );
 
 ?>

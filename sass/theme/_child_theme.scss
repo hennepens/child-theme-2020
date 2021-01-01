@@ -17,8 +17,7 @@ p {
 }
 
 h1,h2,h3,h4,h5,h6{
-	font-family: $font-family-libre-baskerville-regular;
-	font-style: italic;
+	font-family: $font-family-libre-baskerville-italic;
 }
 
 h2{
@@ -445,9 +444,8 @@ h2{
 			padding: 0;
 			flex-grow: 1;
 			span:first-child{
-				font-family: $font-family-libre-baskerville-regular;
+				font-family: $font-family-libre-baskerville-bold;
     			font-size: 1.5rem;
-    			font-weight: 700;
     			margin-bottom: 8px;
     			display: block;
     			@media only screen and (max-width: 767px) {
@@ -532,8 +530,7 @@ h2{
     			flex-direction: column;
     			flex-grow: 1;
     			.price{
-    				font-family: $font-family-libre-baskerville-regular;
-    				font-style: italic;
+    				font-family: $font-family-libre-baskerville-italic;
     				color: #000 !important;
 					margin-top: 0 !important;
 					margin-bottom: -10px !important;
@@ -618,13 +615,11 @@ li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.prod
     		width: 100%;
     		span{
     			&:first-child{
-    				font-family: $font-family-libre-baskerville-regular;
-    				font-weight: 700;
+    				font-family: $font-family-libre-baskerville-bold;
     			}
     			&:nth-child(2){
     				display: block;
-    				font-family: $font-family-libre-baskerville-regular;
-    				font-style: italic;
+    				font-family: $font-family-libre-baskerville-italic;
     				font-size: 1.25rem;
     				margin-top: 15px;
     				position: relative;
@@ -901,8 +896,7 @@ li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.prod
 			display: block;
     		padding-bottom: 5px;
     		font-size: 1.25rem;
-			font-family: $font-family-libre-baskerville-regular;
-			font-style: italic;
+			font-family: $font-family-libre-baskerville-italic;
 			bdi{
 				font-size: inherit;
 			}

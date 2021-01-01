@@ -1,5 +1,26 @@
 @charset "UTF-8";
 @font-face {
+  font-family: 'libre_baskervillebold';
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/librebaskerville-bold-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'libre_baskervilleitalic';
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/librebaskerville-italic-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'libre_baskervilleregular';
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/librebaskerville-regular-webfont.woff2") format("woff2"), url("../fonts/librebaskerville-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
   font-family: 'superiorregular';
   src: local("Open Sans"), local("Open Sans"), url("../fonts/superior-regular-webfont.woff2") format("woff2"), url("../fonts/superior-regular-webfont.woff") format("woff");
   font-weight: normal;
@@ -8478,8 +8499,7 @@ p {
   font-family: "Libre Baskerville"; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Libre Baskerville";
-  font-style: italic; }
+  font-family: "libre_baskervilleitalic"; }
 
 h2 {
   font-size: 2.5rem; }
@@ -8827,9 +8847,8 @@ h2 {
           -ms-flex-positive: 1;
               flex-grow: 1; }
       .products li .woocommerce-loop-product__title span:first-child {
-        font-family: "Libre Baskerville";
+        font-family: "libre_baskervillebold";
         font-size: 1.5rem;
-        font-weight: 700;
         margin-bottom: 8px;
         display: block; }
         @media only screen and (max-width: 767px) {
@@ -8907,8 +8926,7 @@ h2 {
             -ms-flex-positive: 1;
                 flex-grow: 1; }
         .products li .product-info .woocommerce-loop-product__link .price {
-          font-family: "Libre Baskerville";
-          font-style: italic;
+          font-family: "libre_baskervilleitalic";
           color: #000 !important;
           margin-top: 0 !important;
           margin-bottom: -10px !important;
@@ -8973,12 +8991,10 @@ h2 {
   line-height: 2rem;
   width: 100%; }
   .single-product .summary .product_title span:first-child {
-    font-family: "Libre Baskerville";
-    font-weight: 700; }
+    font-family: "libre_baskervillebold"; }
   .single-product .summary .product_title span:nth-child(2) {
     display: block;
-    font-family: "Libre Baskerville";
-    font-style: italic;
+    font-family: "libre_baskervilleitalic";
     font-size: 1.25rem;
     margin-top: 15px;
     position: relative;
@@ -9213,8 +9229,7 @@ h2 {
   display: block;
   padding-bottom: 5px;
   font-size: 1.25rem;
-  font-family: "Libre Baskerville";
-  font-style: italic; }
+  font-family: "libre_baskervilleitalic"; }
   .woocommerce-variation-price .price .amount bdi {
     font-size: inherit; }
 
