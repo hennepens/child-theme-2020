@@ -117,7 +117,7 @@ function understrap_remove_scripts() {
     foreach($jquery_ui as $script){
         wp_deregister_script($script);
     }
-
+  }
 
 
 
