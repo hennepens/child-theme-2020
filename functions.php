@@ -85,9 +85,6 @@ function understrap_remove_scripts() {
     
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
-    wp_dequeue_style( 'woocommerce-smallscreen' );
-    wp_deregister_style( 'woocommerce-smallscreen' );
-    
     wp_deregister_style( 'font-awesome-5' );
     wp_deregister_style( 'dashicons' ); 
     wp_dequeue_script( 'understrap-scripts' );
