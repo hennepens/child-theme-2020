@@ -115,7 +115,7 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_dequeue_style( 'xoo-wsc-fonts' );
   }, 999 );
 
-add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style' );
+add_action( 'wp_print_styles', 'tn_dequeue_font_awesome_style',9999 );
 function tn_dequeue_font_awesome_style() {
       wp_dequeue_style( 'fontawesome' );
       wp_deregister_style( 'fontawesome' );
