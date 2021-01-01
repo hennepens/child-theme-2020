@@ -8777,9 +8777,8 @@ h2 {
     .site-info ul li:last-child {
       padding-right: 0; }
 
-.social-cc .fa {
-  font-weight: inherit !important;
-  font-family: FontAwesome; }
+.social-cc i {
+  font-size: 2rem; }
 
 /* Product Categories */
 .added_to_cart.wc-forward {
