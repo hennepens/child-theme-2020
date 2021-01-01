@@ -8496,7 +8496,7 @@ body {
     opacity: 1; }
 
 p {
-  font-family: "Libre Baskerville"; }
+  font-family: "libre_baskervilleregular"; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "libre_baskervilleitalic"; }
@@ -8599,7 +8599,7 @@ h2 {
               filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
   .navbar a {
     color: #000;
-    font-family: "Libre Baskerville"; }
+    font-family: "libre_baskervilleregular"; }
     .navbar a:hover {
       color: #356e3e; }
 
@@ -9138,7 +9138,7 @@ h2 {
   float: right;
   font-size: large;
   line-height: initial;
-  font-family: "Libre Baskerville"; }
+  font-family: "libre_baskervilleregular"; }
 
 .single-product .one-time-purchase-label {
   -webkit-box-flex: 1;
