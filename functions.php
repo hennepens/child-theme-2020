@@ -713,16 +713,4 @@ function remove_jquery_migrate( $scripts ) {
  }
 add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
 
-// takes care of theme enqueues
-add_action( 'wp_enqueue_scripts', function() {
-    global $wp_styles;
-    if ( isset( $wp_styles->queue ) ) {
-        foreach ( $wp_styles->queue as $key => $handle ) {
-            if ( false !== strpos( $handle, 'fl-builder-google-fonts-' ) ) {
-                unset( $wp_styles->queue[ $key ] );
-            }
-        }
-    }
-}, 101 );
-
 ?>

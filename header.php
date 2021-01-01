@@ -21,7 +21,6 @@ $upload_dir = wp_get_upload_dir();
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="preconnect" href="https://f8p2j7h2.rocketcdn.me">
 	<link rel="dns-prefetch" href="https://f8p2j7h2.rocketcdn.me">
-	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/icomoon.woff" crossorigin="anonymous">	
 
 	<?php if(!wp_is_mobile()){ ?>
 		<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg" type="image/webp">
