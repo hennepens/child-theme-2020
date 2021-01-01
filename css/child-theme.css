@@ -5363,6 +5363,11 @@ h2 {
   .max-width-65 .fl-col-group-group-nested .fl-col-content.fl-node-content {
     max-width: 100% !important; } }
 
+.collage video {
+  width: 100%;
+  max-width: 100%;
+  display: block; }
+
 @media only screen and (min-width: 768px) {
   .map-column .fl-module.fl-module-map {
     position: absolute;
