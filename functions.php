@@ -113,6 +113,17 @@ function understrap_remove_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
+add_action( 'wp_enqueue_scripts', function() {
+    global $wp_styles;
+    if ( isset( $wp_styles->queue ) ) {
+        foreach ( $wp_styles->queue as $key => $handle ) {
+            if ( 'font-awesome-5' === $handle ) {
+              $wp_styles->registered[ $handle ]->src = site_url( '/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.1/css/all.min.css');
+            }
+        }
+    }
+}, 11 );
+
 add_action( 'wp_enqueue_scripts', function(){
     wp_dequeue_style( 'xoo-wsc-fonts' );
   }, 999 );
