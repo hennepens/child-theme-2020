@@ -5008,6 +5008,10 @@ h2 {
     .navbar a:hover {
       color: #356e3e; }
 
+@media only screen and (max-width: 767px) {
+  #navbarNavDropdown {
+    display: none; } }
+
 .woocommerce-store-notice.demo_store {
   position: relative;
   background: #eee;

@@ -122,7 +122,11 @@ h2{
 		}
 	}
 }
-
+#navbarNavDropdown{
+	@media only screen and (max-width: 767px) {
+			display: none;
+		}
+}
 
 .woocommerce-store-notice.demo_store {
 	position: relative;
