@@ -4963,6 +4963,7 @@ h2 {
         right: 15px; } }
     .navbar .quick-links-container img {
       max-width: 30px;
+      max-height: 30px;
       border-radius: 100px; }
   .navbar .navbar-collapse {
     width: 225px;
