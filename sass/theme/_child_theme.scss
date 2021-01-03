@@ -426,6 +426,7 @@ display: none;
 		height: 30px;
     	width: 150px;
     	border: 1px #000 solid;
+    	padding: 0;
     	li{
     		padding: 5px 10px;
     		z-index: 2;
@@ -434,7 +435,12 @@ display: none;
     			float: left;
     			width: 130px;
     			display: block;
-    			background: #ddd;
+    			label{
+    				display: flex;
+    				padding: 0;
+    				margin: 0;
+    				align-items: center;
+    			}
     			&:hover{
     				background: #09f;
     			}
