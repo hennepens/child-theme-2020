@@ -565,7 +565,7 @@ function bbloomer_add_checkout_minimum_notice() {
        'label_class'   => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
        'input_class'   => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
        'required'      => true,
-       'label'         => 'I acknowledge that a minimum of 3 subscription cycles is required for 40% off promotion.*',
+       'label'         => 'I acknowledge that a minimum of 3 subscription cycles is required for 25% off promotion.*',
     )); 
   }
    
