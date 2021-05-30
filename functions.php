@@ -183,7 +183,7 @@ function custom_single_product_title_inject(){
 }
 
 function custom_loop_product_title_inject(){
-  global $product;
+  $product = wc_get_product($id);
   $product_main_title =  get_post_meta( $product->get_id(), '_bhww_main_title_wysiwyg', true );
 
     if ( !empty( $product_main_title ) ) {
