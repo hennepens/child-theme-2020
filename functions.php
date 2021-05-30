@@ -184,8 +184,8 @@ function custom_single_product_title_inject(){
 
 function custom_loop_product_title_inject($product){
   global $product;
-  $product_id = $product->get_id();
-  $product_main_title = get_post_meta( $product_id->get_parent_id(), '_bhww_main_title_wysiwyg', true );
+  $product_id = $product->get_parent_id();
+  $product_main_title = get_post_meta( $product_id, '_bhww_main_title_wysiwyg', true );
 
     if ( !empty( $product_main_title ) ) {
         echo '<h2 class="woocommerce-loop-product__title">' . $product_main_title . '</h2>';
