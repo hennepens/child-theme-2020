@@ -191,6 +191,7 @@ function custom_loop_product_title_inject($product){
         echo '<h2 class="woocommerce-loop-product__title">' . $product_main_title . '</h2>';
     }else{
       echo wp_kses_post(get_the_title());
+      echo $product_id;
     }
 }
 
