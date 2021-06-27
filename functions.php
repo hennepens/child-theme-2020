@@ -486,7 +486,11 @@ return $items;
 }
 
 function iconic_add_to_cart_button_text( $text, $product ) {
-  return '<div class="woocommerce-button" title="' . esc_attr__( 'Select options', 'woocommerce' ) . '">Add to Cart</div>';
+  if ( ! $product->is_in_stock() ) {
+        return '<div class="woocommerce-button" title="' . esc_attr__( 'Select options', 'woocommerce' ) . '">Sold Out</div>';
+    }else{
+    return '<div class="woocommerce-button" title="' . esc_attr__( 'Select options', 'woocommerce' ) . '">Add to Cart</div>';
+  }
 }
 
 add_filter( 'iconic_wssv_add_to_cart_button_text', 'iconic_add_to_cart_button_text', 10, 2 );
@@ -498,7 +502,7 @@ function misha_after_add_to_cart_btn(){
   echo '<a href="#" rel="nofollow" data-product_id="'. $product->get_parent_id() .'" data-product_sku="'. $product->get_sku() .'" data-quantity="1" class="subscription-message button add_to_cart add_to_cart_button jck_wssv_add_to_cart" data-variation_id="'. $product->get_id() .'" data-convert_to_sub_'. $product->get_parent_id() .'="6_week"><div class="woocommerce-button" title="Select options">Subscribe &amp; Save 25&percnt;</div></a>
 
     <div class="popup">
-
+    
 
     </div>';
 }
@@ -675,10 +679,7 @@ function remove_jquery_migrate( $scripts ) {
 add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
 
 add_shortcode ('woo_featured_products', 'woo_featured_products' );
-/**
- * Create WooCommerce Image Loop of Featured Products
- * @link https://wordpress.stackexchange.com/questions/195425/display-featured-products-through-custom-loop-in-woocommerce-on-template-page
- */
+
 function woo_featured_products() {
 ob_start();
 

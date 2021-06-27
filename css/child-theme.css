@@ -5287,6 +5287,21 @@ h2 {
 .xoo-wsc-sc-bki {
   margin-left: 15px; }
 
+.xoo-wsc-container .xoo-wsch-basket {
+  display: none; }
+
+.xoo-wsc-sm-info {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.xoo-wsc-pprice {
+  display: none; }
+
+.xoo-wsc-sm-right, .xoo-wsc-smr-ptotal {
+  max-width: 100%;
+  padding-left: 0;
+  width: 100%; }
+
 /* Footer Edits */
 #wrapper-footer {
   background-color: #e9ecef;
@@ -5494,17 +5509,24 @@ h2 {
     display: none; }
 
 .woocommerce-cart .wcsatt-options {
-  height: 30px;
-  width: 150px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  float: left;
   border: 1px #000 solid;
   padding: 0; }
+  .woocommerce-cart .wcsatt-options .subscription-details {
+    font-size: small;
+    clear: both;
+    display: block;
+    line-height: 0rem;
+    padding-bottom: 5px; }
   .woocommerce-cart .wcsatt-options li {
     padding: 5px 10px;
-    z-index: 2;
-    display: none; }
+    z-index: 2; }
     .woocommerce-cart .wcsatt-options li.selectedOption {
       float: left;
-      width: 130px;
+      width: 100%;
       display: block; }
       .woocommerce-cart .wcsatt-options li.selectedOption label {
         display: -webkit-box;
@@ -5519,13 +5541,15 @@ h2 {
         background: #09f; }
     .woocommerce-cart .wcsatt-options li.selected {
       background: #09f; }
+    .woocommerce-cart .wcsatt-options li input {
+      max-width: 10px; }
     .woocommerce-cart .wcsatt-options li input:checked {
       cursor: pointer; }
   .woocommerce-cart .wcsatt-options.open {
     position: absolute;
     width: 200px; }
     .woocommerce-cart .wcsatt-options.open li {
-      display: block; }
+      display: block !important; }
 
 @media only screen and (max-width: 767px) {
   .bg-img-none .fl-row-content-wrap {
@@ -5749,6 +5773,9 @@ h2 {
         background: #000;
         color: #fff;
         border-color: #fff; }
+      .products li .add_to_cart_button.subscription-message:hover {
+        background: none;
+        color: inherit; }
     .products li .woocommerce-loop-product__title {
       padding: 0;
       -webkit-box-flex: 1;
@@ -5847,13 +5874,27 @@ h2 {
     .products li .wcsatt-dash {
       display: none; }
     .products li .subscription-message {
-      width: 100%;
       text-align: center;
       font-size: .9rem;
       font-style: italic;
       color: #356e3e;
       margin-top: 10px;
       padding: 0;
+      border: 0;
+      width: auto; }
+      .products li .subscription-message:after {
+        top: inherit !important;
+        font-style: initial !important; }
+    .products li.outofstock .button {
+      opacity: 0.5;
+      width: 150px;
+      border-radius: 50px;
+      margin: 20px auto 0 auto;
+      border-radius: 100px;
+      color: #cc0000;
+      background-color: #fff;
+      border: 2px solid #cc0000; }
+    .products li.outofstock .subscription-message {
       border: 0; }
 
 @media only screen and (max-width: 767px) {
