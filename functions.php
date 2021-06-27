@@ -457,6 +457,12 @@ function hook_additional_product_info_template() {
   if ( has_term( 'full-spectrum-tincture-template', 'product_tag' ) ) {
     echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="full-spectrum-tincture"]' ) . '</div>';
   }
+  if ( has_term( 'broad-tincture-template', 'product_tag' ) ) {
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="broad-spectrum-tincture"]' ) . '</div>';
+  }
+  if ( has_term( 'water-soluble-tincture-template', 'product_tag' ) ) {
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="water-solbule-tincture"]' ) . '</div>';
+  }
   else{
     //echo 'HELLO';
   }
