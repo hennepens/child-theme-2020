@@ -461,7 +461,7 @@ function hook_additional_product_info_template() {
     echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="broad-spectrum-tincture"]' ) . '</div>';
   }
   if ( has_term( 'water-soluble-tincture-template', 'product_tag' ) ) {
-    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="water-solbule-tincture"]' ) . '</div>';
+    echo '<div class="bb-content">' . do_shortcode( '[fl_builder_insert_layout slug="water-soluble-tincture"]' ) . '</div>';
   }
   else{
     //echo 'HELLO';
