@@ -5946,6 +5946,9 @@ h2 {
     background: #75BD80;
     border-color: #356e3e; }
 
+.address-break {
+  display: block; }
+
 /* Single Product Template */
 .single-product .woocommerce-product-gallery .flex-control-nav {
   display: -webkit-box;
