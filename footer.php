@@ -79,6 +79,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<li>
 								&copy; <?php echo date_i18n(_x( 'Y', 'copyright date format', 'understrap' )); ?> Hennepen&apos;s&reg;. All Rights Reserved.
 							</li>
+						</ul>
+						<ul class="d-md-flex d-block">
 							<li>
 								<a href="/terms-of-service">Terms of Service</a>
 							</li>

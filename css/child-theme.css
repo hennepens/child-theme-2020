@@ -5792,7 +5792,8 @@ h2 {
       .products li .woocommerce-loop-product__title span:nth-child(2) {
         display: block !important; }
         .products li .woocommerce-loop-product__title span:nth-child(2) em {
-          position: relative; }
+          position: relative;
+          font-size: 0.9rem; }
           .products li .woocommerce-loop-product__title span:nth-child(2) em:before, .products li .woocommerce-loop-product__title span:nth-child(2) em:after {
             position: absolute;
             vertical-align: middle;
