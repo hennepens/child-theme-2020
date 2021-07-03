@@ -74,20 +74,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 			<div class="col-md-12">
 				<footer class="site-footer mt-5" id="colophon">
-					<div class="d-flex site-info justify-content-center">
-						<ul class="d-md-flex d-block">
-							<li>
-								&copy; <?php echo date_i18n(_x( 'Y', 'copyright date format', 'understrap' )); ?> Hennepen&apos;s&reg;. All Rights Reserved.
-							</li>
-						</ul>
-						<ul class="d-md-flex d-block">
-							<li>
-								<a href="/terms-of-service">Terms of Service</a>
-							</li>
-							<li>	
-								<a href="/privacy-policy">Privacy Policy</a>
-							</li>
-						</ul>
+					<div class="site-info text-center">
+							<ul class="justify-content-center">
+								<li>
+									&copy; <?php echo date_i18n(_x( 'Y', 'copyright date format', 'understrap' )); ?> Hennepen&apos;s&reg;. All Rights Reserved.
+								</li>
+							</ul>
+
+							<ul class="justify-content-center">
+								<li>
+									<a href="/terms-of-service">Terms of Service</a>
+								</li>
+								<li>	
+									<a href="/privacy-policy">Privacy Policy</a>
+								</li>
+							</ul>
 					</div><!-- .site-info -->
 				</footer><!-- #colophon -->
 			</div><!--col end -->
