@@ -5545,11 +5545,6 @@ h2 {
       max-width: 10px; }
     .woocommerce-cart .wcsatt-options li input:checked {
       cursor: pointer; }
-  .woocommerce-cart .wcsatt-options.open {
-    position: absolute;
-    width: 200px; }
-    .woocommerce-cart .wcsatt-options.open li {
-      display: block !important; }
 
 @media only screen and (max-width: 767px) {
   .bg-img-none .fl-row-content-wrap {
