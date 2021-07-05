@@ -460,7 +460,6 @@ display: none;
     		padding: 5px 10px;
     		z-index: 2;
     		&.selectedOption{
-    			float: left;
     			width: 100%;
     			display: block;
     			label{
@@ -481,6 +480,11 @@ display: none;
     		}
     		input:checked{
     			cursor: pointer;
+    		}
+    	}
+    	&.open{
+    		li{
+    			display: block !important;
     		}
     	}
 	}

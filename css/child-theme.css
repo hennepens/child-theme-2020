@@ -28,6 +28,20 @@
   font-display: swap; }
 
 @font-face {
+  font-family: 'proxima_novaregular';
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/proximanova-regular-webfont.woff2") format("woff2"), url("../fonts/proximanova-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'proxima_novabold';
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/proxima_nova_bold-webfont.woff2") format("woff2"), url("../fonts/proxima_nova_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
   font-family: 'linearicons';
   src: url("../fonts/linearicons.eot?mlscn1#iefix") format("embedded-opentype"), url("../fonts/linearicons.ttf") format("truetype"), url("../fonts/linearicons.woff") format("woff"), url("../fonts/linearicons.svg?#icons") format("svg");
   font-weight: normal;
@@ -5525,7 +5539,6 @@ h2 {
     padding: 5px 10px;
     z-index: 2; }
     .woocommerce-cart .wcsatt-options li.selectedOption {
-      float: left;
       width: 100%;
       display: block; }
       .woocommerce-cart .wcsatt-options li.selectedOption label {
@@ -5545,6 +5558,8 @@ h2 {
       max-width: 10px; }
     .woocommerce-cart .wcsatt-options li input:checked {
       cursor: pointer; }
+  .woocommerce-cart .wcsatt-options.open li {
+    display: block !important; }
 
 @media only screen and (max-width: 767px) {
   .bg-img-none .fl-row-content-wrap {
