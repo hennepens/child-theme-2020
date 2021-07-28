@@ -804,7 +804,7 @@ if ( ! function_exists( 'save_custom_content_meta_box' ) )
     }
 }
 
-<?php
+
 function autoship_new_default_frequency_options( $options ) {
   // Return a new set of default frequency options of 1 through 4 Weeks
   return array(
@@ -867,5 +867,3 @@ function autoship_new_default_frequency_options( $options ) {
   );
 }
 add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' );
-
-?>
