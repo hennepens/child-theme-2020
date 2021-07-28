@@ -804,4 +804,68 @@ if ( ! function_exists( 'save_custom_content_meta_box' ) )
     }
 }
 
+<?php
+function autoship_new_default_frequency_options( $options ) {
+  // Return a new set of default frequency options of 1 through 4 Weeks
+  return array(
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 2,
+      'display_name' => 'Every 2 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 3,
+      'display_name' => 'Every 3 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 4,
+      'display_name' => 'Every 4 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 5,
+      'display_name' => 'Every 5 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 6,
+      'display_name' => 'Every 6 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 8,
+      'display_name' => 'Every 2 Months'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 13,
+      'display_name' => 'Every 3 Months'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 26,
+      'display_name' => 'Every 6 Months'
+    )
+  );
+}
+add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' );
+
 ?>
