@@ -297,6 +297,7 @@ h2{
 	display: flex;
 	justify-content: flex-end;
 	position: relative;
+	align-items:  center;
 	.added_to_cart{
 		position: absolute;
 		bottom: -34px;
@@ -308,10 +309,18 @@ h2{
 		padding-left: 15px;
 		margin-left: 5px;
 	}
-	.quantity.real{
-		display: none !important;
+	.quantity{
+		font-size:  large;
+		#realQty{
+			padding: 10px 10px 10px 15px;
+    		margin: 0 10px;
+    		border-radius: 8px;
+    	}
 	}
+
+
 }
+
 
 .qty-container{
 	width: 100%;
@@ -344,6 +353,12 @@ display: none;
 }
 .xoo-wsc-img-col{
 	align-self: flex-start;
+}
+.xoo-wsc-pname{
+	p{
+		font-size: 0.75rem;
+		font-family: $font-family-libre-baskerville-italic;
+	}
 }
 
 .bb-content{
@@ -432,63 +447,7 @@ display: none;
 	}
 }
 
-.woocommerce-cart{
-	.cart{
-		.quantity.real{
-			display: block !important;
-			span{
-				display: none;
-			}
-		}
-	}
-	.wcsatt-options{
-		width:  100%;
-		height:  100%;
-		overflow:  hidden;
-		float:  left;
-    	border: 1px #000 solid;
-    	padding: 0;
-    	.subscription-details{
-    		font-size: small;
-    		clear: both;
-	    	display: block;
-	    	line-height: 0rem;
-	    	padding-bottom: 5px;
 
-    	}
-    	li{
-    		padding: 5px 10px;
-    		z-index: 2;
-    		&.selectedOption{
-    			width: 100%;
-    			display: block;
-    			label{
-    				display: flex;
-    				padding: 0;
-    				margin: 0;
-    				align-items: center;
-    			}
-    			&:hover{
-    				background: #09f;
-    			}
-    		}
-    		&.selected:not(> input:checked){
-    			background: #09f;
-    		}
-    		input{
-    			max-width: 10px;
-    		}
-    		input:checked{
-    			cursor: pointer;
-    		}
-    	}
-    	&.open{
-    		li{
-    			display: block !important;
-    		}
-    	}
-	}
-}
 
 .bg-img-none .fl-row-content-wrap{
 	@media only screen and (max-width: 767px) {
@@ -524,6 +483,30 @@ display: none;
 				align-items: center;
 				&:after{
 					border-color: transparent transparent transparent #000;	
+				}
+			}
+		}
+	}
+}
+
+
+.woocommerce-cart-form{
+	.cart{
+		.cart_item{
+			td{
+				vertical-align: top !important;
+				img{
+					width: 200px !important;
+				}
+			}
+			.autoship-label{
+				input{
+					width:  auto;
+				}
+			}
+			.quantity{
+				span{
+					display:  none;
 				}
 			}
 		}

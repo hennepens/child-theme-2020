@@ -285,10 +285,10 @@
 	    margin-right: 10px;
 	    color: #ccc;
 	    &:last-child{
-	    	padding-right: 0;
+	    	margin-right: 0;
 	    }
 	    &.selected{
-	    	border-color: #333;
+	    	border-color: #edebe6;
 	    	color: inherit;
 	    	background-color: #edebe6;
 	    }
@@ -313,5 +313,114 @@
 				margin: 0 auto;
 			}
 	    }
+	}
+}
+
+.single_variation_wrap{
+	.discount-label-container{
+		.autoship-info-link{
+			padding-left:  0 !important;
+		}
+	}
+	.autoship-price-container{
+		font-family: $font-family-libre-baskerville-italic;
+		font-size:  large;
+		color: #77a464;
+
+	}
+
+	.autoship-schedule-options-variable{
+		.autoship-frequency{
+			&.active{
+				display:  flex;
+				width:  100%;
+				justify-content: flex-end;
+				background: #edebe6;
+				border-top:  2px solid #fff;
+				padding:  20px;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+				label{
+					margin-bottom:  0;
+					margin-right:  10px;
+					font-size:  large;
+				}
+				select{
+					font-size:  large;
+					border-radius:  8px;
+					padding: 5px  10px;
+				}
+			}
+		}
+	}
+
+	.autoship-type{
+		.autoship-label{
+			padding: 20px;
+			border-radius:  8px;
+			}
+		&.autoship-no{
+			opacity:  0.5;
+		}	
+		&.active{
+			.autoship-label{
+				opacity: 1;
+				background: #edebe6;
+			}
+			&.autoship-no{
+				opacity: 1;
+			}
+		}
+		&.autoship-yes{
+			.autoship-label{
+				margin-bottom:  0;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+		
+	}
+
+	.one-time-container{
+		width:  100%;
+		display:  flex;
+		align-items: center;
+		
+		.woocommerce-Price-amount{
+			margin-left:  auto;
+			font-family: $font-family-libre-baskerville-italic;
+		}
+		.label-price-container{
+			width:  100%;
+			display:  flex;
+			align-items:  center;
+
+		}
+		input{
+			margin-right: 10px;
+		}
+	}
+	.autoship-label{
+		width:  100%;
+		font-size:  large;
+		input{
+			width:  1.25rem;
+			height:  1.25rem;
+		}
+		.autoship-discount-label{
+			display:  flex;
+			width:  100%;
+			.discount-label-container{
+				margin-right:  auto;
+				display:  flex;
+				align-items:  center;
+			}
+			input{
+				margin-right:  10px;
+			}
+		}
+		.autoship-checkout-percent-discount{
+			padding: 0 4px;
+		}
 	}
 }

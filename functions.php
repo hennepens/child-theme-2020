@@ -867,3 +867,47 @@ function autoship_new_default_frequency_options( $options ) {
   );
 }
 add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' );
+
+function change_radio_label($label, $option_type, $discount, $product) {
+    if($option_type == 'yes') {
+        return $discount ? __('Subscribe & Save') : __('Subscribe');
+    } else {
+        return __('One-time Purchase ' . $product->get_price_html());
+    }
+}
+add_filter('autoship_radio_label', 'change_radio_label', 10, 4);
+
+function autoship_checkout_recurring_variable_discount_string2( $product_id ){
+
+  $product = wc_get_product( $product_id );
+
+  $strings['autoship_save_string'] = sprintf( '<span class="autoship-save">%s</span>',
+  apply_filters( 'autoship_radio_label', __( 'Autoship and Save', 'autoship' ),
+  'yes', true, $product ) );
+  $strings['autoship_string'] = sprintf( '<span class="autoship">%s</span>',
+  apply_filters( 'autoship_radio_label', __( 'Autoship', 'autoship' ),
+  'yes', false, $product ) );
+
+  ob_start();?>
+
+  <span class="autoship-discount-label">
+    <span class="discount-label-container">
+      <input type="radio" class="autoship-yes-radio <?php echo $skin['input']?>" name="autoship<?php echo $product->get_id(); ?>" value="yes" <?=$autoship_yes?> />
+
+      <span class="autoship-save"><?php echo $strings['autoship_save_string']; ?></span>
+      <span class="autoship-custom-percent-discount-str"></span> 
+      <?php  echo autoship_info_dialog_link( $product->get_id() ); ?>
+    </span>
+        <span class="autoship-price-container">
+          <span class="autoship-retail-price"> <s><?php echo $product->get_price_html()?></s></span>
+          <span class="autoship-checkout-price"></span>
+        </span>
+  </span>
+  <span class="autoship-no-discount-label">
+      <span class="autoship"><?php echo $strings['autoship_string']; ?></span>
+  </span>
+
+  <?php
+  return apply_filters( 'autoship_checkout_recurring_variable_discount_string_html', ob_get_clean(), $product, $strings );
+
+}

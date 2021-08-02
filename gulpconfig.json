@@ -1,6 +1,6 @@
 {
   "browserSyncOptions" : {
-    "proxy": "localhost:7888/hennepens/",
+    "proxy": "hennepens.localhost/",
     "notify": false
   },
   "browserSyncWatchFiles" : [
