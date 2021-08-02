@@ -910,3 +910,20 @@ function autoship_checkout_recurring_variable_discount_string2( $product_id ){
   return apply_filters( 'autoship_checkout_recurring_variable_discount_string_html', ob_get_clean(), $product, $strings );
 
 }
+
+
+ 
+/**
+* Adds Order Number Column back into the Scheduled Orders table
+*
+* @param array $columns The current column array
+* @return array The filtered columns
+*/
+
+function xx_add_autoship_scheduled_orders_order_number_column( $columns ){
+    return array( 'order-number'  => __( 'Order', 'autoship' ) ) + $columns;
+}
+
+add_filter( 'autoship_my_account_my_scheduled_orders_columns', 'xx_add_autoship_scheduled_orders_order_number_column', 10, 1 );
+
+
