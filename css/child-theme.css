@@ -5171,6 +5171,10 @@ body {
   body.admin-bar {
     opacity: 1; }
 
+.site-main {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
 .skip-link {
   display: none; }
 
@@ -5619,7 +5623,7 @@ h2 {
   color: #fff;
   border-radius: 50px; }
 
-.cart_totals ul#shipping_method li {
+.cart_totals #shipping_method li {
   margin-bottom: 0 !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
@@ -5993,11 +5997,14 @@ h2 {
       max-width: 100px; }
 
 .single-product #woocommerce-wrapper {
-  padding-bottom: 0;
-  padding-top: 50px; }
+  padding-bottom: 0; }
   @media only screen and (max-width: 767px) {
     .single-product #woocommerce-wrapper {
       padding-top: 0; } }
+
+@media only screen and (max-width: 767px) {
+  .single-product .site-main {
+    padding-top: 0; } }
 
 .single-product #content .product.type-product {
   max-width: 1140px;

@@ -10,6 +10,12 @@ body {
 	}
 }
 
+.site-main{
+	padding-top:  50px;
+	padding-bottom:  50px;
+}
+
+
 .skip-link{
 	display: none;
 }
@@ -562,7 +568,7 @@ display: none;
 		color: #fff;
 		border-radius:  50px;
 	}
-	ul#shipping_method{
+	#shipping_method{
 		li{
 			margin-bottom:  0 !important;
 		}

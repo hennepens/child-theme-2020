@@ -15,7 +15,11 @@
 	}
 	#woocommerce-wrapper{
 		padding-bottom: 0;
-		padding-top: 50px;
+		@media only screen and (max-width: 767px) {
+			padding-top: 0;
+		}
+	}
+	.site-main{
 		@media only screen and (max-width: 767px) {
 			padding-top: 0;
 		}
