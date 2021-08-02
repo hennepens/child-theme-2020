@@ -5619,6 +5619,9 @@ h2 {
   color: #fff;
   border-radius: 50px; }
 
+.cart_totals ul#shipping_method li {
+  margin-bottom: 0 !important; }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
   background: none;

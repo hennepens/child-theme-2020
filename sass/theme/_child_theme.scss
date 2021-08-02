@@ -555,11 +555,17 @@ display: none;
 		
 	}
 	.btn{
-			clear:  both;
-			float:  right;
-			padding:  10px 20px;
-			background-color: #77a464;
-			color: #fff;
-			border-radius:  50px;
+		clear:  both;
+		float:  right;
+		padding:  10px 20px;
+		background-color: #77a464;
+		color: #fff;
+		border-radius:  50px;
+	}
+	ul#shipping_method{
+		li{
+			margin-bottom:  0 !important;
 		}
+	}
+
 }
