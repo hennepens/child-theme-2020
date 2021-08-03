@@ -10,6 +10,16 @@ body {
 	}
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 .site-main{
 	padding-top:  50px;
 	padding-bottom:  50px;
@@ -574,4 +584,28 @@ display: none;
 		}
 	}
 
+}
+
+#jckqv_summary{
+	width:  70% !important;
+	.woocommerce-variation-price,.price,.variations{
+		display:  none !important;
+	}
+	#autoship-schedule-options-variable{
+		margin:  0;
+	}
+	#jckqv_desc{
+		p{
+			margin:  0;
+		}
+	}
+	.single_variation_wrap{
+		margin:  0;
+	}
+}
+#jckqv_images_wrap{
+	width: 30% !important;
+}
+.jckqv-qty-spinners{
+	display:  none !important;
 }

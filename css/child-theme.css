@@ -5171,6 +5171,14 @@ body {
   body.admin-bar {
     opacity: 1; }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
 .site-main {
   padding-top: 50px;
   padding-bottom: 50px; }
@@ -5625,6 +5633,23 @@ h2 {
 
 .cart_totals #shipping_method li {
   margin-bottom: 0 !important; }
+
+#jckqv_summary {
+  width: 70% !important; }
+  #jckqv_summary .woocommerce-variation-price, #jckqv_summary .price, #jckqv_summary .variations {
+    display: none !important; }
+  #jckqv_summary #autoship-schedule-options-variable {
+    margin: 0; }
+  #jckqv_summary #jckqv_desc p {
+    margin: 0; }
+  #jckqv_summary .single_variation_wrap {
+    margin: 0; }
+
+#jckqv_images_wrap {
+  width: 30% !important; }
+
+.jckqv-qty-spinners {
+  display: none !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {

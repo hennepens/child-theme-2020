@@ -510,6 +510,8 @@ function misha_after_add_to_cart_btn(){
     
 
     </div>';
+
+
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
@@ -926,4 +928,11 @@ function xx_add_autoship_scheduled_orders_order_number_column( $columns ){
 
 add_filter( 'autoship_my_account_my_scheduled_orders_columns', 'xx_add_autoship_scheduled_orders_order_number_column', 10, 1 );
 
+ // Default the Autoship option for both Simple and
+// Variable products by default.
+function xx_default_autoship_for_all( $default ){
+  return 'yes';
+}
+add_filter('autoship_default_product_schedule_options_choice_value', 'xx_default_autoship_for_all', 10 ,1);
 
+?>
