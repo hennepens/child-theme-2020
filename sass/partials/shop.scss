@@ -40,6 +40,17 @@
 				color:  inherit;
 				}
 			}
+			
+		}
+		.iconic-wqv-button{
+			margin-top:  1em !important;
+			margin-bottom:  0 !important;
+			width:  150px !important;
+			border:  2px solid #000 !important;
+			borer-radius:  100px !important;
+			padding:  .618em 1em !important;
+			font-weight:  700;
+			line-height: 1 !important;
 		}
 		.woocommerce-loop-product__title{
 			padding: 0;
@@ -160,9 +171,9 @@
 		    font-style: italic;
 		    color: #356e3e;
 		    margin-top: 10px;
-		    padding: 0;
-		    border: 0;
-		    width: auto;
+		    padding: 0 !important;
+		    border: 0 !important;
+		    width: auto !important;
 		    &:after{
 		    	top: inherit !important;
 		    	font-style: initial !important;

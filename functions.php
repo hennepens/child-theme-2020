@@ -504,14 +504,21 @@ add_action( 'woocommerce_after_shop_loop_item', 'misha_after_add_to_cart_btn' );
  
 function misha_after_add_to_cart_btn(){
   global $product;
-  echo '<a href="#" rel="nofollow" data-product_id="'. $product->get_parent_id() .'" data-product_sku="'. $product->get_sku() .'" data-quantity="1" class="subscription-message button add_to_cart add_to_cart_button jck_wssv_add_to_cart" data-variation_id="'. $product->get_id() .'" data-convert_to_sub_'. $product->get_parent_id() .'="6_week"><div class="woocommerce-button" title="Select options">Subscribe &amp; Save 25&percnt;</div></a>
+  echo '
+   <a href="#" rel="nofollow" data-jckqvpid="' . $product->get_parent_id().':'. $product->get_id() . '" class="iconic-wqv-button iconic-wqv-button--align-center subscription-message"> Subscribe &amp; Save 25&percnt;</a>
 
-    <div class="popup">
-    
-
-    </div>';
-
-
+  <script>
+  jQuery(document).ready(function(){
+    function selectAutoship(){
+      console.log(document);
+      jQuery(document).find("input.autoship-yes-radio").attr("checked", "checked");
+    }
+      jQuery(".subscription-message").click(function(){
+        jQuery("body").addClass("clicked-autoship");
+        selectAutoship();
+      });
+   });
+  </script>;';
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
@@ -805,6 +812,14 @@ if ( ! function_exists( 'save_custom_content_meta_box' ) )
     }
 }
 
+ // Default the Autoship option for both Simple and
+// Variable products by default.
+function default_autoship_for_all( $default ){
+  return 'yes';
+}
+//add_filter('autoship_default_product_schedule_options_choice_value', 'default_autoship_for_all', 10 ,1);
+
+
 
 function autoship_new_default_frequency_options( $options ) {
   // Return a new set of default frequency options of 1 through 4 Weeks
@@ -928,11 +943,21 @@ function xx_add_autoship_scheduled_orders_order_number_column( $columns ){
 
 add_filter( 'autoship_my_account_my_scheduled_orders_columns', 'xx_add_autoship_scheduled_orders_order_number_column', 10, 1 );
 
- // Default the Autoship option for both Simple and
-// Variable products by default.
-function xx_default_autoship_for_all( $default ){
-  return 'yes';
+
+function add_js_qv($product){
+?>
+<script>
+    if(jQuery("body").hasClass("clicked-autoship")) {
+      jQuery("#jckqv").find("input.autoship-yes-radio").attr("checked", "checked");    
+    }
+  
+  </script>;
+
+<?php
+
 }
-add_filter('autoship_default_product_schedule_options_choice_value', 'xx_default_autoship_for_all', 10 ,1);
+
+add_action('jck_qv_after_summary', 'add_js_qv', 10, 1);
+
 
 ?>

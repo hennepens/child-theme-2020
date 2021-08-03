@@ -5838,6 +5838,15 @@ h2 {
       .products li .add_to_cart_button.subscription-message:hover {
         background: none;
         color: inherit; }
+    .products li .iconic-wqv-button {
+      margin-top: 1em !important;
+      margin-bottom: 0 !important;
+      width: 150px !important;
+      border: 2px solid #000 !important;
+      borer-radius: 100px !important;
+      padding: .618em 1em !important;
+      font-weight: 700;
+      line-height: 1 !important; }
     .products li .woocommerce-loop-product__title {
       padding: 0;
       -webkit-box-flex: 1;
@@ -5949,9 +5958,9 @@ h2 {
       font-style: italic;
       color: #356e3e;
       margin-top: 10px;
-      padding: 0;
-      border: 0;
-      width: auto; }
+      padding: 0 !important;
+      border: 0 !important;
+      width: auto !important; }
       .products li .subscription-message:after {
         top: inherit !important;
         font-style: initial !important; }
