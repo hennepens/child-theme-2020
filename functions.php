@@ -948,7 +948,8 @@ function add_js_qv($product){
 ?>
 <script>
     if(jQuery("body").hasClass("clicked-autoship")) {
-      jQuery("#jckqv").find("input.autoship-yes-radio").attr("checked", "checked");    
+      jQuery("#jckqv").find("input.autoship-yes-radio").attr("checked", "checked");
+      jQuery("body").removeClass("clicked-autoship");
     }
   
   </script>;

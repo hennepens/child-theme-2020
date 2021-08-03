@@ -5639,7 +5639,7 @@ h2 {
   #jckqv_summary .woocommerce-variation-price, #jckqv_summary .price, #jckqv_summary .variations {
     display: none !important; }
   #jckqv_summary #autoship-schedule-options-variable {
-    margin: 0; }
+    margin: 0 0 25px 0; }
   #jckqv_summary #jckqv_desc p {
     margin: 0; }
   #jckqv_summary .single_variation_wrap {
