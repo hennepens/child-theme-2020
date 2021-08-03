@@ -5834,7 +5834,7 @@ h2 {
         color: #fff;
         border-color: #fff; }
       .products li .add_to_cart_button.subscription-message:hover {
-        background: none;
+        background: none !important;
         color: inherit; }
       .products li .add_to_cart_button .woocommerce-button {
         display: inline-block !important; }
@@ -5846,7 +5846,12 @@ h2 {
       border-radius: 100px !important;
       padding: .618em 1em !important;
       font-weight: 700;
-      line-height: 1 !important; }
+      line-height: 1 !important;
+      -webkit-transition: all	0.25s;
+      transition: all	0.25s; }
+      .products li .iconic-wqv-button:hover {
+        background: #000;
+        color: #fff; }
     .products li .woocommerce-loop-product__title {
       padding: 0;
       -webkit-box-flex: 1;
@@ -5958,9 +5963,15 @@ h2 {
       font-style: italic;
       color: #356e3e;
       margin-top: 10px;
-      padding: 0 !important;
+      padding: 0 0 2px 0 !important;
       border: 0 !important;
-      width: auto !important; }
+      width: auto !important;
+      border-bottom: 2px solid #fff !important;
+      border-radius: 0 !important; }
+      .products li .subscription-message:hover {
+        background: none !important;
+        color: #000;
+        border-bottom: 2px solid #000 !important; }
       .products li .subscription-message:after {
         top: inherit !important;
         font-style: initial !important; }
