@@ -960,4 +960,41 @@ function add_js_qv($product){
 add_action('jck_qv_after_summary', 'add_js_qv', 10, 1);
 
 
+
+
+add_filter ( 'woocommerce_account_menu_items', 'misha_one_more_link' );
+function misha_one_more_link( $menu_links ){
+
+  // we will hook "anyuniquetext123" later
+  $new = array( 'wholesale' => 'Wholesale Portal' );
+
+  // or in case you need 2 links
+  // $new = array( 'link1' => 'Link 1', 'link2' => 'Link 2' );
+
+  // array_slice() is good when you want to add an element between the other ones
+  $menu_links = array_slice( $menu_links, 0, 1, true ) 
+  + $new 
+  + array_slice( $menu_links, 1, NULL, true );
+
+
+  return $menu_links;
+ 
+ 
+}
+
+add_filter( 'woocommerce_get_endpoint_url', 'misha_hook_endpoint', 10, 4 );
+function misha_hook_endpoint( $url, $endpoint, $value, $permalink ){
+ 
+  if( $endpoint === 'wholesale' ) {
+ 
+    // ok, here is the place for your custom URL, it could be external
+    $url = 'https://hennepens.com/wholesale';
+ 
+  }
+  return $url;
+ 
+}
+
+
+
 ?>
