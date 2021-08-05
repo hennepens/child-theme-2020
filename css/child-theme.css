@@ -5651,6 +5651,13 @@ h2 {
 .jckqv-qty-spinners {
   display: none !important; }
 
+.product .autoship-price-container .autoship-retail-price .price {
+  text-decoration: line-through;
+  color: #212529;
+  opacity: 0.5; }
+  .product .autoship-price-container .autoship-retail-price .price ins .amount {
+    display: none; }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
   background: none;
@@ -6211,10 +6218,13 @@ h2 {
     margin-top: -5px; }
 
 .single-product .one-time-price {
-  float: right;
-  font-size: large;
-  line-height: initial;
-  font-family: "libre_baskervilleregular"; }
+  margin-left: auto;
+  line-height: initial; }
+  .single-product .one-time-price .price {
+    color: #212529 !important;
+    font-family: "libre_baskervilleregular"; }
+    .single-product .one-time-price .price ins {
+      text-decoration: none; }
 
 .single-product .one-time-purchase-label {
   -webkit-box-flex: 1;
@@ -6306,8 +6316,10 @@ h2 {
 
 .single_variation_wrap .autoship-price-container {
   font-family: "libre_baskervilleitalic";
-  font-size: large;
   color: #77a464; }
+
+.single_variation_wrap .autoship-checkout-price {
+  font-size: 1.25rem; }
 
 .single_variation_wrap .autoship-schedule-options-variable .autoship-frequency.active {
   display: -webkit-box;
@@ -6324,8 +6336,7 @@ h2 {
   border-bottom-right-radius: 8px; }
   .single_variation_wrap .autoship-schedule-options-variable .autoship-frequency.active label {
     margin-bottom: 0;
-    margin-right: 10px;
-    font-size: large; }
+    margin-right: 10px; }
   .single_variation_wrap .autoship-schedule-options-variable .autoship-frequency.active select {
     font-size: large;
     border-radius: 8px;
@@ -6373,8 +6384,7 @@ h2 {
     margin-right: 10px; }
 
 .single_variation_wrap .autoship-label {
-  width: 100%;
-  font-size: large; }
+  width: 100%; }
   .single_variation_wrap .autoship-label input {
     width: 1.25rem;
     height: 1.25rem; }

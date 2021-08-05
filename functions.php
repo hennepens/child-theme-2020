@@ -321,7 +321,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
 add_filter('woocommerce_reset_variations_link', '__return_empty_string');
 
 
-add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
+//add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
 function func_option_valgt2() {
     global $product;
 
@@ -887,7 +887,7 @@ function change_radio_label($label, $option_type, $discount, $product) {
     if($option_type == 'yes') {
         return $discount ? __('Subscribe & Save') : __('Subscribe');
     } else {
-        return __('One-time Purchase ' . $product->get_price_html());
+        return __('One-time Purchase ');
     }
 }
 add_filter('autoship_radio_label', 'change_radio_label', 10, 4);
@@ -914,7 +914,7 @@ function autoship_checkout_recurring_variable_discount_string2( $product_id ){
       <?php  echo autoship_info_dialog_link( $product->get_id() ); ?>
     </span>
         <span class="autoship-price-container">
-          <span class="autoship-retail-price"> <s><?php echo $product->get_price_html()?></s></span>
+          <span class="autoship-retail-price"> <s><?php do_action('autoship_before_schedule_options_variable_custom_2', $product, $skin, $default_check );  ?></s></span>
           <span class="autoship-checkout-price"></span>
         </span>
   </span>
@@ -995,6 +995,33 @@ function misha_hook_endpoint( $url, $endpoint, $value, $permalink ){
  
 }
 
+add_action('autoship_before_schedule_options_variable_custom', 'selected_variation_price_replace_variable_price_range');
+add_action('autoship_before_schedule_options_variable_custom_2', 'selected_variation_price_replace_variable_price_range');
+function selected_variation_price_replace_variable_price_range(){
+    global $product;
 
+    if( $product->is_type('variable') ):
+    ?><style> .woocommerce-variation-price {display:none;} </style>
+    <script>
+    jQuery(function($) {
+        var p = '.label-price-container .one-time-price'
+            p2 = '.autoship-retail-price'
+            q = $(p).html();
+            q2 = $(p2).html();
+
+        $('form.cart').on('show_variation', function( event, data ) {
+            if ( data.price_html ) {
+                $(p).html(data.price_html);
+                $(p2).html(data.price_html);
+            }
+        }).on('hide_variation', function( event ) {
+            $(p).html(q);
+            $(p2).html(q2);
+        });
+    });
+    </script>
+    <?php
+    endif;
+}
 
 ?>

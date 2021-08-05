@@ -238,10 +238,15 @@
 	}
 
 	.one-time-price{
-		float: right;
-	    font-size: large;
+		margin-left:  auto;
 	    line-height: initial;
-	    font-family: $font-family-libre-baskerville-regular;
+	    .price{
+	    	color:  #212529 !important;
+	    	font-family: $font-family-libre-baskerville-regular;
+	    	ins{
+	    		text-decoration: none;
+	    	}
+		}
 	}
 	.one-time-purchase-label{
 		flex-grow: 1;
@@ -328,9 +333,11 @@
 	}
 	.autoship-price-container{
 		font-family: $font-family-libre-baskerville-italic;
-		font-size:  large;
 		color: #77a464;
 
+	}
+	.autoship-checkout-price{
+		font-size:  1.25rem;
 	}
 
 	.autoship-schedule-options-variable{
@@ -347,7 +354,6 @@
 				label{
 					margin-bottom:  0;
 					margin-right:  10px;
-					font-size:  large;
 				}
 				select{
 					font-size:  large;
@@ -406,7 +412,6 @@
 	}
 	.autoship-label{
 		width:  100%;
-		font-size:  large;
 		input{
 			width:  1.25rem;
 			height:  1.25rem;

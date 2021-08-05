@@ -609,3 +609,23 @@ display: none;
 .jckqv-qty-spinners{
 	display:  none !important;
 }
+
+.product{
+	.autoship-price-container{
+		.autoship-retail-price{
+			.price{
+				text-decoration: line-through;
+				color:  #212529;
+				opacity:  0.5;
+				ins{
+					.amount{
+						display:  none;
+					}
+				}
+			}
+		}
+	}
+	.label-price-container{
+
+	}
+}

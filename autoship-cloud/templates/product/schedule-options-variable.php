@@ -47,9 +47,11 @@ $autoship_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $autoship_json 
       <label class="autoship-label <?php echo $skin['label']?>">
         <span class="one-time-container-container">
           <span class="one-time-container">
+
             <input type="radio" class="autoship-no-radio <?php echo $skin['input']?>" name="autoship<?php echo $product->get_id(); ?>" value="no" <?=$autoship_no?> />
             <span class="label-price-container">
               <?php echo apply_filters('autoship_radio_label', __( '<span>One-time Purchase</span>', 'autoship' ), 'no', false, $product ); ?>
+              <span class="one-time-price"><?php do_action('autoship_before_schedule_options_variable_custom', $product, $skin, $default_check ); ?></span>
             </span>
           </span>
       </label>
