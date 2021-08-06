@@ -5639,8 +5639,13 @@ h2 {
 
 #jckqv_summary {
   width: 70% !important; }
+  @media only screen and (max-width: 767px) {
+    #jckqv_summary {
+      width: 100% !important; } }
   #jckqv_summary .woocommerce-variation-price, #jckqv_summary .price, #jckqv_summary .variations {
     display: none !important; }
+  #jckqv_summary .one-time-price .price {
+    display: block !important; }
   #jckqv_summary #autoship-schedule-options-variable {
     margin: 0 0 25px 0; }
   #jckqv_summary #jckqv_desc p {
@@ -5650,6 +5655,9 @@ h2 {
 
 #jckqv_images_wrap {
   width: 30% !important; }
+  @media only screen and (max-width: 767px) {
+    #jckqv_images_wrap {
+      display: none !important; } }
 
 .jckqv-qty-spinners {
   display: none !important; }
@@ -6219,15 +6227,6 @@ h2 {
     font-size: 0.75rem;
     color: #999;
     margin-top: -5px; }
-
-.single-product .one-time-price {
-  margin-left: auto;
-  line-height: initial; }
-  .single-product .one-time-price .price {
-    color: #212529 !important;
-    font-family: "libre_baskervilleregular"; }
-    .single-product .one-time-price .price ins {
-      text-decoration: none; }
 
 .single-product .one-time-purchase-label {
   -webkit-box-flex: 1;

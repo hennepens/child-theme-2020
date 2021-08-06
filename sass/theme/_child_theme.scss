@@ -590,10 +590,19 @@ display: none;
 		max-width: 30% !important;
 	}
 }
+
 #jckqv_summary{
 	width:  70% !important;
+	@media only screen and (max-width: 767px) {
+		width:  100% !important;
+	}
 	.woocommerce-variation-price,.price,.variations{
 		display:  none !important;
+	}
+	.one-time-price{
+		.price{
+			display:  block !important;
+		}
 	}
 	#autoship-schedule-options-variable{
 		margin:0 0 25px 0;
@@ -609,6 +618,9 @@ display: none;
 }
 #jckqv_images_wrap{
 	width: 30% !important;
+	@media only screen and (max-width: 767px) {
+		display:  none !important;
+	}
 }
 .jckqv-qty-spinners{
 	display:  none !important;

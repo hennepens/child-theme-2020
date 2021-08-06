@@ -997,6 +997,7 @@ function misha_hook_endpoint( $url, $endpoint, $value, $permalink ){
 
 add_action('autoship_before_schedule_options_variable_custom', 'selected_variation_price_replace_variable_price_range');
 add_action('autoship_before_schedule_options_variable_custom_2', 'selected_variation_price_replace_variable_price_range');
+add_action('jck_qv_after_summary', 'selected_variation_price_replace_variable_price_range');
 function selected_variation_price_replace_variable_price_range(){
     global $product;
 
