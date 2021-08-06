@@ -597,9 +597,14 @@ display: none;
 
 #jckqv_summary{
 	width:  70% !important;
-
 	@media only screen and (max-width: 767px) {
 		width:  100% !important;
+		padding:  20px !important;
+	}
+	.cart{
+		@media only screen and (max-width: 767px) {
+			margin-bottom:  0 !important;
+		}
 	}
 	.woocommerce-variation-price,.price,.variations{
 		display:  none !important;
