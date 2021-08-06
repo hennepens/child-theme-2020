@@ -153,6 +153,7 @@ h2{
 	box-shadow: none;
 	font-weight: bold;
 	font-family: $font-family-sans-serif;
+	z-index: 99997;
 	.woocommerce-store-notice__dismiss-link {
 		display: none;
 	}

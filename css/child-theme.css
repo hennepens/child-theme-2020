@@ -5292,6 +5292,7 @@ h2 {
           box-shadow: none;
   font-weight: bold;
   font-family: "proxima_novaregular";
+  z-index: 99997;
   color: #356e3e; }
   .woocommerce-store-notice.demo_store .woocommerce-store-notice__dismiss-link {
     display: none; }
