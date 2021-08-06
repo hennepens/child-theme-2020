@@ -5689,8 +5689,8 @@ h2 {
   .product .autoship-price-container .autoship-retail-price .price ins .amount {
     display: none; }
 
-.mfp-content {
-  z-index: 9999 !important; }
+.mfp-content, .mfp-bg {
+  z-index: 99999 !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {

@@ -665,10 +665,7 @@ display: none;
 			}
 		}
 	}
-	.label-price-container{
-
-	}
 }
-.mfp-content{
-	z-index: 9999 !important;
+.mfp-content, .mfp-bg{
+	z-index: 99999 !important;
 }
