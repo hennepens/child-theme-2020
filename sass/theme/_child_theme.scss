@@ -666,6 +666,9 @@ display: none;
 		}
 	}
 }
-.mfp-content, .mfp-bg{
+.mfp-bg{
+	z-index: 99998 !important;
+}
+.mfp-content{
 	z-index: 99999 !important;
 }

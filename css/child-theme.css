@@ -5689,7 +5689,10 @@ h2 {
   .product .autoship-price-container .autoship-retail-price .price ins .amount {
     display: none; }
 
-.mfp-content, .mfp-bg {
+.mfp-bg {
+  z-index: 99998 !important; }
+
+.mfp-content {
   z-index: 99999 !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
