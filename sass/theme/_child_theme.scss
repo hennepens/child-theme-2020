@@ -587,10 +587,20 @@ display: none;
 
 }
 #jckqv{
+	h1, p{
+		font-family: $font-family-libre-baskerville-regular !important;
+	}
 	.iconic-woothumbs-all-images-wrap{
 		max-width: 30% !important;
 		@media only screen and (max-width: 767px) {
 			display:  none !important;
+		}
+	}
+	.price{
+		display: inherit !important;
+
+		@media only screen and (max-width: 767px) {
+			display:  block !important;
 		}
 	}
 }
@@ -606,7 +616,7 @@ display: none;
 			margin-bottom:  0 !important;
 		}
 	}
-	.woocommerce-variation-price,.price,.variations{
+	.woocommerce-variation-price,.variations{
 		display:  none !important;
 	}
 	.one-time-price{
@@ -656,7 +666,7 @@ display: none;
 	display:  none !important;
 }
 
-.product{
+.product, #jckqv_summary{
 	.autoship-price-container{
 		.autoship-retail-price{
 			.price{
@@ -678,3 +688,4 @@ display: none;
 .mfp-wrap{
 	z-index: 99999 !important;
 }
+
