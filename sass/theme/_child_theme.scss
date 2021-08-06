@@ -593,6 +593,7 @@ display: none;
 
 #jckqv_summary{
 	width:  70% !important;
+	
 	@media only screen and (max-width: 767px) {
 		width:  100% !important;
 	}
@@ -618,6 +619,7 @@ display: none;
 }
 #jckqv_images_wrap{
 	width: 30% !important;
+
 	@media only screen and (max-width: 767px) {
 		display:  none !important;
 	}
