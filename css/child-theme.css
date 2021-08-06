@@ -5636,6 +5636,9 @@ h2 {
 
 #jckqv .iconic-woothumbs-all-images-wrap {
   max-width: 30% !important; }
+  @media only screen and (max-width: 767px) {
+    #jckqv .iconic-woothumbs-all-images-wrap {
+      display: none !important; } }
 
 #jckqv_summary {
   width: 70% !important; }
@@ -5644,14 +5647,31 @@ h2 {
       width: 100% !important; } }
   #jckqv_summary .woocommerce-variation-price, #jckqv_summary .price, #jckqv_summary .variations {
     display: none !important; }
-  #jckqv_summary .one-time-price .price {
-    display: block !important; }
+  #jckqv_summary .one-time-price {
+    margin-left: auto; }
+    #jckqv_summary .one-time-price .price {
+      display: inherit !important; }
   #jckqv_summary #autoship-schedule-options-variable {
     margin: 0 0 25px 0; }
   #jckqv_summary #jckqv_desc p {
     margin: 0; }
   #jckqv_summary .single_variation_wrap {
     margin: 0; }
+  #jckqv_summary .quantity span {
+    display: none; }
+  #jckqv_summary .button {
+    padding: 4px;
+    min-width: 200px;
+    font-size: 1.25rem;
+    background: #356e3e;
+    border: 4px solid #75bd80;
+    border-radius: 100px;
+    color: #fff;
+    text-transform: uppercase;
+    -webkit-transition: .1s all ease;
+    transition: .1s all ease;
+    height: auto;
+    font-size: 1rem; }
 
 #jckqv_images_wrap {
   width: 30% !important; }
@@ -5668,6 +5688,9 @@ h2 {
   opacity: 0.5; }
   .product .autoship-price-container .autoship-retail-price .price ins .amount {
     display: none; }
+
+.mfp-content {
+  z-index: 9999 !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
@@ -6402,7 +6425,8 @@ h2 {
       display: flex;
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center; }
+              align-items: center;
+      white-space: no-wrap; }
     .single_variation_wrap .autoship-label .autoship-discount-label input {
       margin-right: 10px; }
   .single_variation_wrap .autoship-label .autoship-checkout-percent-discount {

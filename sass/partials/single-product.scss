@@ -237,7 +237,7 @@
 		}
 	}
 
-	
+
 	.one-time-purchase-label{
 		flex-grow: 1;
 		padding-right: 15px;
@@ -413,6 +413,7 @@
 				margin-right:  auto;
 				display:  flex;
 				align-items:  center;
+				white-space: no-wrap;
 			}
 			input{
 				margin-right:  10px;
