@@ -6078,7 +6078,7 @@ h2 {
           line-height: 0; } }
     @media only screen and (max-width: 767px) {
       .products li .full-title {
-        display: block;
+        display: none;
         line-height: 0; } }
 
 .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
