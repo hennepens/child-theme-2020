@@ -795,3 +795,19 @@ display: none;
 .animatedfsmenu.animation_line .afsmenu>li.has-children__on>a, .animatedfsmenu.animation_line .afsmenu>li:hover>a{
 	padding-left:  0 !important;
 }
+
+.woocommerce-product-gallery__wrapper{
+	display:  flex;
+	flex-direction: row-reverse;
+	.woocommerce-product-gallery__image{
+		max-width:  80%;
+	}
+	.gallery{
+		max-width:  20%;
+		border-right: 1px solid #efefef;
+		img{
+			margin-bottom:  5px;
+			border-bottom: 1px solid #efefef;
+		}
+	}
+}

@@ -5799,6 +5799,23 @@ h2 {
 .animatedfsmenu.animation_line .afsmenu > li.has-children__on > a, .animatedfsmenu.animation_line .afsmenu > li:hover > a {
   padding-left: 0 !important; }
 
+.woocommerce-product-gallery__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+  .woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image {
+    max-width: 80%; }
+  .woocommerce-product-gallery__wrapper .gallery {
+    max-width: 20%;
+    border-right: 1px solid #efefef; }
+    .woocommerce-product-gallery__wrapper .gallery img {
+      margin-bottom: 5px;
+      border-bottom: 1px solid #efefef; }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
   background: none;
