@@ -5734,7 +5734,7 @@ h2 {
 .mfp-wrap {
   z-index: 99999 !important; }
 
-.animatedsfmenu {
+#animatedfsmenu.animatedfsmenu {
   position: absolute !important; }
 
 .animatedfsmenu-navbar-toggler.right_top {
