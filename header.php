@@ -44,9 +44,6 @@ $upload_dir = wp_get_upload_dir();
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
 		<nav class="navbar navbar-expand-md">
-			<div class="mobile-nav d-md-none">
-				<?php shiftnav_toggle( 'shiftnav-main' , '' , array( 'icon' => 'bars' , 'class' => 'shiftnav-toggle-button') ); ?>
-			</div>
 				<div class="d-flex container">
 				<?php wp_nav_menu(
 				array(
