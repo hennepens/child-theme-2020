@@ -5751,6 +5751,7 @@ h2 {
   background: #ffffff !important; }
 
 .home .animatedfsmenu-navbar-toggler.right_top {
+  poistion: absolute !important;
   left: 0 !important;
   top: 0 !important;
   padding: 28px 20px !important;
