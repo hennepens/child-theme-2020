@@ -5585,9 +5585,24 @@ h2 {
   font-family: "libre_baskervilleitalic"; }
 
 .woocommerce-cart-form .cart .cart_item td {
-  vertical-align: top !important; }
+  vertical-align: top !important;
+  text-align: left !important; }
+  .woocommerce-cart-form .cart .cart_item td::before {
+    padding-right: 5px; }
   .woocommerce-cart-form .cart .cart_item td img {
     width: 200px !important; }
+  @media only screen and (max-width: 767px) {
+    .woocommerce-cart-form .cart .cart_item td.product-thumbnail {
+      display: block !important;
+      border-top: 0;
+      padding-bottom: 0; } }
+  @media only screen and (max-width: 767px) {
+    .woocommerce-cart-form .cart .cart_item td.product-thumbnail::before {
+      display: none; } }
+  @media only screen and (max-width: 767px) {
+    .woocommerce-cart-form .cart .cart_item td.product-name {
+      border-top: 0;
+      padding-top: 0; } }
 
 .woocommerce-cart-form .cart .cart_item .autoship-label input {
   width: auto; }
@@ -5615,14 +5630,23 @@ h2 {
 .cart_totals h2 {
   display: none; }
 
-.cart_totals table {
+.cart_totals .shop_table {
   border: 0 !important;
-  width: auto !important;
-  float: right !important; }
-  .cart_totals table tr {
+  float: right !important;
+  width: auto !important; }
+  @media only screen and (max-width: 767px) {
+    .cart_totals .shop_table {
+      width: 100% !important; } }
+  .cart_totals .shop_table tr {
     text-align: right; }
-  .cart_totals table td {
-    border: 0; }
+    @media only screen and (max-width: 767px) {
+      .cart_totals .shop_table tr td {
+        border: 0;
+        text-align: right; } }
+    @media only screen and (max-width: 767px) {
+      .cart_totals .shop_table tr td::before {
+        padding-right: 5px !important;
+        float: none !important; } }
 
 .cart_totals .btn {
   clear: both;
@@ -5645,7 +5669,8 @@ h2 {
       display: none !important; } }
 
 #jckqv .price {
-  display: inherit !important; }
+  display: inherit !important;
+  font-weight: 400; }
   @media only screen and (max-width: 767px) {
     #jckqv .price {
       display: block !important; } }
@@ -6045,6 +6070,12 @@ h2 {
       pointer-events: none; }
     .products li.outofstock .subscription-message {
       border: 0; }
+    .products li .line-break {
+      display: none; }
+      @media only screen and (max-width: 767px) {
+        .products li .line-break {
+          display: block;
+          line-height: 0; } }
 
 @media only screen and (max-width: 767px) {
   li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
@@ -6124,6 +6155,8 @@ h2 {
   text-align: center;
   line-height: 2rem;
   width: 100%; }
+  .single-product .summary .product_title .line-break {
+    display: none; }
   .single-product .summary .product_title span:first-child {
     font-family: "libre_baskervillebold"; }
   .single-product .summary .product_title span:nth-child(2) {
@@ -6358,7 +6391,21 @@ h2 {
 
 .single_variation_wrap .autoship-price-container {
   font-family: "libre_baskervilleitalic";
-  color: #77a464; }
+  color: #77a464;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media only screen and (max-width: 767px) {
+    .single_variation_wrap .autoship-price-container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .single_variation_wrap .autoship-price-container bdi {
+    padding-right: 5px; }
+    @media only screen and (max-width: 767px) {
+      .single_variation_wrap .autoship-price-container bdi {
+        padding-right: 0; } }
 
 .single_variation_wrap .autoship-checkout-price {
   font-size: 1.25rem; }
@@ -6424,6 +6471,8 @@ h2 {
             align-items: center; }
   .single_variation_wrap .one-time-container input {
     margin-right: 10px; }
+  .single_variation_wrap .one-time-container .one-time-price {
+    margin-left: auto; }
 
 .single_variation_wrap .autoship-label {
   width: 100%; }
@@ -6448,6 +6497,10 @@ h2 {
       margin-right: 10px; }
   .single_variation_wrap .autoship-label .autoship-checkout-percent-discount {
     padding: 0 4px; }
+
+@media only screen and (max-width: 767px) {
+  .single_variation_wrap .quantity span {
+    display: none; } }
 
 .u-column1 {
   display: block; }

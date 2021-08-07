@@ -208,6 +208,13 @@
 				border:  0;
 			}
 		}
+		.line-break{
+			display: none;
+			@media only screen and (max-width: 767px) {
+				display:  block;
+				line-height: 0;
+			}
+		}
 	}
 }
 

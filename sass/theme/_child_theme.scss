@@ -517,8 +517,30 @@ display: none;
 			}
 			td{
 				vertical-align: top !important;
+				text-align: left !important;
+				&::before{
+					padding-right:  5px;
+				}
 				img{
 					width: 200px !important;
+				}
+				&.product-thumbnail{
+					@media only screen and (max-width: 767px) {
+						display:  block !important;
+						border-top:  0;
+						padding-bottom:  0;
+					}
+					&::before{
+						@media only screen and (max-width: 767px) {
+							display:  none;
+						}
+					}
+				}
+				&.product-name{
+					@media only screen and (max-width: 767px) {
+						border-top:  0;
+						padding-top:  0;
+					}
 				}
 			}
 			.autoship-label{
@@ -559,17 +581,28 @@ display: none;
 	h2{
 		display:  none;
 	}
-	table{
+	.shop_table{
 		border:  0 !important;
-		width: auto !important;
 		float:  right !important;
+		width:  auto !important;
+		@media only screen and (max-width: 767px) {
+			width:  100% !important;
+		}
 		tr{
 			text-align: right;
+			td{
+				@media only screen and (max-width: 767px) {
+					border:  0;
+					text-align: right;
+				}
+				&::before{
+					@media only screen and (max-width: 767px) {
+						padding-right:  5px !important;
+						float:  none !important;
+					}
+				}
+			}
 		}
-		td{
-			border:  0;
-		}
-		
 	}
 	.btn{
 		clear:  both;
@@ -598,7 +631,7 @@ display: none;
 	}
 	.price{
 		display: inherit !important;
-
+		font-weight:  400;
 		@media only screen and (max-width: 767px) {
 			display:  block !important;
 		}

@@ -44,6 +44,9 @@
 			text-align: center;
     		line-height: 2rem;
     		width: 100%;
+    		.line-break{
+				display: none;
+			}
     		span{
     			&:first-child{
     				font-family: $font-family-libre-baskerville-bold;
@@ -324,8 +327,18 @@
 	.autoship-price-container{
 		font-family: $font-family-libre-baskerville-italic;
 		color: #77a464;
-
+		display:  flex;
+		@media only screen and (max-width: 767px) {
+			flex-direction:  column;
+		}
+		bdi{
+			padding-right:  5px;
+			@media only screen and (max-width: 767px) {
+				padding-right: 0;
+			}
+		}
 	}
+
 	.autoship-checkout-price{
 		font-size:  1.25rem;
 	}
@@ -399,6 +412,9 @@
 		input{
 			margin-right: 10px;
 		}
+		.one-time-price{
+			margin-left: auto;
+		}
 	}
 	.autoship-label{
 		width:  100%;
@@ -423,4 +439,10 @@
 			padding: 0 4px;
 		}
 	}
+	.quantity span{
+		@media only screen and (max-width: 767px) {
+			display: none;
+		}
+	}
+
 }
