@@ -517,7 +517,7 @@ function misha_after_add_to_cart_btn(){
         selectAutoship();
       });
    });
-  </script>;';
+  </script>';
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
