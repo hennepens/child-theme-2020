@@ -6081,8 +6081,9 @@ h2 {
         display: none;
         line-height: 0; } }
 
-.woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
-  width: 48% !important; }
+@media only screen and (max-width: 767px) {
+  .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+    width: 48% !important; } }
 
 @media only screen and (max-width: 767px) {
   li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
