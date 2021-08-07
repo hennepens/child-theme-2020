@@ -5734,6 +5734,16 @@ h2 {
 .mfp-wrap {
   z-index: 99999 !important; }
 
+.animatedfsmenu-navbar-toggler.right_top {
+  left: 0;
+  top: 0;
+  padding: 28px 20px;
+  width: 20px;
+  height: 20px; }
+  .animatedfsmenu-navbar-toggler.right_top .bar {
+    width: 20px;
+    height: 20px; }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
   background: none;

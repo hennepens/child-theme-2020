@@ -722,3 +722,17 @@ display: none;
 	z-index: 99999 !important;
 }
 
+
+.animatedfsmenu-navbar-toggler{
+	&.right_top{
+		left: 0;
+    	top: 0;
+    	padding: 28px 20px;
+    	width:  20px;
+    	height:  20px;
+    	.bar{
+    		width:  20px;
+    		height: 20px;
+    	}
+	}
+}
