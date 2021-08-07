@@ -725,6 +725,7 @@ display: none;
 
 .animatedfsmenu-navbar-toggler{
 	&.right_top{
+		position:  absolute !important;
 		left: 0 !important;
     	top: 55px !important;
     	padding: 28px 20px !important;
