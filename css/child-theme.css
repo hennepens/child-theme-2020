@@ -5819,6 +5819,13 @@ h2 {
       margin-bottom: 5px;
       border-bottom: 1px solid #efefef; }
 
+.menu-mobile-menu {
+  background: url("https://hennepens.com/wp-content/themes/child-theme-2020/images/hennepens-logomark-small.svg") !important;
+  fill: #fff;
+  width: 200px;
+  height: 200px;
+  display: block; }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
   background: none;
