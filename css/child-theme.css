@@ -5235,6 +5235,9 @@ h2 {
       max-width: 30px;
       max-height: 30px;
       border-radius: 100px; }
+    @media only screen and (max-width: 767px) {
+      .navbar .quick-links-container .navbar-nav li:first-child {
+        display: none; } }
   .navbar .navbar-collapse {
     width: 225px;
     -webkit-box-pack: center;

@@ -89,6 +89,13 @@ h2{
 			max-height: 30px;
 			border-radius: 100px;
 		}
+		.navbar-nav{
+			li:first-child{
+				@media only screen and (max-width: 767px) {
+					display:  none;
+				}
+			}
+		}
 	}
 	.navbar-collapse{
 		width: 225px;
