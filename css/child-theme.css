@@ -5821,11 +5821,14 @@ h2 {
 
 #menu-mobile-menu:before {
   content: '';
-  background: url("https://hennepens.com/wp-content/themes/child-theme-2020/images/hennepens-logomark-small.svg") !important;
-  fill: #fff;
-  width: 200px;
-  height: 200px;
-  display: block; }
+  background-image: url(https://hennepens.com/wp-content/themes/child-theme-2020/images/hennepens-logomark-small.svg) !important;
+  fill: white;
+  width: 100px;
+  height: 100px;
+  display: block;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+  margin: 0 auto; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
