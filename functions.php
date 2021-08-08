@@ -482,7 +482,7 @@ function lw_hide_sale_flash(){
 }
 
 
-add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
+//add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
  
 function custom_remove_downloads_my_account( $items ) {
 unset($items['downloads']);
