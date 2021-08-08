@@ -1034,7 +1034,7 @@ function bbloomer_remove_address_my_account( $items ) {
  
 // -------------------------------
 // 2. Second, print the ex tab content (woocommerce_account_edit_address) into an existing tab (woocommerce_account_edit-account_endpoint). See notes below!
- 
+add_action( 'woocommerce_account_edit-account_endpoint', 'woocommerce_account_edit_address' );
 
 
 ?>
