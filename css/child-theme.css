@@ -5819,7 +5819,8 @@ h2 {
       margin-bottom: 5px;
       border-bottom: 1px solid #efefef; }
 
-.menu-mobile-menu {
+#menu-mobile-menu:before {
+  content: '';
   background: url("https://hennepens.com/wp-content/themes/child-theme-2020/images/hennepens-logomark-small.svg") !important;
   fill: #fff;
   width: 200px;
