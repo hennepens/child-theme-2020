@@ -1025,6 +1025,16 @@ function selected_variation_price_replace_variable_price_range(){
     endif;
 }
 
+add_filter( 'woocommerce_account_menu_items', 'bbloomer_remove_address_my_account', 999 );
+ 
+function bbloomer_remove_address_my_account( $items ) {
+   unset( $items['edit-address'] );
+   return $items;
+}
+ 
+// -------------------------------
+// 2. Second, print the ex tab content (woocommerce_account_edit_address) into an existing tab (woocommerce_account_edit-account_endpoint). See notes below!
+ 
 
 
 ?>
