@@ -826,9 +826,11 @@ display: none;
 	    fill: white;
 	    width: 75px;
 	    height: 75px;
-	    margin-bottom:  25px;
 	    display: block;
 	    filter: brightness(0) invert(1);
 	    margin: 0 auto;
+	    margin-bottom:  25px;
+	    background-size: 100% 100% !important;
+    	background-repeat: no-repeat;
 	}
 }
