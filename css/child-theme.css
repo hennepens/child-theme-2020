@@ -5833,6 +5833,10 @@ h2 {
   background-size: 100% 100% !important;
   background-repeat: no-repeat; }
 
+@media only screen and (max-width: 767px) {
+  .custom-login {
+    padding: 10px; } }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
   background: none;
