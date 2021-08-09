@@ -836,7 +836,9 @@ display: none;
 }
 
 .custom-login{
-	@media only screen and (max-width: 767px) {
-		padding: 10px;
+	form{
+		@media only screen and (max-width: 767px) {
+			padding: 10px;
+		}
 	}
 }

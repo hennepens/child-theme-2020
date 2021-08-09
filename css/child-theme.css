@@ -5834,7 +5834,7 @@ h2 {
   background-repeat: no-repeat; }
 
 @media only screen and (max-width: 767px) {
-  .custom-login {
+  .custom-login form {
     padding: 10px; } }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
