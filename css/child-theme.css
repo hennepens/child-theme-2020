@@ -5837,7 +5837,7 @@ h2 {
   .custom-login form {
     padding: 10px !important; } }
 
-.wc-product-table td {
+.wc-product-table td, .wc-product-table tr {
   vertical-align: middle !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
