@@ -5757,14 +5757,14 @@ h2 {
 .home .animatedfs_menu_list li > a:before, .home .animatedfsmenu .animatedfsmenu-navbar-toggler .bar, .woocommerce-page .navbar-expand-md .animatedfs_menu_list li > a:before, .woocommerce-page .animatedfsmenu.navbar-expand-md .animatedfsmenu-navbar-toggler .bar {
   background: #ffffff !important; }
 
-.home .animatedfsmenu-navbar-toggler.right_top {
+.home .animatedfsmenu-navbar-toggler.right_top, .page-login .animatedfsmenu-navbar-toggler.right_top, .page-register .animatedfsmenu-navbar-toggler.right_top {
   position: absolute !important;
   left: 0 !important;
   top: 0 !important;
   padding: 28px 20px !important;
   width: 20px !important;
   height: 20px !important; }
-  .home .animatedfsmenu-navbar-toggler.right_top .bar {
+  .home .animatedfsmenu-navbar-toggler.right_top .bar, .page-login .animatedfsmenu-navbar-toggler.right_top .bar, .page-register .animatedfsmenu-navbar-toggler.right_top .bar {
     background: #fff !important; }
 
 .animatedfsmenu.animation_line .afsmenu > li.has-children__on > a:before, .animatedfsmenu.animation_line .afsmenu > li:hover > a:before {
