@@ -1038,7 +1038,8 @@ add_action( 'woocommerce_account_edit-account_endpoint', 'woocommerce_account_ed
 
 
 function redirect_user() {
-  if ( ! is_user_logged_in() && is_page('my-account') ) {
+  $referrer = $_SERVER['HTTP_REFERER'];
+  if ( ! is_user_logged_in() && !is_woocommerce() && is_page('my-account') && !strstr( $referrer,'wp-admin' )) {
     $return_url = esc_url( home_url( '/login' ) );
     wp_redirect( $return_url );
     die();

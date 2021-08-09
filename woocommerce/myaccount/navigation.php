@@ -22,8 +22,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_before_account_navigation' );
 ?>
 
-<nav class="woocommerce-MyAccount-navigation">
-	<ul>
+<nav class="woocommerce-MyAccount-navigation" aria-label="Account Navigation">
+    <!-- aria-expanded needs managed with Javascript -->
+  <button
+    type="button"
+    class="dropdown__title d-none"
+    aria-expanded="false"
+    aria-controls="mobile-account-dropdown"
+  >
+    Menu
+  </button>
+	<ul class="dropdown__menu" id="mobile-account-dropdown">
 		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
 			<li>
 				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
