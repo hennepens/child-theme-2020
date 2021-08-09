@@ -1037,4 +1037,13 @@ function bbloomer_remove_address_my_account( $items ) {
 add_action( 'woocommerce_account_edit-account_endpoint', 'woocommerce_account_edit_address' );
 
 
+function redirect_user() {
+  if ( ! is_user_logged_in() && is_page('my-account') ) {
+    $return_url = esc_url( home_url( '/login' ) );
+    wp_redirect( $return_url );
+    die();
+  }
+}
+add_action( 'template_redirect', 'redirect_user' );
+
 ?>
