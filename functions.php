@@ -1081,7 +1081,7 @@ add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_lin
 // 4. Add content to the new tab
   
 function bbloomer_wholesale_portal_content() {
-   echo '<h3>Wholsale Portal</h3><p>Welcome to the wholesale portal. As a wholesale customer, you can select any number of cases from our product line and receiving keystone pricing when you order at least 1 case.</p>';
+   echo '<h3 class="text-center">Wholsale Portal</h3><p class="text-center">Welcome to the wholesale portal. As a wholesale customer, you can select any number of cases from our product line and receiving keystone pricing when you order at least 1 case.</p>';
    echo do_shortcode( '[product_table]' );
 }
   
