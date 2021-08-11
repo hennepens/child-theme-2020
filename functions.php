@@ -1082,7 +1082,7 @@ add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_lin
   
 function bbloomer_wholesale_portal_content() {
    echo '<h3 class="text-center">Wholsale Portal</h3><p class="text-center">Welcome to the wholesale portal. As a wholesale customer, you can select any number of cases from our product line and receiving keystone pricing when you order at least 1 case.</p>';
-   echo do_shortcode( '[product_table]' );
+   echo do_shortcode( '[product_table responsive_control="column"]' );
 }
   
 add_action( 'woocommerce_account_wholesale-portal_endpoint', 'bbloomer_wholesale_portal_content' );

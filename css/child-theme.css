@@ -5837,8 +5837,12 @@ h2 {
   .custom-login form {
     padding: 10px !important; } }
 
-.wc-product-table td, .wc-product-table tr {
-  vertical-align: middle !important; }
+.wc-product-table {
+  table-layout: auto !important; }
+  .wc-product-table td, .wc-product-table tr {
+    vertical-align: middle !important; }
+  .wc-product-table .quantity span {
+    display: none !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {

@@ -844,7 +844,13 @@ display: none;
 }
 
 .wc-product-table{
+	table-layout: auto !important;
 	td, tr{
 		vertical-align: middle !important;
+	}
+	.quantity{
+		span{
+			display: none !important;
+		}
 	}
 }
