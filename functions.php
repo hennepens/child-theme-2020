@@ -1051,41 +1051,41 @@ add_action( 'template_redirect', 'redirect_user' );
 // 1. Register new endpoint (URL) for My Account page
 // Note: Re-save Permalinks or it will give 404 error
   
-function bbloomer_add_premium_support_endpoint() {
-    add_rewrite_endpoint( 'premium-support', EP_ROOT | EP_PAGES );
+function bbloomer_add_wholesale_portal_endpoint() {
+    add_rewrite_endpoint( 'wholesale-portal', EP_ROOT | EP_PAGES );
 }
   
-add_action( 'init', 'bbloomer_add_premium_support_endpoint' );
+add_action( 'init', 'bbloomer_add_wholesale_portal_endpoint' );
   
 // ------------------
 // 2. Add new query var
   
-function bbloomer_wholesale_query_vars( $vars ) {
+function bbloomer_wholesale_portal_query_vars( $vars ) {
     $vars[] = 'wholesale-portal';
     return $vars;
 }
   
-add_filter( 'query_vars', 'bbloomer_wholesale_query_vars', 0 );
+add_filter( 'query_vars', 'bbloomer_wholesale_portal_query_vars', 0 );
   
 // ------------------
 // 3. Insert the new endpoint into the My Account menu
   
-function bbloomer_add_wholesale_link_my_account( $items ) {
+function bbloomer_add_wholesale_portal_link_my_account( $items ) {
     $items['wholesale-portal'] = 'Wholesale Portal';
     return $items;
 }
   
-//add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_premium_support_link_my_account' );
+//add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_link_my_account' );
   
 // ------------------
 // 4. Add content to the new tab
   
-function bbloomer_wholesale_content() {
+function bbloomer_wholesale_portal_content() {
    echo '<h3>Wholsale Portal</h3><p>Welcome to the wholesale portal. As a wholesale customer, you can select any number of cases from our product line and receiving keystone pricing when you order at least 1 case.</p>';
    echo do_shortcode( '[product_table]' );
 }
   
-add_action( 'woocommerce_account_premium-support_endpoint', 'bbloomer_premium_support_content' );
+add_action( 'woocommerce_account_wholesale_portal_endpoint', 'bbloomer_wholesale_portal_content' );
 // Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format
 
 
