@@ -1085,7 +1085,7 @@ function bbloomer_wholesale_portal_content() {
    echo do_shortcode( '[product_table]' );
 }
   
-add_action( 'woocommerce_account_wholesale_portal_endpoint', 'bbloomer_wholesale_portal_content' );
+add_action( 'woocommerce_account_wholesale-portal_endpoint', 'bbloomer_wholesale_portal_content' );
 // Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format
 
 
