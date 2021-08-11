@@ -1089,4 +1089,20 @@ add_action( 'woocommerce_account_wholesale-portal_endpoint', 'bbloomer_wholesale
 // Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format
 
 
+function bbloomer_add_premium_support_link_my_account( $items ) {
+// Remove the logout menu item.
+$logout = $items['customer-logout'];
+unset( $items['customer-logout'] );
+ 
+// Insert your custom endpoint.
+$items['wholesale-portal'] = 'Wholesale Portal';
+ 
+// Insert back the logout item.
+$items['customer-logout'] = $logout;
+ 
+return $items;
+}
+   
+add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_premium_support_link_my_account' );
+
 ?>
