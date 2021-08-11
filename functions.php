@@ -962,7 +962,7 @@ add_action('jck_qv_after_summary', 'add_js_qv', 10, 1);
 
 
 
-add_filter ( 'woocommerce_account_menu_items', 'misha_one_more_link' );
+//add_filter ( 'woocommerce_account_menu_items', 'misha_one_more_link' );
 function misha_one_more_link( $menu_links ){
 
   // we will hook "anyuniquetext123" later
@@ -982,7 +982,7 @@ function misha_one_more_link( $menu_links ){
  
 }
 
-add_filter( 'woocommerce_get_endpoint_url', 'misha_hook_endpoint', 10, 4 );
+//add_filter( 'woocommerce_get_endpoint_url', 'misha_hook_endpoint', 10, 4 );
 function misha_hook_endpoint( $url, $endpoint, $value, $permalink ){
  
   if( $endpoint === 'wholesale' ) {
@@ -1075,7 +1075,7 @@ function bbloomer_add_wholesale_portal_link_my_account( $items ) {
     return $items;
 }
   
-//add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_link_my_account' );
+add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_link_my_account' );
   
 // ------------------
 // 4. Add content to the new tab
