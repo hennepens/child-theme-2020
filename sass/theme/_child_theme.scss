@@ -798,18 +798,12 @@ display: none;
 	padding: 0 !important;
     text-align: center !important;
     font-family: 'libre_baskervilleregular' !important;
-    .sub-menu{
-    	padding:  0 !important;
-    	li{
-    		a{
-    			font-size:  16px !important;
-    		}
-    	}
-    }
+    
     .afsmenu__close{
     	display:  none;
     }
 }
+.animatedfsmenu .animatedfs_menu_list .afsmenu li a{}
 .animatedfsmenu.animation_line .afsmenu>li.has-children__on>a, .animatedfsmenu.animation_line .afsmenu>li:hover>a{
 	padding-left:  0 !important;
 }
@@ -844,6 +838,14 @@ display: none;
 	    background-size: 100% 100% !important;
     	background-repeat: no-repeat;
 	}
+	.sub-menu{
+    	padding:  0 !important;
+    	.menu-item{
+    		a{
+    			font-size:  16px !important;
+    		}
+    	}
+    }
 }
 
 .custom-login{
