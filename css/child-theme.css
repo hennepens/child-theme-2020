@@ -5964,6 +5964,10 @@ h2 {
     padding-left: 15px;
     padding-right: 15px; }
 
+@media only screen and (max-width: 767px) {
+  .woocommerce-MyAccount-navigation {
+    display: none !important; } }
+
 /* Product Categories */
 .added_to_cart.wc-forward {
   display: none !important; }
