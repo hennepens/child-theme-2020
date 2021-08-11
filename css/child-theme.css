@@ -5798,6 +5798,12 @@ h2 {
   padding: 0 !important;
   text-align: center !important;
   font-family: 'libre_baskervilleregular' !important; }
+  .afsmenu .sub-menu {
+    padding: 0 !important; }
+    .afsmenu .sub-menu li a {
+      font-size: 16px !important; }
+  .afsmenu .afsmenu__close {
+    display: none; }
 
 .animatedfsmenu.animation_line .afsmenu > li.has-children__on > a, .animatedfsmenu.animation_line .afsmenu > li:hover > a {
   padding-left: 0 !important; }
