@@ -1075,7 +1075,7 @@ function bbloomer_add_wholesale_portal_link_my_account( $items ) {
     return $items;
 }
   
-add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_link_my_account' );
+add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_link_my_account', 100, 1 );
   
 // ------------------
 // 4. Add content to the new tab
