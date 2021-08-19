@@ -1,6 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+  exit; // Exit if accessed directly.
 }
 
 
@@ -139,8 +139,8 @@ function tn_dequeue_font_awesome_style() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
 
-	// Get the theme data
-	$the_theme = wp_get_theme();
+  // Get the theme data
+  $the_theme = wp_get_theme();
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
@@ -509,7 +509,7 @@ function misha_after_add_to_cart_btn(){
   <script>
   jQuery(document).ready(function(){
     function selectAutoship(){
-      console.log(document);
+      console.log("test");
       jQuery(document).find("input.autoship-yes-radio").attr("checked", "checked");
     }
       jQuery(".subscription-message").click(function(){
@@ -811,18 +811,17 @@ if ( ! function_exists( 'save_custom_content_meta_box' ) )
     }
 }
 
- // Default the Autoship option for both Simple and
-// Variable products by default.
-function default_autoship_for_all( $default ){
-  return 'yes';
-}
-//add_filter('autoship_default_product_schedule_options_choice_value', 'default_autoship_for_all', 10 ,1);
-
-
 
 function autoship_new_default_frequency_options( $options ) {
   // Return a new set of default frequency options of 1 through 4 Weeks
   return array(
+     array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => '',
+      // Frequency (integer)
+      'frequency' => 0,
+      'display_name' => 'Every...'
+    ),
     array(
       // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
       'frequency_type' => 'Weeks',
@@ -948,6 +947,7 @@ function add_js_qv($product){
 <script>
     if(jQuery("body").hasClass("clicked-autoship")) {
       jQuery("#jckqv").find("input.autoship-yes-radio").attr("checked", "checked");
+      jQuery("#jckqv").find("select.autoship-frequency-select").val("val2").change();
       jQuery("body").removeClass("clicked-autoship");
     }
   
