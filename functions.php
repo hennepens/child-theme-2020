@@ -1086,7 +1086,7 @@ add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_referral_link_my_acc
   
 function bbloomer_referral_link_content() {
    echo '<h3 class="text-center">Refer a Friend</h3><p class="text-center">refer a friend description</p>';
-  // echo do_shortcode( '[automatewoo_referrals_share_widget]' );
+  echo do_shortcode( '[automatewoo_referrals_share_widget]' );
 }
   
 add_action( 'woocommerce_account_refer-a-friend_endpoint', 'bbloomer_referral_link_content' );
