@@ -960,41 +960,6 @@ function add_js_qv($product){
 add_action('jck_qv_after_summary', 'add_js_qv', 10, 1);
 
 
-
-
-//add_filter ( 'woocommerce_account_menu_items', 'misha_one_more_link' );
-function misha_one_more_link( $menu_links ){
-
-  // we will hook "anyuniquetext123" later
-  $new = array( 'wholesale' => 'Wholesale Portal' );
-
-  // or in case you need 2 links
-  // $new = array( 'link1' => 'Link 1', 'link2' => 'Link 2' );
-
-  // array_slice() is good when you want to add an element between the other ones
-  $menu_links = array_slice( $menu_links, 0, 1, true ) 
-  + $new 
-  + array_slice( $menu_links, 1, NULL, true );
-
-
-  return $menu_links;
- 
- 
-}
-
-//add_filter( 'woocommerce_get_endpoint_url', 'misha_hook_endpoint', 10, 4 );
-function misha_hook_endpoint( $url, $endpoint, $value, $permalink ){
- 
-  if( $endpoint === 'wholesale' ) {
- 
-    // ok, here is the place for your custom URL, it could be external
-    $url = 'https://hennepens.com/wholesale';
- 
-  }
-  return $url;
- 
-}
-
 add_action('autoship_before_schedule_options_variable_custom', 'selected_variation_price_replace_variable_price_range');
 add_action('autoship_before_schedule_options_variable_custom_2', 'selected_variation_price_replace_variable_price_range');
 add_action('jck_qv_after_summary', 'selected_variation_price_replace_variable_price_range');
@@ -1088,6 +1053,43 @@ function bbloomer_wholesale_portal_content() {
 add_action( 'woocommerce_account_wholesale-portal_endpoint', 'bbloomer_wholesale_portal_content' );
 // Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format
 
+function bbloomer_add_referral_link_endpoint() {
+    add_rewrite_endpoint( 'refer-a-friend', EP_ROOT | EP_PAGES );
+}
+  
+add_action( 'init', 'bbloomer_add_referral_link_endpoint' );
+  
+// ------------------
+// 2. Add new query var
+  
+function bbloomer_referral_link_query_vars( $vars ) {
+    $vars[] = 'refer-a-friend';
+    return $vars;
+}
+  
+add_filter( 'query_vars', 'bbloomer_referral_link_query_vars', 0 );
+  
+// ------------------
+// 3. Insert the new endpoint into the My Account menu
+  
+function bbloomer_add_referral_link_my_account( $items ) {
+    $items['referal-a-friend'] = 'Refer a Friend';
+    return $items;
+}
+  
+add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_referral_link_my_account', 100, 1 );
+  
+// ------------------
+// 4. Add content to the new tab
+  
+function bbloomer_referral_link_content() {
+   echo '<h3 class="text-center">Refer a Friend</h3><p class="text-center">refer a friend description</p>';
+   echo do_shortcode( '[product_table]' );
+}
+  
+add_action( 'woocommerce_account_refer-a-friend_endpoint', 'bbloomer_referral_link_content' );
+// Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format
+
 
 function bbloomer_add_premium_support_link_my_account( $items ) {
 // Remove the logout menu item.
@@ -1096,6 +1098,7 @@ unset( $items['customer-logout'] );
  
 // Insert your custom endpoint.
 $items['wholesale-portal'] = 'Wholesale Portal';
+$items['refer-a-friend'] = 'Refer a Frien';
  
 // Insert back the logout item.
 $items['customer-logout'] = $logout;
