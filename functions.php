@@ -1098,11 +1098,11 @@ unset( $items['customer-logout'] );
  
 // Insert your custom endpoint.
 $items['wholesale-portal'] = 'Wholesale Portal';
-$items['refer-a-friend'] = 'Refer a Frien';
+$items['refer-a-friend'] = 'Refer a Friend';
  
 // Insert back the logout item.
 $items['customer-logout'] = $logout;
- 
+  
 return $items;
 }
    
