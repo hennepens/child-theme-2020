@@ -1088,6 +1088,7 @@ function bbloomer_referral_link_content() {
    echo '<h3 class="text-center">Refer a Friend</h3><p class="text-center">refer a friend description</p>';
    echo do_shortcode( '[automatewoo_advocate_referral_coupon]' );
     echo do_shortcode( '[automatewoo_referrals_share_widget]' );
+    echo do_shortcode( '[automatewoo_referrals_share_page]' );
 
 }
   
