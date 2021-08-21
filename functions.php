@@ -1053,6 +1053,8 @@ function bbloomer_wholesale_portal_content() {
 add_action( 'woocommerce_account_wholesale-portal_endpoint', 'bbloomer_wholesale_portal_content' );
 // Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format
 
+
+
 function bbloomer_add_referral_link_endpoint() {
     add_rewrite_endpoint( 'refer-a-friend', EP_ROOT | EP_PAGES );
 }
@@ -1084,7 +1086,7 @@ add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_referral_link_my_acc
   
 function bbloomer_referral_link_content() {
    echo '<h3 class="text-center">Refer a Friend</h3><p class="text-center">refer a friend description</p>';
-   echo do_shortcode( '[product_table]' );
+   echo do_shortcode( '[automatewoo_referrals_page]' );
 }
   
 add_action( 'woocommerce_account_refer-a-friend_endpoint', 'bbloomer_referral_link_content' );
