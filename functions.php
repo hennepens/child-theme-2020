@@ -1073,7 +1073,7 @@ add_filter( 'query_vars', 'bbloomer_referral_link_query_vars', 0 );
 // 3. Insert the new endpoint into the My Account menu
   
 function bbloomer_add_referral_link_my_account( $items ) {
-    $items['referal-a-friend'] = 'Refer a Friend';
+    $items['refer-a-friend'] = 'Refer a Friend';
     return $items;
 }
   
