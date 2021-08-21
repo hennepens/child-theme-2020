@@ -1144,4 +1144,20 @@ function webroom_woocommerce_coupon_links(){
 add_action('wp_loaded', 'webroom_woocommerce_coupon_links', 30);
 add_action('woocommerce_add_to_cart', 'webroom_woocommerce_coupon_links');
 
+
+add_action( 'woocommerce_order_status_completed', 'wpglorify_change_role_on_purchase' );
+
+function wpglorify_change_role_on_purchase( $order_id ) {
+  $order = new WC_Order( $order_id );
+  $items = $order->get_items();
+  foreach ( $items as $item ) {
+    $subscription_order =  (isset( $item['autoship_frequency'] ));
+    if( $subscription_order) {
+      $user = new WP_User( $order->user_id );
+      $user->remove_role( 'customer' ); 
+      $user->add_role( 'subscriber' );
+    }
+  }
+}
+
 ?>
