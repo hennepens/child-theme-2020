@@ -1167,8 +1167,9 @@ function wpglorify_change_role_on_purchase( $order_id ) {
   }
 }
 
-add_filter( 'automatewoo/referrals/store_credit/coupon_data', 'update_aw_referral_coupon_20200716' );
-function update_aw_referral_coupon_20200716( $data ) {
+add_filter( 'automatewoo/referrals/store_credit/coupon_data', 'update_aw_referral_coupon_data' );
+
+function update_aw_referral_coupon_data( $data ) {
   // Uncomment anything you'd like to use.
   // $data['product_ids']                 = [];
   // $data['excluded_product_ids']        = [];
