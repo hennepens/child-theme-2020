@@ -1091,7 +1091,7 @@ function bbloomer_referral_link_content() {
    echo '<u>' . site_url() . '/shop/?coupon_code=';
    echo do_shortcode( '[automatewoo_advocate_referral_coupon]' ) . '</u></a></div>';
   echo do_shortcode( '[automatewoo_referrals_page]' );
-
+echo do_shortcode( '[automatewoo_advocate_referral_coupon]' );
 }
   
 add_action( 'woocommerce_account_refer-a-friend_endpoint', 'bbloomer_referral_link_content' );
