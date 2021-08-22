@@ -1086,7 +1086,7 @@ add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_referral_link_my_acc
   
 function bbloomer_referral_link_content() {
    echo '<h3 class="text-center">Refer a Friend</h3><p class="text-center">refer a friend description</p>';
-   echo '<label><b>Your Unique Code:</b></label> <span class="coupon-code-link">' . do_shortcode( '[automatewoo_advocate_referral_link]' ) . '</span>';
+   echo '<div class="text-center"><label><b>Your Unique Code:</b></label> <a class="coupon-code-link" href="'. do_shortcode( '[automatewoo_advocate_referral_link]' ) .'"><u>' . do_shortcode( '[automatewoo_advocate_referral_link]' ) . '</u></a></div>';
   echo do_shortcode( '[automatewoo_referrals_page]' );
 
 }
