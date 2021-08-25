@@ -1085,8 +1085,8 @@ add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_referral_link_my_acc
 // 4. Add content to the new tab
   
 function bbloomer_referral_link_content() {
-   echo '<h3 class="text-center">Refer a Friend</h3><p class="text-center">Send your friends and family a unique 20% Coupon code when they purchase their first order on hennepens.com! When they complete their first order you will receive a coupon for $50.00 in store credit.</p>';
-   echo '<div class="text-center"><span class="coupon-code-box">' . do_shortcode( '[automatewoo_advocate_referral_coupon]' ) . '</span></div>';
+   echo '<h3 class="text-center">Refer a Friend</h3><p class="text-center">Send your friends and family a $20 Coupon code when they purchase their first order on hennepens.com! When they complete their first order you will receive a coupon for $5.00 in store credit.</p>';
+   echo '<div class="text-center"><b>Your Unique Coupon Code</b><span class="coupon-code-box">' . do_shortcode( '[automatewoo_advocate_referral_coupon]' ) . '</span></div>';
   echo do_shortcode( '[automatewoo_referrals_page]' );
 
 }
