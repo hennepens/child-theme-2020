@@ -321,7 +321,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
 add_filter('woocommerce_reset_variations_link', '__return_empty_string');
 
 
-//add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
+add_action( 'woocommerce_before_add_to_cart_quantity', 'func_option_valgt2' );
 function func_option_valgt2() {
     global $product;
 
@@ -812,183 +812,6 @@ if ( ! function_exists( 'save_custom_content_meta_box' ) )
 }
 
 
-function autoship_new_default_frequency_options( $options ) {
-  // Return a new set of default frequency options of 1 through 4 Weeks
-  return array(
-     array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => '',
-      // Frequency (integer)
-      'frequency' => 0,
-      'display_name' => 'Every...'
-    ),
-    array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => 'Weeks',
-      // Frequency (integer)
-      'frequency' => 2,
-      'display_name' => 'Every 2 Weeks'
-    ),
-    array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => 'Weeks',
-      // Frequency (integer)
-      'frequency' => 3,
-      'display_name' => 'Every 3 Weeks'
-    ),
-    array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => 'Weeks',
-      // Frequency (integer)
-      'frequency' => 4,
-      'display_name' => 'Every 4 Weeks'
-    ),
-    array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => 'Weeks',
-      // Frequency (integer)
-      'frequency' => 5,
-      'display_name' => 'Every 5 Weeks'
-    ),
-    array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => 'Weeks',
-      // Frequency (integer)
-      'frequency' => 6,
-      'display_name' => 'Every 6 Weeks'
-    ),
-    array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => 'Weeks',
-      // Frequency (integer)
-      'frequency' => 8,
-      'display_name' => 'Every 2 Months'
-    ),
-    array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => 'Weeks',
-      // Frequency (integer)
-      'frequency' => 13,
-      'display_name' => 'Every 3 Months'
-    ),
-    array(
-      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
-      'frequency_type' => 'Weeks',
-      // Frequency (integer)
-      'frequency' => 26,
-      'display_name' => 'Every 6 Months'
-    )
-  );
-}
-add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' );
-
-function change_radio_label($label, $option_type, $discount, $product) {
-    if($option_type == 'yes') {
-        return $discount ? __('Subscribe & Save') : __('Subscribe');
-    } else {
-        return __('One-time Purchase ');
-    }
-}
-add_filter('autoship_radio_label', 'change_radio_label', 10, 4);
-
-function autoship_checkout_recurring_variable_discount_string2( $product_id ){
-
-  $product = wc_get_product( $product_id );
-
-  $strings['autoship_save_string'] = sprintf( '<span class="autoship-save">%s</span>',
-  apply_filters( 'autoship_radio_label', __( 'Autoship and Save', 'autoship' ),
-  'yes', true, $product ) );
-  $strings['autoship_string'] = sprintf( '<span class="autoship">%s</span>',
-  apply_filters( 'autoship_radio_label', __( 'Autoship', 'autoship' ),
-  'yes', false, $product ) );
-
-  ob_start();?>
-
-  <span class="autoship-discount-label">
-    <span class="discount-label-container">
-      <input type="radio" class="autoship-yes-radio <?php echo $skin['input']?>" name="autoship<?php echo $product->get_id(); ?>" value="yes" <?=$autoship_yes?> />
-
-      <span class="autoship-save"><?php echo $strings['autoship_save_string']; ?></span>
-      <span class="autoship-custom-percent-discount-str"></span> 
-      <?php  echo autoship_info_dialog_link( $product->get_id() ); ?>
-    </span>
-        <span class="autoship-price-container">
-          <span class="autoship-retail-price"> <s><?php do_action('autoship_before_schedule_options_variable_custom_2', $product, $skin, $default_check );  ?></s></span>
-          <span class="autoship-checkout-price"></span>
-        </span>
-  </span>
-  <span class="autoship-no-discount-label">
-      <span class="autoship"><?php echo $strings['autoship_string']; ?></span>
-  </span>
-
-  <?php
-  return apply_filters( 'autoship_checkout_recurring_variable_discount_string_html', ob_get_clean(), $product, $strings );
-
-}
-
-
- 
-/**
-* Adds Order Number Column back into the Scheduled Orders table
-*
-* @param array $columns The current column array
-* @return array The filtered columns
-*/
-
-function xx_add_autoship_scheduled_orders_order_number_column( $columns ){
-    return array( 'order-number'  => __( 'Order', 'autoship' ) ) + $columns;
-}
-
-add_filter( 'autoship_my_account_my_scheduled_orders_columns', 'xx_add_autoship_scheduled_orders_order_number_column', 10, 1 );
-
-
-function add_js_qv($product){
-?>
-<script>
-    if(jQuery("body").hasClass("clicked-autoship")) {
-      jQuery("#jckqv").find("input.autoship-yes-radio").attr("checked", "checked");
-      jQuery("#jckqv").find("select.autoship-frequency-select").val("val2").change();
-      jQuery("body").removeClass("clicked-autoship");
-    }
-  
-  </script>;
-
-<?php
-
-}
-
-add_action('jck_qv_after_summary', 'add_js_qv', 10, 1);
-
-
-add_action('autoship_before_schedule_options_variable_custom', 'selected_variation_price_replace_variable_price_range');
-add_action('autoship_before_schedule_options_variable_custom_2', 'selected_variation_price_replace_variable_price_range');
-add_action('jck_qv_after_summary', 'selected_variation_price_replace_variable_price_range');
-function selected_variation_price_replace_variable_price_range(){
-    global $product;
-
-    if( $product->is_type('variable') ):
-    ?><style> .woocommerce-variation-price {display:none;} </style>
-    <script>
-    jQuery(function($) {
-        var p = '.label-price-container .one-time-price'
-            p2 = '.autoship-retail-price'
-            q = $(p).html();
-            q2 = $(p2).html();
-
-        $('form.cart').on('show_variation', function( event, data ) {
-            if ( data.price_html ) {
-                $(p).html(data.price_html);
-                $(p2).html(data.price_html);
-            }
-        }).on('hide_variation', function( event ) {
-            $(p).html(q);
-            $(p2).html(q2);
-        });
-    });
-    </script>
-    <?php
-    endif;
-}
 
 add_filter( 'woocommerce_account_menu_items', 'bbloomer_remove_address_my_account', 999 );
  
@@ -1151,7 +974,7 @@ function webroom_woocommerce_coupon_links(){
 add_action('wp_loaded', 'webroom_woocommerce_coupon_links', 30);
 add_action('woocommerce_add_to_cart', 'webroom_woocommerce_coupon_links');
 
-
+/* AUTOSHIP RELICS
 add_action( 'woocommerce_order_status_completed', 'wpglorify_change_role_on_purchase' );
 
 function wpglorify_change_role_on_purchase( $order_id ) {
@@ -1182,5 +1005,185 @@ function update_aw_referral_coupon_data( $data ) {
 }
 
 add_filter( 'wc_payment_gateway_authorize_net_cim_activate_apple_pay', '__return_true' );
+
+
+
+function autoship_new_default_frequency_options( $options ) {
+  // Return a new set of default frequency options of 1 through 4 Weeks
+  return array(
+     array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => '',
+      // Frequency (integer)
+      'frequency' => 0,
+      'display_name' => 'Every...'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 2,
+      'display_name' => 'Every 2 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 3,
+      'display_name' => 'Every 3 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 4,
+      'display_name' => 'Every 4 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 5,
+      'display_name' => 'Every 5 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 6,
+      'display_name' => 'Every 6 Weeks'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 8,
+      'display_name' => 'Every 2 Months'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 13,
+      'display_name' => 'Every 3 Months'
+    ),
+    array(
+      // Days, Weeks, Months, DayOfTheWeek, DayOfTheMonth
+      'frequency_type' => 'Weeks',
+      // Frequency (integer)
+      'frequency' => 26,
+      'display_name' => 'Every 6 Months'
+    )
+  );
+}
+add_filter( 'autoship-default-frequency-options', 'autoship_new_default_frequency_options' );
+
+function change_radio_label($label, $option_type, $discount, $product) {
+    if($option_type == 'yes') {
+        return $discount ? __('Subscribe & Save') : __('Subscribe');
+    } else {
+        return __('One-time Purchase ');
+    }
+}
+add_filter('autoship_radio_label', 'change_radio_label', 10, 4);
+
+function autoship_checkout_recurring_variable_discount_string2( $product_id ){
+
+  $product = wc_get_product( $product_id );
+
+  $strings['autoship_save_string'] = sprintf( '<span class="autoship-save">%s</span>',
+  apply_filters( 'autoship_radio_label', __( 'Autoship and Save', 'autoship' ),
+  'yes', true, $product ) );
+  $strings['autoship_string'] = sprintf( '<span class="autoship">%s</span>',
+  apply_filters( 'autoship_radio_label', __( 'Autoship', 'autoship' ),
+  'yes', false, $product ) );
+
+  ob_start();?>
+
+  <span class="autoship-discount-label">
+    <span class="discount-label-container">
+      <input type="radio" class="autoship-yes-radio <?php echo $skin['input']?>" name="autoship<?php echo $product->get_id(); ?>" value="yes" <?=$autoship_yes?> />
+
+      <span class="autoship-save"><?php echo $strings['autoship_save_string']; ?></span>
+      <span class="autoship-custom-percent-discount-str"></span> 
+      <?php  echo autoship_info_dialog_link( $product->get_id() ); ?>
+    </span>
+        <span class="autoship-price-container">
+          <span class="autoship-retail-price"> <s><?php do_action('autoship_before_schedule_options_variable_custom_2', $product, $skin, $default_check );  ?></s></span>
+          <span class="autoship-checkout-price"></span>
+        </span>
+  </span>
+  <span class="autoship-no-discount-label">
+      <span class="autoship"><?php echo $strings['autoship_string']; ?></span>
+  </span>
+
+  <?php
+  return apply_filters( 'autoship_checkout_recurring_variable_discount_string_html', ob_get_clean(), $product, $strings );
+
+}
+
+
+function xx_add_autoship_scheduled_orders_order_number_column( $columns ){
+    return array( 'order-number'  => __( 'Order', 'autoship' ) ) + $columns;
+}
+
+add_filter( 'autoship_my_account_my_scheduled_orders_columns', 'xx_add_autoship_scheduled_orders_order_number_column', 10, 1 );
+
+
+
+
+
+function add_js_qv($product){
+?>
+<script>
+    if(jQuery("body").hasClass("clicked-autoship")) {
+      jQuery("#jckqv").find("input.autoship-yes-radio").attr("checked", "checked");
+      jQuery("#jckqv").find("select.autoship-frequency-select").val("val2").change();
+      jQuery("body").removeClass("clicked-autoship");
+    }
+  
+  </script>;
+
+<?php
+
+}
+
+add_action('jck_qv_after_summary', 'func_option_valgt2', 10, 1);
+
+
+add_action('autoship_before_schedule_options_variable_custom', 'selected_variation_price_replace_variable_price_range');
+add_action('autoship_before_schedule_options_variable_custom_2', 'selected_variation_price_replace_variable_price_range');
+add_action('jck_qv_after_summary', 'selected_variation_price_replace_variable_price_range');
+function selected_variation_price_replace_variable_price_range(){
+    global $product;
+
+    if( $product->is_type('variable') ):
+    ?><style> .woocommerce-variation-price {display:none;} </style>
+    <script>
+    jQuery(function($) {
+        var p = '.label-price-container .one-time-price'
+            p2 = '.autoship-retail-price'
+            q = $(p).html();
+            q2 = $(p2).html();
+
+        $('form.cart').on('show_variation', function( event, data ) {
+            if ( data.price_html ) {
+                $(p).html(data.price_html);
+                $(p2).html(data.price_html);
+            }
+        }).on('hide_variation', function( event ) {
+            $(p).html(q);
+            $(p2).html(q2);
+        });
+    });
+    </script>
+    <?php
+    endif;
+}
+
+
+
+*/ /////// END AUTOSHIP RELICS
+
 
 ?>
