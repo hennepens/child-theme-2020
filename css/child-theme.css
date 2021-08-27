@@ -5851,6 +5851,100 @@ h2 {
   .wc-product-table .quantity span {
     display: none !important; }
 
+.woocommerce-Addresses.col2-set, .col2-set.addresses {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 20px; }
+  .woocommerce-Addresses.col2-set .saw-shipping, .woocommerce-Addresses.col2-set .saw-billing, .col2-set.addresses .saw-shipping, .col2-set.addresses .saw-billing {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    margin-bottom: 10px; }
+    .woocommerce-Addresses.col2-set .saw-shipping a, .woocommerce-Addresses.col2-set .saw-billing a, .col2-set.addresses .saw-shipping a, .col2-set.addresses .saw-billing a {
+      margin-left: auto;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      justify-items: center;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      border-radius: 100px;
+      border: 1px solid #000;
+      padding: 10px 20px;
+      line-height: normal;
+      -ms-flex-item-align: center;
+          align-self: center; }
+
+.u-column1.col-1.woocommerce-Address, .u-column2.col-2.woocommerce-Address {
+  max-width: 100% !important;
+  background: #efefef;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  margin-bottom: 2%;
+  border-radius: 8px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
+  margin-right: 2%; }
+  .u-column1.col-1.woocommerce-Address .u-column2.col-2.woocommerce-Address, .u-column2.col-2.woocommerce-Address .u-column2.col-2.woocommerce-Address {
+    margin-right: 0; }
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 0;
+  background: #efefef; }
+
+.col2-set.addresses .col-1, .col2-set.addresses .col-2 {
+  max-width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto; }
+  .col2-set.addresses .col-1 address, .col2-set.addresses .col-2 address {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    padding-bottom: 15px; }
+    .col2-set.addresses .col-1 address .account-shipping-actions, .col2-set.addresses .col-2 address .account-shipping-actions {
+      margin-top: auto; }
+
+.woopack-my-account.tabs-position-left .woocommerce .woocommerce-MyAccount-navigation {
+  width: 20%; }
+
+.woopack-my-account .woocommerce .woocommerce-MyAccount-content {
+  width: 80% !important;
+  float: left !important; }
+
+.aw-referrals-share-container {
+  clear: none !important;
+  width: 80%;
+  float: left; }
+
+.aw-referrals-share-buttons, .aw-referrals-share-or {
+  text-align: left !important; }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
   background: none;

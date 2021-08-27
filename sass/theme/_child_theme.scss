@@ -868,3 +868,80 @@ display: none;
 	}
 }
 
+.woocommerce-Addresses.col2-set,.col2-set.addresses{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 20px;
+	 .saw-shipping,.saw-billing{
+    	display: flex;
+    	align-items: center;
+    	width: 100%;
+    	margin-bottom: 10px;
+    	a{
+    	    margin-left: auto;
+			justify-content: center;
+			justify-items: center;
+			font-family: sans-serif;
+			text-transform: uppercase;
+			border-radius: 100px;
+			border: 1px solid #000;
+			padding: 10px 20px;
+			line-height: normal;
+			align-self: center;
+    	}
+    }
+}
+.u-column1.col-1.woocommerce-Address, .u-column2.col-2.woocommerce-Address{
+	max-width: 100% !important;
+	background: #efefef;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 2%;
+    border-radius: 8px;
+    flex: 1 1 33%;
+    margin-right: 2%;
+    .u-column2.col-2.woocommerce-Address{
+    margin-right: 0;
+    }
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea{
+	padding: 10px;
+    border-radius: 8px;
+    border: 0;
+    background: #efefef;
+}
+
+.col2-set.addresses .col-1, .col2-set.addresses .col-2{
+	max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    address{
+	    display: flex;
+	    flex-direction: column;
+	    height: 100%;
+	    padding-bottom: 15px;
+	    .account-shipping-actions{
+	    margin-top: auto;
+	    }
+    }
+}
+
+.woopack-my-account.tabs-position-left .woocommerce .woocommerce-MyAccount-navigation{
+	width: 20%;
+}
+.woopack-my-account .woocommerce .woocommerce-MyAccount-content{
+	width: 80% !important;
+	float: left !important;
+}
+.aw-referrals-share-container{
+	clear: none !important;
+	width: 80%;
+	float: left;
+}
+.aw-referrals-share-buttons,.aw-referrals-share-or{
+	text-align: left !important;
+}

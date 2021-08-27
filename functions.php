@@ -813,7 +813,7 @@ if ( ! function_exists( 'save_custom_content_meta_box' ) )
 
 
 
-add_filter( 'woocommerce_account_menu_items', 'bbloomer_remove_address_my_account', 999 );
+//add_filter( 'woocommerce_account_menu_items', 'bbloomer_remove_address_my_account', 1 );
  
 function bbloomer_remove_address_my_account( $items ) {
    unset( $items['edit-address'] );
@@ -822,18 +822,18 @@ function bbloomer_remove_address_my_account( $items ) {
  
 // -------------------------------
 // 2. Second, print the ex tab content (woocommerce_account_edit_address) into an existing tab (woocommerce_account_edit-account_endpoint). See notes below!
-add_action( 'woocommerce_account_edit-account_endpoint', 'woocommerce_account_edit_address' );
+//add_action( 'woocommerce_account_edit-account_endpoint', 'woocommerce_account_edit_address' );
 
 
 function redirect_user() {
-  $referrer = $_SERVER['HTTP_REFERER'];
-  if ( ! is_user_logged_in() && !is_woocommerce() && is_page('my-account') && !strstr( $referrer,'wp-admin' )) {
-    $return_url = esc_url( home_url( '/login' ) );
+
+  if (isset($_SERVER['HTTP_REFERER']) && ! is_user_logged_in() && !is_woocommerce() && is_page('my-account') && !strstr( $referrer,'wp-admin' )) {
+    $return_url = esc_url( home_url( '/dashboard-console' ) );
     wp_redirect( $return_url );
     die();
   }
 }
-add_action( 'template_redirect', 'redirect_user' );
+//add_action( 'template_redirect', 'redirect_user' );
 
 // ------------------
 // 1. Register new endpoint (URL) for My Account page
@@ -869,7 +869,7 @@ add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_lin
 // 4. Add content to the new tab
   
 function bbloomer_wholesale_portal_content() {
-   echo '<h3 class="text-center">Wholsale Portal</h3><p class="text-center">Welcome to the wholesale portal. As a wholesale customer, you can select any number of cases from our product line and receiving keystone pricing when you order at least 1 case.</p>';
+   echo '<h3>Wholsale Portal</h3><p>Welcome to the wholesale portal. As a wholesale customer, you can select any number of cases from our product line and receiving keystone pricing when you order at least 1 case.</p>';
    echo do_shortcode( '[product_table]' );
 }
   
@@ -908,8 +908,8 @@ add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_referral_link_my_acc
 // 4. Add content to the new tab
   
 function bbloomer_referral_link_content() {
-   echo '<h3 class="text-center">Refer a Friend</h3><p class="text-center">Send your friends and family a $20 Coupon code when they purchase their first order on hennepens.com! When they complete their first order you will receive a coupon for $5.00 in store credit.</p>';
-   echo '<div class="text-center unique-code"><p>Your Unique Coupon Code</p><span class="coupon-code-box">' . do_shortcode( '[automatewoo_advocate_referral_coupon]' ) . '</span></div>';
+   echo '<h3>Refer a Friend</h3><p>Send your friends and family a $20 Coupon code when they purchase their first order on hennepens.com! When they complete their first order you will receive a coupon for $5.00 in store credit.</p>';
+   echo '<div class="unique-code"><p>Your Unique Coupon Code</p><span class="coupon-code-box">' . do_shortcode( '[automatewoo_advocate_referral_coupon]' ) . '</span></div>';
   echo do_shortcode( '[automatewoo_referrals_page]' );
 
 }
@@ -974,6 +974,8 @@ function webroom_woocommerce_coupon_links(){
 add_action('wp_loaded', 'webroom_woocommerce_coupon_links', 30);
 add_action('woocommerce_add_to_cart', 'webroom_woocommerce_coupon_links');
 
+add_filter( 'wc_payment_gateway_authorize_net_cim_activate_apple_pay', '__return_true' );
+
 /* AUTOSHIP RELICS
 add_action( 'woocommerce_order_status_completed', 'wpglorify_change_role_on_purchase' );
 
@@ -1004,7 +1006,7 @@ function update_aw_referral_coupon_data( $data ) {
   return $data;
 }
 
-add_filter( 'wc_payment_gateway_authorize_net_cim_activate_apple_pay', '__return_true' );
+
 
 
 
