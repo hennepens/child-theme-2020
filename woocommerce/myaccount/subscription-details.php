@@ -91,7 +91,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </table>
 
 <?php if ( $notes = $subscription->get_customer_order_notes() ) : ?>
-	<h2><?php esc_html_e( 'Subscription updates', 'woocommerce-subscriptions' ); ?></h2>
+	<h3><?php esc_html_e( 'Subscription updates', 'woocommerce-subscriptions' ); ?></h3>
 	<ol class="woocommerce-OrderUpdates commentlist notes">
 		<?php foreach ( $notes as $note ) : ?>
 		<li class="woocommerce-OrderUpdate comment note">

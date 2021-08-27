@@ -5916,11 +5916,13 @@ h2 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-preferred-size: auto;
-      flex-basis: auto; }
+      flex-basis: auto;
+  padding-left: 0; }
   .col2-set.addresses .col-1 address, .col2-set.addresses .col-2 address {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding-left: inherit;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

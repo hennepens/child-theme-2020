@@ -919,8 +919,10 @@ display: none;
     flex-direction: row;
     flex-wrap: wrap;
     flex-basis: auto;
+    padding-left: 0;
     address{
 	    display: flex;
+	    padding-left: inherit;
 	    flex-direction: column;
 	    height: 100%;
 	    padding-bottom: 15px;

@@ -172,5 +172,5 @@ wc_print_notices();
 	<div class="clear"></div>
 	<input type="hidden" name="jgtb_edit_subscription_details" value="<?php echo esc_attr( $subscription->get_id() ); ?>">
 	<?php wp_nonce_field( 'wcs_edit_details_of_' . $subscription->get_id(), 'jgtb_edit_details_of_' . $subscription->get_id() ); ?>
-	<button type="submit" name="edit-subscription-button" value=1><?php echo esc_html_x( 'Save Details', 'Button text on Edit Subscription page', 'jg-toolbox' ); ?></button>
+	<button type="submit" class="button" name="edit-subscription-button" value=1><?php echo esc_html_x( 'Save Details', 'Button text on Edit Subscription page', 'jg-toolbox' ); ?></button>
 </form>
