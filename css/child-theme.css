@@ -5457,7 +5457,8 @@ h2 {
 
 .qty-container {
   width: 100%;
-  padding: 20px 0; }
+  padding: 20px 0;
+  display: none; }
   .qty-container label {
     font-weight: 700; }
   .qty-container select {
