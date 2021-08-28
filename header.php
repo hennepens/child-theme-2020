@@ -85,7 +85,7 @@ $upload_dir = wp_get_upload_dir();
 			      wp_get_current_user();
 			      echo '<li><a href="/my-account">' . get_avatar( $current_user ) . '</a></li>'; ?>		    
 			      <?php } else { ?>
-			        <li class="d-none d-md-flex"><a href="/my-account">My Account</a></li>
+			        <li class="d-none d-md-flex"><a href="/login">My Account</a></li>
 			      <?php } ?>
 			      <li><?php echo do_shortcode('[xoo_wsc_cart]'); ?></li>
 			  </ul>
