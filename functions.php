@@ -91,32 +91,6 @@ function understrap_remove_scripts() {
     wp_dequeue_script( 'wc-cart-fragments' ); 
 
   }
-  function unload_all_jquery() {
-    //wp_enqueue_script("jquery");
-    $jquery_ui = array(
-        "jquery-ui-widget",
-        "jquery-ui-mouse",
-        "jquery-ui-accordion",
-        "jquery-ui-autocomplete",
-        "jquery-ui-slider",
-        "jquery-ui-tabs",   
-        "jquery-ui-draggable",
-        "jquery-ui-droppable",
-        "jquery-ui-selectable",
-        "jquery-ui-position",
-        "jquery-ui-datepicker",
-        "jquery-ui-resizable",
-        "jquery-ui-dialog",
-        "jquery-ui-button"
-    );
-
-    foreach($jquery_ui as $script){
-        wp_deregister_script($script);
-    }
-  }
-
-
-
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
