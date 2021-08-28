@@ -36,6 +36,7 @@ if ( ! $product->is_purchasable() ) {
 
 
 	?>
+	<script>document.getElementById("atsval").value = "1";</script>
 	<input type="hidden" id="atsval"  name="ats_quantity" value="1" class="ats_qty">
 	<input type="hidden" name="ats_product_id" value="<?php echo esc_attr( $product->get_id() ); ?>">
 	<input type="hidden" name="ats_variation_id" value="0">
