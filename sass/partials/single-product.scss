@@ -245,6 +245,13 @@
 		flex-grow: 1;
 		padding-right: 15px;
 		color: #aaa;
+		display:flex;
+		.one-time-price{
+			margin-left: auto;
+    		padding-bottom: 5px;
+    		font-size: 1.25rem;
+			font-family: $font-family-libre-baskerville-italic;
+		}
 	}
 	.delivery-container{
 		padding: 15px;
