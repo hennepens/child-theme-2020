@@ -33,8 +33,10 @@ if ( ! $product->is_purchasable() ) {
 		$items_string = Javorszky\Toolbox\Utilities\generate_nonce_on_items( $subscription );
 		wp_nonce_field( 'add_to_subscription_' . $items_string, 'jgtbwpnonce_' . $subscription->get_id(), false );
 	}
+	$default_value = 1;
+	
 	?>
-	<input type="hidden" name="ats_quantity" value="<?php echo '1'; ?>" class="ats_qty">
+	<input type="hidden" name="ats_quantity" value="<?php echo $default_value; ?>" class="ats_qty">
 	<input type="hidden" name="ats_product_id" value="<?php echo esc_attr( $product->get_id() ); ?>">
 	<input type="hidden" name="ats_variation_id" value="0">
 	<input type="hidden" name="ats_variation_attributes" value="">
