@@ -36,8 +36,8 @@ if ( ! $product->is_purchasable() ) {
 
 
 	?>
-	<input type="hidden" name="ats_quantity" value="" class="ats_qty">
-	<input type="hidden" id="atsval" name="ats_product_id" value="<?php echo esc_attr( $product->get_id() ); ?>">
+	<input type="hidden" id="atsval"  name="ats_quantity" value="" class="ats_qty">
+	<input type="hidden" name="ats_product_id" value="<?php echo esc_attr( $product->get_id() ); ?>">
 	<input type="hidden" name="ats_variation_id" value="0">
 	<input type="hidden" name="ats_variation_attributes" value="">
 	<button type="submit" name="add-to-subscription" disabled="disabled" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt">
