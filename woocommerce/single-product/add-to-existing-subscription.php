@@ -36,6 +36,7 @@ if ( ! $product->is_purchasable() ) {
 
 
 	?>
+	<script>document.getElementById("atsval").value = 1;</script>
 	<input type="hidden" id="atsval"  name="ats_quantity" value="" class="ats_qty">
 	<input type="hidden" name="ats_product_id" value="<?php echo esc_attr( $product->get_id() ); ?>">
 	<input type="hidden" name="ats_variation_id" value="0">
@@ -43,7 +44,4 @@ if ( ! $product->is_purchasable() ) {
 	<button type="submit" name="add-to-subscription" disabled="disabled" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt">
 		<?php echo esc_html_x( 'Add to existing subscription', 'Text on button for add to existing subscription functionality', 'jg-toolbox' ); ?>
 	</button>
-	<script>
-		document.getElementById("atsval").value = 1;
-	</script>
 </form>
