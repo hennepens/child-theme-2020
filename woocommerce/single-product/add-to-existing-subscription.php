@@ -34,7 +34,7 @@ if ( ! $product->is_purchasable() ) {
 		wp_nonce_field( 'add_to_subscription_' . $items_string, 'jgtbwpnonce_' . $subscription->get_id(), false );
 	}
 	?>
-	<input type="hidden" name="ats_quantity" value="1">
+	<input type="hidden" name="ats_quantity" value="1" class="ats_qty">
 	<input type="hidden" name="ats_product_id" value="<?php echo esc_attr( $product->get_id() ); ?>">
 	<input type="hidden" name="ats_variation_id" value="0">
 	<input type="hidden" name="ats_variation_attributes" value="">
