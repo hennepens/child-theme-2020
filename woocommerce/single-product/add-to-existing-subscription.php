@@ -44,6 +44,6 @@ if ( ! $product->is_purchasable() ) {
 		<?php echo esc_html_x( 'Add to existing subscription', 'Text on button for add to existing subscription functionality', 'jg-toolbox' ); ?>
 	</button>
 	<script>
-		document.getElementById("atsval").value = "1";
+		document.getElementById("atsval").value = 1;
 	</script>
 </form>
