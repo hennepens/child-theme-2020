@@ -261,7 +261,6 @@ function get_help_icon($content, $type = 'text', $echo = false){
 }
 
   add_action( 'wp_enqueue_scripts', function() {
-  if( ! function_exists( 'is_product' ) || ! is_product() || ! is_shop() ) { return; }
   wp_enqueue_script( 'jquery' );
   wp_add_inline_script( 'jquery', '
     jQuery( document ).ready( function( $ ) {
