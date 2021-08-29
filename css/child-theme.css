@@ -5715,6 +5715,8 @@ h2 {
     font-size: 1rem; }
   #jckqv_summary .single_variation_wrap .woocommerce-variation-price .price {
     color: #77a464 !important; }
+    #jckqv_summary .single_variation_wrap .woocommerce-variation-price .price ins {
+      color: #77a464 !important; }
   #jckqv_summary .wcsatt-options-wrapper {
     display: none !important; }
 
