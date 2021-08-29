@@ -6793,25 +6793,28 @@ h2 {
   .cert-tag.CBDA {
     color: #00A3DC;
     border-color: #00A3DC; }
-  .cert-tag.CBDVA {
-    color: #3B6FEF;
-    border-color: #3B6FEF; }
-  .cert-tag.CBG {
-    color: #6F43FF;
-    border-color: #6F43FF; }
   .cert-tag.CBC {
     color: #65CC6A;
     border-color: #65CC6A; }
   .cert-tag.CBCA {
     color: #16C8A2;
     border-color: #16C8A2; }
+  .cert-tag.CBDVA {
+    color: #3B6FEF;
+    border-color: #3B6FEF; }
+  .cert-tag.CBG {
+    color: #6F43FF;
+    border-color: #6F43FF; }
+  .cert-tag.CBGA {
+    color: #8234C5;
+    border-color: #8234C5; }
   .cert-tag.CBN {
     color: #FEC200;
     border-color: #FEC200; }
   .cert-tag.Delta {
     color: #BE225B;
     border-color: #BE225B; }
-  .cert-tag.THCA {
+  .cert-tag.THC-A {
     color: #F7931E;
     border-color: #F7931E; }
 
