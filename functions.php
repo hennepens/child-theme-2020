@@ -559,7 +559,22 @@ add_action( 'woocommerce_after_shop_loop_item', 'misha_after_add_to_cart_btn' );
 function misha_after_add_to_cart_btn(){
   global $product;
   echo '
-   <a href="#" rel="nofollow" data-jckqvpid="' . $product->get_parent_id().':'. $product->get_id() . '" class="iconic-wqv-button iconic-wqv-button--align-center subscription-message"> Subscribe &amp; Save 25&percnt;</a>';
+   <a href="#" rel="nofollow" data-jckqvpid="' . $product->get_parent_id().':'. $product->get_id() . '" class="iconic-wqv-button iconic-wqv-button--align-center subscription-message"> Subscribe &amp; Save 25&percnt;</a>
+
+   <script>
+    jQuery(document).ready(function(){
+      function selectSubscription(){
+        console.log(document);
+        jQuery(document).find("input.autoship-yes-radio").attr("checked", "checked");
+      }
+        jQuery(".subscription-message").click(function(){
+          jQuery("body").addClass("clicked-subscription");
+          selectAutoship();
+        });
+    });
+  </script>';
+   ';
+
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
@@ -1164,16 +1179,20 @@ function show_product_cannabinoids() {
 }
 
 
+
 add_action('jck_qv_after_summary', 'add_js_qv', 10, 1);
 
 function add_js_qv(){ ?>
 
 <script>
 jQuery(document).ready(function(){
+  addGeneratedRadioButtons();
+  if(jQuery("body").hasClass("clicked-subscription")) {
+    jQuery("#jckqv").find("i.purchase-options li:last-child").addClass("selected");
+    jQuery("body").removeClass("clicked-autoship");
+  }
+});
 
-        addGeneratedRadioButtons();
-        
-      });
      
   
   </script>
