@@ -6438,48 +6438,48 @@ h2 {
   display: block; }
 
 /* Single Product Template */
-.single-product .woocommerce-product-gallery .flex-control-nav, .woocommerce-shop .woocommerce-product-gallery .flex-control-nav {
+.single-product .woocommerce-product-gallery .flex-control-nav, .woocommerce-shop .woocommerce-product-gallery .flex-control-nav, #jckqv_summary .woocommerce-product-gallery .flex-control-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  .single-product .woocommerce-product-gallery .flex-control-nav li, .woocommerce-shop .woocommerce-product-gallery .flex-control-nav li {
+  .single-product .woocommerce-product-gallery .flex-control-nav li, .woocommerce-shop .woocommerce-product-gallery .flex-control-nav li, #jckqv_summary .woocommerce-product-gallery .flex-control-nav li {
     max-width: 100px; }
-    .single-product .woocommerce-product-gallery .flex-control-nav li img, .woocommerce-shop .woocommerce-product-gallery .flex-control-nav li img {
+    .single-product .woocommerce-product-gallery .flex-control-nav li img, .woocommerce-shop .woocommerce-product-gallery .flex-control-nav li img, #jckqv_summary .woocommerce-product-gallery .flex-control-nav li img {
       max-width: 100px; }
 
-.single-product #woocommerce-wrapper, .woocommerce-shop #woocommerce-wrapper {
+.single-product #woocommerce-wrapper, .woocommerce-shop #woocommerce-wrapper, #jckqv_summary #woocommerce-wrapper {
   padding-bottom: 0; }
   @media only screen and (max-width: 767px) {
-    .single-product #woocommerce-wrapper, .woocommerce-shop #woocommerce-wrapper {
+    .single-product #woocommerce-wrapper, .woocommerce-shop #woocommerce-wrapper, #jckqv_summary #woocommerce-wrapper {
       padding-top: 0; } }
 
 @media only screen and (max-width: 767px) {
-  .single-product .site-main, .woocommerce-shop .site-main {
+  .single-product .site-main, .woocommerce-shop .site-main, #jckqv_summary .site-main {
     padding-top: 0; } }
 
-.single-product #content .product.type-product, .woocommerce-shop #content .product.type-product {
+.single-product #content .product.type-product, .woocommerce-shop #content .product.type-product, #jckqv_summary #content .product.type-product {
   max-width: 1140px;
   margin: 0 auto; }
   @media only screen and (max-width: 767px) {
-    .single-product #content .product.type-product, .woocommerce-shop #content .product.type-product {
+    .single-product #content .product.type-product, .woocommerce-shop #content .product.type-product, #jckqv_summary #content .product.type-product {
       padding: 0 20px; } }
 
-.single-product #content #primary, .woocommerce-shop #content #primary {
+.single-product #content #primary, .woocommerce-shop #content #primary, #jckqv_summary #content #primary {
   padding: 0; }
 
-.single-product .summary .product_title, .woocommerce-shop .summary .product_title {
+.single-product .summary .product_title, .woocommerce-shop .summary .product_title, #jckqv_summary .summary .product_title {
   margin-bottom: 1.25rem;
   text-align: center;
   line-height: 2rem;
   width: 100%; }
-  .single-product .summary .product_title .line-break, .woocommerce-shop .summary .product_title .line-break {
+  .single-product .summary .product_title .line-break, .woocommerce-shop .summary .product_title .line-break, #jckqv_summary .summary .product_title .line-break {
     display: none; }
-  .single-product .summary .product_title span:first-child, .woocommerce-shop .summary .product_title span:first-child {
+  .single-product .summary .product_title span:first-child, .woocommerce-shop .summary .product_title span:first-child, #jckqv_summary .summary .product_title span:first-child {
     font-family: "libre_baskervillebold"; }
-  .single-product .summary .product_title span:nth-child(2), .woocommerce-shop .summary .product_title span:nth-child(2) {
+  .single-product .summary .product_title span:nth-child(2), .woocommerce-shop .summary .product_title span:nth-child(2), #jckqv_summary .summary .product_title span:nth-child(2) {
     display: block;
     font-family: "libre_baskervilleitalic";
     font-size: 1.25rem;
@@ -6487,9 +6487,9 @@ h2 {
     position: relative;
     white-space: normal;
     width: 100%; }
-    .single-product .summary .product_title span:nth-child(2) em, .woocommerce-shop .summary .product_title span:nth-child(2) em {
+    .single-product .summary .product_title span:nth-child(2) em, .woocommerce-shop .summary .product_title span:nth-child(2) em, #jckqv_summary .summary .product_title span:nth-child(2) em {
       position: relative; }
-      .single-product .summary .product_title span:nth-child(2) em:before, .single-product .summary .product_title span:nth-child(2) em:after, .woocommerce-shop .summary .product_title span:nth-child(2) em:before, .woocommerce-shop .summary .product_title span:nth-child(2) em:after {
+      .single-product .summary .product_title span:nth-child(2) em:before, .single-product .summary .product_title span:nth-child(2) em:after, .woocommerce-shop .summary .product_title span:nth-child(2) em:before, .woocommerce-shop .summary .product_title span:nth-child(2) em:after, #jckqv_summary .summary .product_title span:nth-child(2) em:before, #jckqv_summary .summary .product_title span:nth-child(2) em:after {
         position: absolute;
         vertical-align: middle;
         display: inline-block;
@@ -6498,9 +6498,9 @@ h2 {
         width: 12%;
         margin: 0 1rem;
         top: 50%; }
-      .single-product .summary .product_title span:nth-child(2) em:before, .woocommerce-shop .summary .product_title span:nth-child(2) em:before {
+      .single-product .summary .product_title span:nth-child(2) em:before, .woocommerce-shop .summary .product_title span:nth-child(2) em:before, #jckqv_summary .summary .product_title span:nth-child(2) em:before {
         left: -24%; }
-  .single-product .summary .product_title span:last-child, .woocommerce-shop .summary .product_title span:last-child {
+  .single-product .summary .product_title span:last-child, .woocommerce-shop .summary .product_title span:last-child, #jckqv_summary .summary .product_title span:last-child {
     padding: 5px 0;
     background: #D4AF37;
     background: -webkit-gradient(linear, left top, left bottom, from(#D4AF37), to(#C5A028));
@@ -6515,35 +6515,35 @@ h2 {
     display: inline-block;
     margin-top: 10px;
     font-size: 1.25rem; }
-    .single-product .summary .product_title span:last-child:before, .woocommerce-shop .summary .product_title span:last-child:before {
+    .single-product .summary .product_title span:last-child:before, .woocommerce-shop .summary .product_title span:last-child:before, #jckqv_summary .summary .product_title span:last-child:before {
       content: '• ';
       padding-right: 4px;
       padding-left: 10px; }
-    .single-product .summary .product_title span:last-child:after, .woocommerce-shop .summary .product_title span:last-child:after {
+    .single-product .summary .product_title span:last-child:after, .woocommerce-shop .summary .product_title span:last-child:after, #jckqv_summary .summary .product_title span:last-child:after {
       content: ' •';
       padding-left: 4px;
       padding-right: 10px; }
 
-.single-product .wcsatt-options-wrapper .wcsatt-options-product, .woocommerce-shop .wcsatt-options-wrapper .wcsatt-options-product {
+.single-product .wcsatt-options-wrapper .wcsatt-options-product, .woocommerce-shop .wcsatt-options-wrapper .wcsatt-options-product, #jckqv_summary .wcsatt-options-wrapper .wcsatt-options-product {
   margin: 0 0 2em 0;
   padding: 0; }
 
-.single-product .subscription-option, .woocommerce-shop .subscription-option {
+.single-product .subscription-option, .woocommerce-shop .subscription-option, #jckqv_summary .subscription-option {
   display: none; }
-  .single-product .subscription-option.selected, .woocommerce-shop .subscription-option.selected {
+  .single-product .subscription-option.selected, .woocommerce-shop .subscription-option.selected, #jckqv_summary .subscription-option.selected {
     /*display: inherit;*/ }
-  .single-product .subscription-option input, .woocommerce-shop .subscription-option input {
+  .single-product .subscription-option input, .woocommerce-shop .subscription-option input, #jckqv_summary .subscription-option input {
     display: none; }
 
-.single-product .subscription-option-details .subscription-details, .woocommerce-shop .subscription-option-details .subscription-details {
+.single-product .subscription-option-details .subscription-details, .woocommerce-shop .subscription-option-details .subscription-details, #jckqv_summary .subscription-option-details .subscription-details {
   display: none; }
 
-.single-product .subscription-details, .woocommerce-shop .subscription-details {
+.single-product .subscription-details, .woocommerce-shop .subscription-details, #jckqv_summary .subscription-details {
   display: block; }
 
-.single-product .purchase-options, .woocommerce-shop .purchase-options {
+.single-product .purchase-options, .woocommerce-shop .purchase-options, #jckqv_summary .purchase-options {
   max-width: 100% !important; }
-  .single-product .purchase-options label.subscription-container, .woocommerce-shop .purchase-options label.subscription-container {
+  .single-product .purchase-options label.subscription-container, .woocommerce-shop .purchase-options label.subscription-container, #jckqv_summary .purchase-options label.subscription-container {
     width: auto;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -6555,58 +6555,58 @@ h2 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-  .single-product .purchase-options li, .woocommerce-shop .purchase-options li {
+  .single-product .purchase-options li, .woocommerce-shop .purchase-options li, #jckqv_summary .purchase-options li {
     padding: 0 !important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
-    .single-product .purchase-options li input, .woocommerce-shop .purchase-options li input {
+    .single-product .purchase-options li input, .woocommerce-shop .purchase-options li input, #jckqv_summary .purchase-options li input {
       margin-left: 15px;
       width: 1.25rem;
       height: 1.25rem; }
-    .single-product .purchase-options li.selected, .woocommerce-shop .purchase-options li.selected {
+    .single-product .purchase-options li.selected, .woocommerce-shop .purchase-options li.selected, #jckqv_summary .purchase-options li.selected {
       border-radius: 8px; }
   @media only screen and (max-width: 767px) {
-    .single-product .purchase-options .help-icon, .woocommerce-shop .purchase-options .help-icon {
+    .single-product .purchase-options .help-icon, .woocommerce-shop .purchase-options .help-icon, #jckqv_summary .purchase-options .help-icon {
       margin-left: 8px;
       margin-right: 0; } }
-  .single-product .purchase-options li .subscription-price, .woocommerce-shop .purchase-options li .subscription-price {
+  .single-product .purchase-options li .subscription-price, .woocommerce-shop .purchase-options li .subscription-price, #jckqv_summary .purchase-options li .subscription-price {
     margin: 0;
     padding: 0; }
-    .single-product .purchase-options li .subscription-price .one-time-option, .woocommerce-shop .purchase-options li .subscription-price .one-time-option {
+    .single-product .purchase-options li .subscription-price .one-time-option, .woocommerce-shop .purchase-options li .subscription-price .one-time-option, #jckqv_summary .purchase-options li .subscription-price .one-time-option {
       display: none !important; }
-    .single-product .purchase-options li .subscription-price .wcsatt-sub-discount, .woocommerce-shop .purchase-options li .subscription-price .wcsatt-sub-discount {
+    .single-product .purchase-options li .subscription-price .wcsatt-sub-discount, .woocommerce-shop .purchase-options li .subscription-price .wcsatt-sub-discount, #jckqv_summary .purchase-options li .subscription-price .wcsatt-sub-discount {
       color: #77a464; }
-    .single-product .purchase-options li .subscription-price .subscription-option-details, .woocommerce-shop .purchase-options li .subscription-price .subscription-option-details {
+    .single-product .purchase-options li .subscription-price .subscription-option-details, .woocommerce-shop .purchase-options li .subscription-price .subscription-option-details, #jckqv_summary .purchase-options li .subscription-price .subscription-option-details {
       display: none;
       min-height: auto !important;
       padding: 0 !important; }
       @media only screen and (max-width: 767px) {
-        .single-product .purchase-options li .subscription-price .subscription-option-details, .woocommerce-shop .purchase-options li .subscription-price .subscription-option-details {
+        .single-product .purchase-options li .subscription-price .subscription-option-details, .woocommerce-shop .purchase-options li .subscription-price .subscription-option-details, #jckqv_summary .purchase-options li .subscription-price .subscription-option-details {
           max-width: 90px;
           text-align: right; } }
-    .single-product .purchase-options li .subscription-price .subscription-option, .woocommerce-shop .purchase-options li .subscription-price .subscription-option {
+    .single-product .purchase-options li .subscription-price .subscription-option, .woocommerce-shop .purchase-options li .subscription-price .subscription-option, #jckqv_summary .purchase-options li .subscription-price .subscription-option {
       display: none;
       min-height: auto !important;
       padding: 0 !important; }
-      .single-product .purchase-options li .subscription-price .subscription-option.selected, .woocommerce-shop .purchase-options li .subscription-price .subscription-option.selected {
+      .single-product .purchase-options li .subscription-price .subscription-option.selected, .woocommerce-shop .purchase-options li .subscription-price .subscription-option.selected, #jckqv_summary .purchase-options li .subscription-price .subscription-option.selected {
         display: block !important;
         background-color: inherit; }
-        .single-product .purchase-options li .subscription-price .subscription-option.selected.one-time-option, .woocommerce-shop .purchase-options li .subscription-price .subscription-option.selected.one-time-option {
+        .single-product .purchase-options li .subscription-price .subscription-option.selected.one-time-option, .woocommerce-shop .purchase-options li .subscription-price .subscription-option.selected.one-time-option, #jckqv_summary .purchase-options li .subscription-price .subscription-option.selected.one-time-option {
           display: none; }
-        .single-product .purchase-options li .subscription-price .subscription-option.selected .subscription-price, .woocommerce-shop .purchase-options li .subscription-price .subscription-option.selected .subscription-price {
+        .single-product .purchase-options li .subscription-price .subscription-option.selected .subscription-price, .woocommerce-shop .purchase-options li .subscription-price .subscription-option.selected .subscription-price, #jckqv_summary .purchase-options li .subscription-price .subscription-option.selected .subscription-price {
           display: inherit !important; }
-      .single-product .purchase-options li .subscription-price .subscription-option:last-child, .woocommerce-shop .purchase-options li .subscription-price .subscription-option:last-child {
+      .single-product .purchase-options li .subscription-price .subscription-option:last-child, .woocommerce-shop .purchase-options li .subscription-price .subscription-option:last-child, #jckqv_summary .purchase-options li .subscription-price .subscription-option:last-child {
         display: block; }
-        .single-product .purchase-options li .subscription-price .subscription-option:last-child .subscription-option-details, .woocommerce-shop .purchase-options li .subscription-price .subscription-option:last-child .subscription-option-details {
+        .single-product .purchase-options li .subscription-price .subscription-option:last-child .subscription-option-details, .woocommerce-shop .purchase-options li .subscription-price .subscription-option:last-child .subscription-option-details, #jckqv_summary .purchase-options li .subscription-price .subscription-option:last-child .subscription-option-details {
           display: block; }
-      .single-product .purchase-options li .subscription-price .subscription-option label, .woocommerce-shop .purchase-options li .subscription-price .subscription-option label {
+      .single-product .purchase-options li .subscription-price .subscription-option label, .woocommerce-shop .purchase-options li .subscription-price .subscription-option label, #jckqv_summary .purchase-options li .subscription-price .subscription-option label {
         float: right;
         width: auto; }
 
-.single-product .choose-label, .woocommerce-shop .choose-label {
+.single-product .choose-label, .woocommerce-shop .choose-label, #jckqv_summary .choose-label {
   position: relative;
   float: left;
   width: auto;
@@ -6615,13 +6615,13 @@ h2 {
           flex-grow: 1;
   font-weight: bold;
   font-size: 1.15rem; }
-  .single-product .choose-label .subscription-term-notification, .woocommerce-shop .choose-label .subscription-term-notification {
+  .single-product .choose-label .subscription-term-notification, .woocommerce-shop .choose-label .subscription-term-notification, #jckqv_summary .choose-label .subscription-term-notification {
     display: block;
     font-size: 0.75rem;
     color: #999;
     margin-top: -5px; }
 
-.single-product .one-time-purchase-label, .woocommerce-shop .one-time-purchase-label {
+.single-product .one-time-purchase-label, .woocommerce-shop .one-time-purchase-label, #jckqv_summary .one-time-purchase-label {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -6633,21 +6633,21 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-  .single-product .one-time-purchase-label .one-time-price, .woocommerce-shop .one-time-purchase-label .one-time-price {
+  .single-product .one-time-purchase-label .one-time-price, .woocommerce-shop .one-time-purchase-label .one-time-price, #jckqv_summary .one-time-purchase-label .one-time-price {
     margin-left: auto;
     padding-bottom: 5px;
     font-size: 1.25rem;
     font-family: "libre_baskervilleitalic"; }
 
-.single-product .delivery-container, .woocommerce-shop .delivery-container {
+.single-product .delivery-container, .woocommerce-shop .delivery-container, #jckqv_summary .delivery-container {
   padding: 15px;
   border-top: 2px solid #fff;
   display: none;
   width: 100%; }
-  .single-product .delivery-container .prompt-heading, .woocommerce-shop .delivery-container .prompt-heading {
+  .single-product .delivery-container .prompt-heading, .woocommerce-shop .delivery-container .prompt-heading, #jckqv_summary .delivery-container .prompt-heading {
     text-align: right;
     margin-bottom: 15px; }
-  .single-product .delivery-container .subscription-delivery, .woocommerce-shop .delivery-container .subscription-delivery {
+  .single-product .delivery-container .subscription-delivery, .woocommerce-shop .delivery-container .subscription-delivery, #jckqv_summary .delivery-container .subscription-delivery {
     width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -6661,10 +6661,10 @@ h2 {
     display: -ms-flexbox;
     display: flex;
     justify-content: flex-end; }
-    .single-product .delivery-container .subscription-delivery .delivery-every, .woocommerce-shop .delivery-container .subscription-delivery .delivery-every {
+    .single-product .delivery-container .subscription-delivery .delivery-every, .woocommerce-shop .delivery-container .subscription-delivery .delivery-every, #jckqv_summary .delivery-container .subscription-delivery .delivery-every {
       width: auto; }
 
-.single-product .selected .delivery-container, .woocommerce-shop .selected .delivery-container {
+.single-product .selected .delivery-container, .woocommerce-shop .selected .delivery-container, #jckqv_summary .selected .delivery-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6673,10 +6673,10 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.single-product .selected .one-time-purchase-label, .woocommerce-shop .selected .one-time-purchase-label {
+.single-product .selected .one-time-purchase-label, .woocommerce-shop .selected .one-time-purchase-label, #jckqv_summary .selected .one-time-purchase-label {
   color: inherit; }
 
-.single-product .generatedRadios, .woocommerce-shop .generatedRadios {
+.single-product .generatedRadios, .woocommerce-shop .generatedRadios, #jckqv_summary .generatedRadios {
   padding: 15px 0;
   width: 50%;
   border: 1px solid #ccc;
@@ -6689,13 +6689,13 @@ h2 {
           justify-content: center;
   margin-right: 10px;
   color: #ccc; }
-  .single-product .generatedRadios:last-child, .woocommerce-shop .generatedRadios:last-child {
+  .single-product .generatedRadios:last-child, .woocommerce-shop .generatedRadios:last-child, #jckqv_summary .generatedRadios:last-child {
     margin-right: 0; }
-  .single-product .generatedRadios.selected, .woocommerce-shop .generatedRadios.selected {
+  .single-product .generatedRadios.selected, .woocommerce-shop .generatedRadios.selected, #jckqv_summary .generatedRadios.selected {
     border-color: #edebe6;
     color: inherit;
     background-color: #edebe6; }
-  .single-product .generatedRadios label, .woocommerce-shop .generatedRadios label {
+  .single-product .generatedRadios label, .woocommerce-shop .generatedRadios label, #jckqv_summary .generatedRadios label {
     margin: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6703,17 +6703,17 @@ h2 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-  .single-product .generatedRadios input, .woocommerce-shop .generatedRadios input {
+  .single-product .generatedRadios input, .woocommerce-shop .generatedRadios input, #jckqv_summary .generatedRadios input {
     width: 1.25rem;
     height: 1.25rem;
     margin-right: 5px; }
 
-.single-product .stamp-group img, .woocommerce-shop .stamp-group img {
+.single-product .stamp-group img, .woocommerce-shop .stamp-group img, #jckqv_summary .stamp-group img {
   float: left;
   margin-bottom: 20px;
   margin-right: 5px; }
   @media only screen and (max-width: 767px) {
-    .single-product .stamp-group img, .woocommerce-shop .stamp-group img {
+    .single-product .stamp-group img, .woocommerce-shop .stamp-group img, #jckqv_summary .stamp-group img {
       float: none;
       margin: 0 auto; } }
 
