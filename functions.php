@@ -265,7 +265,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
     wp_add_inline_script( 'jquery', '
     (function($){ 
       addGeneratedRadioButtons();
-
+      console.log("made it");
       function addGeneratedRadioButtons(){
         $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
           $( "div.generatedRadios" ).remove();
