@@ -337,8 +337,11 @@ function get_help_icon($content, $type = 'text', $echo = false){
 
     jQuery(".wcsatt-options-wrapper .wcsatt-options-product input").change(function(){
 
-      if (jQuery(this).val() == "one-time") updatePurchaseOptions(0);
-      else updatePurchaseOptions(jQuery(".wcsatt-options-wrapper .wcsatt-options-product select").val());
+      if (jQuery(this).val() == "one-time"){
+        updatePurchaseOptions(0);
+      }else{
+        updatePurchaseOptions(jQuery(".wcsatt-options-wrapper .wcsatt-options-product select").val());
+      }
 
       jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").addClass("selected");
       jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").siblings().removeClass("selected");
