@@ -216,7 +216,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       };
  
     function generateRadiosButtons(){
-		 var selectedVariant = $(".generatedRadios.selected label input").val();
+		 var selectedVariant = jQuery(".generatedRadios.selected label input").val();
 		 selectedVariant = selectedVariant.split(" ")[0];
 		 jQuery(".current_selected_variant").text(selectedVariant);
     	jQuery(".input-text.qty").change(function(){
@@ -241,14 +241,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     	var $savetext = jQuery(".subscription-price");
     	
     	jQuery(':contains("— save")').each(function(){
-		    jQuery($savetext).html($($savetext).html().split("— save").join(""));
+		    jQuery($savetext).html(jQuery($savetext).html().split("— save").join(""));
 		});
     	
         // purchase options
 		jQuery('.purchase-options input').change(function(){
 
 			if (jQuery(this).val() == 'one-time') updatePurchaseOptions(0);
-			else updatePurchaseOptions($('.purchase-options select').val());
+			else updatePurchaseOptions(jQuery('.purchase-options select').val());
 
 			jQuery(this).closest('li').addClass('selected')
 				.siblings().removeClass('selected');
@@ -258,7 +258,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		jQuery('.wcsatt-options-wrapper .wcsatt-options-product input').change(function(){
 
 			if (jQuery(this).val() == 'one-time') updatePurchaseOptions(0);
-			else updatePurchaseOptions($('.wcsatt-options-wrapper .wcsatt-options-product select').val());
+			else updatePurchaseOptions(jQuery('.wcsatt-options-wrapper .wcsatt-options-product select').val());
 
 			jQuery(this).siblings('.purchase-options .selected .subscriptions-list .subscription-price').children('li').addClass('selected')
 				.siblings().removeClass('selected');
@@ -278,7 +278,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			// get json value from woocomerce from
 		    
-			var product_attr    =   jQuery.parseJSON( $(".variations_form").attr("data-product_variations") ),
+			var product_attr    =   jQuery.parseJSON( jQuery(".variations_form").attr("data-product_variations") ),
 		    	obj_attr		= "";
 
 			
