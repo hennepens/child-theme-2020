@@ -5694,6 +5694,8 @@ h2 {
       display: inherit !important; }
   #jckqv_summary #jckqv_desc p {
     margin: 0; }
+  #jckqv_summary .variations {
+    display: none; }
   #jckqv_summary .single_variation_wrap {
     margin: 0; }
   #jckqv_summary .quantity span {
