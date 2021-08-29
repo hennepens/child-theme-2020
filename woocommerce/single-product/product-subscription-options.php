@@ -301,7 +301,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		    });
 		}
 	};
-})(jQuery);
 </script>
 
 <?php
