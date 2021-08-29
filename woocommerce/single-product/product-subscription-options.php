@@ -185,7 +185,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <script>
 (function($){
-
+    $(document).ready(function(){
 		 var selectedVariant = $(".generatedRadios.selected label input").val();
 		 selectedVariant = selectedVariant.split(" ")[0];
 		 $(".current_selected_variant").text(selectedVariant);
