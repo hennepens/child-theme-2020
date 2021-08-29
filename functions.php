@@ -922,7 +922,7 @@ add_action('woocommerce_add_to_cart', 'webroom_woocommerce_coupon_links');
 
 add_filter( 'wc_payment_gateway_authorize_net_cim_activate_apple_pay', '__return_true' );
 
-<?php
+
 //////////////////////////////////////////////////////////////// Register cannabinoids Taxonomy
 add_action( 'init', 'custom_product_cannabinoid_taxonomy', 0 );
 function custom_product_cannabinoid_taxonomy()  {
