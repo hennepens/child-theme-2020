@@ -261,34 +261,37 @@ function get_help_icon($content, $type = 'text', $echo = false){
 }
 
   add_action( 'wp_enqueue_scripts', function() {
-  wp_enqueue_script( 'jquery' );
-  wp_add_inline_script( 'jquery', '
-    jQuery( document ).ready( function( $ ) {
-      $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
-        $( "div.generatedRadios" ).remove();
-        $( "table.variations select" ).each( function() {
-          var selName = $( this ).attr( "name" );
-          $( "select[name=" + selName + "] option" ).each( function() {
-            var option = $( this );
-            var value = option.attr( "value" );
-            if( value == "" ) { return; }
-            var label = option.html();
-            var select = option.parent();
-            var selected = select.val();
-            var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
-            if(isSelected.includes("checked")){var selectedClass = "selected"} else{var selectedClass=""};
-            var radioHtml = `<input type="radio" name="${selName}" value="${value}" ${isSelected}>`;
-            var optionHtml = `<div class="generatedRadios ${selectedClass}"><label>${radioHtml} ${label}</label></div>`;
-            select.parent().append(
-              $( optionHtml ).click( function() {
-                select.val( value ).trigger( "change" );
-              } )
-            )
-          } ).parent().hide();
-        } );
-      } );
-    } );
-  ', 'after' );
+    wp_enqueue_script( 'jquery' );
+    wp_add_inline_script( 'jquery', '
+    (function($){ 
+      addGeneratedRadioButtons();
+
+      function addGeneratedRadioButtons(){
+        $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
+          $( "div.generatedRadios" ).remove();
+          $( "table.variations select" ).each( function() {
+            var selName = $( this ).attr( "name" );
+            $( "select[name=" + selName + "] option" ).each( function() {
+              var option = $( this );
+              var value = option.attr( "value" );
+              if( value == "" ) { return; }
+              var label = option.html();
+              var select = option.parent();
+              var selected = select.val();
+              var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
+              if(isSelected.includes("checked")){var selectedClass = "selected"} else{var selectedClass=""};
+              var radioHtml = `<input type="radio" name="${selName}" value="${value}" ${isSelected}>`;
+              var optionHtml = `<div class="generatedRadios ${selectedClass}"><label>${radioHtml} ${label}</label></div>`;
+              select.parent().append(
+                $( optionHtml ).click( function() {
+                  select.val( value ).trigger( "change" );
+                } )
+              )
+            } ).parent().hide();
+          } );
+        };
+      })(jQuery);
+    ', 'after' );
 } );
 
 add_filter('woocommerce_reset_variations_link', '__return_empty_string');
