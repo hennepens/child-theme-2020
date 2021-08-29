@@ -245,6 +245,7 @@ echo
 
 "</div>\n";
 
+?>
 <script>
 	 jQuery(document).ready(function(){
 
