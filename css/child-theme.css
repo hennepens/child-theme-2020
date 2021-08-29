@@ -6894,21 +6894,21 @@ h2 {
 /*
 * Product subscriptions
 */
-.single-product .wcsatt-sub-options,
-.single-product .wcsatt-sub-discount {
+.wcsatt-sub-options,
+.wcsatt-sub-discount {
   font-size: 1.2rem;
   font-weight: 700;
   color: gray; }
 
-.single-product .wcsatt-sub-options {
+.wcsatt-sub-options {
   margin-left: 0.5rem; }
 
-.single-product .purchase-options {
+.purchase-options {
   max-width: 460px;
   margin: 0 0 10px 0;
   padding-left: 0; }
 
-.single-product .purchase-options li {
+.purchase-options li {
   min-height: 60px;
   margin-bottom: 0;
   padding: 10px;
@@ -6919,35 +6919,35 @@ h2 {
   display: -ms-flexbox;
   display: flex; }
 
-.single-product .purchase-options li.selected {
+.purchase-options li.selected {
   background-color: #edebe6; }
 
-.single-product .purchase-options .subscription-price li.selected {
+.purchase-options .subscription-price li.selected {
   background-color: inherit; }
 
-.single-product .purchase-options li::before {
+.purchase-options li::before {
   display: none; }
 
-.single-product .purchase-options input {
+.purchase-options input {
   margin: 0 6px 0px 0;
   height: 1em;
   width: 1em;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer; }
 
-.single-product .purchase-options label {
+.purchase-options label {
   margin-bottom: 0;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer; }
 
-.single-product .purchase-options select {
+.purchase-options select {
   background-color: white;
   margin-left: 15px;
   padding: 4px 8px;
   height: 40px;
   width: 140px; }
 
-.single-product .purchase-options .help-icon {
+.purchase-options .help-icon {
   margin-left: 15px; }
 
 /*.u-column1{
