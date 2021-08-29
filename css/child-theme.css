@@ -6574,7 +6574,7 @@ h2 {
     .single-product .purchase-options li .subscription-price .one-time-option, .woocommerce-shop .purchase-options li .subscription-price .one-time-option {
       display: none !important; }
     .single-product .purchase-options li .subscription-price .wcsatt-sub-discount, .woocommerce-shop .purchase-options li .subscription-price .wcsatt-sub-discount {
-      display: none; }
+      color: #77a464; }
     .single-product .purchase-options li .subscription-price .subscription-option-details, .woocommerce-shop .purchase-options li .subscription-price .subscription-option-details {
       display: none;
       min-height: auto !important;
@@ -6775,6 +6775,8 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -6786,23 +6788,32 @@ h2 {
   border: 1px solid;
   border-radius: 100px; }
   .cert-tag.CBD {
-    color: #EB7464;
-    border-color: #EB7464; }
+    color: #0AB5BF;
+    border-color: #0AB5BF; }
   .cert-tag.CBDA {
-    color: #BD71AE;
-    border-color: #BD71AE; }
+    color: #00A3DC;
+    border-color: #00A3DC; }
+  .cert-tag.CBDVA {
+    color: #3B6FEF;
+    border-color: #3B6FEF; }
   .cert-tag.CBG {
-    color: #5865AF;
-    border-color: #5865AF; }
+    color: #6F43FF;
+    border-color: #6F43FF; }
   .cert-tag.CBC {
-    color: #81D1DF;
-    border-color: #81D1DF; }
+    color: #65CC6A;
+    border-color: #65CC6A; }
+  .cert-tag.CBCA {
+    color: #16C8A2;
+    border-color: #16C8A2; }
   .cert-tag.CBN {
-    color: #E789B8;
-    border-color: #E789B8; }
+    color: #FEC200;
+    border-color: #FEC200; }
   .cert-tag.Delta {
-    color: #F7A141;
-    border-color: #F7A141; }
+    color: #BE225B;
+    border-color: #BE225B; }
+  .cert-tag.THCA {
+    color: #F7931E;
+    border-color: #F7931E; }
 
 /*.u-column1{
 	display: block;
