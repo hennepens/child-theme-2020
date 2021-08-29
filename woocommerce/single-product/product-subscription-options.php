@@ -193,9 +193,9 @@ if ( ! defined( 'ABSPATH' ) ) {
         jQuery( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
           jQuery( "div.generatedRadios" ).remove();
           jQuery( "table.variations select" ).each( function() {
-            var selName = $( this ).attr( "name" );
+            var selName = jQuery( this ).attr( "name" );
             jQuery( "select[name=" + selName + "] option" ).each( function() {
-              var option = $( this );
+              var option = jQuery( this );
               var value = option.attr( "value" );
               if( value == "" ) { return; }
               var label = option.html();
