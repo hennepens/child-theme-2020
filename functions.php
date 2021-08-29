@@ -467,7 +467,7 @@ add_action( 'woocommerce_after_shop_loop_item', 'misha_after_add_to_cart_btn' );
 function misha_after_add_to_cart_btn(){
   global $product;
   echo '
-   <a href="#" rel="nofollow" onclick="addGeneratedRadioButtons();" data-jckqvpid="' . $product->get_parent_id().':'. $product->get_id() . '" class="iconic-wqv-button iconic-wqv-button--align-center subscription-message"> Subscribe &amp; Save 25&percnt;</a>';
+   <a href="#" rel="nofollow" onClick="addGeneratedRadioButtons()" data-jckqvpid="' . $product->get_parent_id().':'. $product->get_id() . '" class="iconic-wqv-button iconic-wqv-button--align-center subscription-message"> Subscribe &amp; Save 25&percnt;</a>';
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
