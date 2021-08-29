@@ -271,6 +271,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
       jQuery("subscription-message").on("click", function() {
         addGeneratedRadioButtons();
       });
+      
       function addGeneratedRadioButtons(){
         console.log("made it");
         jQuery( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
