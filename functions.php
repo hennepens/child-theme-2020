@@ -263,15 +263,14 @@ function get_help_icon($content, $type = 'text', $echo = false){
   add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_script( 'jquery' );
     wp_add_inline_script( 'jquery', '
-    (function($){ 
-      $(document).ready(function(){
+      jQuery(document).ready(function(){
         addGeneratedRadioButtons();
       });
       console.log("made it");
       function addGeneratedRadioButtons(){
-        $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
-          $( "div.generatedRadios" ).remove();
-          $( "table.variations select" ).each( function() {
+        jQuery( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
+          jQuery( "div.generatedRadios" ).remove();
+          jQuery( "table.variations select" ).each( function() {
             var selName = $( this ).attr( "name" );
             $( "select[name=" + selName + "] option" ).each( function() {
               var option = $( this );
@@ -293,7 +292,6 @@ function get_help_icon($content, $type = 'text', $echo = false){
           } );
         });
       };
-      })(jQuery);
     ', 'after' );
 } );
 
