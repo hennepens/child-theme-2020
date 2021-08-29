@@ -6777,7 +6777,8 @@ h2 {
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  margin-bottom: 20px; }
 
 .cert-tag {
   padding: 2px 10px;

@@ -1052,7 +1052,7 @@ function show_product_cannabinoids() {
 
     if ( $current_certs && ! is_wp_error( $current_certs ) ) {
 
-      echo '<h6>Active Cannabinoids:</h6><div id="cert-tags-' . $variation_id . '" class="cert-tags">';
+      echo '<h6 class="text-center">Active Cannabinoids:</h6><div id="cert-tags-' . $variation_id . '" class="cert-tags">';
 
       foreach ($current_certs as $cert) {
         $cert_name = $cert->name;
