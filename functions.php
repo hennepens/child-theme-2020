@@ -779,7 +779,7 @@ function redirect_user() {
     die();
   }
 }
-//add_action( 'template_redirect', 'redirect_user' );
+add_action( 'template_redirect', 'redirect_user' );
 
 // ------------------
 // 1. Register new endpoint (URL) for My Account page
