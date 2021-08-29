@@ -184,7 +184,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 </style>
 
 <script>
-(function($){	
+(function($){
+	addGeneratedRadioButtons();
 	generateRadiosButtons();
  
     function generateRadiosButtons(){
