@@ -260,7 +260,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
   else return $output;
 }
 
-  add_action( 'wp_enqueue_scripts', function() {
+  //add_action( 'wp_enqueue_scripts', function() {
   wp_enqueue_script( 'jquery' );
   wp_add_inline_script( 'jquery', '
     jQuery( document ).ready( function( $ ) {
