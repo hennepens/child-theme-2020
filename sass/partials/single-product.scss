@@ -455,12 +455,12 @@
 
 }
 .jgtb-add-to-subscription{
-	text-align: right;
+	text-align: right !important;
 	label{
-		width: 100%;
+		width: 100% !important;
 	}
 	#jgtb_add_to_existing{
-		margin-bottom: 0;
+		margin-bottom: 20px !important;
 	}
 	.single_add_to_cart_button.button.alt{
 		background: #000 !important;
