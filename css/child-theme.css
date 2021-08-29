@@ -5714,7 +5714,7 @@ h2 {
     height: auto;
     font-size: 1rem; }
   #jckqv_summary .single_variation_wrap .woocommerce-variation-price .price {
-    display: none; }
+    display: none !important; }
 
 #jckqv_images_wrap {
   width: 30% !important; }
