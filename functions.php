@@ -327,10 +327,11 @@ function get_help_icon($content, $type = 'text', $echo = false){
         // purchase options
     jQuery(".purchase-options input").change(function(){
       console.log("hello");
-      if ($(this).val() == "one-time") updatePurchaseOptions(0);
+      if (jQuery(this).val() == "one-time") updatePurchaseOptions(0);
       else updatePurchaseOptions(jQuery(".purchase-options select").val());
 
-      jQuery(this).closest("li").addClass("selected").siblings().removeClass("selected");
+      jQuery(this).closest("li").addClass("selected");
+      jQuery(this).siblings().removeClass("selected");
       console.log("end hello");
     });
 
