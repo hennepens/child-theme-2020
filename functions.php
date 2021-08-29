@@ -1187,10 +1187,7 @@ function add_js_qv(){ ?>
 <script>
 jQuery(document).ready(function(){
   addGeneratedRadioButtons();
-  if(jQuery("body").hasClass("clicked-subscription") {
-    jQuery("#jckqv").find(".purchase-options li:last-child").addClass("selected");
-    jQuery("body").removeClass("clicked-autoship");
-  }
+
 });
 
      
