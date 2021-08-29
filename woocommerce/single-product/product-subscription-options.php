@@ -220,8 +220,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 selectedVariant = selectedVariant.split(" ")[0];
 		 jQuery(".current_selected_variant").text(selectedVariant);
     	jQuery(".input-text.qty").change(function(){
-    		var selectedVariant = $(".generatedRadios.selected label input").val();
-    		var selectedQty = $(this).children("option:selected").val();
+    		var selectedVariant = jQuery(".generatedRadios.selected label input").val();
+    		var selectedQty = jQuery(this).children("option:selected").val();
 		  jQuery(".current_selected_variant").text(selectedVariant);
 		  jQuery(".quantity #realQty").val(selectedQty);
 		  jQuery(".delivery-every .current_selected_qty").text(selectedQty);
@@ -247,7 +247,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         // purchase options
 		jQuery('.purchase-options input').change(function(){
 
-			if ($(this).val() == 'one-time') updatePurchaseOptions(0);
+			if (jQuery(this).val() == 'one-time') updatePurchaseOptions(0);
 			else updatePurchaseOptions($('.purchase-options select').val());
 
 			jQuery(this).closest('li').addClass('selected')
@@ -257,7 +257,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		jQuery('.wcsatt-options-wrapper .wcsatt-options-product input').change(function(){
 
-			if ($(this).val() == 'one-time') updatePurchaseOptions(0);
+			if (jQuery(this).val() == 'one-time') updatePurchaseOptions(0);
 			else updatePurchaseOptions($('.wcsatt-options-wrapper .wcsatt-options-product select').val());
 
 			jQuery(this).siblings('.purchase-options .selected .subscriptions-list .subscription-price').children('li').addClass('selected')
@@ -286,7 +286,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		       // Create New Array by selecting variations
 		        jQuery( ".variations_form select" ).each(function( index ) {
 		            
-		             obj_attr[ $(this).attr("name") ] = $(this).val();
+		             obj_attr[ jQuery(this).attr("name") ] = jQuery(this).val();
 		            
 		        });
 		        
