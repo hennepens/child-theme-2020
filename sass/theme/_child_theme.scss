@@ -699,6 +699,11 @@ display: none;
 				.amount{
 					display: none !important;
 				}
+				del{
+					.amount{
+						display: block !important;
+					}
+				}
 				ins{
 					.amount{
 						color: #77a464 !important;
