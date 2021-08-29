@@ -696,8 +696,14 @@ display: none;
 		.woocommerce-variation-price{
 			.price{
 				color: #77a464 !important;
+				.amount{
+					display: none !important;
+				}
 				ins{
-					color: #77a464 !important;
+					.amount{
+						color: #77a464 !important;
+						display: block !important;
+					}
 				}
 			}
 		}
