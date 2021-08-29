@@ -346,62 +346,6 @@
 			}
 		}
 	}
-
-	.autoship-checkout-price{
-		font-size:  1.25rem;
-	}
-
-	.autoship-schedule-options-variable{
-		.autoship-frequency{
-			&.active{
-				display:  flex;
-				width:  100%;
-				justify-content: flex-end;
-				background: #edebe6;
-				border-top:  2px solid #fff;
-				padding:  20px;
-				border-bottom-left-radius: 8px;
-				border-bottom-right-radius: 8px;
-				label{
-					margin-bottom:  0;
-					margin-right:  10px;
-				}
-				select{
-					font-size:  large;
-					border-radius:  8px;
-					padding: 5px  10px;
-				}
-			}
-		}
-	}
-
-	.autoship-type{
-		.autoship-label{
-			padding: 20px;
-			border-radius:  8px;
-			}
-		&.autoship-no{
-			opacity:  0.5;
-		}	
-		&.active{
-			.autoship-label{
-				opacity: 1;
-				background: #edebe6;
-			}
-			&.autoship-no{
-				opacity: 1;
-			}
-		}
-		&.autoship-yes{
-			.autoship-label{
-				margin-bottom:  0;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-			}
-		}
-		
-	}
-
 	.one-time-container{
 		width:  100%;
 		display:  flex;
@@ -422,29 +366,6 @@
 		}
 		.one-time-price{
 			margin-left: auto;
-		}
-	}
-	.autoship-label{
-		width:  100%;
-		input{
-			width:  1.25rem;
-			height:  1.25rem;
-		}
-		.autoship-discount-label{
-			display:  flex;
-			width:  100%;
-			.discount-label-container{
-				margin-right:  auto;
-				display:  flex;
-				align-items:  center;
-				white-space: no-wrap;
-			}
-			input{
-				margin-right:  10px;
-			}
-		}
-		.autoship-checkout-percent-discount{
-			padding: 0 4px;
 		}
 	}
 	.quantity span{
