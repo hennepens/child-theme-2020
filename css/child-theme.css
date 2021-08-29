@@ -6771,27 +6771,35 @@ h2 {
   .jgtb-add-to-subscription .single_add_to_cart_button.button.alt {
     background: #000 !important; }
 
-.certifica .cert-tag {
+.cert-tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.cert-tag {
   padding: 2px 10px;
   margin: 5px;
   border: 1px solid;
   border-radius: 100px; }
-  .certifica .cert-tag.CBD {
+  .cert-tag.CBD {
     color: #EB7464;
     border-color: #EB7464; }
-  .certifica .cert-tag.CBDA {
+  .cert-tag.CBDA {
     color: #BD71AE;
     border-color: #BD71AE; }
-  .certifica .cert-tag.CBG {
+  .cert-tag.CBG {
     color: #5865AF;
     border-color: #5865AF; }
-  .certifica .cert-tag.CBC {
+  .cert-tag.CBC {
     color: #81D1DF;
     border-color: #81D1DF; }
-  .certifica .cert-tag.CBN {
+  .cert-tag.CBN {
     color: #E789B8;
     border-color: #E789B8; }
-  .certifica .cert-tag.Delta {
+  .cert-tag.Delta {
     color: #F7A141;
     border-color: #F7A141; }
 
