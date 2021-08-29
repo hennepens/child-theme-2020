@@ -5688,12 +5688,12 @@ h2 {
   @media only screen and (max-width: 767px) {
     #jckqv_summary .cart {
       margin-bottom: 0 !important; } }
+  #jckqv_summary .variations {
+    display: none !important; }
   #jckqv_summary .one-time-price {
     margin-left: auto; }
     #jckqv_summary .one-time-price .price {
       display: inherit !important; }
-  #jckqv_summary #autoship-schedule-options-variable {
-    margin: 0 0 25px 0; }
   #jckqv_summary #jckqv_desc p {
     margin: 0; }
   #jckqv_summary .single_variation_wrap {
@@ -5713,6 +5713,8 @@ h2 {
     transition: .1s all ease;
     height: auto;
     font-size: 1rem; }
+  #jckqv_summary .single_variation_wrap .woocommerce-variation-price .price {
+    display: none; }
 
 #jckqv_images_wrap {
   width: 30% !important; }
@@ -5722,13 +5724,6 @@ h2 {
 
 .jckqv-qty-spinners {
   display: none !important; }
-
-.product .autoship-price-container .autoship-retail-price .price, #jckqv_summary .autoship-price-container .autoship-retail-price .price {
-  text-decoration: line-through;
-  color: #212529;
-  opacity: 0.5; }
-  .product .autoship-price-container .autoship-retail-price .price ins .amount, #jckqv_summary .autoship-price-container .autoship-retail-price .price ins .amount {
-    display: none; }
 
 .mfp-bg {
   z-index: 99998 !important; }
