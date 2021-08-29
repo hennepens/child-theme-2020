@@ -264,7 +264,9 @@ function get_help_icon($content, $type = 'text', $echo = false){
     wp_enqueue_script( 'jquery' );
     wp_add_inline_script( 'jquery', '
     (function($){ 
-      addGeneratedRadioButtons();
+      $(document).ready(function(){
+        addGeneratedRadioButtons();
+      });
       console.log("made it");
       function addGeneratedRadioButtons(){
         $( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
