@@ -194,7 +194,7 @@ if ( ! defined( 'ABSPATH' ) ) {
           jQuery( "div.generatedRadios" ).remove();
           jQuery( "table.variations select" ).each( function() {
             var selName = $( this ).attr( "name" );
-            $( "select[name=" + selName + "] option" ).each( function() {
+            jQuery( "select[name=" + selName + "] option" ).each( function() {
               var option = $( this );
               var value = option.attr( "value" );
               if( value == "" ) { return; }
@@ -206,7 +206,7 @@ if ( ! defined( 'ABSPATH' ) ) {
               var radioHtml = `<input type="radio" name="${selName}" value="${value}" ${isSelected}>`;
               var optionHtml = `<div class="generatedRadios ${selectedClass}"><label>${radioHtml} ${label}</label></div>`;
               select.parent().append(
-                $( optionHtml ).click( function() {
+                jQuery( optionHtml ).click( function() {
                   select.val( value ).trigger( "change" );
                 } )
               )
@@ -214,67 +214,65 @@ if ( ! defined( 'ABSPATH' ) ) {
           } );
         });
       };
-(function($){
-	
  
     function generateRadiosButtons(){
 		 var selectedVariant = $(".generatedRadios.selected label input").val();
 		 selectedVariant = selectedVariant.split(" ")[0];
-		 $(".current_selected_variant").text(selectedVariant);
-    	$(".input-text.qty").change(function(){
+		 jQuery(".current_selected_variant").text(selectedVariant);
+    	jQuery(".input-text.qty").change(function(){
     		var selectedVariant = $(".generatedRadios.selected label input").val();
     		var selectedQty = $(this).children("option:selected").val();
-		  $(".current_selected_variant").text(selectedVariant);
-		  $(".quantity #realQty").val(selectedQty);
-		  $(".delivery-every .current_selected_qty").text(selectedQty);
+		  jQuery(".current_selected_variant").text(selectedVariant);
+		  jQuery(".quantity #realQty").val(selectedQty);
+		  jQuery(".delivery-every .current_selected_qty").text(selectedQty);
 		  	if(selectedQty <= 1){
 		  		selectedVariant = selectedVariant.split(" ")[0];
-		  		$(".current_selected_variant").text(selectedVariant);
+		  		jQuery(".current_selected_variant").text(selectedVariant);
 			}else if(selectedQty>=2){
 				if(selectedVariant == "Box"){
-					$(".current_selected_variant").text(selectedVariant + "es");
+					jQuery(".current_selected_variant").text(selectedVariant + "es");
 				}
 				else{
 					selectedVariant = selectedVariant.split(" ")[0];
-					$(".current_selected_variant").text(selectedVariant + "s");
+					jQuery(".current_selected_variant").text(selectedVariant + "s");
 				}
 			}
 		});
-    	var $savetext = $(".subscription-price");
+    	var $savetext = jQuery(".subscription-price");
     	
-    	$(':contains("— save")').each(function(){
-		    $($savetext).html($($savetext).html().split("— save").join(""));
+    	jQuery(':contains("— save")').each(function(){
+		    jQuery($savetext).html($($savetext).html().split("— save").join(""));
 		});
     	
         // purchase options
-		$('.purchase-options input').change(function(){
+		jQuery('.purchase-options input').change(function(){
 
 			if ($(this).val() == 'one-time') updatePurchaseOptions(0);
 			else updatePurchaseOptions($('.purchase-options select').val());
 
-			$(this).closest('li').addClass('selected')
+			jQuery(this).closest('li').addClass('selected')
 				.siblings().removeClass('selected');
 
 		});
 
-		$('.wcsatt-options-wrapper .wcsatt-options-product input').change(function(){
+		jQuery('.wcsatt-options-wrapper .wcsatt-options-product input').change(function(){
 
 			if ($(this).val() == 'one-time') updatePurchaseOptions(0);
 			else updatePurchaseOptions($('.wcsatt-options-wrapper .wcsatt-options-product select').val());
 
-			$(this).siblings('.purchase-options .selected .subscriptions-list .subscription-price').children('li').addClass('selected')
+			jQuery(this).siblings('.purchase-options .selected .subscriptions-list .subscription-price').children('li').addClass('selected')
 				.siblings().removeClass('selected');
 
 		});
 
 
 
-		$('.purchase-options select').change(function(){
-			$('.purchase-options input[value="subscription"]').prop('checked', true).change();
+		jQuery('.purchase-options select').change(function(){
+			jQuery('.purchase-options input[value="subscription"]').prop('checked', true).change();
 		});
 
 		function updatePurchaseOptions(v){
-			$('.wcsatt-options-product input[value="'+ v +'"]').prop('checked', true).change();
+			jQuery('.wcsatt-options-product input[value="'+ v +'"]').prop('checked', true).change();
 		}
 		if( jQuery( ".variations_form select" ).length  ){
 
@@ -296,7 +294,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		        jQuery.each( product_attr, function( index, loop_value ) {
 		        
 		            if( JSON.stringify( obj_attr ) === JSON.stringify( loop_value.attributes )  ){
-		                $('.one-time-price').html( loop_value.price_html );
+		                jQuery('.one-time-price').html( loop_value.price_html );
 		                
 		            }
 		        }); 
