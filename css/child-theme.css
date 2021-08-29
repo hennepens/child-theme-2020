@@ -5688,8 +5688,6 @@ h2 {
   @media only screen and (max-width: 767px) {
     #jckqv_summary .cart {
       margin-bottom: 0 !important; } }
-  #jckqv_summary .woocommerce-variation-price, #jckqv_summary .variations {
-    display: none !important; }
   #jckqv_summary .one-time-price {
     margin-left: auto; }
     #jckqv_summary .one-time-price .price {
