@@ -326,7 +326,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
       
         // purchase options
     jQuery(".purchase-options input").change(function(){
-
+      console.log("hello");
       if (jQuery(this).val() == "one-time") updatePurchaseOptions(0);
       else updatePurchaseOptions(jQuery(".purchase-options select").val());
 
