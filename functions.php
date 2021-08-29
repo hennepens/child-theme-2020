@@ -331,7 +331,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
       else updatePurchaseOptions(jQuery(".purchase-options select").val());
 
       jQuery(this).closest("li").addClass("selected").siblings().removeClass("selected");
-
+      console.log("end hello");
     });
 
     jQuery(".wcsatt-options-wrapper .wcsatt-options-product input").change(function(){
