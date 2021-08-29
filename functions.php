@@ -342,7 +342,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
       }else{
         updatePurchaseOptions(jQuery(".wcsatt-options-wrapper .wcsatt-options-product select").val());
       }
-
+      console.log("this is in wcsattwrapper function");
       jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").addClass("selected");
       jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").siblings().removeClass("selected");
 
