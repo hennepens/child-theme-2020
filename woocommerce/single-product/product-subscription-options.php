@@ -184,8 +184,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 </style>
 
 <script>
-(function($){
+(function($){	
     $(document).ready(function(){
+    	generateRadiosButtons();	
+    	function generateRadiosButtons(){
 		 var selectedVariant = $(".generatedRadios.selected label input").val();
 		 selectedVariant = selectedVariant.split(" ")[0];
 		 $(".current_selected_variant").text(selectedVariant);
@@ -270,6 +272,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		        }); 
 		    });
 		}
+	};
     });
 })(jQuery);
 </script>
