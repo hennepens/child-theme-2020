@@ -1177,7 +1177,7 @@ jQuery(document).ready(function(){
         addGeneratedRadioButtons();
         
       });
-      jQuery("subscription-message").on("click"){
+      jQuery("subscription-message").on("click", function() { 
         addGeneratedRadioButtons();
       }
       function addGeneratedRadioButtons(){
@@ -1239,8 +1239,11 @@ jQuery(document).ready(function(){
         // purchase options
     jQuery(".purchase-options input").change(function(){
       console.log(this);
-      if (jQuery(this).val() == "one-time") updatePurchaseOptions(0);
-      else updatePurchaseOptions(jQuery(".purchase-options select").val());
+      if (jQuery(this).val() == "one-time"){
+        updatePurchaseOptions(0);
+      }else{
+        updatePurchaseOptions(jQuery(".purchase-options select").val());
+      }
 
       jQuery(this).closest("li").addClass("selected");
       jQuery(this).parent("li").siblings().removeClass("selected");
@@ -1259,9 +1262,7 @@ jQuery(document).ready(function(){
       jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").siblings().removeClass("selected");
 
     });
-
-
-
+    
     jQuery(".purchase-options select").change(function(){
       jQuery(".purchase-options input[value=\'subscription\']").prop("checked", true).change();
     });
