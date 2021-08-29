@@ -387,3 +387,35 @@
 		background: #000 !important;
 	}
 }
+
+.certifica
+.cert-tag{
+	padding: 2px 10px;
+    margin: 5px;
+    border: 1px solid;
+    border-radius: 100px;
+    &.CBD{
+    	color: #EB7464;
+    	border-color: #EB7464;
+    }
+    &.CBDA{
+    	color: #BD71AE;
+    	border-color: #BD71AE;
+    }
+    &.CBG{
+    	color: #5865AF;
+    	border-color: #5865AF;
+    }
+    &.CBC{
+    	color: #81D1DF;
+    	border-color: #81D1DF;
+    }
+    &.CBN{
+    	color: #E789B8;
+    	border-color: #E789B8;
+    }
+    &.Delta{
+    	color: #F7A141;
+    	border-color: #F7A141;
+    }
+}
