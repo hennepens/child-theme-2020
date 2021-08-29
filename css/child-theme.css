@@ -5701,7 +5701,8 @@ h2 {
   #jckqv_summary .quantity span {
     display: none; }
   #jckqv_summary .subscription-option-details {
-    max-width: 60%; }
+    max-width: 60%;
+    margin-left: auto; }
   #jckqv_summary .button {
     padding: 4px;
     min-width: 200px;
