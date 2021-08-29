@@ -354,7 +354,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
     });
 
     function updatePurchaseOptions(v){
-      jQuery(".wcsatt-options-product input[value=\"'+ v +'\"]").prop("checked", true).change();
+      jQuery(".wcsatt-options-product input[value=\"\'+ v +\'\"]").prop("checked", true).change();
     }
     if( jQuery( ".variations_form select" ).length  ){
 
