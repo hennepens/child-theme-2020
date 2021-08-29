@@ -186,7 +186,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <script>
 	 jQuery(document).ready(function(){
 
-        addGeneratedRadioButtons();
+        
         
       });
       function addGeneratedRadioButtons(){
