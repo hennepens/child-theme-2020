@@ -185,7 +185,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <script>
 	 jQuery(document).ready(function(){
-	 	generateRadiosButtons();
+
         addGeneratedRadioButtons();
         
       });
@@ -214,6 +214,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             } ).parent().hide();
           } );
         });
+        generateRadiosButtons();
       };
  
     function generateRadiosButtons(){
