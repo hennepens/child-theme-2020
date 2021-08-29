@@ -268,7 +268,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
         addGeneratedRadioButtons();
         
       });
-      jQuery("subscription-message").on("click"){
+      jQuery("subscription-message").on("click", function() {
         addGeneratedRadioButtons();
       }
       function addGeneratedRadioButtons(){
