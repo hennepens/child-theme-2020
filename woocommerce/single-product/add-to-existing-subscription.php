@@ -48,5 +48,5 @@ if ( ! $product->is_purchasable() ) {
 	var wtyValue = 1;
 	jQuery('#jgtb_add_to_existing').click(function(){
 		jQuery('#atsval').val('1');
-	}
+	});
 </script>
