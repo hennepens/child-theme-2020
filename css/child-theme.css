@@ -6714,6 +6714,15 @@ h2 {
   .single_variation_wrap .quantity span {
     display: none; } }
 
+.jgtb-add-to-subscription {
+  text-align: right; }
+  .jgtb-add-to-subscription label {
+    width: 100%; }
+  .jgtb-add-to-subscription #jgtb_add_to_existing {
+    margin-bottom: 0; }
+  .jgtb-add-to-subscription .single_add_to_cart_button.button.alt {
+    background: #000 !important; }
+
 /*.u-column1{
 	display: block;
 }

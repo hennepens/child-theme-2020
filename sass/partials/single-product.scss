@@ -454,3 +454,15 @@
 	}
 
 }
+.jgtb-add-to-subscription{
+	text-align: right;
+	label{
+		width: 100%;
+	}
+	#jgtb_add_to_existing{
+		margin-bottom: 0;
+	}
+	.single_add_to_cart_button.button.alt{
+		background: #000 !important;
+	}
+}
