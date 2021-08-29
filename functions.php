@@ -928,20 +928,20 @@ add_action( 'init', 'custom_product_cannabinoid_taxonomy', 0 );
 function custom_product_cannabinoid_taxonomy()  {
 
   $labels = array(
-    'name'                       => 'cannabinoids',
-    'singular_name'              => 'cannabinoid (product_cannabinoid)',
+    'name'                       => 'Cannabinoids',
+    'singular_name'              => 'Cannabinoid (product_cannabinoid)',
     'menu_name'                  => 'cannabinoids',
-    'all_items'                  => 'All cannabinoids',
-    'parent_item'                => 'Parent cannabinoid',
-    'parent_item_colon'          => 'Parent cannabinoid:',
-    'new_item_name'              => 'New cannabinoid Name',
-    'add_new_item'               => 'Add New cannabinoid',
-    'edit_item'                  => 'Edit cannabinoid',
-    'update_item'                => 'Update cannabinoid',
-    'separate_items_with_commas' => 'Separate cannabinoids with commas',
-    'search_items'               => 'Search cannabinoid',
-    'add_or_remove_items'        => 'Add or remove cannabinoid',
-    'choose_from_most_used'      => 'Choose from the most used cannabinoids',
+    'all_items'                  => 'All Cannabinoids',
+    'parent_item'                => 'Parent Cannabinoid',
+    'parent_item_colon'          => 'Parent Cannabinoid:',
+    'new_item_name'              => 'New Cannabinoid Name',
+    'add_new_item'               => 'Add New Cannabinoid',
+    'edit_item'                  => 'Edit Cannabinoid',
+    'update_item'                => 'Update Cannabinoid',
+    'separate_items_with_commas' => 'Separate Cannabinoids with commas',
+    'search_items'               => 'Search Cannabinoid',
+    'add_or_remove_items'        => 'Add or remove Cannabinoid',
+    'choose_from_most_used'      => 'Choose from the most used Cannabinoids',
   );
   $args = array(
     'labels'                     => $labels,
@@ -977,7 +977,7 @@ function add_variation_settings_fields( $loop, $variation_data, $variation_post 
   woocommerce_wp_select( array(
     'id'            => '_product_cannabinoid'.$loop,
     'name'          => '_product_cannabinoid'.$loop.'[]',
-    'label'         => __("cannabinoids", "woocommerce" ),
+    'label'         => __("Cannabinoids", "woocommerce" ),
     'options'       => $options,
     'class'         => 'product-cert-select',
     'custom_attributes' => array('multiple' => 'multiple'),
