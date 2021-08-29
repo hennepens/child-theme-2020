@@ -930,7 +930,7 @@ function custom_product_cannabinoid_taxonomy()  {
   $labels = array(
     'name'                       => 'Cannabinoids',
     'singular_name'              => 'Cannabinoid (product_cannabinoid)',
-    'menu_name'                  => 'cannabinoids',
+    'menu_name'                  => 'Cannabinoids',
     'all_items'                  => 'All Cannabinoids',
     'parent_item'                => 'Parent Cannabinoid',
     'parent_item_colon'          => 'Parent Cannabinoid:',
