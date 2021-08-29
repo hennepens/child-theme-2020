@@ -186,30 +186,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 <script>
 (function($){
 
-    $(document).ready(function(){
-	    	$( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
-	        $( "div.generatedRadios" ).remove();
-	        $( "table.variations select" ).each( function() {
-	          var selName = $( this ).attr( "name" );
-	          $( "select[name=" + selName + "] option" ).each( function() {
-	            var option = $( this );
-	            var value = option.attr( "value" );
-	            if( value == "" ) { return; }
-	            var label = option.html();
-	            var select = option.parent();
-	            var selected = select.val();
-	            var isSelected = ( selected == value ) ? " checked=\"checked\"" : "";
-	            if(isSelected.includes("checked")){var selectedClass = "selected"} else{var selectedClass=""};
-	            var radioHtml = `<input type="radio" name="${selName}" value="${value}" ${isSelected}>`;
-	            var optionHtml = `<div class="generatedRadios ${selectedClass}"><label>${radioHtml} ${label}</label></div>`;
-	            select.parent().append(
-	              $( optionHtml ).click( function() {
-	                select.val( value ).trigger( "change" );
-	              } )
-	            )
-	          } ).parent().hide();
-	        } );
-	      } );
 		 var selectedVariant = $(".generatedRadios.selected label input").val();
 		 selectedVariant = selectedVariant.split(" ")[0];
 		 $(".current_selected_variant").text(selectedVariant);
