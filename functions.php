@@ -922,4 +922,150 @@ add_action('woocommerce_add_to_cart', 'webroom_woocommerce_coupon_links');
 
 add_filter( 'wc_payment_gateway_authorize_net_cim_activate_apple_pay', '__return_true' );
 
+<?php
+//////////////////////////////////////////////////////////////// Register cannabinoids Taxonomy
+add_action( 'init', 'custom_product_cannabinoid_taxonomy', 0 );
+function custom_product_cannabinoid_taxonomy()  {
+
+  $labels = array(
+    'name'                       => 'cannabinoids',
+    'singular_name'              => 'cannabinoid (product_cannabinoid)',
+    'menu_name'                  => 'cannabinoids',
+    'all_items'                  => 'All cannabinoids',
+    'parent_item'                => 'Parent cannabinoid',
+    'parent_item_colon'          => 'Parent cannabinoid:',
+    'new_item_name'              => 'New cannabinoid Name',
+    'add_new_item'               => 'Add New cannabinoid',
+    'edit_item'                  => 'Edit cannabinoid',
+    'update_item'                => 'Update cannabinoid',
+    'separate_items_with_commas' => 'Separate cannabinoids with commas',
+    'search_items'               => 'Search cannabinoid',
+    'add_or_remove_items'        => 'Add or remove cannabinoid',
+    'choose_from_most_used'      => 'Choose from the most used cannabinoids',
+  );
+  $args = array(
+    'labels'                     => $labels,
+    'hierarchical'               => true,
+    'public'                     => true,
+    'show_ui'                    => true,
+    'show_admin_column'          => false,
+    'show_in_nav_menus'          => true,
+    'show_tagcloud'              => true,
+  );
+  register_taxonomy( 'product_cannabinoid', 'product', $args );
+
+}
+
+
+// Add custom multi-select fields in variation setting tab
+add_action( 'woocommerce_product_after_variable_attributes', 'add_variation_settings_fields', 20, 3 );
+function add_variation_settings_fields( $loop, $variation_data, $variation_post ) {
+
+  // Get product certs
+  $terms = get_terms([
+    'taxonomy' => 'product_cannabinoid',
+    'hide_empty' => false,
+  ]);
+  $options = []; // Initialize options array
+
+  // Loop through each wp_term object and set term names in an array
+  foreach ($terms as $term) {
+    $term_name = __( $term->name, "woocommerce" );
+    $options[$term_name] = $term_name;
+  }
+
+  woocommerce_wp_select( array(
+    'id'            => '_product_cannabinoid'.$loop,
+    'name'          => '_product_cannabinoid'.$loop.'[]',
+    'label'         => __("cannabinoids", "woocommerce" ),
+    'options'       => $options,
+    'class'         => 'product-cert-select',
+    'custom_attributes' => array('multiple' => 'multiple'),
+    'value'         => get_post_meta( $variation_post->ID, '_product_cannabinoid', true ),
+  ), $variation_post->ID );
+
+  echo '<div class="options_group">';
+
+  woocommerce_wp_checkbox( array (
+      'id'            => '_not_ready_to_sell_variation'.$loop,
+      'label'         => __( '&nbsp;Call To Order', 'woocommerce' ),
+      'description'   => __( '', 'woocommerce' ),
+      'value'         => get_post_meta( $variation_post->ID, '_not_ready_to_sell_variation', true ),
+    ), $variation_post->ID );
+
+  echo '</div>';
+
+  echo '
+  <script>
+  jQuery(document).ready(function( $ ) {
+    $(".product-cert-select").select2();
+    $(".select2-container").css({"width": "100%"});
+  });
+  </script>
+  ';
+
+}
+
+// Save product certs & CTO for variations
+add_action( 'woocommerce_save_product_variation', 'save_product_cannabinoid_variation_field', 11, 2 );
+function save_product_cannabinoid_variation_field( $variation_id, $i ) {
+  $post_data =  isset( $_POST['_product_cannabinoid'.$i] ) ? $_POST['_product_cannabinoid'.$i] : null;
+  update_post_meta( $variation_id, '_product_cannabinoid', $post_data );
+}
+// CTO for variations
+add_action( 'woocommerce_save_product_variation', 'save_cto_variation_field', 11, 2 );
+function save_cto_variation_field( $variation_id, $i ) {
+  $woocommerce_checkbox = isset( $_POST['_not_ready_to_sell_variation'.$i] ) ? 'yes' : null;
+  update_post_meta( $variation_id, '_not_ready_to_sell_variation', $woocommerce_checkbox );
+}
+
+// Load product certs for variations (on frontend)
+add_filter( 'woocommerce_available_variation', 'load_product_cannabinoid_variation_field' );
+function load_product_cannabinoid_variation_field( $variations ) {
+  $certsDivider = ' • ';
+  $variations['product_cannabinoid'] = str_replace(',', $certsDivider, wc_get_formatted_variation(get_post_meta( $variations[ 'variation_id' ], '_product_cannabinoid', true ), true, false));
+  return $variations;
+}
+
+// Load CTO Variations (on frontend)
+add_filter( 'woocommerce_available_variation', 'load_cto_variation_field' );
+function load_cto_variation_field( $variations ) {
+  $variations['not_ready_to_sell_variation'] = get_post_meta( $variations[ 'variation_id' ], '_not_ready_to_sell_variation', true );
+  return $variations;
+}
+
+
+////////////////////////////////////////////////////// cannabinoid TAGS FOR SIMPLE PRODUCTS
+add_action( 'woocommerce_after_shop_loop_item_title', 'show_product_cannabinoids', 5 );
+add_action( 'woocommerce_single_product_summary', 'show_product_cannabinoids', 11, 0 );
+function show_product_cannabinoids() {
+
+  global $product;
+
+  $variation_id = $product->get_id();
+  $current_certs = get_the_terms( get_the_ID(), 'product_cannabinoid' ); // GLOBAL PRODUCT CERTS
+  $variation_certs = str_replace(', ', ' • ', wc_get_formatted_variation(get_post_meta( $variation_id , '_product_cannabinoid', true), true, false)); // VARIATION PRODUCT CERTS
+
+  if ( $variation_certs ) {
+    echo '<span class="text-success">' . $variation_certs . '</span>';
+  } else {
+
+    if ( $current_certs && ! is_wp_error( $current_certs ) ) {
+
+      echo '<div id="cert-tags-' . $variation_id . '" class="cert-tags">';
+
+      foreach ($current_certs as $cert) {
+        $cert_name = $cert->name;
+        if ($cert_name) {
+          echo '<span class="cert-tag text-success">' . $cert_name . '</span>';
+        }
+      }
+
+      echo '</div>';
+
+    }
+  }
+}
+
+
 ?>
