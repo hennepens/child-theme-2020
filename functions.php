@@ -331,7 +331,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
       else updatePurchaseOptions(jQuery(".purchase-options select").val());
 
       jQuery(this).closest("li").addClass("selected");
-      jQuery(this).removeClass("selected");
+      jQuery(this).siblings().removeClass("selected");
       console.log("end hello");
     });
 
@@ -340,8 +340,8 @@ function get_help_icon($content, $type = 'text', $echo = false){
       if (jQuery(this).val() == "one-time") updatePurchaseOptions(0);
       else updatePurchaseOptions(jQuery(".wcsatt-options-wrapper .wcsatt-options-product select").val());
 
-      jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").addClass("selected")
-        .siblings().removeClass("selected");
+      jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").addClass("selected");
+      jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").siblings().removeClass("selected");
 
     });
 
