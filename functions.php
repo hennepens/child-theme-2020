@@ -350,7 +350,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
 
 
     jQuery(".purchase-options select").change(function(){
-      jQuery(".purchase-options input[value="subscription"]"").prop("checked", true).change();
+      jQuery(".purchase-options input[value=\'subscription\']").prop("checked", true).change();
     });
 
     function updatePurchaseOptions(v){
