@@ -1052,12 +1052,12 @@ function show_product_cannabinoids() {
 
     if ( $current_certs && ! is_wp_error( $current_certs ) ) {
 
-      echo '<div id="cert-tags-' . $variation_id . '" class="cert-tags"><h5>Active Cannabinoids:</h5>';
+      echo '<h6>Active Cannabinoids:</h6><div id="cert-tags-' . $variation_id . '" class="cert-tags">';
 
       foreach ($current_certs as $cert) {
         $cert_name = $cert->name;
         if ($cert_name) {
-          echo '<span class="cert-tag ' . $cert_name . ' text-success">' . $cert_name . '</span>';
+          echo '<span class="cert-tag ' . $cert_name . '">' . $cert_name . '</span>';
         }
       }
 
