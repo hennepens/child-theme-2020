@@ -1177,7 +1177,7 @@ jQuery(document).ready(function(){
         addGeneratedRadioButtons();
         
       });
-      jQuery("subscription-message").on("click", function() { 
+      jQuery("subscription-message").on("click", function() {
         addGeneratedRadioButtons();
       }
       function addGeneratedRadioButtons(){
@@ -1262,7 +1262,7 @@ jQuery(document).ready(function(){
       jQuery(this).siblings(".purchase-options .selected .subscriptions-list .subscription-price").children("li").siblings().removeClass("selected");
 
     });
-    
+
     jQuery(".purchase-options select").change(function(){
       jQuery(".purchase-options input[value=\'subscription\']").prop("checked", true).change();
     });
