@@ -289,7 +289,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
               )
             } ).parent().hide();
           } );
-        };
+        }
       };
       })(jQuery);
     ', 'after' );
