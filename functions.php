@@ -564,12 +564,12 @@ function misha_after_add_to_cart_btn(){
    <script>
     jQuery(document).ready(function(){
       function selectSubscription(){
-        console.log(document);
-        jQuery(document).find("input.autoship-yes-radio").attr("checked", "checked");
+        console.log("hello");
+        jQuery("#jckqv").find(".purchase-options li:last-child").addClass("selected");
       }
         jQuery(".subscription-message").click(function(){
           jQuery("body").addClass("clicked-subscription");
-          selectSubscription()
+          selectSubscription();
         });
     });
   </script>';
