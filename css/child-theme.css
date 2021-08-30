@@ -5934,8 +5934,11 @@ h2 {
         -ms-flex-direction: column;
             flex-direction: column;
     height: 100%;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    padding-left: 10px; }
     .col2-set.addresses .col-1 address .account-shipping-actions, .col2-set.addresses .col-2 address .account-shipping-actions {
+      margin-top: auto; }
+    .col2-set.addresses .col-1 address .account-billing-actions, .col2-set.addresses .col-2 address .account-billing-actions {
       margin-top: auto; }
 
 .woopack-my-account.tabs-position-left .woocommerce .woocommerce-MyAccount-navigation {
