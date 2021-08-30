@@ -321,8 +321,8 @@ function get_help_icon($content, $type = 'text', $echo = false){
 
     });
       var $savetext = jQuery(".subscription-price");
-      $(":contains(\'— save\')").each(function(){
-        $($savetext).html($($savetext).html().split("— save").join(""));
+      jQuery(":contains(\'— save\')").each(function(){
+        jQuery($savetext).html($($savetext).html().split("— save").join(""));
       });
       
       
