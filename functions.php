@@ -1187,6 +1187,8 @@ jQuery(document).ready(function(){
   addGeneratedRadioButtons();
 
   if(jQuery("body").hasClass("clicked-subscription")) {
+    console.log("clicked subscribe");
+    
     jQuery("#jckqv").find(".purchase-options li:last-child").addClass("selected");
     jQuery("body").removeClass("clicked-autoship");
   }
