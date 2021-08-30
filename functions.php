@@ -1199,4 +1199,19 @@ jQuery(document).ready(function(){
   </script>
   <?php
 }
+
+add_filter( 'woocommerce_coupon_is_valid', 'disable_coupons_for_subscription_products', 10, 3 );
+function disable_coupons_for_subscription_products( $is_valid, $coupon, $discount ){
+    // Loop through cart items
+    foreach ( WC()->cart->get_cart() as $cart_item ) {
+        // Check for subscription products using "All products for subscription" add on
+        if ( isset($cart_item['wcsatt_data']['active_subscription_scheme']) 
+        && ! empty($cart_item['wcsatt_data']['active_subscription_scheme']) ) {
+            $is_valid = false; // Subscription product found: Make coupons "not valid"
+            break; // Stop and exit from the loop
+        }
+    }
+    return $is_valid;
+}
+
 ?>
