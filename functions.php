@@ -269,7 +269,6 @@ function get_help_icon($content, $type = 'text', $echo = false){
         
       });
       function addGeneratedRadioButtons(){
-        console.log("made it");
         jQuery( ".variations_form" ).on( "wc_variation_form woocommerce_update_variation_values", function() {
           jQuery( "div.generatedRadios" ).remove();
           jQuery( "table.variations select" ).each( function() {
@@ -292,13 +291,6 @@ function get_help_icon($content, $type = 'text', $echo = false){
               )
             } ).parent().hide();
           } );
-          if(jQuery("body").hasClass("clicked-subscription")) {
-            console.log("clicked subscribe");
-            jQuery("#jckqv_summary").find(".purchase-options li").removeClass("selected");
-            jQuery("#jckqv_summary").find(".purchase-options li").last().addClass("selected");
-
-            jQuery("body").removeClass("clicked-subscription");
-          }
           generateRadiosButtons();
         });
 
@@ -325,6 +317,13 @@ function get_help_icon($content, $type = 'text', $echo = false){
           selectedVariant = selectedVariant.split(" ")[0];
           jQuery(".current_selected_variant").text(selectedVariant + "s");
         }
+      }
+      if(jQuery("body").hasClass("clicked-subscription")) {
+        console.log("clicked subscribe");
+        jQuery("#jckqv_summary").find(".purchase-options li").removeClass("selected");
+        jQuery("#jckqv_summary").find(".purchase-options li").last().addClass("selected");
+
+        jQuery("body").removeClass("clicked-subscription");
       }
     });
       var $savetext = jQuery(".subscription-price");
