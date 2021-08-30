@@ -493,11 +493,6 @@ function add_info_after_container(){
 
 add_action('woocommerce_after_shop_loop_item', 'add_info_after_container');
 
-add_filter( 'wcsatt_price_html_suffix', 'apfs_remove_suffix', 10, 3 );
-
-function apfs_remove_suffix( $suffix, $product, $args ) {
-  return '';
-}
 
 function hook_additional_product_info_template() {
   global $product;
@@ -1212,5 +1207,7 @@ function disable_coupons_for_subscription_products( $is_valid, $coupon, $discoun
     }
     return $is_valid;
 }
+
+
 
 ?>
