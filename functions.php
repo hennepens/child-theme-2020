@@ -318,13 +318,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
           jQuery(".current_selected_variant").text(selectedVariant + "s");
         }
       }
-      if(jQuery("body").hasClass("clicked-subscription")) {
-        console.log("clicked subscribe");
-        jQuery("#jckqv_summary").find(".purchase-options li").removeClass("selected");
-        jQuery("#jckqv_summary").find(".purchase-options li").last().addClass("selected");
 
-        jQuery("body").removeClass("clicked-subscription");
-      }
     });
       var $savetext = jQuery(".subscription-price");
       
@@ -389,6 +383,13 @@ function get_help_icon($content, $type = 'text', $echo = false){
             }); 
         });
     }
+     if(jQuery("body").hasClass("clicked-subscription")) {
+        console.log("clicked subscribe");
+        jQuery("#jckqv_summary").find(".purchase-options li").removeClass("selected");
+        jQuery("#jckqv_summary").find(".purchase-options li").last().addClass("selected");
+
+        jQuery("body").removeClass("clicked-subscription");
+      }
   };
     ', 'after' );
 } );
