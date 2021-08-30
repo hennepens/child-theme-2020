@@ -292,6 +292,13 @@ function get_help_icon($content, $type = 'text', $echo = false){
               )
             } ).parent().hide();
           } );
+          if(jQuery("body").hasClass("clicked-subscription")) {
+            console.log("clicked subscribe");
+            jQuery("#jckqv_summary").find(".purchase-options li").removeClass("selected");
+            jQuery("#jckqv_summary").find(".purchase-options li").last().addClass("selected");
+
+            jQuery("body").removeClass("clicked-subscription");
+          }
           generateRadiosButtons();
         });
 
@@ -1185,14 +1192,6 @@ function add_js_qv(){ ?>
 <script>
 jQuery(document).ready(function(){
   addGeneratedRadioButtons();
-
-  if(jQuery("body").hasClass("clicked-subscription")) {
-    console.log("clicked subscribe");
-    jQuery("#jckqv_summary").find(".purchase-options li").removeClass("selected");
-    jQuery("#jckqv_summary").find(".purchase-options li").last().addClass("selected");
-
-    jQuery("body").removeClass("clicked-subscription");
-  }
 });
 
      
