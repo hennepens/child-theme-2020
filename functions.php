@@ -1188,8 +1188,9 @@ jQuery(document).ready(function(){
 
   if(jQuery("body").hasClass("clicked-subscription")) {
     console.log("clicked subscribe");
+    jQuery("#jckqv_summary").find(".purchase-options li").removeClass("selected");
+    jQuery("#jckqv_summary").find(".purchase-options li").last().addClass("selected");
 
-    jQuery("#jckqv").find(".purchase-options li").last().addClass("selected");
     jQuery("body").removeClass("clicked-autoship");
   }
 });
