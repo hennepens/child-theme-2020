@@ -569,12 +569,10 @@ function misha_after_add_to_cart_btn(){
       }
         jQuery(".subscription-message").click(function(){
           jQuery("body").addClass("clicked-subscription");
-          selectAutoship();
+          selectSubscription()
         });
     });
   </script>';
-   ';
-
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
@@ -1187,7 +1185,10 @@ function add_js_qv(){ ?>
 <script>
 jQuery(document).ready(function(){
   addGeneratedRadioButtons();
-
+  if(jQuery("body").hasClass("clicked-subscription") {
+    jQuery("#jckqv").find(".purchase-options li:last-child").addClass("selected");
+    jQuery("body").removeClass("clicked-autoship");
+  }
 });
 
      
