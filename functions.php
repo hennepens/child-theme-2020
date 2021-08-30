@@ -320,9 +320,9 @@ function get_help_icon($content, $type = 'text', $echo = false){
       }
 
     });
-      var $savetext = jQuery(".subscription-price");
+      var savetext = jQuery(".subscription-price");
       jQuery(":contains(\'— save\')").each(function(){
-        jQuery($savetext).html($($savetext).html().split("— save").join(""));
+        jQuery(savetext).html(jQuery(savetext).html().split("— save").join(""));
       });
       
       
