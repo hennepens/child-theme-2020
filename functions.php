@@ -1191,7 +1191,7 @@ jQuery(document).ready(function(){
     jQuery("#jckqv_summary").find(".purchase-options li").removeClass("selected");
     jQuery("#jckqv_summary").find(".purchase-options li").last().addClass("selected");
 
-    jQuery("body").removeClass("clicked-autoship");
+    jQuery("body").removeClass("clicked-subscription");
   }
 });
 
