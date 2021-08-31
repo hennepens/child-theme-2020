@@ -1224,5 +1224,13 @@ function wpse_new_mail_from_name( $old ) {
     return 'Hennepen\'s'; // Edit it with your/company name
 }
 
+// decode HTML entities in from address on email - so you can have subject line with apostrophie
+add_action( 'wp_mail', function ( $email ) {
+
+  $email['subject'] = html_entity_decode( $email['subject'], ENT_QUOTES );
+
+  return $email;
+}, 13 );        // priority 13 is after style_mail() function; we want to clean up after that
+
 
 ?>
