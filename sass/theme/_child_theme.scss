@@ -1120,3 +1120,9 @@ display: none;
 .single-product .purchase-options .help-icon{
 	margin-left: 15px;
 }
+
+.wfacp_checkout_template{
+	.woocommerce-store-notice.demo_store{
+		display: none !important;
+	}
+}
