@@ -1213,6 +1213,10 @@ function disable_coupons_for_subscription_products( $is_valid, $coupon, $discoun
     return $is_valid;
 }
 
+add_filter('wp_mail_from_name', 'wpse_new_mail_from_name');
+function wpse_new_mail_from_name( $old ) {
+    return 'Hennepen\'s'; // Edit it with your/company name
+}
 
 
 ?>
