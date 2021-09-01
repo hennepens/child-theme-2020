@@ -6080,7 +6080,7 @@ h2 {
 .single-product .purchase-options .help-icon {
   margin-left: 15px; }
 
-.wfacp_checkout-template .woocommerce-store-notice.demo-store {
+.wfacp_checkout-template .woocommerce-store-notice.demo_store {
   display: none !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */

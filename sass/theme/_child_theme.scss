@@ -1122,9 +1122,7 @@ display: none;
 }
 
 .wfacp_checkout-template{
-	.woocommerce-store-notice{
-		&.demo-store{
-			display: none !important;
-		}
+	.woocommerce-store-notice.demo_store{
+		display: none !important;
 	}
 }
