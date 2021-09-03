@@ -33,8 +33,7 @@ global $product;
 	<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
 	<input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
 	<input type="hidden" name="variation_id" class="variation_id" value="0" />
-	<?php
-	 if (isset(is_user_logged_in() && current_user_can('administrator'))) { ?>
+	
 	<div id="gpay-container"></div>
 	<script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
 	<script>
@@ -269,5 +268,5 @@ global $product;
 	  paymentToken = paymentData.paymentMethodData.tokenizationData.token;
 	}
 		</script>
-	<?php } ?>
+
 	</div>
