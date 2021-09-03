@@ -1472,7 +1472,6 @@ function add_google_pay_button(){
   }
     </script>
     <?php
-  }
 }
 
 
