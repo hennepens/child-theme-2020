@@ -1233,7 +1233,7 @@ add_action( 'wp_mail', function ( $email ) {
 }, 13 );        // priority 13 is after style_mail() function; we want to clean up after that
 
 
-add_action('woocommerce_after_add_to_cart_button', 'add_google_pay_button', 10);
+add_action('woocommerce_after_add_to_cart_button', 'add_google_pay_button');
 function add_google_pay_button(){
   if (isset(is_user_logged_in() && current_user_can('administrator'))) {
   ?>
@@ -1472,6 +1472,8 @@ function add_google_pay_button(){
   }
     </script>
     <?php
+  }else{
+    return;
   }
 }
 
