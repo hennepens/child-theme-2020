@@ -1235,7 +1235,7 @@ add_action( 'wp_mail', function ( $email ) {
 
 add_action('woocommerce_after_add_to_cart_button', 'add_google_pay_button');
 function add_google_pay_button(){
-  if (isset(is_user_logged_in() && current_user_can('administrator'))) {
+  if (is_user_logged_in() && current_user_can('administrator')) {
   ?>
   <div id="gpay-container"></div>
   <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
