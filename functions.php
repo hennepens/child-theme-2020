@@ -1177,7 +1177,7 @@ function show_product_cannabinoids() {
         }
       }
 
-      echo '</div>';
+      echo '<script>jQuery(function () {jQuery("[data-toggle=\'tooltip\']").tooltip();})</script></div>';
 
     }
   }
