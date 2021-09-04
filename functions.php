@@ -1174,7 +1174,7 @@ function show_product_cannabinoids() {
         $cert_name = $cert->name;
         $cert_description = $cert->description;
         if ($cert_name) {
-          echo '<span class="cert-tag ' . $cert_name . '" data-toggle="tooltip" data-placement="bottom" title="'. $cert_description .'">' . $cert_name . '</span>';
+          echo '<span class="cert-tag ' . $cert_name . '" data-toggle="tooltip" data-html="true" data-placement="bottom" title="'. $cert_description .'">' . $cert_name . '</span>';
         }
       }
 
