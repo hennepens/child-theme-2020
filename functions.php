@@ -875,6 +875,7 @@ if ( ! function_exists( 'save_custom_content_meta_box' ) )
 
         // Sanitize user input and update the meta field in the database.
         update_post_meta( $post_id, $prefix.'main_title_wysiwyg', wp_kses_post($_POST[ 'main_title_wysiwyg' ]) );
+        update_post_meta( $post_id, $prefix.'cbd_mg', wp_kses_post($_POST[ 'cbd_mg' ]) );
     }
 }
 
