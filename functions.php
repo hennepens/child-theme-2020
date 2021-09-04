@@ -86,8 +86,9 @@ function understrap_remove_scripts() {
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
     /*wp_deregister_style( 'font-awesome-5' );*/
-    /*wp_dequeue_script( 'understrap-scripts' );
-    wp_deregister_script( 'understrap-scripts' );*/
+    wp_dequeue_script( 'understrap-scripts' );
+    wp_enqueue_script( 'jquery-js', ''.get_stylesheet_directory_uri().'/js/popper.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+    wp_deregister_script( 'understrap-scripts' );
     wp_dequeue_script( 'wc-cart-fragments' ); 
 
   }
