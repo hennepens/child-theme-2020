@@ -822,10 +822,15 @@ if ( ! function_exists( 'add_custom_content_meta_box' ) ){
         $prefix = '_bhww_'; // global $prefix;
 
         $main_title = get_post_meta($post->ID, $prefix.'main_title_wysiwyg', true) ? get_post_meta($post->ID, $prefix.'main_title_wysiwyg', true) : '';
+        $cbd_mg = get_post_meta($post->ID, $prefix.'cbd_mg', true) ? get_post_meta($post->ID, $prefix.'cbd_mg', true) : '';
         $args['textarea_rows'] = 6;
+        $args2 = '';
 
         echo '<p>'.__( 'Product Custom Title', 'cmb' ).'</p>';
         wp_editor( $main_title, 'main_title_wysiwyg', $args );
+
+        echo '<p>'.__( 'CBD Total Mg', 'cmb' ).'</p>';
+        wp_editor( $cbd_mg, 'cbd_mg', $args2 );
 
         echo '<input type="hidden" name="custom_product_field_nonce" value="' . wp_create_nonce() . '">';
     }
