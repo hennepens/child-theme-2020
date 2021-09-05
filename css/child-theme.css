@@ -6217,8 +6217,8 @@ h2 {
 .woocommerce-page .animatedfsmenu-navbar-toggler.right_top, .page-wellness-network .animatedfsmenu-navbar-toggler.right_top {
   top: 0 !important; }
 
-.woocommerce-page .animatedfsmenu-navbar-toggler.right_top {
-  top: inherit !important; }
+.woocommerce-page.woocommerce-demo-store .animatedfsmenu-navbar-toggler.right_top {
+  top: 50px !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {

@@ -1297,10 +1297,10 @@ display: none;
 		}
 	}
 }
-.woocommerce-page{
+.woocommerce-page.woocommerce-demo-store{
 	.animatedfsmenu-navbar-toggler{
 		&.right_top{
-			top: inherit !important;
+			top: 50px !important;
 		}
 	}
 }
