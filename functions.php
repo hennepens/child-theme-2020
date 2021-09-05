@@ -87,7 +87,7 @@ function understrap_remove_scripts() {
     wp_deregister_style( 'understrap-styles' );
     /*wp_deregister_style( 'font-awesome-5' );*/
     wp_dequeue_script( 'understrap-scripts' );
-    wp_enqueue_script( 'jquery-js', ''.get_stylesheet_directory_uri().'/js/popper.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+    wp_enqueue_script( 'popper-scripts', ''.get_stylesheet_directory_uri() . '/js/popper.min.js', array(), false);
     wp_deregister_script( 'understrap-scripts' );
     wp_dequeue_script( 'wc-cart-fragments' ); 
 
@@ -1241,7 +1241,7 @@ add_action( 'wp_mail', function ( $email ) {
 }, 13 );        // priority 13 is after style_mail() function; we want to clean up after that
 
 
-add_action('woocommerce_after_add_to_cart_button', 'add_google_pay_button');
+//add_action('woocommerce_after_add_to_cart_button', 'add_google_pay_button');
 function add_google_pay_button(){
   if (is_user_logged_in() && current_user_can('administrator')) {
   ?>
@@ -1484,6 +1484,7 @@ function add_google_pay_button(){
     return;
   }
 }
+
 
 
 ?>
