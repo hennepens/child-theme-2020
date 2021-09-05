@@ -63,7 +63,7 @@ $upload_dir = wp_get_upload_dir();
 			); ?>
 			<h1 class="navbar-brand mb-0 ">
 				<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
-					<?php if(is_woocommerce() || is_account_page()){ ?>
+					<?php if(is_woocommerce() || is_account_page() || is_page('wellness-network')){ ?>
 						<img id="logomark-svg" class="mb-3" alt data-lazy-type="image" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hennepens-logomark-small.svg" alt="Hennepen's" width="80" height="80">
 					<?php }else{ ?>
 					<img id="logo-svg" src="<?php echo get_stylesheet_directory_uri() .'/images/hennepens-logo-tagline.svg';?>" alt="Hennepen's" width="300">

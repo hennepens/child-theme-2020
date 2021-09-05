@@ -6166,15 +6166,15 @@ h2 {
   background-color: #000;
   border-radius: 0.25rem; }
 
-.woocommerce-page .navbar {
+.woocommerce-page .navbar, .page-wellness-network .navbar {
   width: 100%; }
-  .woocommerce-page .navbar .container {
+  .woocommerce-page .navbar .container, .page-wellness-network .navbar .container {
     width: 100%;
     max-width: 100%;
     -webkit-box-pack: unset;
         -ms-flex-pack: unset;
             justify-content: unset; }
-    .woocommerce-page .navbar .container #navbarNavDropdown {
+    .woocommerce-page .navbar .container #navbarNavDropdown, .page-wellness-network .navbar .container #navbarNavDropdown {
       width: auto;
       -webkit-box-pack: unset;
           -ms-flex-pack: unset;
@@ -6182,39 +6182,39 @@ h2 {
       -webkit-box-flex: inherit;
           -ms-flex-positive: inherit;
               flex-grow: inherit; }
-      .woocommerce-page .navbar .container #navbarNavDropdown.right {
+      .woocommerce-page .navbar .container #navbarNavDropdown.right, .page-wellness-network .navbar .container #navbarNavDropdown.right {
         -webkit-box-ordinal-group: 3;
             -ms-flex-order: 2;
                 order: 2; }
-        .woocommerce-page .navbar .container #navbarNavDropdown.right #menu-main-menu-right {
+        .woocommerce-page .navbar .container #navbarNavDropdown.right #menu-main-menu-right, .page-wellness-network .navbar .container #navbarNavDropdown.right #menu-main-menu-right {
           margin-right: 0 !important; }
-      .woocommerce-page .navbar .container #navbarNavDropdown.left {
+      .woocommerce-page .navbar .container #navbarNavDropdown.left, .page-wellness-network .navbar .container #navbarNavDropdown.left {
         -webkit-box-ordinal-group: 4;
             -ms-flex-order: 3;
                 order: 3; }
-        .woocommerce-page .navbar .container #navbarNavDropdown.left #menu-shop-menu {
+        .woocommerce-page .navbar .container #navbarNavDropdown.left #menu-shop-menu, .page-wellness-network .navbar .container #navbarNavDropdown.left #menu-shop-menu {
           margin-left: 0 !important; }
-      .woocommerce-page .navbar .container #navbarNavDropdown li {
+      .woocommerce-page .navbar .container #navbarNavDropdown li, .page-wellness-network .navbar .container #navbarNavDropdown li {
         border: 0; }
-    .woocommerce-page .navbar .container .navbar-brand {
+    .woocommerce-page .navbar .container .navbar-brand, .page-wellness-network .navbar .container .navbar-brand {
       padding: 0;
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;
               order: 1;
       margin: 0; }
       @media only screen and (max-width: 767px) {
-        .woocommerce-page .navbar .container .navbar-brand {
+        .woocommerce-page .navbar .container .navbar-brand, .page-wellness-network .navbar .container .navbar-brand {
           margin: auto; } }
-      .woocommerce-page .navbar .container .navbar-brand #logomark-svg {
+      .woocommerce-page .navbar .container .navbar-brand #logomark-svg, .page-wellness-network .navbar .container .navbar-brand #logomark-svg {
         width: 60px;
         margin-right: 20px;
         margin-bottom: 0 !important; }
         @media only screen and (max-width: 767px) {
-          .woocommerce-page .navbar .container .navbar-brand #logomark-svg {
+          .woocommerce-page .navbar .container .navbar-brand #logomark-svg, .page-wellness-network .navbar .container .navbar-brand #logomark-svg {
             margin-right: 0 !important;
             width: 50px; } }
 
-.woocommerce-page .animatedfsmenu-navbar-toggler.right_top {
+.woocommerce-page .animatedfsmenu-navbar-toggler.right_top, .page-wellness-network .animatedfsmenu-navbar-toggler.right_top {
   top: 0 !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
