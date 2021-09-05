@@ -6195,10 +6195,12 @@ h2 {
         @media only screen and (max-width: 767px) {
           .woocommerce-page .navbar .container .navbar-brand #logomark-svg, .page-wellness-network .navbar .container .navbar-brand #logomark-svg {
             margin-right: 0 !important;
-            width: 50px; } }
+            width: 50px;
+            height: auto;
+            padding: 5px 0; } }
 
 .woocommerce-page .animatedfsmenu-navbar-toggler.right_top, .page-wellness-network .animatedfsmenu-navbar-toggler.right_top {
-  top: 0 !important; }
+  top: -10px !important; }
 
 .woocommerce-page.woocommerce-demo-store .animatedfsmenu-navbar-toggler.right_top {
   top: 50px !important; }
