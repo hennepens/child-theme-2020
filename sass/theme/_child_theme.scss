@@ -1297,3 +1297,10 @@ display: none;
 		}
 	}
 }
+.woocommerce-page{
+	.animatedfsmenu-navbar-toggler{
+		&.right_top{
+			top: inherit !important;
+		}
+	}
+}
