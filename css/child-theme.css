@@ -5812,10 +5812,10 @@ h2 {
 
 #menu-mobile-menu:before {
   content: '';
-  background-image: url(https://hennepens.com/wp-content/themes/child-theme-2020/images/hennepens-logomark-small.svg) !important;
+  background-image: url(https://hennepens.com/wp-content/themes/child-theme-2020/images/hennepens-logo-tagline.svg) !important;
   fill: white;
-  width: 75px;
-  height: 75px;
+  width: 250px;
+  height: 50px;
   display: block;
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
