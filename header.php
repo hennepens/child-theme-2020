@@ -25,11 +25,15 @@ $upload_dir = wp_get_upload_dir();
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-bold-webfont.woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-regular-webfont.woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/librebaskerville-italic-webfont.woff2" crossorigin="anonymous">
-	<?php if(!wp_is_mobile()){ ?>
+	<?php 
+	if(is_front_page()){
+	 if(!wp_is_mobile()){ ?>
 		<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-colorado-fields.jpg" type="image/webp">
 	<?php }else{ ?>
 		<link rel="preload" as="image" href="/wp-content/uploads/2020/12/hennepens-hero-image-mobile.jpg" type="image/webp">
-	<?php } ?>
+	<?php } 
+	}
+	?>
 	
 	<?php wp_head(); ?>
 </head>
@@ -59,7 +63,12 @@ $upload_dir = wp_get_upload_dir();
 			); ?>
 			<h1 class="navbar-brand mb-0 ">
 				<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
+					<?php if(is_woocommerce() || is_account_page()){ ?>
+						<img id="logomark-svg" class="mb-3" alt data-lazy-type="image" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hennepens-logomark-small.svg" alt="Hennepen's" width="80" height="80">
+					<?php }else{ ?>
 					<img id="logo-svg" src="<?php echo get_stylesheet_directory_uri() .'/images/hennepens-logo-tagline.svg';?>" alt="Hennepen's" width="300">
+					<?php } ?>
+
 				</a>
 			</h1>
 			<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php/* esc_attr_e( 'Toggle navigation', 'understrap' );*/ ?>">
