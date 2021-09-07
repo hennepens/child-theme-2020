@@ -5179,6 +5179,9 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield; }
 
+.site {
+  overflow-y: visible; }
+
 .site-main {
   padding-top: 50px;
   padding-bottom: 50px; }
@@ -5218,8 +5221,10 @@ h2 {
       font-size: 1.5rem; }
   @media only screen and (max-width: 767px) {
     .navbar {
-      padding-left: 0;
-      padding-right: 0; } }
+      height: 50px;
+      padding: 0;
+      background: #000;
+      overflow: visible; } }
   .navbar .container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -6213,7 +6218,11 @@ h2 {
               margin-right: 0 !important;
               width: 50px;
               height: auto;
-              padding: 0; } }
+              padding: 0;
+              padding: 0;
+              margin: 0;
+              -webkit-filter: invert(1);
+                      filter: invert(1); } }
       @media only screen and (max-width: 767px) {
         .woocommerce-page .navbar .container .navbar-brand, .page-wellness-network .navbar .container .navbar-brand {
           margin: auto; } }
