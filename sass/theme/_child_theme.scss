@@ -1261,9 +1261,14 @@ display: none;
 					a{
 						color: #fff;
 						border-bottom: 2px solid #000;
-						padding: 0;
+						padding: 0.5rem 0;
 					}
 					&.current-menu-item{
+						a{
+							border-bottom: 2px solid #fff;
+						}
+					}
+					&:hover{
 						a{
 							border-bottom: 2px solid #fff;
 						}
