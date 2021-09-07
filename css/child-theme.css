@@ -6195,7 +6195,7 @@ h2 {
         margin-right: 10px; }
         @media only screen and (max-width: 767px) {
           .woocommerce-page .navbar .container .navbar-brand a, .page-wellness-network .navbar .container .navbar-brand a {
-            margin-top: 0; } }
+            margin: 0; } }
         .woocommerce-page .navbar .container .navbar-brand a:before, .page-wellness-network .navbar .container .navbar-brand a:before {
           content: '';
           display: block;
@@ -6204,7 +6204,7 @@ h2 {
           border-radius: 100px;
           width: 70px;
           height: 70px;
-          top: -5px;
+          top: 0;
           left: -5px; }
           @media only screen and (max-width: 767px) {
             .woocommerce-page .navbar .container .navbar-brand a:before, .page-wellness-network .navbar .container .navbar-brand a:before {

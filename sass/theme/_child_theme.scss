@@ -1269,7 +1269,7 @@ display: none;
 				    margin-top: 5px;
 				    margin-right: 10px;
 				    @media only screen and (max-width: 767px) {
-				    	margin-top: 0;
+				    	margin: 0;
 				    }
 				    &:before{
 				    	content: '';
@@ -1279,7 +1279,7 @@ display: none;
 					    border-radius: 100px;
 					    width: 70px;
 					    height: 70px;
-					    top: -5px;
+					    top: 0;
 					    left: -5px;
 					    @media only screen and (max-width: 767px) {
 					    	width: 60px;
