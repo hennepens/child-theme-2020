@@ -6236,6 +6236,9 @@ h2 {
 .woocommerce-page .animatedfsmenu-navbar-toggler.right_top, .page-wellness-network .animatedfsmenu-navbar-toggler.right_top {
   top: -17px !important; }
 
+.woocommerce-page .animatedfsmenu-navbar-toggler .bar, .page-wellness-network .animatedfsmenu-navbar-toggler .bar {
+  background: #fff; }
+
 .woocommerce-page.woocommerce-demo-store .animatedfsmenu-navbar-toggler.right_top {
   top: 50px !important; }
 
