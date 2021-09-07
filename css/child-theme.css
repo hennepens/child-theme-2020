@@ -6228,10 +6228,10 @@ h2 {
         .woocommerce-page .navbar .container .navbar-brand, .page-wellness-network .navbar .container .navbar-brand {
           margin: auto;
           padding-top: 5px; } }
-      .woocommerce-page .navbar .container .navbar-brand .xoo-wsc-sc-cont, .page-wellness-network .navbar .container .navbar-brand .xoo-wsc-sc-cont {
-        margin-top: -5px; }
-      .woocommerce-page .navbar .container .navbar-brand .xoo-wsc-sc-bki.xoo-wsc-icon-cart1, .page-wellness-network .navbar .container .navbar-brand .xoo-wsc-sc-bki.xoo-wsc-icon-cart1 {
-        color: #fff; }
+  .woocommerce-page .navbar .xoo-wsc-sc-cont, .page-wellness-network .navbar .xoo-wsc-sc-cont {
+    margin-top: -5px; }
+  .woocommerce-page .navbar .xoo-wsc-sc-bki.xoo-wsc-icon-cart1, .page-wellness-network .navbar .xoo-wsc-sc-bki.xoo-wsc-icon-cart1 {
+    color: #fff; }
 
 .woocommerce-page .animatedfsmenu-navbar-toggler.right_top, .page-wellness-network .animatedfsmenu-navbar-toggler.right_top {
   top: -17px !important; }
