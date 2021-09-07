@@ -5276,10 +5276,7 @@ h2 {
       -webkit-filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
               filter: invert(1) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
   .navbar a {
-    color: #000;
     font-family: "libre_baskervilleregular"; }
-    .navbar a:hover {
-      color: #356e3e; }
 
 @media only screen and (max-width: 767px) {
   #navbarNavDropdown {
