@@ -6251,7 +6251,7 @@ h2 {
   top: 41px !important; }
 
 .woocommerce-account .woocommerce-store-notice.demo_store {
-  display: none; }
+  display: none !important; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-our-mission .navbar, .page-about-us .navbar, .page-sell-wholesale .navbar, .page-arc-partnership .navbar {
