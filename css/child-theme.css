@@ -6250,7 +6250,7 @@ h2 {
 .woocommerce-page.woocommerce-demo-store .animatedfsmenu-navbar-toggler.right_top {
   top: 41px !important; }
 
-.woocommerce-account .woocommerce-store-notice demo_store {
+.woocommerce-account .woocommerce-store-notice.demo_store {
   display: none; }
 
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
