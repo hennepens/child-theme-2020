@@ -6151,7 +6151,8 @@ h2 {
 .woocommerce-page .navbar, .page-wellness-network .navbar {
   width: 100%;
   z-index: 99999;
-  background: #000;
+  background: #000 !important;
+  position: relative !important;
   padding: 0; }
   .woocommerce-page .navbar .container, .page-wellness-network .navbar .container {
     width: 100%;

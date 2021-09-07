@@ -1233,7 +1233,8 @@ display: none;
 	.navbar{
 		width: 100%;
 		z-index: 99999;
-		background: #000;
+		background: #000 !important;
+		position: relative !important;
 		padding: 0;
 		.container{
 			width: 100%;
