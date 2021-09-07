@@ -1346,3 +1346,9 @@ display: none;
 		}
 	}
 }
+
+.page-my-account{
+	.woocommerce-store-notice demo_store{
+		display: none;
+	}
+}
