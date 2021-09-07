@@ -6150,7 +6150,8 @@ h2 {
 
 .woocommerce-page .navbar, .page-wellness-network .navbar {
   width: 100%;
-  z-index: 99999; }
+  z-index: 99999;
+  background: #000; }
   .woocommerce-page .navbar .container, .page-wellness-network .navbar .container {
     width: 100%;
     max-width: 100%;
@@ -6178,7 +6179,13 @@ h2 {
         .woocommerce-page .navbar .container #navbarNavDropdown.left #menu-shop-menu, .page-wellness-network .navbar .container #navbarNavDropdown.left #menu-shop-menu {
           margin-left: 0 !important; }
       .woocommerce-page .navbar .container #navbarNavDropdown li, .page-wellness-network .navbar .container #navbarNavDropdown li {
-        border: 0; }
+        border: 0;
+        padding: 0.5rem; }
+        .woocommerce-page .navbar .container #navbarNavDropdown li a, .page-wellness-network .navbar .container #navbarNavDropdown li a {
+          color: #fff;
+          border-bottom: 2px solid #000; }
+          .woocommerce-page .navbar .container #navbarNavDropdown li a.current-menu-item, .page-wellness-network .navbar .container #navbarNavDropdown li a.current-menu-item {
+            border-bottom: 2px solid #fff; }
     .woocommerce-page .navbar .container .navbar-brand, .page-wellness-network .navbar .container .navbar-brand {
       padding: 0;
       -webkit-box-ordinal-group: 2;
@@ -6210,7 +6217,9 @@ h2 {
         .woocommerce-page .navbar .container .navbar-brand a #logomark-svg, .page-wellness-network .navbar .container .navbar-brand a #logomark-svg {
           width: 60px;
           height: 60px;
-          margin-bottom: 0 !important; }
+          margin-bottom: 0 !important;
+          -webkit-filter: invert(1);
+                  filter: invert(1); }
           @media only screen and (max-width: 767px) {
             .woocommerce-page .navbar .container .navbar-brand a #logomark-svg, .page-wellness-network .navbar .container .navbar-brand a #logomark-svg {
               margin-right: 0 !important;
@@ -6218,9 +6227,7 @@ h2 {
               height: auto;
               padding: 0;
               padding: 0;
-              margin: 0;
-              -webkit-filter: invert(1);
-                      filter: invert(1); } }
+              margin: 0; } }
       @media only screen and (max-width: 767px) {
         .woocommerce-page .navbar .container .navbar-brand, .page-wellness-network .navbar .container .navbar-brand {
           margin: auto;

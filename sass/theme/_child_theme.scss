@@ -1233,6 +1233,7 @@ display: none;
 	.navbar{
 		width: 100%;
 		z-index: 99999;
+		background: #000;
 		.container{
 			width: 100%;
 			max-width: 100%;
@@ -1255,6 +1256,14 @@ display: none;
 				}
 				li{
 					border: 0;
+					padding: 0.5rem;
+					a{
+						color: #fff;
+						border-bottom: 2px solid #000;
+						&.current-menu-item{
+							border-bottom: 2px solid #fff;
+						}
+					}
 				}
 			}
 			.navbar-brand{
@@ -1288,6 +1297,7 @@ display: none;
 						width: 60px;
 						height: 60px;
 						margin-bottom: 0 !important;
+						filter: invert(1);
 						@media only screen and (max-width: 767px) {		
 							margin-right: 0 !important;
 							width: 50px;
@@ -1295,7 +1305,6 @@ display: none;
 							padding: 0;
 							padding: 0;
 							margin: 0;
-							filter: invert(1);
 						}
 					}
 				}
