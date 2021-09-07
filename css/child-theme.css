@@ -5759,9 +5759,6 @@ h2 {
     width: 20px !important;
     background: #000 !important; }
 
-.woocommerce-page .animatedfs_menu_list li > a:before, .woocommerce-page .animatedfsmenu .animatedfsmenu-navbar-toggler .bar {
-  background: #000000 !important; }
-
 .home .animatedfs_menu_list li > a:before, .home .animatedfsmenu .animatedfsmenu-navbar-toggler .bar, .woocommerce-page .navbar-expand-md .animatedfs_menu_list li > a:before, .woocommerce-page .animatedfsmenu.navbar-expand-md .animatedfsmenu-navbar-toggler .bar {
   background: #ffffff !important; }
 
