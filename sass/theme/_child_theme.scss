@@ -1261,7 +1261,10 @@ display: none;
 					a{
 						color: #fff;
 						border-bottom: 2px solid #000;
-						&.current-menu-item{
+						padding: 0;
+					}
+					&.current-menu-item{
+						a{
 							border-bottom: 2px solid #fff;
 						}
 					}

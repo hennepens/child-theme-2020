@@ -6184,9 +6184,10 @@ h2 {
         padding: 0.5rem; }
         .woocommerce-page .navbar .container #navbarNavDropdown li a, .page-wellness-network .navbar .container #navbarNavDropdown li a {
           color: #fff;
-          border-bottom: 2px solid #000; }
-          .woocommerce-page .navbar .container #navbarNavDropdown li a.current-menu-item, .page-wellness-network .navbar .container #navbarNavDropdown li a.current-menu-item {
-            border-bottom: 2px solid #fff; }
+          border-bottom: 2px solid #000;
+          padding: 0; }
+        .woocommerce-page .navbar .container #navbarNavDropdown li.current-menu-item a, .page-wellness-network .navbar .container #navbarNavDropdown li.current-menu-item a {
+          border-bottom: 2px solid #fff; }
     .woocommerce-page .navbar .container .navbar-brand, .page-wellness-network .navbar .container .navbar-brand {
       padding: 0;
       -webkit-box-ordinal-group: 2;
