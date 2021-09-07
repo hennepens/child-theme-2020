@@ -1234,7 +1234,7 @@ display: none;
 			width: 100%;
 			max-width: 100%;
 			justify-content: unset;
-			#navbarNavDropdown{
+			#navbarNavDropdown, .quick-links-container{
 				width: auto;
 				justify-content: unset;
 				flex-grow: inherit;
@@ -1265,6 +1265,7 @@ display: none;
 					}
 					&:hover{
 						a{
+							color: #fff;
 							border-bottom: 2px solid #fff;
 						}
 					}
@@ -1315,11 +1316,6 @@ display: none;
 				@media only screen and (max-width: 767px) {		
 					margin: auto;
 					padding-top: 5px;
-				}
-			}
-			.quick-links-container{
-				a{
-					color: #fff;
 				}
 			}
 		}
