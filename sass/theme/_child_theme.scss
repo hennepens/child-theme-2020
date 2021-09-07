@@ -1279,7 +1279,7 @@ display: none;
 					    border-radius: 100px;
 					    width: 70px;
 					    height: 70px;
-					    top: 0;
+					    top: -5px;
 					    left: -5px;
 					    @media only screen and (max-width: 767px) {
 					    	width: 60px;
@@ -1303,13 +1303,20 @@ display: none;
 				}
 				@media only screen and (max-width: 767px) {		
 					margin: auto;
+					padding-top: 5px;
+				}
+				.xoo-wsc-sc-cont{
+				margin-top: -5px;
+				}
+				.xoo-wsc-sc-bki xoo-wsc-icon-cart1{
+					color: #fff;
 				}
 			}
 		}
 	}
 	.animatedfsmenu-navbar-toggler{
 		&.right_top{
-			top: -15px !important;
+			top: -17px !important;
 		}
 	}
 }

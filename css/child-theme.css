@@ -6204,7 +6204,7 @@ h2 {
           border-radius: 100px;
           width: 70px;
           height: 70px;
-          top: 0;
+          top: -5px;
           left: -5px; }
           @media only screen and (max-width: 767px) {
             .woocommerce-page .navbar .container .navbar-brand a:before, .page-wellness-network .navbar .container .navbar-brand a:before {
@@ -6226,10 +6226,15 @@ h2 {
                       filter: invert(1); } }
       @media only screen and (max-width: 767px) {
         .woocommerce-page .navbar .container .navbar-brand, .page-wellness-network .navbar .container .navbar-brand {
-          margin: auto; } }
+          margin: auto;
+          padding-top: 5px; } }
+      .woocommerce-page .navbar .container .navbar-brand .xoo-wsc-sc-cont, .page-wellness-network .navbar .container .navbar-brand .xoo-wsc-sc-cont {
+        margin-top: -5px; }
+      .woocommerce-page .navbar .container .navbar-brand .xoo-wsc-sc-bki xoo-wsc-icon-cart1, .page-wellness-network .navbar .container .navbar-brand .xoo-wsc-sc-bki xoo-wsc-icon-cart1 {
+        color: #fff; }
 
 .woocommerce-page .animatedfsmenu-navbar-toggler.right_top, .page-wellness-network .animatedfsmenu-navbar-toggler.right_top {
-  top: -15px !important; }
+  top: -17px !important; }
 
 .woocommerce-page.woocommerce-demo-store .animatedfsmenu-navbar-toggler.right_top {
   top: 50px !important; }
