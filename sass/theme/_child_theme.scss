@@ -22,6 +22,7 @@ input[type=number] {
 .site{
 	overflow-y: visible;
 }
+
 .site-main{
 	padding-top:  50px;
 	padding-bottom:  50px;
@@ -47,10 +48,6 @@ h2{
 
 .admin-bar p.demo_store{
 	top: 0;
-}
-
-.site{
-	overflow: hidden;
 }
 
 .btn{
@@ -1237,6 +1234,7 @@ display: none;
 .woocommerce-page, .page-wellness-network{
 	.navbar{
 		width: 100%;
+		z-index: 99999;
 		.container{
 			width: 100%;
 			max-width: 100%;
@@ -1270,6 +1268,9 @@ display: none;
 				    margin-left: 5px;
 				    margin-top: 5px;
 				    margin-right: 10px;
+				    @media only screen and (max-width: 767px) {
+				    	margin-top: 0;
+				    }
 				    &:before{
 				    	content: '';
 					    display: block;
