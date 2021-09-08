@@ -265,7 +265,7 @@ img {
  /* Hides Dark Mode-Only Content, Like Images */
 
 	.img-dark { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; margin-left: auto !important;
-	margin-right: auto !important; width: 100% !important }
+	margin-right: auto !important; width: 100% !important; }
  
 	.img-light { display:none; display:none !important; height: 0 !important; }
 
@@ -287,7 +287,7 @@ img {
 	.img-dark { display:none; display:none !important; height: 0 !important; }
 
 	[data-ogsc] .img-light { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; margin-left: auto !important;
-	margin-right: auto !important; width: 100% !important }
+	margin-right: auto !important; width: 100% !important; }
 	 
 	[data-ogsc] .img-dark { display:none; display:none !important; width: 100% !important; height: 0 !important;}
 
