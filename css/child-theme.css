@@ -6323,7 +6323,7 @@ h2 {
     width: 50%;
     z-index: -1; } }
 
-#hero-header h1.fl-heading {
+#hero-header .fl-heading {
   font-family: "superiorregular" !important;
   font-size: 6em;
   letter-spacing: 2px;
@@ -6333,8 +6333,11 @@ h2 {
   -webkit-transform: rotate(-5deg);
           transform: rotate(-5deg); }
   @media only screen and (max-width: 767px) {
-    #hero-header h1.fl-heading {
+    #hero-header .fl-heading {
       font-size: 3.75rem; } }
+
+#hero-header h6.fl-heading {
+  fonts-size: 2rem; }
 
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }
