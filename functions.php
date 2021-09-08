@@ -1505,7 +1505,7 @@ function filter_wc_my_account_menu($items) {
     if (current_user_can('default_wholesaler')) {
         return $items;
     }
-    if (!isset($items['wholesale-portal'])) {
+    if (isset($items['wholesale-portal'])) {
         unset($items['wholesale-portal']);
     }
 
