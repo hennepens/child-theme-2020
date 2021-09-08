@@ -981,7 +981,9 @@ unset( $items['customer-logout'] );
  
 // Insert your custom endpoint.
 $items['refer-a-friend'] = 'Refer a Friend';
-$items['wholesale-portal'] = 'Wholesale Portal';
+if (!current_user_can('default_wholesaler')) {
+  $items['wholesale-portal'] = 'Wholesale Portal';
+}
  
 // Insert back the logout item.
 $items['customer-logout'] = $logout;
@@ -1498,40 +1500,6 @@ function add_google_pay_button(){
       return $wp_new_user_notification_email;
   }
 
-  add_filter('woocommerce_account_menu_items', 'filter_wc_my_account_menu');
-  add_action('template_redirect', 'redirect_for_blocked_wc_pages');
-
-function filter_wc_my_account_menu($items) {
-  if (isset($items['wholesale-portal']) && !current_user_can('default_wholesaler')) {
-        unset($items['wholesale-portal']);
-        return $items;
-    }
-
-    return $items;
-}
-
-function check_end_point_url($end_point, $current_url) {
-    $blocked_url = wc_get_endpoint_url($end_point);
-    if ($current_url==$blocked_url) {
-        $my_account_url = wc_get_endpoint_url('my-account');
-        wp_redirect($my_account_url);
-        die;
-    }
-}
-
-function redirect_for_blocked_wc_pages() {
-    global $wp;
-    
-    if (!current_user_can('default_wholesaler')) {
-        return;
-    }
-        
-    $current_url = trailingslashit(home_url($wp->request));        
-    $blocked_end_points = array('wholesale-portal');
-    foreach($blocked_end_points as $bep) {
-        check_end_point_url($bep, $current_url);
-    }
-    
-}
+  
 
 ?>
