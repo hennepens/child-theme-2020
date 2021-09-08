@@ -1497,10 +1497,10 @@ function add_google_pay_button(){
         $wp_new_user_notification_email['subject'] = __('Your Hennepen\'s Account is ready to activate');
 
         // Put the username in the message
-        $message = sprintf(__('Username: %s'), $user->email) . "\r\n\r\n";
+        $message = sprintf(__('Username: %s'), $user->user_email) . "\r\n\r\n";
         // Give your user the link to reset her password 
         $message .= __('To set your password, visit the following address:') . "\r\n\r\n";
-        $message .= '<a href="' . site_url("login/?reset_pass=1&key=$key&id=" . rawurlencode($user->id), 'login') . "\">Set my Password and Login</a>\r\n\r\n";
+        $message .= site_url("login/?reset_pass=1&key=$key&id=" . rawurlencode($user->id), 'login') . " \r\n\r\n";
 
         $message .= wp_login_url() . "\r\n";
 
