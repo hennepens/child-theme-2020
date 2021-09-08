@@ -6323,7 +6323,7 @@ h2 {
     width: 50%;
     z-index: -1; } }
 
-#hero-header .fl-heading {
+#hero-header h1.fl-heading {
   font-family: "superiorregular" !important;
   font-size: 6em;
   letter-spacing: 2px;
@@ -6333,7 +6333,7 @@ h2 {
   -webkit-transform: rotate(-5deg);
           transform: rotate(-5deg); }
   @media only screen and (max-width: 767px) {
-    #hero-header .fl-heading {
+    #hero-header h1.fl-heading {
       font-size: 3.75rem; } }
 
 #home-page-hero .fl-row-content-wrap {
@@ -6357,13 +6357,13 @@ h2 {
     .path-to-wellness {
       border: 0; } }
 
-.page-contact-us .wrapper, .page-sell-wholesale .wrapper, .page-our-mission .wrapper, .page-arc-partnership .wrapper {
+.page-contact-us .wrapper, .page-sell-wholesale .wrapper, .page-our-mission .wrapper, .page-arc-partnership .wrapper, .page-about-us .wrapper, .page-about .wrapper {
   padding: 0; }
 
-.page-contact-us .container-fluid, .page-sell-wholesale .container-fluid, .page-our-mission .container-fluid, .page-arc-partnership .container-fluid {
+.page-contact-us .container-fluid, .page-sell-wholesale .container-fluid, .page-our-mission .container-fluid, .page-arc-partnership .container-fluid, .page-about-us .container-fluid, .page-about .container-fluid {
   padding-left: 0;
   padding-right: 0; }
-  .page-contact-us .container-fluid#footer-full-content, .page-sell-wholesale .container-fluid#footer-full-content, .page-our-mission .container-fluid#footer-full-content, .page-arc-partnership .container-fluid#footer-full-content {
+  .page-contact-us .container-fluid#footer-full-content, .page-sell-wholesale .container-fluid#footer-full-content, .page-our-mission .container-fluid#footer-full-content, .page-arc-partnership .container-fluid#footer-full-content, .page-about-us .container-fluid#footer-full-content, .page-about .container-fluid#footer-full-content {
     padding-left: 15px;
     padding-right: 15px; }
 
