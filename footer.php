@@ -77,14 +77,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="site-info text-center">
 							<ul class="justify-content-center">
 								<li>
-									&copy; <?php echo date_i18n(_x( 'Y', 'copyright date format', 'understrap' )); ?> Hennepen&apos;s&reg;. All Rights Reserved.
-								</li>
-							</ul>
-							 <!-- (c) 2005, 2021. Authorize.Net is a registered trademark of CyberSource Corporation -->
-							 <div class="AuthorizeNetSeal m-auto pb-4"> <script type="text/javascript" language="javascript">var ANS_customer_id="73988ae6-bab4-4a12-b67d-f3c5edff17a3";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net:443/anetseal/seal.js" ></script>
-							 </div>
-							<ul class="justify-content-center">
-								<li>
 									<a href="/terms-of-service">Terms of Service</a>
 								</li>
 								<li>	
@@ -92,6 +84,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</li>
 								<li>	
 									<a href="/shipping-returns">Shipping & Returns</a>
+								</li>
+							</ul>
+							<!-- (c) 2005, 2021. Authorize.Net is a registered trademark of CyberSource Corporation -->
+							<div class="AuthorizeNetSeal m-auto pb-4"> <script type="text/javascript" language="javascript">var ANS_customer_id="73988ae6-bab4-4a12-b67d-f3c5edff17a3";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net:443/anetseal/seal.js" ></script>
+							</div>
+							<ul class="justify-content-center">
+								<li>
+									&copy; <?php echo date_i18n(_x( 'Y', 'copyright date format', 'understrap' )); ?> Hennepen&apos;s&reg;. All Rights Reserved.
 								</li>
 							</ul>
 					</div><!-- .site-info -->
