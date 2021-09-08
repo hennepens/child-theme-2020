@@ -1500,7 +1500,7 @@ function add_google_pay_button(){
         $message = sprintf(__('Username: %s'), $user->email) . "\r\n\r\n";
         // Give your user the link to reset her password 
         $message .= __('To set your password, visit the following address:') . "\r\n\r\n";
-        $message .= '<a href=' . site_url("login/?reset_pass=1&key=$key&id=" . rawurlencode($user->id), 'login') . ">Set my Password and Login</a>\r\n\r\n";
+        $message .= '<a href="' . site_url("login/?reset_pass=1&key=$key&id=" . rawurlencode($user->id), 'login') . "\">Set my Password and Login</a>\r\n\r\n";
 
         $message .= wp_login_url() . "\r\n";
 
