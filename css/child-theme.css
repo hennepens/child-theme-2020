@@ -6337,7 +6337,12 @@ h2 {
       font-size: 3.75rem; } }
 
 #hero-header h6.fl-heading {
-  font-size: 2rem; }
+  font-size: 2rem;
+  padding-left: 40px !important; }
+  @media only screen and (max-width: 767px) {
+    #hero-header h6.fl-heading {
+      font-size: 1.2rem;
+      padding-left: 15px !important; } }
 
 #home-page-hero .fl-row-content-wrap {
   min-height: 80vh; }
