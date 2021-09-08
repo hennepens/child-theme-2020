@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-md-3">
 				<ul class="d-flex list-inline justify-content-center justify-content-md-end social-cc">
 					<li class="icon list-inline-item">
-						<a href="https://instagram.com/hennepenscbd" target="_blank">
+						<a href="https://instagram.com/hennepensmade" target="_blank">
 							<i class="icon icon-instagram"></i>
 						</a>
 					</li>
@@ -89,6 +89,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</li>
 								<li>	
 									<a href="/privacy-policy">Privacy Policy</a>
+								</li>
+								<li>	
+									<a href="/shipping-returns">Shipping & Returns</a>
 								</li>
 							</ul>
 					</div><!-- .site-info -->
