@@ -267,7 +267,10 @@ img {
   #dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
    
   /* Hides Light Mode-Only Content, Like Images */
-  #light-img { display:none; display:none !important; }
+  .light-img { display:none; display:none !important; }
+   
+  /* Custom Dark Mode Background Color */
+  .darkmode { background-color: #000000 !important; }
    
   /* Custom Dark Mode Font Colors */
   h1, h2, p, span, a, b { color: #ffffff !important; }
@@ -282,7 +285,10 @@ img {
    
   /* Hides Light Mode-Only Content, Like Images */
   #dark-img { display:none; display:none !important; }
-
+   
+  /* Custom Dark Mode Background Color */
+  .darkmode { background-color: #ffffff !important; }
+   
   /* Custom Dark Mode Font Colors */
   h1, h2, p, span, a, b { color: #000000 !important; }
    

@@ -43,8 +43,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 											<td id="template_header_image">
 												<?php
 												
-													echo '<p id="light-img" style="margin-top:40px; text-align:center;"><img src="https://hennepens.com/wp-content/uploads/email-images/hennepens-email-logo-light.png" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
-													echo '<p id="dark-img" style="margin-top:40px; text-align:center;"><img src="https://hennepens.com/wp-content/uploads/email-images/hennepens-email-logo-dark.png" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
+													echo '<p class="light-img" style="margin-top:40px; text-align:center;"><img src="https://hennepens.com/wp-content/uploads/email-images/hennepens-email-logo-light.png" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
+													echo '<p class="dark-img" style="margin-top:40px; text-align:center;"><img src="https://hennepens.com/wp-content/uploads/email-images/hennepens-email-logo-dark.png" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
 												?>
 											</td>
 										</tr>
