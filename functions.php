@@ -1503,6 +1503,13 @@ function add_google_pay_button(){
   
   add_action('template_redirect', 'redirect_for_blocked_wc_pages');
 
+function filter_wc_my_account_menu($items) {
+  if (isset($items['wholesale-portal']) && !current_user_can('default_wholesaler')) {
+        unset($items['wholesale-portal']);
+    }
+
+    return $items;
+}
 
 function check_end_point_url($end_point, $current_url) {
     $blocked_url = wc_get_endpoint_url($end_point);
