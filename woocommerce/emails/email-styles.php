@@ -245,14 +245,12 @@ img {
 	display: inline-block;
 	font-size: 14px;
 	font-weight: bold;
-	height: auto;
 	outline: none;
 	text-decoration: none;
 	text-transform: capitalize;
 	vertical-align: middle;
 	margin-<?php echo is_rtl() ? 'left' : 'right'; ?>: 10px;
 	max-width: 100%;
-	height: auto;
 }
 
 .shipped_via{
