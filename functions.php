@@ -1497,7 +1497,7 @@ function add_google_pay_button(){
       return $wp_new_user_notification_email;
   }
 
-  add_filter('woocommerce_account_menu_items', 'filter_wc_my_account_menu',100, 1);
+  add_filter('woocommerce_account_menu_items', 'filter_wc_my_account_menu');
 add_action('template_redirect', 'redirect_for_blocked_wc_pages');
 
 function filter_wc_my_account_menu($items) {
