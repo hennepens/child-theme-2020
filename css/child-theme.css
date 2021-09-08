@@ -5758,7 +5758,7 @@ h2 {
 .home .animatedfsmenu-navbar-toggler.right_top, .page-login .animatedfsmenu-navbar-toggler.right_top, .page-register .animatedfsmenu-navbar-toggler.right_top, .page-contact-us .animatedfsmenu-navbar-toggler.right_top, .page-sell-wholesale .animatedfsmenu-navbar-toggler.right_top, .page-our-mission .animatedfsmenu-navbar-toggler.right_top, .page-arc-partnership .animatedfsmenu-navbar-toggler.right_top, .page-about-us .animatedfsmenu-navbar-toggler.right_top, .page-about .animatedfsmenu-navbar-toggler.right_top {
   position: absolute !important;
   left: 0 !important;
-  top: 0 !important;
+  top: -15px !important;
   padding: 28px 20px !important;
   width: 20px !important;
   height: 20px !important; }
