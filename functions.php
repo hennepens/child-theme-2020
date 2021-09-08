@@ -1486,5 +1486,28 @@ function add_google_pay_button(){
 }
 
 
+ add_filter('wp_new_user_notification_email', 'change_notification_message', 10, 3);
+
+    function change_notification_message( $wp_new_user_notification_email, $user, $blogname ) {
+
+        // Generate a new key
+        $key = get_password_reset_key( $user );
+
+        // Set the subject
+        $wp_new_user_notification_email['subject'] = __('Your email subject');
+
+        // Put the username in the message
+        $message = sprintf(__('Username: %s'), $user->user_login) . "\r\n\r\n";
+        // Give your user the link to reset her password 
+        $message .= __('To set your password, visit the following address:') . "\r\n\r\n";
+        $message .= '<' . site_url("login/?reset_pass=1&key=$key&id=" . rawurlencode($user->id), 'login') . ">\r\n\r\n";
+
+        $message .= wp_login_url() . "\r\n";
+
+        // Set the email's message
+        $wp_new_user_notification_email['message'] = $message;
+
+        return $wp_new_user_notification_email;
+    }
 
 ?>
