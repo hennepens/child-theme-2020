@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 											<td id="template_header_image">
 												<?php
 												
-													echo '<div style="margin-top:40px; text-align:center;">';
+													echo '<div style="margin: 40px auto 0 db2_autocommit(connection); text-align:center;">';
 													echo '<img class="img-light" style="display: none;" src="https://hennepens.com/wp-content/uploads/email-images/hennepens-email-logo-light.png" alt="' . get_bloginfo( 'name', 'display' ) . '" />';
 													echo '<img class="img-dark" src="https://hennepens.com/wp-content/uploads/email-images/hennepens-email-logo-dark.png" alt="' . get_bloginfo( 'name', 'display' ) . '" />';
 													echo '</div>';
