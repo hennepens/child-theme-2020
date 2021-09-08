@@ -1499,14 +1499,12 @@ function add_google_pay_button(){
   }
 
   add_filter('woocommerce_account_menu_items', 'filter_wc_my_account_menu');
-add_action('template_redirect', 'redirect_for_blocked_wc_pages');
+  add_action('template_redirect', 'redirect_for_blocked_wc_pages');
 
 function filter_wc_my_account_menu($items) {
-    if (!current_user_can('default_wholesaler')) {
-        return $items;
-    }
-    if (isset($items['wholesale-portal']) && !current_user_can('default_wholesaler')) {
+  if (isset($items['wholesale-portal']) && !current_user_can('default_wholesaler')) {
         unset($items['wholesale-portal']);
+        return $items;
     }
 
     return $items;
