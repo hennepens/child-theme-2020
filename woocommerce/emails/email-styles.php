@@ -267,12 +267,12 @@ img {
 	.img-dark { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; margin-left: auto !important;
 	margin-right: auto !important; width: 100% !important; }
  
-	.img-light { display:none; display:none !important; height: 0 !important; }
+	.img-light {display:none !important; height: 0 !important; }
 
 	[data-ogsc] .img-dark { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; margin-left: auto !important;
 	margin-right: auto !important;}
  
-	[data-ogsc] .img-light { display:none; display:none !important; width: 100% !important; height: 0 !important; }
+	[data-ogsc] .img-light { display:none !important; height: 0 !important; }
 
    	/* Custom Dark Mode Font Colors */
   	h1, h2, p, span, a, b, table, tbody, thead, tr, td, th, .address, address { color: #ffffff !important; }
@@ -284,12 +284,12 @@ img {
 	.img-light { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; margin-left: auto !important;
 	margin-right: auto !important; width: 100% !important }
    
-	.img-dark { display:none; display:none !important; height: 0 !important; }
+	.img-dark {display:none !important; height: 0 !important; }
 
 	[data-ogsc] .img-light { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; margin-left: auto !important;
 	margin-right: auto !important; width: 100% !important; }
 	 
-	[data-ogsc] .img-dark { display:none; display:none !important; width: 100% !important; height: 0 !important;}
+	[data-ogsc] .img-dark {display:none !important; height: 0 !important;}
 
 	/* Custom Dark Mode Font Colors */
 	  h1, h2, p, span, a, b, table, tbody, thead, tr, td, th, address, .address { color: #000000 !important; }
