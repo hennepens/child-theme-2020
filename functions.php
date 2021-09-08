@@ -980,7 +980,6 @@ $logout = $items['customer-logout'];
 unset( $items['customer-logout'] );
  
 // Insert your custom endpoint.
-$items['wholesale-portal'] = 'Wholesale Portal';
 $items['refer-a-friend'] = 'Refer a Friend';
  
 // Insert back the logout item.
@@ -1483,8 +1482,8 @@ function add_google_pay_button(){
 
       // Set the subject
       $wp_new_user_notification_email['subject'] = __('Your Hennepen\'s Account is ready to activate');
-      if( $user->roles == 'default_wholesaler' ) {
-        echo 'Welcome Wholesaler!';
+      if( current_user_can('default_wholesaler')) {
+        echo 'Welcome New Wholesaler!';
       }
       // Put the username in the message
       $message = sprintf(__('Username: %s'), $user->user_email) . "\r\n\r\n";
@@ -1498,7 +1497,7 @@ function add_google_pay_button(){
       return $wp_new_user_notification_email;
   }
 
-  add_filter('woocommerce_account_menu_items', 'filter_wc_my_account_menu');
+  add_filter('woocommerce_account_menu_items', 'filter_wc_my_account_menu',100, 1);
 add_action('template_redirect', 'redirect_for_blocked_wc_pages');
 
 function filter_wc_my_account_menu($items) {
