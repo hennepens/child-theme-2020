@@ -915,7 +915,7 @@ add_filter( 'query_vars', 'bbloomer_wholesale_portal_query_vars', 0 );
 // 3. Insert the new endpoint into the My Account menu
   
 function bbloomer_add_wholesale_portal_link_my_account( $items ) {
-    if (current_user_can('default_wholesaler')) {$items['wholesale-portal'] = 'Wholesale Portal';}
+    $items['wholesale-portal'] = 'Wholesale Portal';
     return $items;
 }
   
@@ -980,9 +980,7 @@ $logout = $items['customer-logout'];
 unset( $items['customer-logout'] );
  
 // Insert your custom endpoint.
-if (current_user_can('default_wholesaler')) {
-  $items['wholesale-portal'] = 'Wholesale Portal';
-}
+$items['wholesale-portal'] = 'Wholesale Portal';
 $items['refer-a-friend'] = 'Refer a Friend';
  
 // Insert back the logout item.
