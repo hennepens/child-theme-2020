@@ -919,7 +919,7 @@ function bbloomer_add_wholesale_portal_link_my_account( $items ) {
     return $items;
 }
   
-//add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_link_my_account', 100, 1 );
+add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_link_my_account', 100, 1 );
   
 // ------------------
 // 4. Add content to the new tab
@@ -981,9 +981,6 @@ unset( $items['customer-logout'] );
  
 // Insert your custom endpoint.
 $items['refer-a-friend'] = 'Refer a Friend';
-if (current_user_can('default_wholesaler')) {
-  $items['wholesale-portal'] = 'Wholesale Portal';
-}
  
 // Insert back the logout item.
 $items['customer-logout'] = $logout;
@@ -1500,11 +1497,14 @@ function add_google_pay_button(){
       return $wp_new_user_notification_email;
   }
 
-  
-  add_action('template_redirect', 'redirect_for_blocked_wc_pages');
+  add_filter('woocommerce_account_menu_items', 'filter_wc_my_account_menu');
+add_action('template_redirect', 'redirect_for_blocked_wc_pages');
 
 function filter_wc_my_account_menu($items) {
-  if (!isset($items['wholesale-portal']) && current_user_can('default_wholesaler')) {
+    if (!current_user_can('default_wholesaler')) {
+        return $items;
+    }
+    if (isset($items['wholesale-portal'])) {
         unset($items['wholesale-portal']);
     }
 
