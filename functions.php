@@ -1501,7 +1501,7 @@ function add_google_pay_button(){
 add_action('template_redirect', 'redirect_for_blocked_wc_pages');
 
 function filter_wc_my_account_menu($items) {
-    if (!current_user_can('default_wholesaler')) {
+    if (current_user_can('default_wholesaler')) {
         return $items;
     }
     if (isset($items['wholesale-portal'])) {
