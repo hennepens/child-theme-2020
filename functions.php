@@ -1524,7 +1524,7 @@ function check_end_point_url($end_point, $current_url) {
 function redirect_for_blocked_wc_pages() {
     global $wp;
     
-    if (!current_user_can('default_wholesaler')) {
+    if (current_user_can('default_wholesaler')) {
         return;
     }
         
