@@ -240,19 +240,6 @@ a {
 	text-decoration: underline;
 }
 
-img {
-	border: none;
-	display: inline-block;
-	font-size: 14px;
-	font-weight: bold;
-	outline: none;
-	text-decoration: none;
-	text-transform: capitalize;
-	vertical-align: middle;
-	margin-<?php echo is_rtl() ? 'left' : 'right'; ?>: 10px;
-	max-width: 100%;
-}
-
 .shipped_via{
 	display: block;
 }
