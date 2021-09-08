@@ -270,6 +270,7 @@ img {
 
 @media (prefers-color-scheme: dark ) {
  /* Hides Dark Mode-Only Content, Like Images */
+
 	.img-dark { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
  
 	.img-light { display:none; display:none !important; }
@@ -277,8 +278,9 @@ img {
 	[data-ogsc] .img-dark { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
  
 	[data-ogsc] .img-light { display:none; display:none !important; }
+
    	/* Custom Dark Mode Font Colors */
-  h1, h2, p, span, a, b { color: #ffffff !important; }
+  	h1, h2, p, span, a, b, table, tbody, thead, tr, td, th { color: #ffffff !important; }
    
 }
 
@@ -290,7 +292,6 @@ img {
 
 	[data-ogsc] .img-light { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
 	 
-	/* Hides Light Mode-Only Content, Like Images */
 	[data-ogsc] .img-dark { display:none; display:none !important; }
 
 	/* Custom Dark Mode Font Colors */
