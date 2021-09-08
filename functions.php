@@ -881,18 +881,6 @@ if ( ! function_exists( 'save_custom_content_meta_box' ) )
 
 
 
-//add_filter( 'woocommerce_account_menu_items', 'bbloomer_remove_address_my_account', 1 );
- 
-function bbloomer_remove_address_my_account( $items ) {
-   unset( $items['edit-address'] );
-   return $items;
-}
- 
-// -------------------------------
-// 2. Second, print the ex tab content (woocommerce_account_edit_address) into an existing tab (woocommerce_account_edit-account_endpoint). See notes below!
-//add_action( 'woocommerce_account_edit-account_endpoint', 'woocommerce_account_edit_address' );
-
-
 function redirect_user() {
 
   if (isset($_SERVER['HTTP_REFERER']) && ! is_user_logged_in() && !is_woocommerce() && is_page('my-account') && !strstr( $referrer,'wp-admin' )) {
@@ -1488,26 +1476,64 @@ function add_google_pay_button(){
 
  add_filter('wp_new_user_notification_email', 'change_notification_message', 10, 3);
 
-    function change_notification_message( $wp_new_user_notification_email, $user, $blogname ) {
+  function change_notification_message( $wp_new_user_notification_email, $user, $blogname ) {
 
-        // Generate a new key
-        $key = get_password_reset_key( $user );
+      // Generate a new key
+      $key = get_password_reset_key( $user );
 
-        // Set the subject
-        $wp_new_user_notification_email['subject'] = __('Your Hennepen\'s Account is ready to activate');
-        if( $user->roles == 'default_wholesaler' ) {
-          echo 'Welcome Wholesaler!';
-        }
-        // Put the username in the message
-        $message = sprintf(__('Username: %s'), $user->user_email) . "\r\n\r\n";
-        // Give your user the link to reset her password 
-        $message .= __('To set your password, visit the following address:') . "\r\n\r\n";
-        $message .= site_url("login/?reset_pass=1&key=$key&id=" . rawurlencode($user->id), 'login') . " \r\n\r\n";
+      // Set the subject
+      $wp_new_user_notification_email['subject'] = __('Your Hennepen\'s Account is ready to activate');
+      if( $user->roles == 'default_wholesaler' ) {
+        echo 'Welcome Wholesaler!';
+      }
+      // Put the username in the message
+      $message = sprintf(__('Username: %s'), $user->user_email) . "\r\n\r\n";
+      // Give your user the link to reset her password 
+      $message .= __('To set your password, visit the following address:') . "\r\n\r\n";
+      $message .= site_url("login/?reset_pass=1&key=$key&id=" . rawurlencode($user->id), 'login') . " \r\n\r\n";
 
-        // Set the email's message
-        $wp_new_user_notification_email['message'] = $message;
+      // Set the email's message
+      $wp_new_user_notification_email['message'] = $message;
 
-        return $wp_new_user_notification_email;
+      return $wp_new_user_notification_email;
+  }
+
+  add_filter('woocommerce_account_menu_items', 'filter_wc_my_account_menu');
+add_action('template_redirect', 'redirect_for_blocked_wc_pages');
+
+function filter_wc_my_account_menu($items) {
+    if (!current_user_can('default_wholesaler')) {
+        return $items;
     }
+    if (isset($items['wholesale-portal'])) {
+        unset($items['wholesale-portal']);
+    }
+
+    return $items;
+}
+
+function check_end_point_url($end_point, $current_url) {
+    $blocked_url = wc_get_endpoint_url($end_point);
+    if ($current_url==$blocked_url) {
+        $my_account_url = wc_get_endpoint_url('my-account');
+        wp_redirect($my_account_url);
+        die;
+    }
+}
+
+function redirect_for_blocked_wc_pages() {
+    global $wp;
+    
+    if (!current_user_can('default_wholesaler')) {
+        return;
+    }
+        
+    $current_url = trailingslashit(home_url($wp->request));        
+    $blocked_end_points = array('wholesale-portal');
+    foreach($blocked_end_points as $bep) {
+        check_end_point_url($bep, $current_url);
+    }
+    
+}
 
 ?>
