@@ -981,7 +981,7 @@ unset( $items['customer-logout'] );
  
 // Insert your custom endpoint.
 $items['refer-a-friend'] = 'Refer a Friend';
-if (!current_user_can('default_wholesaler')) {
+if (current_user_can('default_wholesaler')) {
   $items['wholesale-portal'] = 'Wholesale Portal';
 }
  
