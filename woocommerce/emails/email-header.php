@@ -40,9 +40,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 										<tr>
 											<td id="template_header_image">
 												<?php
-												if ( $img = get_option( 'woocommerce_email_header_image' ) ) {
-													echo '<p style="margin-top:40px; text-align:center;"><img src="' . esc_url( $img ) . '" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
-												}
+												
+													echo '<p id="light-img" style="margin-top:40px; text-align:center;"><img src="https://hennepens.com/uploads/email-images/hennepens-email-logo-light.png" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
+													echo '<p id="dark-img" style="margin-top:40px; text-align:center;"><img src="https://hennepens.com/uploads/email-images/hennepens-email-logo-dark.png" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
 												?>
 											</td>
 										</tr>
