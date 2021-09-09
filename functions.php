@@ -1482,7 +1482,7 @@ function add_google_pay_button(){
       $key = get_password_reset_key( $user );
 
       // Set the subject
-      if ($user->roles[1] == "default_wholesaler"){
+      if ($user->roles[0] == "default_wholesaler"){
         $wp_new_user_notification_email['subject'] = __('Your Hennepen\'s Wholesale Account is ready to activate');
       }else{
         $wp_new_user_notification_email['subject'] = __('Your Hennepen\'s User Account is ready to activate');
