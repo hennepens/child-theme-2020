@@ -1485,7 +1485,7 @@ function add_google_pay_button(){
       $wp_new_user_notification_email['subject'] = __('Your Hennepen\'s Account is ready to activate');
       $user_meta = get_userdata($user_id);
       $user_roles = $user_meta->roles;
-      if ($user->roles[1] == "default_wholesaler")){
+      if ($user->roles[1] == "default_wholesaler"){
         echo 'Welcome Wholesaler!';
       }
       // Put the username in the message
