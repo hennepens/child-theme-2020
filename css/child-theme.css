@@ -6622,6 +6622,9 @@ h2 {
       padding: 0 0 1.8em 0 !important;
       margin: 0 !important;
       border-bottom: 1px solid #ccc; } }
+  @media only screen and (max-width: 767px) {
+    .woocommerce ul.products[class*=columns-] li.product:last-child, .woocommerce-page ul.products[class*=columns-] li.product:last-child {
+      border-bottom: 0; } }
 
 @media only screen and (max-width: 767px) {
   li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
