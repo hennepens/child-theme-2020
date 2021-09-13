@@ -6253,6 +6253,16 @@ h2 {
 .woocommerce-account .woocommerce-store-notice.demo_store {
   display: none !important; }
 
+.xoo-wsc-ft-btn {
+  border: 1px solid #356E3D !important;
+  border-radius: 100px !important; }
+  .xoo-wsc-ft-btn.xoo-wsc-ft-btn-checkout {
+    background: #356E3D !important;
+    color: #fff !important; }
+  .xoo-wsc-ft-btn.xoo-wsc-ft-btn-cart {
+    background: #fff !important;
+    color: #356E3D !important; }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-template-default .navbar {
   background: none;

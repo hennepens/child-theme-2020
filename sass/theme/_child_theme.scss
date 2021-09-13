@@ -1347,3 +1347,17 @@ display: none;
 		display: none !important;
 	}
 }
+
+
+.xoo-wsc-ft-btn{
+	border: 1px solid #356E3D !important;
+	border-radius: 100px !important;
+	&.xoo-wsc-ft-btn-checkout{
+		background: #356E3D !important;
+		color: #fff !important;
+	}
+	&.xoo-wsc-ft-btn-cart{
+		background: #fff !important;
+		color: #356E3D !important;
+	}
+}
