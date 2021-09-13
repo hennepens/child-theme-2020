@@ -6595,10 +6595,13 @@ h2 {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
-              flex-direction: row; } }
+              flex-direction: row;
+      padding-bottom: 1.8em;
+      margin-bottom: 1.8em;
+      border-bottom: 1px solid #ccc; } }
 
 @media only screen and (max-width: 767px) {
-  .woocommerce ul.products[class*=columns-] li.product:nth-child(odd), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(odd) {
+  .woocommerce ul.products[class*=columns-] li.product:nth-child(even), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(even) {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;

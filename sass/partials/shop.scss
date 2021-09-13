@@ -232,10 +232,13 @@
 	@media only screen and (max-width: 767px) {
 		width:  100% !important;
 		flex-direction: row;
+		padding-bottom: 1.8em;
+		margin-bottom: 1.8em;
+		border-bottom: 1px solid #ccc;
 	}
 }
 
-.woocommerce ul.products[class*=columns-] li.product:nth-child(odd), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(odd){
+.woocommerce ul.products[class*=columns-] li.product:nth-child(even), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(even){
 	@media only screen and (max-width: 767px) {
 		flex-direction: row-reverse;
 	}
