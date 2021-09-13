@@ -6273,11 +6273,11 @@ h2 {
       border: 0 !important; }
   .home .navbar a, .page-template-default .navbar a {
     color: #fff;
-    border-bottom: 4px transparent;
+    border-bottom: 2px transparent;
     padding-left: 0 !important;
     padding-right: 0 !important; }
     .home .navbar a:hover, .page-template-default .navbar a:hover {
-      border-bottom: 4px solid #fff; }
+      border-bottom: 2px solid #fff; }
 
 .home .xoo-wsc-sc-bki, .page-template-default .xoo-wsc-sc-bki {
   color: #fff; }
