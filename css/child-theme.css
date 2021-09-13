@@ -6540,7 +6540,8 @@ h2 {
       @media only screen and (max-width: 767px) {
         .products li .product-info {
           width: 68%;
-          padding-left: 10px; } }
+          padding-right: 10px;
+          padding-left: 0; } }
       .products li .product-info .woocommerce-loop-product__link {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -6629,8 +6630,8 @@ h2 {
 
 @media only screen and (max-width: 767px) {
   .woocommerce ul.products[class*=columns-] li.product:nth-child(even) .product-info, .woocommerce-page ul.products[class*=columns-] li.product:nth-child(even) .product-info {
-    padding-left: 0;
-    padding-right: 10px; } }
+    padding-left: 10px;
+    padding-right: 0; } }
 
 @media only screen and (max-width: 767px) {
   li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
