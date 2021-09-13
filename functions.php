@@ -486,7 +486,7 @@ function add_info_before_container(){
   echo '<div class="product-info">';
 }
 
-add_action('woocommerce_before_shop_loop_item_title', 'add_info_before_container');
+//add_action('woocommerce_before_shop_loop_item_title', 'add_info_before_container');
 
 function add_info_after_container(){
   echo '</div>';
@@ -579,7 +579,7 @@ function misha_after_add_to_cart_btn(){
           selectSubscription();
         });
     });
-  </script>';
+  </script></div>';
 }
 
 function woocommerce_quantity_input( $args = array(), $product = null, $echo = true ) {
