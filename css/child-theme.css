@@ -6537,11 +6537,6 @@ h2 {
       -webkit-box-flex: 1;
           -ms-flex-positive: 1;
               flex-grow: 1; }
-      @media only screen and (max-width: 767px) {
-        .products li .product-info {
-          width: 68%;
-          padding-right: 10px;
-          padding-left: 0; } }
       .products li .product-info .woocommerce-loop-product__link {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -6613,25 +6608,9 @@ h2 {
   @media only screen and (max-width: 767px) {
     .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
       width: 100% !important;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
       padding: 1.8em 0 !important;
       margin: 0 !important;
       border-bottom: 1px solid #ccc; } }
-
-@media only screen and (max-width: 767px) {
-  .woocommerce ul.products[class*=columns-] li.product:nth-child(even), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(even) {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse; } }
-
-@media only screen and (max-width: 767px) {
-  .woocommerce ul.products[class*=columns-] li.product:nth-child(even) .product-info, .woocommerce-page ul.products[class*=columns-] li.product:nth-child(even) .product-info {
-    padding-left: 10px;
-    padding-right: 0; } }
 
 @media only screen and (max-width: 767px) {
   li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n) {
