@@ -20,6 +20,12 @@
 			.tagline{
 				color: #fff;
 			}
+			a{
+				border: 0 !important;
+				&:hover{
+				border: 0 !important;
+				}
+			}
 		}
 		a{
 			color: #fff;

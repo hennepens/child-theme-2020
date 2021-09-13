@@ -6267,6 +6267,10 @@ h2 {
             filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
   .home .navbar .navbar-brand .tagline, .page-template-default .navbar .navbar-brand .tagline {
     color: #fff; }
+  .home .navbar .navbar-brand a, .page-template-default .navbar .navbar-brand a {
+    border: 0 !important; }
+    .home .navbar .navbar-brand a:hover, .page-template-default .navbar .navbar-brand a:hover {
+      border: 0 !important; }
   .home .navbar a, .page-template-default .navbar a {
     color: #fff;
     border-bottom: 4px transparent;
