@@ -232,8 +232,8 @@
 	@media only screen and (max-width: 767px) {
 		width:  100% !important;
 		flex-direction: row;
-		padding-bottom: 1.8em;
-		margin-bottom: 1.8em;
+		padding: 1.8em 0;
+		margin: 1.8em 0;
 		border-bottom: 1px solid #ccc;
 	}
 }
