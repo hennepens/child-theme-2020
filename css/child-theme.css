@@ -6537,6 +6537,10 @@ h2 {
       -webkit-box-flex: 1;
           -ms-flex-positive: 1;
               flex-grow: 1; }
+      @media only screen and (max-width: 767px) {
+        .products li .product-info {
+          width: 65%;
+          padding-left: 10px; } }
       .products li .product-info .woocommerce-loop-product__link {
         display: -webkit-box;
         display: -ms-flexbox;

@@ -144,6 +144,10 @@
 			text-align: center;
 			flex-flow: column;
     		flex-grow: 1;
+    		@media only screen and (max-width: 767px) {
+    			width: 65%;
+    			padding-left: 10px;
+    		}
     		.woocommerce-loop-product__link{
     			display: flex;
     			flex-direction: column;
