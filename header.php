@@ -19,6 +19,7 @@ $upload_dir = wp_get_upload_dir();
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="icon" type="image/x-icon"  href="hennepens.ico">
 	<link rel="preconnect" href="https://f8p2j7h2.rocketcdn.me">
 	<link rel="dns-prefetch" href="https://f8p2j7h2.rocketcdn.me">
 	<link rel="preload" as="font" href="<?php echo get_stylesheet_directory_uri();?>/fonts/superior-regular-webfont.woff2" crossorigin="anonymous">
