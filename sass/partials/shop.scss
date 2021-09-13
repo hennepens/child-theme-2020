@@ -7,10 +7,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	@media only screen and (max-width: 767px) {
-		margin-right: -10px !important;
-		margin-left: -10px !important;
-	}
 	li{
 		position: relative;
 		display: flex;
@@ -232,7 +228,7 @@
 	@media only screen and (max-width: 767px) {
 		width:  100% !important;
 		flex-direction: row;
-		padding: 1.8em 0;
+		padding: 1.8em 0 !important;
 		margin: 0 !important;
 		border-bottom: 1px solid #ccc;
 	}
