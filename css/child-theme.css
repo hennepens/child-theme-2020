@@ -6428,7 +6428,13 @@ h2 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column; }
+            flex-direction: column;
+    /*.full-title{
+			@media only screen and (max-width: 767px) {
+				display:  none;
+				line-height: 0;
+			}
+		}*/ }
     .products li img {
       margin-bottom: 0 !important; }
       @media only screen and (max-width: 767px) {
@@ -6606,10 +6612,6 @@ h2 {
         .products li .line-break {
           display: block;
           line-height: 0; } }
-    @media only screen and (max-width: 767px) {
-      .products li .full-title {
-        display: none;
-        line-height: 0; } }
 
 .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
   padding-right: 10px;
