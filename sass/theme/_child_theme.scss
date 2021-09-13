@@ -1363,3 +1363,15 @@ display: none;
 		color: #356E3D !important;
 	}
 }
+
+.products{
+	li{
+		&.post-1168, &.post-1159, &.post-1156{
+			img{
+				@media only screen and (max-width: 767px) {
+					margin-bottom: -25px !important;
+				}
+			}
+		}
+	}
+}

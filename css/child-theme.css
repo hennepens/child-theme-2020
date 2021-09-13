@@ -6265,6 +6265,10 @@ h2 {
     background: #fff !important;
     color: #356E3D !important; }
 
+@media only screen and (max-width: 767px) {
+  .products li.post-1168 img, .products li.post-1159 img, .products li.post-1156 img {
+    margin-bottom: -25px !important; } }
+
 /* HOME PAGE + General Page Template CUSTOMIZATIONS */
 .home .navbar, .page-template-default .navbar {
   background: none;
