@@ -6423,6 +6423,10 @@ h2 {
             flex-direction: column; }
     .products li img {
       margin-bottom: 0 !important; }
+      @media only screen and (max-width: 767px) {
+        .products li img {
+          max-width: 60% !important;
+          margin: 0 auto !important; } }
     .products li .add_to_cart_button {
       width: 150px;
       margin: 20px auto 0 auto;

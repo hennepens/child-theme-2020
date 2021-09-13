@@ -13,6 +13,10 @@
 		flex-direction: column;
 		img{
 			margin-bottom: 0 !important;
+			@media only screen and (max-width: 767px) {
+				max-width:  60% !important;
+				margin: 0 auto !important;
+			}
 		}
 		.add_to_cart_button{
 			width: 150px;
