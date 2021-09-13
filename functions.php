@@ -486,13 +486,13 @@ function add_info_before_container(){
   echo '<div class="product-info">';
 }
 
-//add_action('woocommerce_before_shop_loop_item_title', 'add_info_before_container');
+add_action('woocommerce_before_shop_loop_item_title', 'add_info_before_container');
 
 function add_info_after_container(){
   echo '</div>';
 }
 
-add_action('woocommerce_after_shop_loop_item', 'add_info_after_container');
+//add_action('woocommerce_after_shop_loop_item', 'add_info_after_container');
 
 add_filter( 'wcsatt_price_html_suffix', 'apfs_remove_suffix', 10, 3 );
 
