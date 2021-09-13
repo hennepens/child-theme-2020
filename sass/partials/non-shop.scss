@@ -8,7 +8,7 @@
 		width: 100%;
 		.navbar-collapse{
 			li{
-				border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+				margin: 0 10px;
 			}
 		}
 		.navbar-brand{
@@ -22,8 +22,11 @@
 		}
 		a{
 			color: #fff;
+			border-bottom: 4px transparent;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
 			&:hover{
-				color: $hennepens-green;
+				border-bottom: 4px solid #fff;
 			}
 		}
 	}

@@ -6260,16 +6260,19 @@ h2 {
   z-index: 999;
   width: 100%; }
   .home .navbar .navbar-collapse li, .page-template-default .navbar .navbar-collapse li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    margin: 0 10px; }
   .home .navbar .navbar-brand #logo-svg, .page-template-default .navbar .navbar-brand #logo-svg {
     -webkit-filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100);
             filter: invert(0) sepia(0%) saturate(0%) hue-rotate(0) brightness(100) contrast(100); }
   .home .navbar .navbar-brand .tagline, .page-template-default .navbar .navbar-brand .tagline {
     color: #fff; }
   .home .navbar a, .page-template-default .navbar a {
-    color: #fff; }
+    color: #fff;
+    border-bottom: 4px transparent;
+    padding-left: 0 !important;
+    padding-right: 0 !important; }
     .home .navbar a:hover, .page-template-default .navbar a:hover {
-      color: #356e3e; }
+      border-bottom: 4px solid #fff; }
 
 .home .xoo-wsc-sc-bki, .page-template-default .xoo-wsc-sc-bki {
   color: #fff; }
