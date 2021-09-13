@@ -1367,9 +1367,13 @@ display: none;
 .products{
 	li{
 		&.post-1168, &.post-1159, &.post-1156{
+			a{
+			overflow: hidden;
+			}
 			img{
 				@media only screen and (max-width: 767px) {
 					margin-bottom: -25px !important;
+					margin-top: -25px !important;
 				}
 			}
 		}
