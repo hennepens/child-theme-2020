@@ -321,12 +321,6 @@ function get_help_icon($content, $type = 'text', $echo = false){
       }
 
     });
-
-    var saveText = jQuery(".subscription-price");
-      
-      jQuery(":contains(\'— save\')").each(function(){
-        jQuery(saveText).html(jQuery(saveText).html().split("— save").join(""));
-    });  
       
         // purchase options
     jQuery(".purchase-options input").change(function(){
@@ -394,6 +388,11 @@ function get_help_icon($content, $type = 'text', $echo = false){
 
         jQuery("body").removeClass("clicked-subscription");
       }
+      var saveText = jQuery(".subscription-price");
+      
+      jQuery(":contains(\'— save\')").each(function(){
+        jQuery(saveText).html(jQuery(saveText).html().split("— save").join(""));
+    }); 
   };
     ', 'after' );
 } );
