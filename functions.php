@@ -389,7 +389,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
         jQuery("body").removeClass("clicked-subscription");
       }
 
-      jQuery(".subscription-price:contains(\'&mdash; save\')").each(function(){
+      jQuery(".subscription-price:contains(\'save\')").each(function(){
         jQuery(this).html(jQuery(this).html().split("&mdash; save").join(""));
       });
 
