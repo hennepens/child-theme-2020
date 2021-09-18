@@ -390,7 +390,7 @@ function get_help_icon($content, $type = 'text', $echo = false){
       }
 
       jQuery(".subscription-price:contains(\'save\')").each(function(){
-        jQuery(this).html($(this).html().split("save").join(""));
+        jQuery(this).html(jQuery(this).html().split("save").join(""));
       });
 
   };
