@@ -671,7 +671,6 @@ display: none;
 		}
 	}
 	.subscription-option-details{
-		max-width: 60%;
 		margin-left: auto;
 	}
 	.button{
@@ -1034,6 +1033,10 @@ display: none;
 	color: gray;
 }
 
+.single-product .wcsatt-sub-discount{
+	display: none !important;
+}
+
 .single-product .wcsatt-sub-options{
 	margin-left: 0.5rem;
 }
@@ -1221,7 +1224,7 @@ display: none;
 .woocommerce-page, .page-wellness-network, .page-contact-us, .page-contact, .page-shipping-returns, .page-terms-of-service, .page-privacy-policy,.page-careers,.page-certificates-of-analysis{
 	.navbar{
 		width: 100%;
-		z-index: 99999;
+		z-index: 99997;
 		background: #000 !important;
 		position: relative !important;
 		padding: 0;

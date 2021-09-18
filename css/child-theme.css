@@ -5696,7 +5696,6 @@ h2 {
   #jckqv_summary .quantity span {
     display: none; }
   #jckqv_summary .subscription-option-details {
-    max-width: 60%;
     margin-left: auto; }
   #jckqv_summary .button {
     padding: 4px;
@@ -6005,6 +6004,9 @@ h2 {
   font-weight: 700;
   color: gray; }
 
+.single-product .wcsatt-sub-discount {
+  display: none !important; }
+
 .single-product .wcsatt-sub-options {
   margin-left: 0.5rem; }
 
@@ -6143,7 +6145,7 @@ h2 {
 
 .woocommerce-page .navbar, .page-wellness-network .navbar, .page-contact-us .navbar, .page-contact .navbar, .page-shipping-returns .navbar, .page-terms-of-service .navbar, .page-privacy-policy .navbar, .page-careers .navbar, .page-certificates-of-analysis .navbar {
   width: 100%;
-  z-index: 99999;
+  z-index: 99997;
   background: #000 !important;
   position: relative !important;
   padding: 0; }
