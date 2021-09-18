@@ -322,10 +322,10 @@ function get_help_icon($content, $type = 'text', $echo = false){
 
     });
 
-    var $savetext = $(".subscription-price");
+    var saveText = jQuery(".subscription-price");
       
-      $(":contains(\'— save\')").each(function(){
-        $($savetext).html($($savetext).html().split("— save").join(""));
+      jQuery(":contains(\'— save\')").each(function(){
+        jQuery(saveText).html(jQuery(saveText).html().split("— save").join(""));
     });  
       
         // purchase options
