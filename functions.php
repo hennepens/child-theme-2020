@@ -918,7 +918,9 @@ add_filter( 'query_vars', 'bbloomer_wholesale_portal_query_vars', 0 );
 // 3. Insert the new endpoint into the My Account menu
   
 function bbloomer_add_wholesale_portal_link_my_account( $items ) {
+  if (current_user_can('default_wholesaler')) {
     $items['wholesale-portal'] = 'Wholesale Portal';
+  }
     return $items;
 }
   
