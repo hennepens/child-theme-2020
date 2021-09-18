@@ -920,9 +920,8 @@ add_filter( 'query_vars', 'bbloomer_wholesale_portal_query_vars', 0 );
 function bbloomer_add_wholesale_portal_link_my_account( $items ) {
   if (current_user_can('default_wholesaler')) {
     $items['wholesale-portal'] = 'Wholesale Portal';
-
+  }
     return $items;
-    }
 }
   
 add_filter( 'woocommerce_account_menu_items', 'bbloomer_add_wholesale_portal_link_my_account', 100, 1 );
@@ -986,7 +985,9 @@ $logout = $items['customer-logout'];
 unset( $items['customer-logout'] );
  
 // Insert your custom endpoint.
+if (current_user_can('default_wholesaler')) {
 $items['wholesale-portal'] = 'Wholesale Portal';
+}
 $items['refer-a-friend'] = 'Refer a Friend';
  
 // Insert back the logout item.
