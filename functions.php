@@ -388,8 +388,8 @@ function get_help_icon($content, $type = 'text', $echo = false){
 
         jQuery("body").removeClass("clicked-subscription");
       }
-      jQuery(".subscription-price").find(\'&mdash; save\').each(function(){
-        jQuery(this).text(jQuery(this).text().replace(\'&mdash; save\',\' \'));
+      jQuery(".subscription-price").find(\'&#8212; save\').each(function(){
+        jQuery(this).text(jQuery(this).html().replace(\'&#8212; save\',\' \'));
       });
 
   };
