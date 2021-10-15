@@ -1544,4 +1544,24 @@ function redirect_for_blocked_wc_pages() {
     
 }
 
+
+add_filter("retrieve_password_message", "my_reset_password_message", 99, 4);
+
+function my_reset_password_message($message, $key, $user_login, $user_data )    {
+
+    $message = "The password for the following account has been requested to be reset:
+
+    " . sprintf(__('%s'), $user_data->user_email) . "
+
+    If this was a mistake, just ignore this email and nothing will happen.
+
+    To reset your password, visit the following address:
+
+    " . network_site_url("login/?reset_pass=1&key=$key&id=" . rawurlencode($user_data->id), 'login') . "\r\n";
+
+    return $message;
+
+}
+
+
 ?>
