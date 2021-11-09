@@ -6836,7 +6836,6 @@ h2 {
 
 .single-product .choose-label, .woocommerce-shop .choose-label, #jckqv_summary .choose-label {
   position: relative;
-  float: left;
   width: auto;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
