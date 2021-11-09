@@ -569,7 +569,7 @@ add_action( 'woocommerce_after_shop_loop_item', 'misha_after_add_to_cart_btn' );
 function misha_after_add_to_cart_btn(){
   global $product;
   echo '
-   <a href="#" rel="nofollow" data-jckqvpid="' . $product->get_parent_id().':'. $product->get_id() . '" class="iconic-wqv-button iconic-wqv-button--align-center subscription-message"> Subscribe &amp; Save 25&percnt;</a>
+   <a href="#" rel="nofollow" data-jckqvpid="' . $product->get_parent_id().':'. $product->get_id() . '" class="iconic-wqv-button iconic-wqv-button--align-center subscription-message"> Subscribe &amp; Save 15&percnt;</a>
 
    <script>
     jQuery(document).ready(function(){
@@ -639,7 +639,7 @@ function woocommerce_quantity_input( $args = array(), $product = null, $echo = t
   
 }
 
-add_action( 'woocommerce_review_order_before_submit', 'bbloomer_add_checkout_minimum_notice', 9 );
+//add_action( 'woocommerce_review_order_before_submit', 'bbloomer_add_checkout_minimum_notice', 9 );
     
 function bbloomer_add_checkout_minimum_notice() {
   if ( class_exists( 'WC_Subscriptions_Product' ) && WC_Subscriptions_Cart::cart_contains_subscription( $product )) {
@@ -649,7 +649,7 @@ function bbloomer_add_checkout_minimum_notice() {
        'label_class'   => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
        'input_class'   => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
        'required'      => true,
-       'label'         => 'I acknowledge that a minimum of 3 subscription cycles is required for 25% off promotion.*',
+       'label'         => 'I acknowledge that a minimum of 3 subscription cycles is required for 15% off promotion.*',
     )); 
   }
    
