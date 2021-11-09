@@ -232,6 +232,11 @@
 		flex-grow: 1;
 		font-weight: bold;
 		font-size: 1.15rem;
+		display: flex;
+		align-items: center;
+		.subscription-price{
+			margin-left: auto;
+		}
 		.subscription-term-notification{
 			display: block;
 			font-size: 0.75rem;

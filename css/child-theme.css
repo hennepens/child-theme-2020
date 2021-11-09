@@ -6842,7 +6842,15 @@ h2 {
       -ms-flex-positive: 1;
           flex-grow: 1;
   font-weight: bold;
-  font-size: 1.15rem; }
+  font-size: 1.15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .single-product .choose-label .subscription-price, .woocommerce-shop .choose-label .subscription-price, #jckqv_summary .choose-label .subscription-price {
+    margin-left: auto; }
   .single-product .choose-label .subscription-term-notification, .woocommerce-shop .choose-label .subscription-term-notification, #jckqv_summary .choose-label .subscription-term-notification {
     display: block;
     font-size: 0.75rem;
