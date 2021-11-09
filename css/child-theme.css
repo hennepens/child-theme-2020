@@ -6850,7 +6850,7 @@ h2 {
       -ms-flex-align: center;
           align-items: center; }
   .single-product .choose-label .subscription-price, .woocommerce-shop .choose-label .subscription-price, #jckqv_summary .choose-label .subscription-price {
-    margin-left: auto; }
+    margin-left: auto !important; }
   .single-product .choose-label .subscription-term-notification, .woocommerce-shop .choose-label .subscription-term-notification, #jckqv_summary .choose-label .subscription-term-notification {
     display: block;
     font-size: 0.75rem;
