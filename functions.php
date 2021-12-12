@@ -1662,9 +1662,12 @@ function specific_logged_in_redirect() {
   $pageUrl = get_permalink($post->ID);
   if ((is_user_logged_in()) && $pageUrl=='https://hennepens.com/wellness-network-partner/register-dr-scharf/'){
     if ( $group = Groups_Group::read_by_name( 'Scharf Network' ) ) {
-      wp_redirect( 'https://hennepens.com/wellness-network-partner/dr-scharf/');
-      exit();
-    }
+       $user_data = get_userdata( $user_id );
+        $user_roles = $user_data->roles;
+        if ( !in_array( 'administrator', $user_roles, true ) ) {
+        wp_redirect( 'https://hennepens.com/wellness-network-partner/dr-scharf/');
+         exit();
+        }
   }
 
   if ((is_user_logged_in()) && $pageUrl=='https://dev.hennepens.com/checkout/'){
