@@ -1660,20 +1660,36 @@ add_action('template_redirect', 'specific_logged_in_redirect');
 function specific_logged_in_redirect() {
   global $post;
   $pageUrl = get_permalink($post->ID);
-  if ((is_user_logged_in()) && $pageUrl=='https://dev.hennepens.com/wellness-network-partner/register-dr-scharf/'){
+  if ((is_user_logged_in()) && $pageUrl=='https://hennepens.com/wellness-network-partner/register-dr-scharf/'){
     if ( $group = Groups_Group::read_by_name( 'Scharf Network' ) ) {
-      wp_redirect( 'https://dev.hennepens.com/wellness-network-partner/dr-scharf/');
+      wp_redirect( 'https://hennepens.com/wellness-network-partner/dr-scharf/');
       exit();
     }
   }
 
   if ((is_user_logged_in()) && $pageUrl=='https://dev.hennepens.com/checkout/'){
     if ( $group = Groups_Group::read_by_name( 'Scharf Network' ) ) {
-      wp_redirect( 'https://dev.hennepens.com/checkouts/dr-scharf/');
+      wp_redirect( 'https://hennepens.com/checkouts/dr-scharf/');
       exit();
     }
   }
 }
+
+add_filter( 'wcsatt_product_subscription_schemes', 'plans_for_specific_user_roles', 10, 2 );
+function plans_for_specific_user_roles( $schemes, $product ) {
+  
+  if( is_user_logged_in() ) {
+    $user  = wp_get_current_user();
+    $roles = ( array ) $user->roles;
+    if ( in_array( 'wellness_member', $roles ) ) {
+      foreach( $schemes as $scheme ) {
+        $scheme->set_discount( 20 );
+      }     
+    }
+  }
+  return $schemes;
+}
+
 
 
 ?>
