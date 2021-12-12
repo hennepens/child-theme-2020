@@ -52,6 +52,12 @@ h2{
 
 /* Navbar Customizations */
 
+.wffn_landing-template .xoo-wsc-sc-cont{
+	width: 30px;
+    position: fixed;
+    right: 50px;
+}
+
 .navbar{
 	background: #f9f9f9;
 	flex: 1;
@@ -629,7 +635,6 @@ display: none;
 		}
 	}
 	.price{
-		display: inherit !important;
 		font-weight:  400;
 		@media only screen and (max-width: 767px) {
 			display:  block !important;
@@ -1318,6 +1323,7 @@ display: none;
 			}
 		.xoo-wsc-sc-cont{
 			margin-top: -5px;
+
 		}
 		.xoo-wsc-sc-bki.xoo-wsc-icon-cart1{
 			color: #fff;

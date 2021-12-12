@@ -5201,6 +5201,11 @@ h2 {
   border-radius: 100px; }
 
 /* Navbar Customizations */
+.wffn_landing-template .xoo-wsc-sc-cont {
+  width: 30px;
+  position: fixed;
+  right: 50px; }
+
 .navbar {
   background: #f9f9f9;
   -webkit-box-flex: 1;
@@ -5668,7 +5673,6 @@ h2 {
       display: none !important; } }
 
 #jckqv .price {
-  display: inherit !important;
   font-weight: 400; }
   @media only screen and (max-width: 767px) {
     #jckqv .price {

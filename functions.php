@@ -389,6 +389,9 @@ function get_help_icon($content, $type = 'text', $echo = false){
         jQuery("body").removeClass("clicked-subscription");
       }
 
+      
+
+
       jQuery(".subscription-price:contains(\'save\')").each(function(){
         jQuery(this).html(jQuery(this).html().split(" — save ").join(""));
       });
@@ -1202,7 +1205,7 @@ jQuery(document).ready(function(){
   <?php
 }
 
-add_filter( 'woocommerce_coupon_is_valid', 'disable_coupons_for_subscription_products', 10, 3 );
+//add_filter( 'woocommerce_coupon_is_valid', 'disable_coupons_for_subscription_products', 10, 3 );
 function disable_coupons_for_subscription_products( $is_valid, $coupon, $discount ){
     // Loop through cart items
     foreach ( WC()->cart->get_cart() as $cart_item ) {
@@ -1561,6 +1564,115 @@ function my_reset_password_message($message, $key, $user_login, $user_data )    
 
     return $message;
 
+}
+
+
+add_action( 'woocommerce_widget_shopping_cart_buttons', function(){
+    // Removing Buttons
+    remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10 );
+    remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
+
+    // Adding customized Buttons
+    add_action( 'woocommerce_widget_shopping_cart_buttons', 'custom_widget_shopping_cart_button_view_cart', 10 );
+    add_action( 'woocommerce_widget_shopping_cart_buttons', 'custom_widget_shopping_cart_proceed_to_checkout', 20 );
+}, 1 );
+
+// Custom cart button
+function custom_widget_shopping_cart_button_view_cart() {
+    $original_link = wc_get_cart_url();
+    $custom_link = 'https://hennepens.com/?wffn-next-link=yes'; // HERE replacing cart link
+    //echo '<a href="' . esc_url( $custom_link ) . '" class="button wc-forward">' . esc_html__( 'View cart', 'woocommerce' ) . '</a>';
+}
+
+// Custom Checkout button
+function custom_widget_shopping_cart_proceed_to_checkout() {
+    $original_link = wc_get_checkout_url();
+    $custom_link = home_url( '/?wffn-next-link=yes' ); // HERE replacing checkout link
+    //echo '<a href="' . esc_url( $custom_link ) . '" class="button checkout wc-forward">' . esc_html__( 'Checkout', 'woocommerce' ) . '</a>';
+}
+
+add_role( 'wellness_member', 'Wellness Member', get_role( 'customer' )->capabilities );
+add_filter( 'wcsatt_discount_from_regular', '__return_true' );  
+
+
+add_action( 'user_register', 'cag_user_register', 10, 1 );
+
+function cag_user_register( $user_id ) {
+  if ( cag_check_dependencies() ) {
+    $user_data = get_userdata( $user_id );
+    $user_roles = $user_data->roles;
+    if ( in_array( 'wellness_member', $user_roles, true ) ) {
+      cag_add_to_group( 'Scharf Network', $user_id );
+    }
+  }
+}
+
+
+function cag_check_dependencies() {
+  $result = false;
+  $active_plugins = get_option( 'active_plugins', array() );
+  $groups_is_active = in_array( 'groups/groups.php', $active_plugins );
+  $wc_is_active = in_array( 'woocommerce/woocommerce.php', $active_plugins );
+  if ( $groups_is_active && $wc_is_active ) {
+    $result = true;
+  }
+  
+  return $result;
+}
+
+/**
+ * Adds new user to group
+ *
+ * @param string $group_name
+ * @param int $user_id
+ */
+function cag_add_to_group( $group_name, $user_id ) {
+  if ( class_exists( 'Groups_User_Group' ) ) {
+    $group = cag_group_exists( $group_name );
+    if ( $group ) {
+      Groups_User_Group::create( array( 'user_id' => $user_id, 'group_id' =>  $group->group_id ) ); 
+    }
+  }
+}
+
+/**
+ * Checks if group exists
+ * and creates it if not
+ *
+ * @param string $group_name
+ * @return boolean|int|object
+ */
+function cag_group_exists( $group_name ) {
+  $result = false;
+  if ( class_exists( 'Groups_Group' ) ) {
+    if( !Groups_Group::read_by_name( $group_name ) ) {
+      $group_id = Groups_Group::create( array( 'name' => $group_name ) );
+      $result = Groups_Group::read( $group_id );
+    } else{
+      $result = Groups_Group::read_by_name( $group_name );
+    }
+  }
+  return $result;
+}
+
+
+add_action('template_redirect', 'specific_logged_in_redirect');
+function specific_logged_in_redirect() {
+  global $post;
+  $pageUrl = get_permalink($post->ID);
+  if ((is_user_logged_in()) && $pageUrl=='https://dev.hennepens.com/wellness-network-partner/register-dr-scharf/'){
+    if ( $group = Groups_Group::read_by_name( 'Scharf Network' ) ) {
+      wp_redirect( 'https://dev.hennepens.com/wellness-network-partner/dr-scharf/');
+      exit();
+    }
+  }
+
+  if ((is_user_logged_in()) && $pageUrl=='https://dev.hennepens.com/checkout/'){
+    if ( $group = Groups_Group::read_by_name( 'Scharf Network' ) ) {
+      wp_redirect( 'https://dev.hennepens.com/checkouts/dr-scharf/');
+      exit();
+    }
+  }
 }
 
 
