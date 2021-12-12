@@ -1668,6 +1668,7 @@ function specific_logged_in_redirect() {
         wp_redirect( 'https://hennepens.com/wellness-network-partner/dr-scharf/');
          exit();
         }
+      }
   }
 
   if ((is_user_logged_in()) && $pageUrl=='https://dev.hennepens.com/checkout/'){
