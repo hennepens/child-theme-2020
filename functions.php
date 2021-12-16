@@ -1239,251 +1239,6 @@ add_action( 'wp_mail', function ( $email ) {
 }, 13 );        // priority 13 is after style_mail() function; we want to clean up after that
 
 
-//add_action('woocommerce_after_add_to_cart_button', 'add_google_pay_button');
-function add_google_pay_button(){
-  if (is_user_logged_in() && current_user_can('administrator')) {
-  ?>
-  <div id="gpay-container" style="position: absolute;top: 100px;"></div>
-  <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
-  <script>
-      /**
-   * Define the version of the Google Pay API referenced when creating your
-   * configuration
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#PaymentDataRequest|apiVersion in PaymentDataRequest}
-   */
-  const baseRequest = {
-    apiVersion: 2,
-    apiVersionMinor: 0
-  };
-
-  /**
-   * Card networks supported by your site and your gateway
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#CardParameters|CardParameters}
-   * @todo confirm card networks supported by your site and gateway
-   */
-  const allowedCardNetworks = ["DISCOVER", "MASTERCARD", "VISA"];
-
-  /**
-   * Card authentication methods supported by your site and your gateway
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#CardParameters|CardParameters}
-   * @todo confirm your processor supports Android device tokens for your
-   * supported card networks
-   */
-  const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
-
-  /**
-   * Identify your gateway and your site's gateway merchant identifier
-   *
-   * The Google Pay API response will return an encrypted payment method capable
-   * of being charged by a supported gateway after payer authorization
-   *
-   * @todo check with your gateway on the parameters to pass
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#gateway|PaymentMethodTokenizationSpecification}
-   */
-  const tokenizationSpecification = {
-    type: 'PAYMENT_GATEWAY',
-    parameters: {
-      'gateway': 'example',
-      'gatewayMerchantId': 'exampleGatewayMerchantId'
-    }
-  };
-
-  /**
-   * Describe your site's support for the CARD payment method and its required
-   * fields
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#CardParameters|CardParameters}
-   */
-  const baseCardPaymentMethod = {
-    type: 'CARD',
-    parameters: {
-      allowedAuthMethods: allowedCardAuthMethods,
-      allowedCardNetworks: allowedCardNetworks
-    }
-  };
-
-  /**
-   * Describe your site's support for the CARD payment method including optional
-   * fields
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#CardParameters|CardParameters}
-   */
-  const cardPaymentMethod = Object.assign(
-    {},
-    baseCardPaymentMethod,
-    {
-      tokenizationSpecification: tokenizationSpecification
-    }
-  );
-
-  /**
-   * An initialized google.payments.api.PaymentsClient object or null if not yet set
-   *
-   * @see {@link getGooglePaymentsClient}
-   */
-  let paymentsClient = null;
-
-  /**
-   * Configure your site's support for payment methods supported by the Google Pay
-   * API.
-   *
-   * Each member of allowedPaymentMethods should contain only the required fields,
-   * allowing reuse of this base request when determining a viewer's ability
-   * to pay and later requesting a supported payment method
-   *
-   * @returns {object} Google Pay API version, payment methods supported by the site
-   */
-  function getGoogleIsReadyToPayRequest() {
-    return Object.assign(
-        {},
-        baseRequest,
-        {
-          allowedPaymentMethods: [baseCardPaymentMethod]
-        }
-    );
-  }
-
-  /**
-   * Configure support for the Google Pay API
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#PaymentDataRequest|PaymentDataRequest}
-   * @returns {object} PaymentDataRequest fields
-   */
-  function getGooglePaymentDataRequest() {
-    const paymentDataRequest = Object.assign({}, baseRequest);
-    paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
-    paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
-    paymentDataRequest.merchantInfo = {
-      // @todo a merchant ID is available for a production environment after approval by Google
-      // See {@link https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist|Integration checklist}
-      // merchantId: '01234567890123456789',
-      merchantName: 'Example Merchant'
-    };
-    return paymentDataRequest;
-  }
-
-  /**
-   * Return an active PaymentsClient or initialize
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/client#PaymentsClient|PaymentsClient constructor}
-   * @returns {google.payments.api.PaymentsClient} Google Pay API client
-   */
-  function getGooglePaymentsClient() {
-    if ( paymentsClient === null ) {
-      paymentsClient = new google.payments.api.PaymentsClient({environment: 'TEST'});
-    }
-    return paymentsClient;
-  }
-
-  /**
-   * Initialize Google PaymentsClient after Google-hosted JavaScript has loaded
-   *
-   * Display a Google Pay payment button after confirmation of the viewer's
-   * ability to pay.
-   */
-  function onGooglePayLoaded() {
-    const paymentsClient = getGooglePaymentsClient();
-    paymentsClient.isReadyToPay(getGoogleIsReadyToPayRequest())
-        .then(function(response) {
-          if (response.result) {
-            addGooglePayButton();
-            // @todo prefetch payment data to improve performance after confirming site functionality
-            // prefetchGooglePaymentData();
-          }
-        })
-        .catch(function(err) {
-          // show error in developer console for debugging
-          console.error(err);
-        });
-  }
-
-  /**
-   * Add a Google Pay purchase button alongside an existing checkout button
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#ButtonOptions|Button options}
-   * @see {@link https://developers.google.com/pay/api/web/guides/brand-guidelines|Google Pay brand guidelines}
-   */
-  function addGooglePayButton() {
-    const paymentsClient = getGooglePaymentsClient();
-    const button =
-        paymentsClient.createButton({onClick: onGooglePaymentButtonClicked});
-    document.getElementById('gpay-container').appendChild(button);
-  }
-
-  /**
-   * Provide Google Pay API with a payment amount, currency, and amount status
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#TransactionInfo|TransactionInfo}
-   * @returns {object} transaction info, suitable for use as transactionInfo property of PaymentDataRequest
-   */
-  function getGoogleTransactionInfo() {
-    return {
-      countryCode: 'US',
-      currencyCode: 'USD',
-      totalPriceStatus: 'FINAL',
-      // set to cart total
-      totalPrice: '1.00'
-    };
-  }
-
-  /**
-   * Prefetch payment data to improve performance
-   *
-   * @see {@link https://developers.google.com/pay/api/web/reference/client#prefetchPaymentData|prefetchPaymentData()}
-   */
-  function prefetchGooglePaymentData() {
-    const paymentDataRequest = getGooglePaymentDataRequest();
-    // transactionInfo must be set but does not affect cache
-    paymentDataRequest.transactionInfo = {
-      totalPriceStatus: 'NOT_CURRENTLY_KNOWN',
-      currencyCode: 'USD'
-    };
-    const paymentsClient = getGooglePaymentsClient();
-    paymentsClient.prefetchPaymentData(paymentDataRequest);
-  }
-
-  /**
-   * Show Google Pay payment sheet when Google Pay payment button is clicked
-   */
-  function onGooglePaymentButtonClicked() {
-    const paymentDataRequest = getGooglePaymentDataRequest();
-    paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
-
-    const paymentsClient = getGooglePaymentsClient();
-    paymentsClient.loadPaymentData(paymentDataRequest)
-        .then(function(paymentData) {
-          // handle the response
-          processPayment(paymentData);
-        })
-        .catch(function(err) {
-          // show error in developer console for debugging
-          console.error(err);
-        });
-  }
-
-  /**
-   * Process payment data returned by the Google Pay API
-   *
-   * @param {object} paymentData response from Google Pay API after user approves payment
-   * @see {@link https://developers.google.com/pay/api/web/reference/response-objects#PaymentData|PaymentData object reference}
-   */
-  function processPayment(paymentData) {
-    // show returned data in developer console for debugging
-      console.log(paymentData);
-    // @todo pass payment token to your gateway to process payment
-    paymentToken = paymentData.paymentMethodData.tokenizationData.token;
-  }
-    </script>
-    <?php
-  }else{
-    return;
-  }
-}
-
-
  add_filter('wp_new_user_notification_email', 'change_notification_message', 10, 3);
 
   function change_notification_message( $wp_new_user_notification_email, $user, $blogname ) {
@@ -1566,31 +1321,6 @@ function my_reset_password_message($message, $key, $user_login, $user_data )    
 
 }
 
-
-add_action( 'woocommerce_widget_shopping_cart_buttons', function(){
-    // Removing Buttons
-    remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10 );
-    remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
-
-    // Adding customized Buttons
-    add_action( 'woocommerce_widget_shopping_cart_buttons', 'custom_widget_shopping_cart_button_view_cart', 10 );
-    add_action( 'woocommerce_widget_shopping_cart_buttons', 'custom_widget_shopping_cart_proceed_to_checkout', 20 );
-}, 1 );
-
-// Custom cart button
-function custom_widget_shopping_cart_button_view_cart() {
-    $original_link = wc_get_cart_url();
-    $custom_link = 'https://hennepens.com/?wffn-next-link=yes'; // HERE replacing cart link
-    //echo '<a href="' . esc_url( $custom_link ) . '" class="button wc-forward">' . esc_html__( 'View cart', 'woocommerce' ) . '</a>';
-}
-
-// Custom Checkout button
-function custom_widget_shopping_cart_proceed_to_checkout() {
-    $original_link = wc_get_checkout_url();
-    $custom_link = home_url( '/?wffn-next-link=yes' ); // HERE replacing checkout link
-    //echo '<a href="' . esc_url( $custom_link ) . '" class="button checkout wc-forward">' . esc_html__( 'Checkout', 'woocommerce' ) . '</a>';
-}
-
 add_role( 'wellness_member', 'Wellness Member', get_role( 'customer' )->capabilities );
 add_filter( 'wcsatt_discount_from_regular', '__return_true' );  
 
@@ -1601,8 +1331,10 @@ function cag_user_register( $user_id ) {
   if ( cag_check_dependencies() ) {
     $user_data = get_userdata( $user_id );
     $user_roles = $user_data->roles;
+    $user_url = $user_data->user_url;
+    $clean_url = trim( str_replace( array( 'http://', 'https://' ), '', $user_url ), '/' );
     if ( in_array( 'wellness_member', $user_roles, true ) ) {
-      cag_add_to_group( 'Scharf Network', $user_id );
+      cag_add_to_group( $clean_url, $user_id );
     }
   }
 }
@@ -1658,22 +1390,19 @@ function cag_group_exists( $group_name ) {
 
 add_action('template_redirect', 'specific_logged_in_redirect');
 function specific_logged_in_redirect() {
-  global $post;
-  $pageUrl = get_permalink($post->ID);
-  if ((is_user_logged_in()) && $pageUrl=='https://hennepens.com/wellness-network-partner/register-dr-scharf/'){
-    if ( $group = Groups_Group::read_by_name( 'Scharf Network' ) ) {
-       $user_data = get_userdata( $user_id );
-        $user_roles = $user_data->roles;
-        if ( in_array( 'administrator', $user_roles, false ) ) {
-        wp_redirect( 'https://hennepens.com/wellness-network-partner/dr-scharf/');
-         exit();
-        }
-      }
-  }
-
-  if ((is_user_logged_in()) && $pageUrl=='https://hennepens.com/checkout/'){
-    if ( $group = Groups_Group::read_by_name( 'Scharf Network' ) ) {
-      wp_redirect( 'https://hennepens.com/checkouts/dr-scharf/');
+  global $post, $current_user, $wpdb;
+  $base_url = site_url();
+  $page_url = get_permalink($post->ID);
+  $user_url = $current_user->user_url;
+  $clean_url = trim( str_replace( array( 'http://', 'https://' ), '', $user_url ), '/' );
+  if ((is_user_logged_in()) && $page_url == $base_url . "/wellness-network-partner/register-" . $clean_url . "/"){
+    if ( $group = Groups_Group::read_by_name($clean_url) ) {    
+      wp_redirect( "https://hennepens.com/wellness-network-partner/" . $clean_url . "/");
+      exit();
+    }
+  } else if ((is_user_logged_in()) && $page_url == 'https://hennepens.com/checkout/'){
+    if ( $group = Groups_Group::read_by_name($clean_url) ) {
+      wp_redirect( $base_url . "/checkouts/" . $clean_url . "/");
       exit();
     }
   }
@@ -1693,7 +1422,5 @@ function plans_for_specific_user_roles( $schemes, $product ) {
   }
   return $schemes;
 }
-
-
 
 ?>
