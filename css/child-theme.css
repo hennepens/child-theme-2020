@@ -6812,7 +6812,6 @@ h2 {
       padding: 0 !important; }
       @media only screen and (max-width: 767px) {
         .single-product .purchase-options li .subscription-price .subscription-option-details, .woocommerce-shop .purchase-options li .subscription-price .subscription-option-details, #jckqv_summary .purchase-options li .subscription-price .subscription-option-details {
-          max-width: 90px;
           text-align: right; } }
     .single-product .purchase-options li .subscription-price .subscription-option, .woocommerce-shop .purchase-options li .subscription-price .subscription-option, #jckqv_summary .purchase-options li .subscription-price .subscription-option {
       display: none;
@@ -6840,13 +6839,15 @@ h2 {
       -ms-flex-positive: 1;
           flex-grow: 1;
   font-weight: bold;
-  font-size: 1.15rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media only screen and (max-width: 767px) {
+    .single-product .choose-label, .woocommerce-shop .choose-label, #jckqv_summary .choose-label {
+      font-size: inherit; } }
   .single-product .choose-label .subscription-price, .woocommerce-shop .choose-label .subscription-price, #jckqv_summary .choose-label .subscription-price {
     margin-left: auto !important; }
   .single-product .choose-label .subscription-term-notification, .woocommerce-shop .choose-label .subscription-term-notification, #jckqv_summary .choose-label .subscription-term-notification {
@@ -6872,6 +6873,9 @@ h2 {
     padding-bottom: 5px;
     font-size: 1.25rem;
     font-family: "libre_baskervilleitalic"; }
+    @media only screen and (max-width: 767px) {
+      .single-product .one-time-purchase-label .one-time-price, .woocommerce-shop .one-time-purchase-label .one-time-price, #jckqv_summary .one-time-purchase-label .one-time-price {
+        font-size: inherit; } }
 
 .single-product .delivery-container, .woocommerce-shop .delivery-container, #jckqv_summary .delivery-container {
   padding: 15px;

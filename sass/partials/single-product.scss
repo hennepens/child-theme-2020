@@ -191,7 +191,6 @@
 					min-height: auto !important;
 					padding: 0 !important;
 					@media only screen and (max-width: 767px) {
-						max-width: 90px;
 						text-align: right;
 					}
 				}
@@ -230,9 +229,11 @@
 		width: 100%;
 		flex-grow: 1;
 		font-weight: bold;
-		font-size: 1.15rem;
 		display: flex;
 		align-items: center;
+		@media only screen and (max-width: 767px) {
+			font-size: inherit;
+		}
 		.subscription-price{
 			margin-left: auto !important;
 		}
@@ -256,6 +257,9 @@
     		padding-bottom: 5px;
     		font-size: 1.25rem;
 			font-family: $font-family-libre-baskerville-italic;
+			@media only screen and (max-width: 767px) {
+				font-size: inherit;
+			}
 		}
 	}
 	.delivery-container{
